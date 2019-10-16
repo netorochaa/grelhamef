@@ -14,7 +14,7 @@ namespace Grelha_MEF
     {   
         //Matriz de rigidez local
         //elemento 1
-        public static int[,] rigidezLocalElemento1 = new int[6,6] 
+        public static double[,] rigidezLocalElemento1 = new double[6, 6] 
             {  
                 {11, 12, 13, 14, 15, 16},
                 {21, 22, 23, 24, 25, 26},
@@ -24,7 +24,7 @@ namespace Grelha_MEF
                 {61, 62, 63, 64, 65, 66}
             };
         //elemento 2
-        public static int[,] rigidezLocalElemento2 = new int[6,6] 
+        public static double[,] rigidezLocalElemento2 = new double[6, 6] 
             {  
                 {11, 12, 13, 14, 15, 16},
                 {21, 22, 23, 24, 25, 26},
@@ -32,6 +32,28 @@ namespace Grelha_MEF
                 {41, 42, 43, 44, 45, 46},
                 {51, 52, 53, 54, 55, 56},
                 {61, 62, 63, 64, 65, 66}
+            };
+
+        //Matriz de rigidez local
+        //elemento 1
+        public static double[,] rigidezteste1 = new double[6, 6] 
+            {  
+                {1,	2,	3,	4,	5,	6},
+                {7,	8,	9,	10,	11,	12},
+                {13, 14, 15, 16, 17, 18},
+                {19, 20, 21, 22, 23, 24},
+                {25, 26, 27, 28, 29, 30},
+                {31, 32, 33, 34, 35, 36}
+            };
+        //elemento 2
+        public static double[,] rigidezteste2 = new double[6, 6] 
+            {  
+                {36, 35, 34, 33, 32, 31},
+                {30, 29, 28, 27, 26, 25},
+                {24, 23, 22, 21, 20, 19},
+                {18, 17, 16, 15, 14, 13},
+                {12, 11, 10, 9, 8, 7},
+                {6, 5, 4, 3, 2, 1}
             };
 
         //Graus de liberdade (associando local a global)
@@ -83,11 +105,12 @@ namespace Grelha_MEF
 
         public Form1()
         {
-            //InitializeComponent();
+            InitializeComponent();
             inicializaVetores();
             inicializaMatrizElemento1();
             inicializaMatrizElemento2();
             inicializaMatrizGlobalDosElementos();
+            //calculaMatrizRigidezAplicandoMatrizRotacao(rigidezteste1, rigidezteste2);
         }
 
         public void inicializaVetores()
@@ -156,39 +179,50 @@ namespace Grelha_MEF
                     //matrizGlobalElemetos[i, j] = matrizLocalElemeto1[i, j] + " + " + matrizLocalElemeto2[i, j];
                     //else
                     //    matrizGlobalElemetos[i, j] = "0";
-                    Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizGlobalEstrutura[i, j]);
+                    //Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizGlobalEstrutura[i, j]);
                 }
             }
         }
 
         //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ**
-        public void inicializaMatrizRigidezEmCoordenadasLocais(double b, double h, double moduloYoung, double coeficientePoisson, double L1, double L2)
+        public double[,] inicializaMatrizRigidezEmCoordenadasLocais(double b, double h, double moduloYoung, double coeficientePoisson, double L1, double L2)
         {
             //Calculando Separadamente
-            double I = (b * Math.Pow(h, 3))/12;
+            //momento inércia
+            double I = Math.Round((b * Math.Pow(h, 3))/12, 3);
             //string unidadeMedidaI = "m⁴";
+            Console.WriteLine("I: " + I);
 
-            double E = moduloYoung * Math.Pow(10, 9);
+            //modulo young
+            double E = moduloYoung;
             //string unidadeMedidaE = "kN/m²";
+            Console.WriteLine("E: " + E);
 
+            //coeficiente Poisson
             double V = coeficientePoisson;
 
-            double G = E / (2 * (1 + V));
+            //modulo de elasticidade transversal
+            double G = Math.Round(E / (2 * (1 + V)), 3);
             //string unidadeMedidaG = "kN/m²";
+            Console.WriteLine("G: " + G);
 
-            double J = h * Math.Pow(b, 3) * ((1 / 3) - 0.21 * (b / h) * (1 - (Math.Pow(b, 4) / (12 * Math.Pow(h, 4)))));
+            //momento inércia torção
+            double J = Math.Round(h * Math.Pow(b, 3) * ((1 / 3) - 0.21 * (b / h) * (1 - (Math.Pow(b, 4) / (12 * Math.Pow(h, 4))))), 3);
             //string unidadeMedidaJ = "m⁴";
+            Console.WriteLine("J: " + Math.Round(h, 3) + "*" + Math.Round(Math.Pow(b, 3), 3) + "*" + ((1 / 3) - 0.21 + "*" + (b / h) + "*" + (1 - (Math.Pow(b, 4) / (12 * Math.Pow(h, 4))))));
 
             //Matriz de rigidez do elemento em coordenadas locais
             double[,] matrizRigidezElementoEmCoordenadasLocais = new double[6, 6]
                 {
-                    {(12*E*I)/Math.Pow(L1, 3), 0, (G*E*I)/Math.Pow(L1, 2), (-12*E*I)/Math.Pow(L1, 3), 0, (6*E*I)/Math.Pow(L1, 2)},
-                    {0, (G*J)/L1, 0, 0, (-G*J)/L1, 0},
-                    {(6*E*I)/Math.Pow(L1, 2), 0, (4*E*I)/L1, (-6*E*I)/Math.Pow(L1, 2), 0, (2*E*I)/L1},
-                    {(-12*E*I)/Math.Pow(L1, 3), 0, (-6*E*I)/Math.Pow(L1, 2), (12*E*I)/Math.Pow(L1, 3), 0, 0},
-                    {0, (-G*J)/L1, 0, 0, (G*J)/L1, 0},
-                    {(6*E*I)/Math.Pow(L1, 2), 0, (2*E*I)/L1, (-6*E*I)/Math.Pow(L1, 2), 0, (4*E*I)/L1}
+                    {Math.Round((12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(L1, 2), 3), Math.Round((-12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(L1, 2), 3)},
+                    {0, Math.Round((G*J)/L1, 3), 0, 0, Math.Round((-G*J)/L1, 3), 0},
+                    {Math.Round((6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((4*E*I)/L1, 3), Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((2*E*I)/L1, 3)},
+                    {Math.Round((-12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), Math.Round((12*E*I)/Math.Pow(L1, 3), 3), 0, 0},
+                    {0, Math.Round((-G*J)/L1, 3), 0, 0, Math.Round((G*J)/L1, 3), 0},
+                    {Math.Round((6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((2*E*I)/L1, 3), Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((4*E*I)/L1, 3)}
                 };
+
+            return matrizRigidezElementoEmCoordenadasLocais;
         }
 
         //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ**
@@ -203,6 +237,68 @@ namespace Grelha_MEF
                     {0, 0, 0, 0, conseno, seno},
                     {0, 0, 0, 0, -seno, conseno}
                 };
+        }
+
+        //Substituindo na matriz de rigidez do elemento e aplicando a matriz de rotação
+        public void calculaMatrizRigidezAplicandoMatrizRotacao(double[,] matrizRigidezElementoEmCoordenadasLocais, double[,] matrizRotacao)
+        {
+            double valorCelula = 0;
+            int quantidadeCelulas = matrizRigidezElementoEmCoordenadasLocais.Length;
+            int celula = 0;
+            int i = 0;
+            int cont = 0;
+
+            for (int j = 0; j < 36; j++)
+            {
+                valorCelula += matrizRigidezElementoEmCoordenadasLocais[i, j] * matrizRotacao[j, cont];
+                Console.WriteLine(matrizRigidezElementoEmCoordenadasLocais[i, j] + " * " + matrizRotacao[j, cont]);
+
+                celula++;                
+
+                if(celula.Equals(6) || celula.Equals(6*2) || celula.Equals(6*3) ||
+                   celula.Equals(6*4) || celula.Equals(6*5))
+                {
+                    j = -1;
+                    cont++;
+                    Console.WriteLine(valorCelula);
+                    valorCelula = 0;
+                }
+                else if (celula.Equals(6 * 6) && i < 5)
+                {
+                    i++;
+                    cont = 0;
+                    j = -1;
+                    celula = 0;
+                    Console.WriteLine(valorCelula);
+                    valorCelula = 0;
+                }
+                else if (i.Equals(5) && celula.Equals(6 * 6))
+                {
+                    break;
+                }
+
+            }
+            Console.WriteLine(celula);
+            valorCelula = 0;   
+        }
+
+        private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
+        {
+            double b = Double.Parse(textBoxB.Text);
+            double h = Double.Parse(textBoxH.Text);
+            double modeloYoung = Double.Parse(textBoxModuloYoung.Text);
+            double coeficientePoisson = Double.Parse(textBoxCoeficientePoisson.Text);
+            double l1 = Double.Parse(textBoxL1.Text);
+
+            double[,] teste = inicializaMatrizRigidezEmCoordenadasLocais(b, h, modeloYoung, coeficientePoisson, l1, 0.0);
+            
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + teste[i, j]);
+                }
+            }
         }
     }
 }
