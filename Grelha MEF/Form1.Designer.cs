@@ -90,7 +90,7 @@
             this.textBoxModuloYoung.Name = "textBoxModuloYoung";
             this.textBoxModuloYoung.Size = new System.Drawing.Size(100, 20);
             this.textBoxModuloYoung.TabIndex = 5;
-            this.textBoxModuloYoung.Text = "300";
+            this.textBoxModuloYoung.Text = "30000000";
             // 
             // label4
             // 
