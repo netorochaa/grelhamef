@@ -47,18 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GithubSharp.Core">
-      <HintPath>..\packages\GithubSharp.Core.0.0.5.1\lib\GithubSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="GithubSharp.Plugins.CacheProviders.ApplicationCacher">
-      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll</HintPath>
-    </Reference>
-    <Reference Include="GithubSharp.Plugins.CacheProviders.WebCache">
-      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.WebCache.dll</HintPath>
-    </Reference>
-    <Reference Include="GithubSharp.Plugins.LogProviders.SimpleLogProvider">
-      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

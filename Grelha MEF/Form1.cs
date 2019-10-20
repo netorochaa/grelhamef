@@ -35,7 +35,7 @@ namespace Grelha_MEF
                 {61, 62, 63, 64, 65, 66}
             };
 
-        //Matriz de rigidez local
+        //Matriz de rigidez local **TESTE** 
         //elemento 1
         public static double[,] rigidezteste1 = new double[6, 6] 
             {  
@@ -56,7 +56,7 @@ namespace Grelha_MEF
                 {12, 11, 10, 9, 8, 7},
                 {6, 5, 4, 3, 2, 1}
             };
-
+        
         //Graus de liberdade (associando local a global)
         //no 1
         public static int[] sistemaGlobalGrausLiberdadeNo1 = new int[] { 1, 2, 3 };
@@ -102,16 +102,49 @@ namespace Grelha_MEF
         public static int[] noGlobalElemento1 = { 1, 3 };
         //elemento 2
         public static int[] noLocalElemento2  = { 1, 2 };
-        public static int[] noGlobalElemento2 = { 1, 2 };        
+        public static int[] noGlobalElemento2 = { 1, 2 };    
+    
+        //Matriz de rotação para o ângulo 0
+        public static double[,] matrizRotacaoAngulo0 = new double[6, 6] 
+            {  
+                {1, 0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0, 0},
+                {0, 0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 1, 0},
+                {0, 0, 0, 0, 0, 1}
+            };
+        //Matriz de rotação para o ângulo 90
+        public static double[,] matrizRotacaoAngulo90 = new double[6, 6] 
+            {  
+                {1, 0, 0, 0, 0, 0},
+                {0, 0, -1, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0, -1},
+                {0, 0, 0, 0, 1, 0}
+            };
 
         public Form1()
         {
             InitializeComponent();
+
+            groupBoxElemento2.Visible = false;
+            groupBoxElemento3.Visible = false;
+            groupBoxElemento4.Visible = false;
+            groupBoxElemento5.Visible = false;
+            groupBoxElemento6.Visible = false;
+            groupBoxElemento7.Visible = false;
+            groupBoxElemento8.Visible = false;
+            groupBoxElemento9.Visible = false;
+            groupBoxElemento10.Visible = false;
+
             inicializaVetores();
             inicializaMatrizElemento1();
             inicializaMatrizElemento2();
             inicializaMatrizGlobalDosElementos();
             //calculaMatrizRigidezAplicandoMatrizRotacao(rigidezteste1, rigidezteste2);
+            inicializaMatrizRotacao((Convert.ToInt32(comboBoxAnguloE1.Text)));
         }
 
         public void inicializaVetores()
@@ -186,7 +219,7 @@ namespace Grelha_MEF
         }
 
         //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ**
-        public double[,] inicializaMatrizRigidezEmCoordenadasLocais(double b, double h, double moduloYoung, double coeficientePoisson, double L1, double L2)
+        public double[,] inicializaMatrizRigidezEmCoordenadasLocais(double b, double h, double moduloYoung, double coeficientePoisson, double comprimentoBarra)
         {
             //Calculando Separadamente
             //momento inércia
@@ -219,29 +252,37 @@ namespace Grelha_MEF
             //Matriz de rigidez do elemento em coordenadas locais
             double[,] matrizRigidezElementoEmCoordenadasLocais = new double[6, 6]
                 {
-                    {Math.Round((12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(L1, 2), 3), Math.Round((-12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(L1, 2), 3)},
-                    {0, Math.Round((G*J)/L1, 3), 0, 0, Math.Round((-G*J)/L1, 3), 0},
-                    {Math.Round((6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((4*E*I)/L1, 3), Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((2*E*I)/L1, 3)},
-                    {Math.Round((-12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), Math.Round((12*E*I)/Math.Pow(L1, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(L1, 2), 3)},
-                    {0, Math.Round((-G*J)/L1, 3), 0, 0, Math.Round((G*J)/L1, 3), 0},
-                    {Math.Round((6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((2*E*I)/L1, 3), Math.Round((-6*E*I)/Math.Pow(L1, 2), 3), 0, Math.Round((4*E*I)/L1, 3)}
+                    {Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
+                    {0, Math.Round((G*J)/comprimentoBarra, 3), 0, 0, Math.Round((-G*J)/comprimentoBarra, 3), 0},
+                    {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3)},
+                    {Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
+                    {0, Math.Round((-G*J)/comprimentoBarra, 3), 0, 0, Math.Round((G*J)/comprimentoBarra, 3), 0},
+                    {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3)}
                 };
 
             return matrizRigidezElementoEmCoordenadasLocais;
         }
 
         //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ**
-        public void inicializaMatrizRotacao(double conseno, double seno)
+        public void inicializaMatrizRotacao(int x)
         {
             double[,] matrizRotacao = new double[6, 6]
                 {
                     {1, 0, 0, 0, 0, 0},
-                    {0, conseno, seno, 0, 0, 0},
-                    {0, -seno, conseno, 0, 0, 0},
+                    {0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0), 0, 0, 0},
+                    {0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0), 0, 0, 0},
                     {0, 0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, conseno, seno},
-                    {0, 0, 0, 0, -seno, conseno}
+                    {0, 0, 0, 0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0)},
+                    {0, 0, 0, 0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0)}
                 };
+            
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizRotacao[i, j]);
+                }
+            }
         }
 
         //Substituindo na matriz de rigidez do elemento e aplicando a matriz de rotação
@@ -297,25 +338,47 @@ namespace Grelha_MEF
 
             double b = double.Parse(textBoxB.Text, provider);
             double h = double.Parse(textBoxH.Text, provider);
-            double modeloYoung = double.Parse(textBoxModuloYoung.Text, provider);
+            double moduloYoung = double.Parse(textBoxModuloYoung.Text, provider) * Math.Pow(10, 9);
             double coeficientePoisson = double.Parse(textBoxCoeficientePoisson.Text, provider);
-            double l1 = double.Parse(textBoxL1.Text, provider);
+            double l1 = double.Parse(textBoxComprimentoE1.Text, provider);
 
             Console.WriteLine("b: " + b);
             Console.WriteLine("h: " + h);
-            Console.WriteLine("moduloYoung: " + modeloYoung);
+            Console.WriteLine("moduloYoung: " + moduloYoung);
             Console.WriteLine("coeficientePoisson: " + coeficientePoisson);
             Console.WriteLine("L1: " + l1);
 
-            double[,] teste = inicializaMatrizRigidezEmCoordenadasLocais(b, h, modeloYoung, coeficientePoisson, l1, 0.0);
+            double[,] teste1 = inicializaMatrizRigidezEmCoordenadasLocais(b, h, moduloYoung, coeficientePoisson, l1);
             
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 6; j++)
-                {
-                    Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + teste[i, j]);
-                }
-            }
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    for (int j = 0; j < 6; j++)
+            //    {
+            //        Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + teste2[i, j]);
+            //    }
+            //}
+        }
+
+        private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownQuantidadeElementos.Value.Equals(2) || numericUpDownQuantidadeElementos.Value > 2) groupBoxElemento2.Visible = true;
+            else groupBoxElemento2.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(3) || numericUpDownQuantidadeElementos.Value > 3) groupBoxElemento3.Visible = true;
+            else groupBoxElemento3.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4) groupBoxElemento4.Visible = true;
+            else groupBoxElemento4.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(5) || numericUpDownQuantidadeElementos.Value > 5) groupBoxElemento5.Visible = true;
+            else groupBoxElemento5.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6) groupBoxElemento6.Visible = true;
+            else groupBoxElemento6.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(7) || numericUpDownQuantidadeElementos.Value > 7) groupBoxElemento7.Visible = true;
+            else groupBoxElemento7.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8) groupBoxElemento8.Visible = true;
+            else groupBoxElemento8.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(9) || numericUpDownQuantidadeElementos.Value > 9) groupBoxElemento9.Visible = true;
+            else groupBoxElemento9.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(10)) groupBoxElemento10.Visible = true;
+            else groupBoxElemento10.Visible = false;
         }
     }
 }
