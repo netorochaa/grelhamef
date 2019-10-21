@@ -40,8 +40,8 @@
             this.textBoxComprimentoE1 = new System.Windows.Forms.TextBox();
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais = new System.Windows.Forms.Button();
             this.groupBoxElemento1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.comboBoxAnguloE1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownQuantidadeElementos = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBoxElemento2 = new System.Windows.Forms.GroupBox();
@@ -195,7 +195,6 @@
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.TabIndex = 10;
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Text = "Calcular";
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.UseVisualStyleBackColor = true;
-            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Click += new System.EventHandler(this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click);
             // 
             // groupBoxElemento1
             // 
@@ -210,15 +209,6 @@
             this.groupBoxElemento1.TabStop = false;
             this.groupBoxElemento1.Text = "Elemento 1";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(116, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Ângulo";
-            // 
             // comboBoxAnguloE1
             // 
             this.comboBoxAnguloE1.FormattingEnabled = true;
@@ -229,7 +219,16 @@
             this.comboBoxAnguloE1.Name = "comboBoxAnguloE1";
             this.comboBoxAnguloE1.Size = new System.Drawing.Size(100, 21);
             this.comboBoxAnguloE1.TabIndex = 11;
-            this.comboBoxAnguloE1.Text = "0";
+            this.comboBoxAnguloE1.Text = "90";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(116, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Ângulo";
             // 
             // numericUpDownQuantidadeElementos
             // 
@@ -286,7 +285,7 @@
             this.comboBoxAnguloE2.Name = "comboBoxAnguloE2";
             this.comboBoxAnguloE2.Size = new System.Drawing.Size(100, 21);
             this.comboBoxAnguloE2.TabIndex = 11;
-            this.comboBoxAnguloE2.Text = "90";
+            this.comboBoxAnguloE2.Text = "0";
             // 
             // label9
             // 
@@ -303,7 +302,7 @@
             this.textBoxComprimentoE2.Name = "textBoxComprimentoE2";
             this.textBoxComprimentoE2.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE2.TabIndex = 9;
-            this.textBoxComprimentoE2.Text = "10.4";
+            this.textBoxComprimentoE2.Text = "5.2";
             // 
             // label10
             // 
