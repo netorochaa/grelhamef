@@ -89,6 +89,50 @@
             this.label25 = new System.Windows.Forms.Label();
             this.textBoxComprimentoE10 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxQuantidadeNos = new System.Windows.Forms.TextBox();
+            this.groupBoxNo6 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo6Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo6Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo6X = new System.Windows.Forms.CheckedListBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.groupBoxNo5 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo5Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo5Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo5X = new System.Windows.Forms.CheckedListBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.groupBoxNo4 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo4Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo4Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo4X = new System.Windows.Forms.CheckedListBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.groupBoxNo3 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo3Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo3Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo3X = new System.Windows.Forms.CheckedListBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.groupBoxNo2 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo2Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo2Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo2X = new System.Windows.Forms.CheckedListBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.groupBoxNo1 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxNo1Z = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo1Y = new System.Windows.Forms.CheckedListBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.checkedListBoxNo1X = new System.Windows.Forms.CheckedListBox();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -100,6 +144,12 @@
             this.groupBoxElemento8.SuspendLayout();
             this.groupBoxElemento9.SuspendLayout();
             this.groupBoxElemento10.SuspendLayout();
+            this.groupBoxNo6.SuspendLayout();
+            this.groupBoxNo5.SuspendLayout();
+            this.groupBoxNo4.SuspendLayout();
+            this.groupBoxNo3.SuspendLayout();
+            this.groupBoxNo2.SuspendLayout();
+            this.groupBoxNo1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -156,7 +206,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(355, 13);
+            this.label4.Location = new System.Drawing.Point(352, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 6;
@@ -166,7 +216,7 @@
             // 
             this.textBoxCoeficientePoisson.Location = new System.Drawing.Point(355, 30);
             this.textBoxCoeficientePoisson.Name = "textBoxCoeficientePoisson";
-            this.textBoxCoeficientePoisson.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCoeficientePoisson.Size = new System.Drawing.Size(88, 20);
             this.textBoxCoeficientePoisson.TabIndex = 7;
             this.textBoxCoeficientePoisson.Text = "0.20";
             // 
@@ -195,6 +245,7 @@
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.TabIndex = 10;
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Text = "Calcular";
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.UseVisualStyleBackColor = true;
+            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Click += new System.EventHandler(this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click);
             // 
             // groupBoxElemento1
             // 
@@ -202,7 +253,7 @@
             this.groupBoxElemento1.Controls.Add(this.label7);
             this.groupBoxElemento1.Controls.Add(this.textBoxComprimentoE1);
             this.groupBoxElemento1.Controls.Add(this.label5);
-            this.groupBoxElemento1.Location = new System.Drawing.Point(16, 95);
+            this.groupBoxElemento1.Location = new System.Drawing.Point(12, 95);
             this.groupBoxElemento1.Name = "groupBoxElemento1";
             this.groupBoxElemento1.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento1.TabIndex = 13;
@@ -246,8 +297,9 @@
             this.numericUpDownQuantidadeElementos.Name = "numericUpDownQuantidadeElementos";
             this.numericUpDownQuantidadeElementos.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownQuantidadeElementos.TabIndex = 14;
+            this.numericUpDownQuantidadeElementos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownQuantidadeElementos.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -258,9 +310,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(13, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 13);
+            this.label8.Size = new System.Drawing.Size(91, 13);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Quantidade Elementos";
+            this.label8.Text = "Quant. Elementos";
             // 
             // groupBoxElemento2
             // 
@@ -268,7 +320,7 @@
             this.groupBoxElemento2.Controls.Add(this.label9);
             this.groupBoxElemento2.Controls.Add(this.textBoxComprimentoE2);
             this.groupBoxElemento2.Controls.Add(this.label10);
-            this.groupBoxElemento2.Location = new System.Drawing.Point(262, 95);
+            this.groupBoxElemento2.Location = new System.Drawing.Point(12, 161);
             this.groupBoxElemento2.Name = "groupBoxElemento2";
             this.groupBoxElemento2.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento2.TabIndex = 16;
@@ -319,7 +371,7 @@
             this.groupBoxElemento3.Controls.Add(this.label11);
             this.groupBoxElemento3.Controls.Add(this.textBoxComprimentoE3);
             this.groupBoxElemento3.Controls.Add(this.label12);
-            this.groupBoxElemento3.Location = new System.Drawing.Point(16, 161);
+            this.groupBoxElemento3.Location = new System.Drawing.Point(12, 227);
             this.groupBoxElemento3.Name = "groupBoxElemento3";
             this.groupBoxElemento3.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento3.TabIndex = 17;
@@ -370,7 +422,7 @@
             this.groupBoxElemento4.Controls.Add(this.label13);
             this.groupBoxElemento4.Controls.Add(this.textBoxComprimentoE4);
             this.groupBoxElemento4.Controls.Add(this.label14);
-            this.groupBoxElemento4.Location = new System.Drawing.Point(262, 161);
+            this.groupBoxElemento4.Location = new System.Drawing.Point(12, 293);
             this.groupBoxElemento4.Name = "groupBoxElemento4";
             this.groupBoxElemento4.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento4.TabIndex = 18;
@@ -421,7 +473,7 @@
             this.groupBoxElemento5.Controls.Add(this.label15);
             this.groupBoxElemento5.Controls.Add(this.textBoxComprimentoE5);
             this.groupBoxElemento5.Controls.Add(this.label16);
-            this.groupBoxElemento5.Location = new System.Drawing.Point(16, 227);
+            this.groupBoxElemento5.Location = new System.Drawing.Point(12, 359);
             this.groupBoxElemento5.Name = "groupBoxElemento5";
             this.groupBoxElemento5.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento5.TabIndex = 19;
@@ -472,7 +524,7 @@
             this.groupBoxElemento6.Controls.Add(this.label17);
             this.groupBoxElemento6.Controls.Add(this.textBoxComprimentoE6);
             this.groupBoxElemento6.Controls.Add(this.label18);
-            this.groupBoxElemento6.Location = new System.Drawing.Point(262, 227);
+            this.groupBoxElemento6.Location = new System.Drawing.Point(763, 153);
             this.groupBoxElemento6.Name = "groupBoxElemento6";
             this.groupBoxElemento6.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento6.TabIndex = 20;
@@ -523,7 +575,7 @@
             this.groupBoxElemento7.Controls.Add(this.label19);
             this.groupBoxElemento7.Controls.Add(this.textBoxComprimentoE7);
             this.groupBoxElemento7.Controls.Add(this.label20);
-            this.groupBoxElemento7.Location = new System.Drawing.Point(16, 293);
+            this.groupBoxElemento7.Location = new System.Drawing.Point(763, 227);
             this.groupBoxElemento7.Name = "groupBoxElemento7";
             this.groupBoxElemento7.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento7.TabIndex = 21;
@@ -574,7 +626,7 @@
             this.groupBoxElemento8.Controls.Add(this.label21);
             this.groupBoxElemento8.Controls.Add(this.textBoxComprimentoE8);
             this.groupBoxElemento8.Controls.Add(this.label22);
-            this.groupBoxElemento8.Location = new System.Drawing.Point(262, 293);
+            this.groupBoxElemento8.Location = new System.Drawing.Point(763, 293);
             this.groupBoxElemento8.Name = "groupBoxElemento8";
             this.groupBoxElemento8.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento8.TabIndex = 22;
@@ -625,7 +677,7 @@
             this.groupBoxElemento9.Controls.Add(this.label23);
             this.groupBoxElemento9.Controls.Add(this.textBoxComprimentoE9);
             this.groupBoxElemento9.Controls.Add(this.label24);
-            this.groupBoxElemento9.Location = new System.Drawing.Point(16, 359);
+            this.groupBoxElemento9.Location = new System.Drawing.Point(763, 359);
             this.groupBoxElemento9.Name = "groupBoxElemento9";
             this.groupBoxElemento9.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento9.TabIndex = 23;
@@ -676,7 +728,7 @@
             this.groupBoxElemento10.Controls.Add(this.label25);
             this.groupBoxElemento10.Controls.Add(this.textBoxComprimentoE10);
             this.groupBoxElemento10.Controls.Add(this.label26);
-            this.groupBoxElemento10.Location = new System.Drawing.Point(262, 359);
+            this.groupBoxElemento10.Location = new System.Drawing.Point(763, 417);
             this.groupBoxElemento10.Name = "groupBoxElemento10";
             this.groupBoxElemento10.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento10.TabIndex = 24;
@@ -721,11 +773,511 @@
             this.label26.TabIndex = 8;
             this.label26.Text = "Comprimento";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(245, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 16);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Quant. de Nós: ";
+            // 
+            // textBoxQuantidadeNos
+            // 
+            this.textBoxQuantidadeNos.Location = new System.Drawing.Point(355, 69);
+            this.textBoxQuantidadeNos.Name = "textBoxQuantidadeNos";
+            this.textBoxQuantidadeNos.ReadOnly = true;
+            this.textBoxQuantidadeNos.Size = new System.Drawing.Size(88, 20);
+            this.textBoxQuantidadeNos.TabIndex = 26;
+            this.textBoxQuantidadeNos.Text = "3";
+            this.textBoxQuantidadeNos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBoxNo6
+            // 
+            this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6Z);
+            this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6Y);
+            this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6X);
+            this.groupBoxNo6.Controls.Add(this.label42);
+            this.groupBoxNo6.Controls.Add(this.label43);
+            this.groupBoxNo6.Controls.Add(this.label44);
+            this.groupBoxNo6.Location = new System.Drawing.Point(451, 177);
+            this.groupBoxNo6.Name = "groupBoxNo6";
+            this.groupBoxNo6.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo6.TabIndex = 32;
+            this.groupBoxNo6.TabStop = false;
+            this.groupBoxNo6.Text = "Nó 6";
+            this.groupBoxNo6.Visible = false;
+            // 
+            // checkedListBoxNo6Z
+            // 
+            this.checkedListBoxNo6Z.FormattingEnabled = true;
+            this.checkedListBoxNo6Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo6Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo6Z.Name = "checkedListBoxNo6Z";
+            this.checkedListBoxNo6Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo6Z.TabIndex = 25;
+            this.checkedListBoxNo6Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo6Y
+            // 
+            this.checkedListBoxNo6Y.FormattingEnabled = true;
+            this.checkedListBoxNo6Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo6Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo6Y.Name = "checkedListBoxNo6Y";
+            this.checkedListBoxNo6Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo6Y.TabIndex = 24;
+            this.checkedListBoxNo6Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6Y_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo6X
+            // 
+            this.checkedListBoxNo6X.FormattingEnabled = true;
+            this.checkedListBoxNo6X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo6X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo6X.Name = "checkedListBoxNo6X";
+            this.checkedListBoxNo6X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo6X.TabIndex = 23;
+            this.checkedListBoxNo6X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6X_SelectedIndexChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(160, 16);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(14, 13);
+            this.label42.TabIndex = 22;
+            this.label42.Text = "Z";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(89, 16);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(14, 13);
+            this.label43.TabIndex = 10;
+            this.label43.Text = "Y";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(20, 16);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(14, 13);
+            this.label44.TabIndex = 8;
+            this.label44.Text = "X";
+            // 
+            // groupBoxNo5
+            // 
+            this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5Z);
+            this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5Y);
+            this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5X);
+            this.groupBoxNo5.Controls.Add(this.label39);
+            this.groupBoxNo5.Controls.Add(this.label40);
+            this.groupBoxNo5.Controls.Add(this.label41);
+            this.groupBoxNo5.Location = new System.Drawing.Point(451, 95);
+            this.groupBoxNo5.Name = "groupBoxNo5";
+            this.groupBoxNo5.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo5.TabIndex = 31;
+            this.groupBoxNo5.TabStop = false;
+            this.groupBoxNo5.Text = "Nó 5";
+            this.groupBoxNo5.Visible = false;
+            // 
+            // checkedListBoxNo5Z
+            // 
+            this.checkedListBoxNo5Z.FormattingEnabled = true;
+            this.checkedListBoxNo5Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo5Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo5Z.Name = "checkedListBoxNo5Z";
+            this.checkedListBoxNo5Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo5Z.TabIndex = 25;
+            this.checkedListBoxNo5Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo5Y
+            // 
+            this.checkedListBoxNo5Y.FormattingEnabled = true;
+            this.checkedListBoxNo5Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo5Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo5Y.Name = "checkedListBoxNo5Y";
+            this.checkedListBoxNo5Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo5Y.TabIndex = 24;
+            this.checkedListBoxNo5Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5Y_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo5X
+            // 
+            this.checkedListBoxNo5X.FormattingEnabled = true;
+            this.checkedListBoxNo5X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo5X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo5X.Name = "checkedListBoxNo5X";
+            this.checkedListBoxNo5X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo5X.TabIndex = 23;
+            this.checkedListBoxNo5X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5X_SelectedIndexChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(160, 16);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(14, 13);
+            this.label39.TabIndex = 22;
+            this.label39.Text = "Z";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(89, 16);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(14, 13);
+            this.label40.TabIndex = 10;
+            this.label40.Text = "Y";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(20, 16);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(14, 13);
+            this.label41.TabIndex = 8;
+            this.label41.Text = "X";
+            // 
+            // groupBoxNo4
+            // 
+            this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4Z);
+            this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4Y);
+            this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4X);
+            this.groupBoxNo4.Controls.Add(this.label36);
+            this.groupBoxNo4.Controls.Add(this.label37);
+            this.groupBoxNo4.Controls.Add(this.label38);
+            this.groupBoxNo4.Location = new System.Drawing.Point(248, 341);
+            this.groupBoxNo4.Name = "groupBoxNo4";
+            this.groupBoxNo4.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo4.TabIndex = 30;
+            this.groupBoxNo4.TabStop = false;
+            this.groupBoxNo4.Text = "Nó 4";
+            this.groupBoxNo4.Visible = false;
+            // 
+            // checkedListBoxNo4Z
+            // 
+            this.checkedListBoxNo4Z.FormattingEnabled = true;
+            this.checkedListBoxNo4Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo4Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo4Z.Name = "checkedListBoxNo4Z";
+            this.checkedListBoxNo4Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo4Z.TabIndex = 25;
+            this.checkedListBoxNo4Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo4Y
+            // 
+            this.checkedListBoxNo4Y.FormattingEnabled = true;
+            this.checkedListBoxNo4Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo4Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo4Y.Name = "checkedListBoxNo4Y";
+            this.checkedListBoxNo4Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo4Y.TabIndex = 24;
+            this.checkedListBoxNo4Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4Y_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo4X
+            // 
+            this.checkedListBoxNo4X.FormattingEnabled = true;
+            this.checkedListBoxNo4X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo4X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo4X.Name = "checkedListBoxNo4X";
+            this.checkedListBoxNo4X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo4X.TabIndex = 23;
+            this.checkedListBoxNo4X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4X_SelectedIndexChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(160, 16);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(14, 13);
+            this.label36.TabIndex = 22;
+            this.label36.Text = "Z";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(89, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(14, 13);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Y";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(20, 16);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(14, 13);
+            this.label38.TabIndex = 8;
+            this.label38.Text = "X";
+            // 
+            // groupBoxNo3
+            // 
+            this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3Z);
+            this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3Y);
+            this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3X);
+            this.groupBoxNo3.Controls.Add(this.label33);
+            this.groupBoxNo3.Controls.Add(this.label34);
+            this.groupBoxNo3.Controls.Add(this.label35);
+            this.groupBoxNo3.Location = new System.Drawing.Point(248, 259);
+            this.groupBoxNo3.Name = "groupBoxNo3";
+            this.groupBoxNo3.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo3.TabIndex = 29;
+            this.groupBoxNo3.TabStop = false;
+            this.groupBoxNo3.Text = "Nó 3";
+            // 
+            // checkedListBoxNo3Z
+            // 
+            this.checkedListBoxNo3Z.FormattingEnabled = true;
+            this.checkedListBoxNo3Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo3Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo3Z.Name = "checkedListBoxNo3Z";
+            this.checkedListBoxNo3Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo3Z.TabIndex = 25;
+            this.checkedListBoxNo3Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo3Y
+            // 
+            this.checkedListBoxNo3Y.FormattingEnabled = true;
+            this.checkedListBoxNo3Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo3Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo3Y.Name = "checkedListBoxNo3Y";
+            this.checkedListBoxNo3Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo3Y.TabIndex = 24;
+            this.checkedListBoxNo3Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3Y_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo3X
+            // 
+            this.checkedListBoxNo3X.FormattingEnabled = true;
+            this.checkedListBoxNo3X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo3X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo3X.Name = "checkedListBoxNo3X";
+            this.checkedListBoxNo3X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo3X.TabIndex = 23;
+            this.checkedListBoxNo3X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3X_SelectedIndexChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(160, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(14, 13);
+            this.label33.TabIndex = 22;
+            this.label33.Text = "Z";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(89, 16);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(14, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Y";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(20, 16);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(14, 13);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "X";
+            // 
+            // groupBoxNo2
+            // 
+            this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2Z);
+            this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2Y);
+            this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2X);
+            this.groupBoxNo2.Controls.Add(this.label30);
+            this.groupBoxNo2.Controls.Add(this.label31);
+            this.groupBoxNo2.Controls.Add(this.label32);
+            this.groupBoxNo2.Location = new System.Drawing.Point(248, 177);
+            this.groupBoxNo2.Name = "groupBoxNo2";
+            this.groupBoxNo2.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo2.TabIndex = 28;
+            this.groupBoxNo2.TabStop = false;
+            this.groupBoxNo2.Text = "Nó 2";
+            // 
+            // checkedListBoxNo2Z
+            // 
+            this.checkedListBoxNo2Z.FormattingEnabled = true;
+            this.checkedListBoxNo2Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo2Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo2Z.Name = "checkedListBoxNo2Z";
+            this.checkedListBoxNo2Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo2Z.TabIndex = 25;
+            this.checkedListBoxNo2Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo2Y
+            // 
+            this.checkedListBoxNo2Y.FormattingEnabled = true;
+            this.checkedListBoxNo2Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo2Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo2Y.Name = "checkedListBoxNo2Y";
+            this.checkedListBoxNo2Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo2Y.TabIndex = 24;
+            this.checkedListBoxNo2Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2Y_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo2X
+            // 
+            this.checkedListBoxNo2X.FormattingEnabled = true;
+            this.checkedListBoxNo2X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo2X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo2X.Name = "checkedListBoxNo2X";
+            this.checkedListBoxNo2X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo2X.TabIndex = 23;
+            this.checkedListBoxNo2X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2X_SelectedIndexChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(160, 16);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(14, 13);
+            this.label30.TabIndex = 22;
+            this.label30.Text = "Z";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(89, 16);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(14, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Y";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(20, 16);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(14, 13);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "X";
+            // 
+            // groupBoxNo1
+            // 
+            this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1Z);
+            this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1Y);
+            this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1X);
+            this.groupBoxNo1.Controls.Add(this.label29);
+            this.groupBoxNo1.Controls.Add(this.label27);
+            this.groupBoxNo1.Controls.Add(this.label28);
+            this.groupBoxNo1.Location = new System.Drawing.Point(248, 95);
+            this.groupBoxNo1.Name = "groupBoxNo1";
+            this.groupBoxNo1.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo1.TabIndex = 27;
+            this.groupBoxNo1.TabStop = false;
+            this.groupBoxNo1.Text = "Nó 1";
+            // 
+            // checkedListBoxNo1Z
+            // 
+            this.checkedListBoxNo1Z.FormattingEnabled = true;
+            this.checkedListBoxNo1Z.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo1Z.Location = new System.Drawing.Point(145, 32);
+            this.checkedListBoxNo1Z.Name = "checkedListBoxNo1Z";
+            this.checkedListBoxNo1Z.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo1Z.TabIndex = 25;
+            this.checkedListBoxNo1Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1Z_SelectedIndexChanged);
+            // 
+            // checkedListBoxNo1Y
+            // 
+            this.checkedListBoxNo1Y.FormattingEnabled = true;
+            this.checkedListBoxNo1Y.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo1Y.Location = new System.Drawing.Point(77, 32);
+            this.checkedListBoxNo1Y.Name = "checkedListBoxNo1Y";
+            this.checkedListBoxNo1Y.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo1Y.TabIndex = 24;
+            this.checkedListBoxNo1Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1Y_SelectedIndexChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(160, 16);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(14, 13);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Z";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(89, 16);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(14, 13);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "Y";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(20, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(14, 13);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "X";
+            // 
+            // checkedListBoxNo1X
+            // 
+            this.checkedListBoxNo1X.CheckOnClick = true;
+            this.checkedListBoxNo1X.FormattingEnabled = true;
+            this.checkedListBoxNo1X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo1X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo1X.Name = "checkedListBoxNo1X";
+            this.checkedListBoxNo1X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo1X.TabIndex = 23;
+            this.checkedListBoxNo1X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1X_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 478);
+            this.ClientSize = new System.Drawing.Size(1005, 478);
+            this.Controls.Add(this.groupBoxNo6);
+            this.Controls.Add(this.groupBoxNo5);
+            this.Controls.Add(this.groupBoxNo4);
+            this.Controls.Add(this.groupBoxNo3);
+            this.Controls.Add(this.groupBoxNo2);
+            this.Controls.Add(this.groupBoxNo1);
+            this.Controls.Add(this.textBoxQuantidadeNos);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBoxElemento10);
             this.Controls.Add(this.groupBoxElemento9);
             this.Controls.Add(this.groupBoxElemento8);
@@ -770,6 +1322,18 @@
             this.groupBoxElemento9.PerformLayout();
             this.groupBoxElemento10.ResumeLayout(false);
             this.groupBoxElemento10.PerformLayout();
+            this.groupBoxNo6.ResumeLayout(false);
+            this.groupBoxNo6.PerformLayout();
+            this.groupBoxNo5.ResumeLayout(false);
+            this.groupBoxNo5.PerformLayout();
+            this.groupBoxNo4.ResumeLayout(false);
+            this.groupBoxNo4.PerformLayout();
+            this.groupBoxNo3.ResumeLayout(false);
+            this.groupBoxNo3.PerformLayout();
+            this.groupBoxNo2.ResumeLayout(false);
+            this.groupBoxNo2.PerformLayout();
+            this.groupBoxNo1.ResumeLayout(false);
+            this.groupBoxNo1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -838,6 +1402,50 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBoxComprimentoE10;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxQuantidadeNos;
+        private System.Windows.Forms.GroupBox groupBoxNo6;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo6Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo6Y;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo6X;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.GroupBox groupBoxNo5;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo5Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo5Y;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo5X;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.GroupBox groupBoxNo4;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo4Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo4Y;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo4X;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox groupBoxNo3;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo3Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo3Y;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo3X;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.GroupBox groupBoxNo2;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo2Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo2Y;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo2X;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.GroupBox groupBoxNo1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo1Z;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo1Y;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.CheckedListBox checkedListBoxNo1X;
 
     }
 }

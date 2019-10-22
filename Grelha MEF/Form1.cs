@@ -80,13 +80,15 @@ namespace Grelha_MEF
         public static int[] noGlobalElemento1 = { 1, 3 };
         //elemento 2
         public static int[] noLocalElemento2  = { 1, 2 };
-        public static int[] noGlobalElemento2 = { 1, 2 };    
+        public static int[] noGlobalElemento2 = { 1, 2 };  
+  
+        //
+        public static double[,] matrizGlobalDosElementos;
 
         public Form1()
         {
             InitializeComponent();
 
-            groupBoxElemento2.Visible = false;
             groupBoxElemento3.Visible = false;
             groupBoxElemento4.Visible = false;
             groupBoxElemento5.Visible = false;
@@ -97,14 +99,14 @@ namespace Grelha_MEF
             groupBoxElemento10.Visible = false;
 
             inicializaVetores();
-            //double[,] matrizRigidezAplicandoMatrizRotacao =  multiplicacaoMatrizes(rigidezteste1, rigidezteste2);
+            
             double[,] matrizGlobalDoElemento1 = multiplicacaoMatrizes(multiplicacaoMatrizes(defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(comboBoxAnguloE1.Text)), inicializaMatrizRigidezEmCoordenadasLocais(textBoxComprimentoE1.Text), String.Empty), inicializaMatrizRotacao(Convert.ToInt32(comboBoxAnguloE1.Text)), "GLOBAL DOS ELEMENTOS 1 - ANGULO: " + comboBoxAnguloE1.Text);
             double[,] matrizGlobalDoElemento2 = multiplicacaoMatrizes(multiplicacaoMatrizes(defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(comboBoxAnguloE2.Text)), inicializaMatrizRigidezEmCoordenadasLocais(textBoxComprimentoE2.Text), String.Empty), inicializaMatrizRotacao(Convert.ToInt32(comboBoxAnguloE2.Text)), "GLOBAL DOS ELEMENTOS 2 - ANGULO: " + comboBoxAnguloE2.Text);
 
             double[,] matrizRigidezGlobalNoSistemaGlobalElemento1 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(matrizGlobalDoElemento1, quantidadeGrausLiberdadeGlobal, localElemento1, "matrizRigidezGlobalNoSistemaGlobalElemento1");
             double[,] matrizRigidezGlobalNoSistemaGlobalElemento2 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(matrizGlobalDoElemento2, quantidadeGrausLiberdadeGlobal, localElemento2, "matrizRigidezGlobalNoSistemaGlobalElemento2");
-            //inicializaMatrizElemento2(matrizGlobalDoElemento2);
-            inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBALDA ESTRUTURA");
+
+            matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
         }
 
         public void inicializaVetores()
@@ -157,23 +159,8 @@ namespace Grelha_MEF
             return matrizResultante;
         }
 
-        //public double[,] inicializaMatrizElemento2(double[,] matrizGlobalDoElemento2)
-        //{
-        //    for (int i = 0; i < grausLiberdadeGlobal.Length; i++)
-        //    {
-        //        for (int j = 0; j < grausLiberdadeGlobal.Length; j++)
-        //        {
-        //            //percorre elementos
-        //            if (!localElemento2[j].Equals(0) && !localElemento2[i].Equals(0))
-        //                matrizLocalSistemaGlobalElemeto2[i, j] = "K" + localElemento2[i] + "," + localElemento2[j] + "(2)";
-        //            else
-        //                matrizLocalSistemaGlobalElemeto2[i, j] = "-";
-        //            //Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizLocalSistemaGlobalElemeto2[i, j]);
-        //        }
-        //    }
-        //}
-
-        public void inicializaMatrizGlobalDosElementos(double[,] matrizRigidezGlobalNoSistemaGlobalElemento1, double[,] matrizRigidezGlobalNoSistemaGlobalElemento2, int quantidadeGrausLiberdadeGlobal, string nome)
+        //MATRIZ GLOBAL DOS ELEMENTOS
+        public double[,] inicializaMatrizGlobalDosElementos(double[,] matrizRigidezGlobalNoSistemaGlobalElemento1, double[,] matrizRigidezGlobalNoSistemaGlobalElemento2, int quantidadeGrausLiberdadeGlobal, string nome)
         {
             double[,] matrizResultante = new double[quantidadeGrausLiberdadeGlobal, quantidadeGrausLiberdadeGlobal];
 
@@ -194,36 +181,13 @@ namespace Grelha_MEF
                     //matrizGlobalElemetos[i, j] = matrizLocalElemeto1[i, j] + " + " + matrizLocalElemeto2[i, j];
                     //else
                     //    matrizGlobalElemetos[i, j] = "0";
-                    Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                    //Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
                 }
             }
+            return matrizResultante;
         }
 
-        //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ**
-        public double[,] inicializaMatrizRotacao(int x)
-        {
-            double[,] matrizRotacao = new double[6, 6]
-                {
-                    {1, 0, 0, 0, 0, 0},
-                    {0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0), 0, 0, 0},
-                    {0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0), 0, 0, 0},
-                    {0, 0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0)},
-                    {0, 0, 0, 0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0)}
-                };
-
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    for (int j = 0; j < 6; j++)
-            //    {
-            //        Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizRotacao[i, j]);
-            //    }
-            //}
-
-            return matrizRotacao;
-        }
-
-        //Substituindo na matriz de rigidez do elemento e aplicando a matriz de rotação
+        //ALGORITMO DE MULTIPLICAÇÃO DE MATRIZES
         public double[,] multiplicacaoMatrizes(double[,] matrizA, double[,] matrizB, string nome)
         {
             double valorCelula = 0;
@@ -278,7 +242,7 @@ namespace Grelha_MEF
 
         }
 
-        //**INSERIR BOTÃO PARA INICIALIZAR ESSA MATRIZ | double b, double h, double moduloYoung, double coeficientePoisson, double comprimentoBarra**
+        //MATRIZ DE RIGIDEZ EM COORDENADAS LOCAIS | double b, double h, double moduloYoung, double coeficientePoisson, double comprimentoBarra**
         public double[,] inicializaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraDoElemento)
         {
             NumberFormatInfo provider = new NumberFormatInfo();
@@ -333,6 +297,31 @@ namespace Grelha_MEF
             return matrizRigidezElementoEmCoordenadasLocais;
         }
 
+        //MATRIZ DE ROTAÇÃO
+        public double[,] inicializaMatrizRotacao(int x)
+        {
+            double[,] matrizRotacao = new double[6, 6]
+                {
+                    {1, 0, 0, 0, 0, 0},
+                    {0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0), 0, 0, 0},
+                    {0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0), 0, 0, 0},
+                    {0, 0, 0, 1, 0, 0},
+                    {0, 0, 0, 0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0)},
+                    {0, 0, 0, 0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0)}
+                };
+
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    for (int j = 0; j < 6; j++)
+            //    {
+            //        Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizRotacao[i, j]);
+            //    }
+            //}
+
+            return matrizRotacao;
+        }
+
+        //MATRIZ DE ROTAÇÃO INVERSA
         public double[,] defineMatrizRotacaoPeloAnguloInversa(int x)
         {
             //Matriz de rotação para o ângulo 0
@@ -358,27 +347,183 @@ namespace Grelha_MEF
 
             return x == 90 ? matrizRotacaoAngulo90Inversa : matrizRotacaoAngulo0Inversa;
         }
+        
+        //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
+        public double[,] inicializaMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
+        {
+            int tamanhoMatriz = 3*quantidadeNos;
+            double[,] matrizResultante;
 
+            if (condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1))
+            {
+                int diminuendo = 3;
+                int tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - diminuendo;
+
+                if (no.Equals(1))
+                {
+                    matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
+
+                    for (int i = diminuendo; i < tamanhoMatriz; i++)
+                    {
+                        for (int j = diminuendo; j < tamanhoMatriz; j++)
+                        {
+                            matrizResultante[i - diminuendo, j - diminuendo] = matrizGlobalDosElementos[i, j];
+                            Console.WriteLine("Indice [" + (i - diminuendo) + ", " + (j - diminuendo) + "] " + matrizResultante[i - diminuendo, j - diminuendo]);
+                        }
+                    }
+                    return matrizResultante;
+                }
+                else if (no.Equals(2))
+                {
+                    matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
+
+                    //espalhaMatrizComCondicoes(matrizResultante, tamanhoMatriz, diminuendo);
+                    return matrizResultante;
+                }
+            }
+            //else if (!condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1) ||
+            //         condicaoX.Equals(1) && !condicaoY.Equals(1) && condicaoZ.Equals(1) ||
+            //         condicaoX.Equals(1) && condicaoY.Equals(1) && !condicaoZ.Equals(1)) tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 2;
+            //else tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 1;      
+
+            return matrizResultante;
+        }
+
+
+        //EVENTOS
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDownQuantidadeElementos.Value.Equals(2) || numericUpDownQuantidadeElementos.Value > 2) groupBoxElemento2.Visible = true;
-            else groupBoxElemento2.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(3) || numericUpDownQuantidadeElementos.Value > 3) groupBoxElemento3.Visible = true;
-            else groupBoxElemento3.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4) groupBoxElemento4.Visible = true;
-            else groupBoxElemento4.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(5) || numericUpDownQuantidadeElementos.Value > 5) groupBoxElemento5.Visible = true;
-            else groupBoxElemento5.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6) groupBoxElemento6.Visible = true;
+            if (numericUpDownQuantidadeElementos.Value.Equals(2) || numericUpDownQuantidadeElementos.Value > 2)
+            { groupBoxElemento2.Visible = true; groupBoxNo3.Visible = true; }
+            else{ groupBoxElemento2.Visible = false; groupBoxNo3.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(3) || numericUpDownQuantidadeElementos.Value > 3) 
+            { groupBoxElemento3.Visible = true; groupBoxNo4.Visible = true; }
+            else{ groupBoxElemento3.Visible = false; groupBoxNo4.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4) 
+            { groupBoxElemento4.Visible = true; groupBoxNo5.Visible = true; }
+            else{ groupBoxElemento4.Visible = false; groupBoxNo5.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(5) || numericUpDownQuantidadeElementos.Value > 5) 
+            { groupBoxElemento5.Visible = true; groupBoxNo6.Visible = true; }
+            else{ groupBoxElemento5.Visible = false; groupBoxNo6.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6) 
+                groupBoxElemento6.Visible = true;
             else groupBoxElemento6.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(7) || numericUpDownQuantidadeElementos.Value > 7) groupBoxElemento7.Visible = true;
+            if (numericUpDownQuantidadeElementos.Value.Equals(7) || numericUpDownQuantidadeElementos.Value > 7) 
+                groupBoxElemento7.Visible = true;
             else groupBoxElemento7.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8) groupBoxElemento8.Visible = true;
+            if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8) 
+                groupBoxElemento8.Visible = true;
             else groupBoxElemento8.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(9) || numericUpDownQuantidadeElementos.Value > 9) groupBoxElemento9.Visible = true;
+            if (numericUpDownQuantidadeElementos.Value.Equals(9) || numericUpDownQuantidadeElementos.Value > 9) 
+                groupBoxElemento9.Visible = true;
             else groupBoxElemento9.Visible = false;
             if (numericUpDownQuantidadeElementos.Value.Equals(10)) groupBoxElemento10.Visible = true;
             else groupBoxElemento10.Visible = false;
+
+            textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString() ;
         }
+
+        public void selecaoUnicaNoCheckedlistbox(CheckedListBox check)
+        {
+            if (check.Equals(0)) check.SetItemChecked(1, false);
+            else if (check.SelectedIndex.Equals(1)) check.SetItemChecked(0, false);
+        }
+
+        private void checkedListBoxNo1X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1X);
+        }
+
+        private void checkedListBoxNo1Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Y);
+        }
+
+        private void checkedListBoxNo1Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Z);
+        }
+
+        private void checkedListBoxNo2X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2X);
+        }
+
+        private void checkedListBoxNo2Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Y);
+        }
+
+        private void checkedListBoxNo2Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Z);
+        }
+
+        private void checkedListBoxNo3X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3X);
+        }
+
+        private void checkedListBoxNo3Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Y);
+        }
+
+        private void checkedListBoxNo3Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Z);
+        }
+
+        private void checkedListBoxNo4X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4X);
+        }
+
+        private void checkedListBoxNo4Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Y);
+        }
+
+        private void checkedListBoxNo4Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Z);
+        }
+
+        private void checkedListBoxNo5X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5X);
+        }
+
+        private void checkedListBoxNo5Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Y);
+        }
+
+        private void checkedListBoxNo5Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
+        }
+
+        private void checkedListBoxNo6X_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo6X);
+        }
+
+        private void checkedListBoxNo6Y_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo6Y);
+        }
+
+        private void checkedListBoxNo6Z_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
+        }
+
+        private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
+        {
+            inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 1, checkedListBoxNo1X.SelectedIndex, checkedListBoxNo1Y.SelectedIndex, checkedListBoxNo1Z.SelectedIndex, Convert.ToInt32(textBoxQuantidadeNos.Text));
+        }
+
+        
     }
 }
