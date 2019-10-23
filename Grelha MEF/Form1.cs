@@ -107,6 +107,7 @@ namespace Grelha_MEF
             double[,] matrizRigidezGlobalNoSistemaGlobalElemento2 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(matrizGlobalDoElemento2, quantidadeGrausLiberdadeGlobal, localElemento2, "matrizRigidezGlobalNoSistemaGlobalElemento2");
 
             matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
+            inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 1, 0, 1, 1, 2);
         }
 
         public void inicializaVetores()
@@ -349,44 +350,98 @@ namespace Grelha_MEF
         }
         
         //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
-        public double[,] inicializaMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
+        public void inicializaMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
         {
             int tamanhoMatriz = 3*quantidadeNos;
-            double[,] matrizResultante;
+            double[,] matrizResultante = new double[,]{};
 
             if (condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1))
             {
                 int diminuendo = 3;
                 int tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - diminuendo;
+                matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
 
                 if (no.Equals(1))
                 {
-                    matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
+                    int comecoNo = diminuendo;
 
-                    for (int i = diminuendo; i < tamanhoMatriz; i++)
+                    for (int i = comecoNo; i < tamanhoMatriz; i++)
                     {
-                        for (int j = diminuendo; j < tamanhoMatriz; j++)
+                        for (int j = comecoNo; j < tamanhoMatriz; j++)
                         {
                             matrizResultante[i - diminuendo, j - diminuendo] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (i - diminuendo) + ", " + (j - diminuendo) + "] " + matrizResultante[i - diminuendo, j - diminuendo]);
+                            //Console.WriteLine("Indice [" + (i - diminuendo) + ", " + (j - diminuendo) + "] " + matrizResultante[i - diminuendo, j - diminuendo]);
                         }
                     }
-                    return matrizResultante;
                 }
                 else if (no.Equals(2))
                 {
-                    matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
+                    int comecoNo = 0;
+                    int countI = 0;
+                    int countJ = 0;
 
-                    //espalhaMatrizComCondicoes(matrizResultante, tamanhoMatriz, diminuendo);
-                    return matrizResultante;
+                    for (int i = comecoNo; i < tamanhoMatriz; i++)
+                    {
+                        if (quantidadeNos > 2)
+                            if (i.Equals(diminuendo) || i.Equals(diminuendo + 1) || i.Equals(diminuendo + 2)) continue;
+                        countJ = 0;
+                        for (int j = comecoNo; j < tamanhoMatriz; j++)
+                        {
+                            if(j.Equals(diminuendo) || j.Equals(diminuendo + 1) || j.Equals(diminuendo + 2)) continue;
+
+                            matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
+                            Console.WriteLine("Indice [" + (countI+1)+ ", " + (countJ+1) + "] " + matrizResultante[countI, countJ]);
+                            countJ++;
+                        }
+                        countI++;
+                    }
+                }
+                if (no.Equals(3))
+                {
+                    int comecoNo = 0;
+
+                    for (int i = comecoNo; i < tamanhoMatriz - diminuendo; i++)
+                    {
+                        for (int j = comecoNo; j < tamanhoMatriz - diminuendo; j++)
+                        {
+                            matrizResultante[i, j] = matrizGlobalDosElementos[i, j];
+                            Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                        }
+                    }
                 }
             }
-            //else if (!condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1) ||
+            else if (!condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1))
+            {
+                int diminuendo = 2;
+                int tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - diminuendo;
+                matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
+
+                if (no.Equals(1))
+                {
+                    int comecoNo = 0;
+                    int countI = 0;
+                    int countJ = 0;
+
+                    for (int i = comecoNo; i < tamanhoMatriz; i++)
+                    {
+                        if (i.Equals(diminuendo - 1) || i.Equals(diminuendo)) continue;
+                        countJ = 0;
+                        for (int j = comecoNo; j < tamanhoMatriz; j++)
+                        {
+                            if (j.Equals(diminuendo - 1) || j.Equals(diminuendo)) continue;
+
+                            matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
+                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            countJ++;
+                        }
+                        countI++;
+                    }
+                }
+                
+            }
             //         condicaoX.Equals(1) && !condicaoY.Equals(1) && condicaoZ.Equals(1) ||
             //         condicaoX.Equals(1) && condicaoY.Equals(1) && !condicaoZ.Equals(1)) tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 2;
             //else tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 1;      
-
-            return matrizResultante;
         }
 
 

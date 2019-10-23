@@ -129,10 +129,10 @@
             this.groupBoxNo1 = new System.Windows.Forms.GroupBox();
             this.checkedListBoxNo1Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo1Y = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxNo1X = new System.Windows.Forms.CheckedListBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.checkedListBoxNo1X = new System.Windows.Forms.CheckedListBox();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -1225,6 +1225,19 @@
             this.checkedListBoxNo1Y.TabIndex = 24;
             this.checkedListBoxNo1Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1Y_SelectedIndexChanged);
             // 
+            // checkedListBoxNo1X
+            // 
+            this.checkedListBoxNo1X.CheckOnClick = true;
+            this.checkedListBoxNo1X.FormattingEnabled = true;
+            this.checkedListBoxNo1X.Items.AddRange(new object[] {
+            "Free",
+            "Fix"});
+            this.checkedListBoxNo1X.Location = new System.Drawing.Point(6, 32);
+            this.checkedListBoxNo1X.Name = "checkedListBoxNo1X";
+            this.checkedListBoxNo1X.Size = new System.Drawing.Size(44, 34);
+            this.checkedListBoxNo1X.TabIndex = 23;
+            this.checkedListBoxNo1X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1X_SelectedIndexChanged);
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1251,19 +1264,6 @@
             this.label28.Size = new System.Drawing.Size(14, 13);
             this.label28.TabIndex = 8;
             this.label28.Text = "X";
-            // 
-            // checkedListBoxNo1X
-            // 
-            this.checkedListBoxNo1X.CheckOnClick = true;
-            this.checkedListBoxNo1X.FormattingEnabled = true;
-            this.checkedListBoxNo1X.Items.AddRange(new object[] {
-            "Free",
-            "Fix"});
-            this.checkedListBoxNo1X.Location = new System.Drawing.Point(6, 32);
-            this.checkedListBoxNo1X.Name = "checkedListBoxNo1X";
-            this.checkedListBoxNo1X.Size = new System.Drawing.Size(44, 34);
-            this.checkedListBoxNo1X.TabIndex = 23;
-            this.checkedListBoxNo1X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1X_SelectedIndexChanged);
             // 
             // Form1
             // 
