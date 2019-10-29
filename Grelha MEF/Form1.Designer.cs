@@ -43,7 +43,6 @@
             this.comboBoxAnguloE1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownQuantidadeElementos = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBoxElemento2 = new System.Windows.Forms.GroupBox();
             this.comboBoxAnguloE2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,6 +91,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxQuantidadeNos = new System.Windows.Forms.TextBox();
             this.groupBoxNo6 = new System.Windows.Forms.GroupBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo6 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo6Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo6Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo6X = new System.Windows.Forms.CheckedListBox();
@@ -99,6 +100,8 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.groupBoxNo5 = new System.Windows.Forms.GroupBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo5 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo5Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo5Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo5X = new System.Windows.Forms.CheckedListBox();
@@ -106,6 +109,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.groupBoxNo4 = new System.Windows.Forms.GroupBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo4 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo4Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo4Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo4X = new System.Windows.Forms.CheckedListBox();
@@ -113,6 +118,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBoxNo3 = new System.Windows.Forms.GroupBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo3 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo3Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo3Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo3X = new System.Windows.Forms.CheckedListBox();
@@ -120,6 +127,8 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBoxNo2 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo2 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo2Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo2Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo2X = new System.Windows.Forms.CheckedListBox();
@@ -127,12 +136,15 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.groupBoxNo1 = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo1 = new System.Windows.Forms.TextBox();
             this.checkedListBoxNo1Z = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo1Y = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxNo1X = new System.Windows.Forms.CheckedListBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -283,7 +295,7 @@
             // 
             // numericUpDownQuantidadeElementos
             // 
-            this.numericUpDownQuantidadeElementos.Location = new System.Drawing.Point(16, 69);
+            this.numericUpDownQuantidadeElementos.Location = new System.Drawing.Point(131, 66);
             this.numericUpDownQuantidadeElementos.Maximum = new decimal(new int[] {
             10,
             0,
@@ -304,15 +316,6 @@
             0,
             0});
             this.numericUpDownQuantidadeElementos.ValueChanged += new System.EventHandler(this.numericUpDownQuantidadeElementos_ValueChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Quant. Elementos";
             // 
             // groupBoxElemento2
             // 
@@ -524,7 +527,7 @@
             this.groupBoxElemento6.Controls.Add(this.label17);
             this.groupBoxElemento6.Controls.Add(this.textBoxComprimentoE6);
             this.groupBoxElemento6.Controls.Add(this.label18);
-            this.groupBoxElemento6.Location = new System.Drawing.Point(763, 153);
+            this.groupBoxElemento6.Location = new System.Drawing.Point(1220, 40);
             this.groupBoxElemento6.Name = "groupBoxElemento6";
             this.groupBoxElemento6.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento6.TabIndex = 20;
@@ -575,7 +578,7 @@
             this.groupBoxElemento7.Controls.Add(this.label19);
             this.groupBoxElemento7.Controls.Add(this.textBoxComprimentoE7);
             this.groupBoxElemento7.Controls.Add(this.label20);
-            this.groupBoxElemento7.Location = new System.Drawing.Point(763, 227);
+            this.groupBoxElemento7.Location = new System.Drawing.Point(1220, 114);
             this.groupBoxElemento7.Name = "groupBoxElemento7";
             this.groupBoxElemento7.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento7.TabIndex = 21;
@@ -626,7 +629,7 @@
             this.groupBoxElemento8.Controls.Add(this.label21);
             this.groupBoxElemento8.Controls.Add(this.textBoxComprimentoE8);
             this.groupBoxElemento8.Controls.Add(this.label22);
-            this.groupBoxElemento8.Location = new System.Drawing.Point(763, 293);
+            this.groupBoxElemento8.Location = new System.Drawing.Point(1220, 180);
             this.groupBoxElemento8.Name = "groupBoxElemento8";
             this.groupBoxElemento8.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento8.TabIndex = 22;
@@ -677,7 +680,7 @@
             this.groupBoxElemento9.Controls.Add(this.label23);
             this.groupBoxElemento9.Controls.Add(this.textBoxComprimentoE9);
             this.groupBoxElemento9.Controls.Add(this.label24);
-            this.groupBoxElemento9.Location = new System.Drawing.Point(763, 359);
+            this.groupBoxElemento9.Location = new System.Drawing.Point(1220, 246);
             this.groupBoxElemento9.Name = "groupBoxElemento9";
             this.groupBoxElemento9.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento9.TabIndex = 23;
@@ -728,7 +731,7 @@
             this.groupBoxElemento10.Controls.Add(this.label25);
             this.groupBoxElemento10.Controls.Add(this.textBoxComprimentoE10);
             this.groupBoxElemento10.Controls.Add(this.label26);
-            this.groupBoxElemento10.Location = new System.Drawing.Point(763, 417);
+            this.groupBoxElemento10.Location = new System.Drawing.Point(1220, 304);
             this.groupBoxElemento10.Name = "groupBoxElemento10";
             this.groupBoxElemento10.Size = new System.Drawing.Size(230, 60);
             this.groupBoxElemento10.TabIndex = 24;
@@ -776,16 +779,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(245, 70);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
+            this.label6.Location = new System.Drawing.Point(254, 68);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 16);
+            this.label6.Size = new System.Drawing.Size(91, 15);
             this.label6.TabIndex = 25;
             this.label6.Text = "Quant. de Nós: ";
             // 
             // textBoxQuantidadeNos
             // 
-            this.textBoxQuantidadeNos.Location = new System.Drawing.Point(355, 69);
+            this.textBoxQuantidadeNos.Location = new System.Drawing.Point(355, 66);
             this.textBoxQuantidadeNos.Name = "textBoxQuantidadeNos";
             this.textBoxQuantidadeNos.ReadOnly = true;
             this.textBoxQuantidadeNos.Size = new System.Drawing.Size(88, 20);
@@ -795,22 +798,43 @@
             // 
             // groupBoxNo6
             // 
+            this.groupBoxNo6.Controls.Add(this.label50);
+            this.groupBoxNo6.Controls.Add(this.textBoxForcaNo6);
             this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6Z);
             this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6Y);
             this.groupBoxNo6.Controls.Add(this.checkedListBoxNo6X);
             this.groupBoxNo6.Controls.Add(this.label42);
             this.groupBoxNo6.Controls.Add(this.label43);
             this.groupBoxNo6.Controls.Add(this.label44);
-            this.groupBoxNo6.Location = new System.Drawing.Point(451, 177);
+            this.groupBoxNo6.Location = new System.Drawing.Point(451, 328);
             this.groupBoxNo6.Name = "groupBoxNo6";
-            this.groupBoxNo6.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo6.Size = new System.Drawing.Size(195, 103);
             this.groupBoxNo6.TabIndex = 32;
             this.groupBoxNo6.TabStop = false;
             this.groupBoxNo6.Text = "Nó 6";
             this.groupBoxNo6.Visible = false;
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(3, 78);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(57, 13);
+            this.label50.TabIndex = 31;
+            this.label50.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo6
+            // 
+            this.textBoxForcaNo6.Enabled = false;
+            this.textBoxForcaNo6.Location = new System.Drawing.Point(77, 75);
+            this.textBoxForcaNo6.Name = "textBoxForcaNo6";
+            this.textBoxForcaNo6.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo6.TabIndex = 30;
+            this.textBoxForcaNo6.EnabledChanged += new System.EventHandler(this.textBoxForcaNo6_EnabledChanged);
+            // 
             // checkedListBoxNo6Z
             // 
+            this.checkedListBoxNo6Z.CheckOnClick = true;
             this.checkedListBoxNo6Z.FormattingEnabled = true;
             this.checkedListBoxNo6Z.Items.AddRange(new object[] {
             "Free",
@@ -823,6 +847,7 @@
             // 
             // checkedListBoxNo6Y
             // 
+            this.checkedListBoxNo6Y.CheckOnClick = true;
             this.checkedListBoxNo6Y.FormattingEnabled = true;
             this.checkedListBoxNo6Y.Items.AddRange(new object[] {
             "Free",
@@ -835,6 +860,7 @@
             // 
             // checkedListBoxNo6X
             // 
+            this.checkedListBoxNo6X.CheckOnClick = true;
             this.checkedListBoxNo6X.FormattingEnabled = true;
             this.checkedListBoxNo6X.Items.AddRange(new object[] {
             "Free",
@@ -874,22 +900,43 @@
             // 
             // groupBoxNo5
             // 
+            this.groupBoxNo5.Controls.Add(this.label49);
+            this.groupBoxNo5.Controls.Add(this.textBoxForcaNo5);
             this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5Z);
             this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5Y);
             this.groupBoxNo5.Controls.Add(this.checkedListBoxNo5X);
             this.groupBoxNo5.Controls.Add(this.label39);
             this.groupBoxNo5.Controls.Add(this.label40);
             this.groupBoxNo5.Controls.Add(this.label41);
-            this.groupBoxNo5.Location = new System.Drawing.Point(451, 95);
+            this.groupBoxNo5.Location = new System.Drawing.Point(248, 328);
             this.groupBoxNo5.Name = "groupBoxNo5";
-            this.groupBoxNo5.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo5.Size = new System.Drawing.Size(195, 103);
             this.groupBoxNo5.TabIndex = 31;
             this.groupBoxNo5.TabStop = false;
             this.groupBoxNo5.Text = "Nó 5";
             this.groupBoxNo5.Visible = false;
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(3, 78);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(57, 13);
+            this.label49.TabIndex = 31;
+            this.label49.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo5
+            // 
+            this.textBoxForcaNo5.Enabled = false;
+            this.textBoxForcaNo5.Location = new System.Drawing.Point(77, 75);
+            this.textBoxForcaNo5.Name = "textBoxForcaNo5";
+            this.textBoxForcaNo5.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo5.TabIndex = 30;
+            this.textBoxForcaNo5.EnabledChanged += new System.EventHandler(this.textBoxForcaNo5_EnabledChanged);
+            // 
             // checkedListBoxNo5Z
             // 
+            this.checkedListBoxNo5Z.CheckOnClick = true;
             this.checkedListBoxNo5Z.FormattingEnabled = true;
             this.checkedListBoxNo5Z.Items.AddRange(new object[] {
             "Free",
@@ -902,6 +949,7 @@
             // 
             // checkedListBoxNo5Y
             // 
+            this.checkedListBoxNo5Y.CheckOnClick = true;
             this.checkedListBoxNo5Y.FormattingEnabled = true;
             this.checkedListBoxNo5Y.Items.AddRange(new object[] {
             "Free",
@@ -914,6 +962,7 @@
             // 
             // checkedListBoxNo5X
             // 
+            this.checkedListBoxNo5X.CheckOnClick = true;
             this.checkedListBoxNo5X.FormattingEnabled = true;
             this.checkedListBoxNo5X.Items.AddRange(new object[] {
             "Free",
@@ -953,22 +1002,43 @@
             // 
             // groupBoxNo4
             // 
+            this.groupBoxNo4.Controls.Add(this.label48);
+            this.groupBoxNo4.Controls.Add(this.textBoxForcaNo4);
             this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4Z);
             this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4Y);
             this.groupBoxNo4.Controls.Add(this.checkedListBoxNo4X);
             this.groupBoxNo4.Controls.Add(this.label36);
             this.groupBoxNo4.Controls.Add(this.label37);
             this.groupBoxNo4.Controls.Add(this.label38);
-            this.groupBoxNo4.Location = new System.Drawing.Point(248, 341);
+            this.groupBoxNo4.Location = new System.Drawing.Point(451, 214);
             this.groupBoxNo4.Name = "groupBoxNo4";
-            this.groupBoxNo4.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo4.Size = new System.Drawing.Size(195, 108);
             this.groupBoxNo4.TabIndex = 30;
             this.groupBoxNo4.TabStop = false;
             this.groupBoxNo4.Text = "Nó 4";
             this.groupBoxNo4.Visible = false;
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(6, 79);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(57, 13);
+            this.label48.TabIndex = 31;
+            this.label48.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo4
+            // 
+            this.textBoxForcaNo4.Enabled = false;
+            this.textBoxForcaNo4.Location = new System.Drawing.Point(77, 76);
+            this.textBoxForcaNo4.Name = "textBoxForcaNo4";
+            this.textBoxForcaNo4.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo4.TabIndex = 30;
+            this.textBoxForcaNo4.EnabledChanged += new System.EventHandler(this.textBoxForcaNo4_EnabledChanged);
+            // 
             // checkedListBoxNo4Z
             // 
+            this.checkedListBoxNo4Z.CheckOnClick = true;
             this.checkedListBoxNo4Z.FormattingEnabled = true;
             this.checkedListBoxNo4Z.Items.AddRange(new object[] {
             "Free",
@@ -981,6 +1051,7 @@
             // 
             // checkedListBoxNo4Y
             // 
+            this.checkedListBoxNo4Y.CheckOnClick = true;
             this.checkedListBoxNo4Y.FormattingEnabled = true;
             this.checkedListBoxNo4Y.Items.AddRange(new object[] {
             "Free",
@@ -993,6 +1064,7 @@
             // 
             // checkedListBoxNo4X
             // 
+            this.checkedListBoxNo4X.CheckOnClick = true;
             this.checkedListBoxNo4X.FormattingEnabled = true;
             this.checkedListBoxNo4X.Items.AddRange(new object[] {
             "Free",
@@ -1032,21 +1104,42 @@
             // 
             // groupBoxNo3
             // 
+            this.groupBoxNo3.Controls.Add(this.label47);
+            this.groupBoxNo3.Controls.Add(this.textBoxForcaNo3);
             this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3Z);
             this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3Y);
             this.groupBoxNo3.Controls.Add(this.checkedListBoxNo3X);
             this.groupBoxNo3.Controls.Add(this.label33);
             this.groupBoxNo3.Controls.Add(this.label34);
             this.groupBoxNo3.Controls.Add(this.label35);
-            this.groupBoxNo3.Location = new System.Drawing.Point(248, 259);
+            this.groupBoxNo3.Location = new System.Drawing.Point(248, 214);
             this.groupBoxNo3.Name = "groupBoxNo3";
-            this.groupBoxNo3.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo3.Size = new System.Drawing.Size(195, 108);
             this.groupBoxNo3.TabIndex = 29;
             this.groupBoxNo3.TabStop = false;
             this.groupBoxNo3.Text = "Nó 3";
             // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 79);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(57, 13);
+            this.label47.TabIndex = 31;
+            this.label47.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo3
+            // 
+            this.textBoxForcaNo3.Enabled = false;
+            this.textBoxForcaNo3.Location = new System.Drawing.Point(77, 76);
+            this.textBoxForcaNo3.Name = "textBoxForcaNo3";
+            this.textBoxForcaNo3.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo3.TabIndex = 30;
+            this.textBoxForcaNo3.EnabledChanged += new System.EventHandler(this.textBoxForcaNo3_EnabledChanged);
+            // 
             // checkedListBoxNo3Z
             // 
+            this.checkedListBoxNo3Z.CheckOnClick = true;
             this.checkedListBoxNo3Z.FormattingEnabled = true;
             this.checkedListBoxNo3Z.Items.AddRange(new object[] {
             "Free",
@@ -1059,6 +1152,7 @@
             // 
             // checkedListBoxNo3Y
             // 
+            this.checkedListBoxNo3Y.CheckOnClick = true;
             this.checkedListBoxNo3Y.FormattingEnabled = true;
             this.checkedListBoxNo3Y.Items.AddRange(new object[] {
             "Free",
@@ -1071,6 +1165,7 @@
             // 
             // checkedListBoxNo3X
             // 
+            this.checkedListBoxNo3X.CheckOnClick = true;
             this.checkedListBoxNo3X.FormattingEnabled = true;
             this.checkedListBoxNo3X.Items.AddRange(new object[] {
             "Free",
@@ -1110,21 +1205,43 @@
             // 
             // groupBoxNo2
             // 
+            this.groupBoxNo2.Controls.Add(this.label46);
+            this.groupBoxNo2.Controls.Add(this.textBoxForcaNo2);
             this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2Z);
             this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2Y);
             this.groupBoxNo2.Controls.Add(this.checkedListBoxNo2X);
             this.groupBoxNo2.Controls.Add(this.label30);
             this.groupBoxNo2.Controls.Add(this.label31);
             this.groupBoxNo2.Controls.Add(this.label32);
-            this.groupBoxNo2.Location = new System.Drawing.Point(248, 177);
+            this.groupBoxNo2.Location = new System.Drawing.Point(451, 95);
             this.groupBoxNo2.Name = "groupBoxNo2";
-            this.groupBoxNo2.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo2.Size = new System.Drawing.Size(195, 110);
             this.groupBoxNo2.TabIndex = 28;
             this.groupBoxNo2.TabStop = false;
             this.groupBoxNo2.Text = "Nó 2";
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(3, 82);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(57, 13);
+            this.label46.TabIndex = 31;
+            this.label46.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo2
+            // 
+            this.textBoxForcaNo2.Enabled = false;
+            this.textBoxForcaNo2.Location = new System.Drawing.Point(77, 79);
+            this.textBoxForcaNo2.Name = "textBoxForcaNo2";
+            this.textBoxForcaNo2.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo2.TabIndex = 30;
+            this.textBoxForcaNo2.Text = "-2";
+            this.textBoxForcaNo2.EnabledChanged += new System.EventHandler(this.textBoxForcaNo2_EnabledChanged);
+            // 
             // checkedListBoxNo2Z
             // 
+            this.checkedListBoxNo2Z.CheckOnClick = true;
             this.checkedListBoxNo2Z.FormattingEnabled = true;
             this.checkedListBoxNo2Z.Items.AddRange(new object[] {
             "Free",
@@ -1137,6 +1254,7 @@
             // 
             // checkedListBoxNo2Y
             // 
+            this.checkedListBoxNo2Y.CheckOnClick = true;
             this.checkedListBoxNo2Y.FormattingEnabled = true;
             this.checkedListBoxNo2Y.Items.AddRange(new object[] {
             "Free",
@@ -1149,6 +1267,7 @@
             // 
             // checkedListBoxNo2X
             // 
+            this.checkedListBoxNo2X.CheckOnClick = true;
             this.checkedListBoxNo2X.FormattingEnabled = true;
             this.checkedListBoxNo2X.Items.AddRange(new object[] {
             "Free",
@@ -1188,6 +1307,8 @@
             // 
             // groupBoxNo1
             // 
+            this.groupBoxNo1.Controls.Add(this.label45);
+            this.groupBoxNo1.Controls.Add(this.textBoxForcaNo1);
             this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1Z);
             this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1Y);
             this.groupBoxNo1.Controls.Add(this.checkedListBoxNo1X);
@@ -1196,13 +1317,33 @@
             this.groupBoxNo1.Controls.Add(this.label28);
             this.groupBoxNo1.Location = new System.Drawing.Point(248, 95);
             this.groupBoxNo1.Name = "groupBoxNo1";
-            this.groupBoxNo1.Size = new System.Drawing.Size(195, 76);
+            this.groupBoxNo1.Size = new System.Drawing.Size(195, 110);
             this.groupBoxNo1.TabIndex = 27;
             this.groupBoxNo1.TabStop = false;
             this.groupBoxNo1.Text = "Nó 1";
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(3, 82);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(57, 13);
+            this.label45.TabIndex = 28;
+            this.label45.Text = "Força (kN)";
+            // 
+            // textBoxForcaNo1
+            // 
+            this.textBoxForcaNo1.Enabled = false;
+            this.textBoxForcaNo1.Location = new System.Drawing.Point(77, 79);
+            this.textBoxForcaNo1.Name = "textBoxForcaNo1";
+            this.textBoxForcaNo1.Size = new System.Drawing.Size(112, 20);
+            this.textBoxForcaNo1.TabIndex = 27;
+            this.textBoxForcaNo1.Text = "10";
+            this.textBoxForcaNo1.EnabledChanged += new System.EventHandler(this.textBoxForcaNo1_EnabledChanged);
+            // 
             // checkedListBoxNo1Z
             // 
+            this.checkedListBoxNo1Z.CheckOnClick = true;
             this.checkedListBoxNo1Z.FormattingEnabled = true;
             this.checkedListBoxNo1Z.Items.AddRange(new object[] {
             "Free",
@@ -1215,6 +1356,7 @@
             // 
             // checkedListBoxNo1Y
             // 
+            this.checkedListBoxNo1Y.CheckOnClick = true;
             this.checkedListBoxNo1Y.FormattingEnabled = true;
             this.checkedListBoxNo1Y.Items.AddRange(new object[] {
             "Free",
@@ -1265,11 +1407,22 @@
             this.label28.TabIndex = 8;
             this.label28.Text = "X";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
+            this.label8.Location = new System.Drawing.Point(10, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 15);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Quant. Elementos: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 478);
+            this.ClientSize = new System.Drawing.Size(1462, 478);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBoxNo6);
             this.Controls.Add(this.groupBoxNo5);
             this.Controls.Add(this.groupBoxNo4);
@@ -1287,7 +1440,6 @@
             this.Controls.Add(this.groupBoxElemento4);
             this.Controls.Add(this.groupBoxElemento3);
             this.Controls.Add(this.groupBoxElemento2);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.numericUpDownQuantidadeElementos);
             this.Controls.Add(this.groupBoxElemento1);
             this.Controls.Add(this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais);
@@ -1356,7 +1508,6 @@
         private System.Windows.Forms.ComboBox comboBoxAnguloE1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantidadeElementos;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBoxElemento2;
         private System.Windows.Forms.ComboBox comboBoxAnguloE2;
         private System.Windows.Forms.Label label9;
@@ -1446,6 +1597,19 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckedListBox checkedListBoxNo1X;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox textBoxForcaNo6;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox textBoxForcaNo5;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox textBoxForcaNo4;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox textBoxForcaNo3;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox textBoxForcaNo2;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox textBoxForcaNo1;
+        private System.Windows.Forms.Label label8;
 
     }
 }

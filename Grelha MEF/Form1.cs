@@ -85,6 +85,9 @@ namespace Grelha_MEF
         //
         public static double[,] matrizGlobalDosElementos;
 
+        //Vetor das cargas externas
+        public static double[] vetorCargasExternas;
+
         public Form1()
         {
             InitializeComponent();
@@ -108,7 +111,7 @@ namespace Grelha_MEF
 
             matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
             double[,] matrizEstruturaComCondicoesDeContorno = inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 2, 1, 1, 1, 3);
-            double[,] matrizEstruturaComCondicoesDeContornoInversa = invert(matrizEstruturaComCondicoesDeContorno);
+            double[,] matrizInversaDaEstrutura = invert(matrizEstruturaComCondicoesDeContorno);
         }
 
         public void inicializaVetores()
@@ -354,7 +357,7 @@ namespace Grelha_MEF
         public double[,] inicializaMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
         {
             int tamanhoMatriz = 3*quantidadeNos;
-            double[,] matrizResultante = new double[,]{};
+            double[,] matrizResultante = new double[,] { };
 
             Console.WriteLine("MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO");
 
@@ -445,6 +448,7 @@ namespace Grelha_MEF
                         }
                         countI++;
                     }
+                    
                 }
                 //NO 2 - YZ
                 if (no.Equals(2))
@@ -862,10 +866,40 @@ namespace Grelha_MEF
                     }
                 }
             }
-            //         condicaoX.Equals(1) && !condicaoY.Equals(1) && condicaoZ.Equals(1) ||
-            //         condicaoX.Equals(1) && condicaoY.Equals(1) && !condicaoZ.Equals(1)) tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 2;
-            //else tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - 1;    
+            inicializaVetorCargasExternas(matrizResultante.GetLength(1));
+
             return matrizResultante;
+        }
+
+        //INICIALIZA VETOR DE CARGAS EXTERNAS
+        public void inicializaVetorCargasExternas(int tamanhoMatriz)
+        {
+            int comecoNo1 = 0;
+            int comecoNo2 = 3;
+            int comecoNo3 = 6;
+            int comecoNo4 = 9;
+            int comecoNo5 = 12;
+            int comecoNo6 = 15;
+
+            vetorCargasExternas = new double[tamanhoMatriz];
+            for (int i = 0; i < vetorCargasExternas.Length; i++)
+                vetorCargasExternas[i] = 0;
+
+            if (!String.IsNullOrEmpty(textBoxForcaNo1.Text.Trim()))
+                vetorCargasExternas[comecoNo1] = double.Parse(textBoxForcaNo1.Text);
+            if (!String.IsNullOrEmpty(textBoxForcaNo2.Text.Trim()))
+                vetorCargasExternas[comecoNo2] = double.Parse(textBoxForcaNo2.Text);
+            if (!String.IsNullOrEmpty(textBoxForcaNo3.Text.Trim()))
+                vetorCargasExternas[comecoNo3] = double.Parse(textBoxForcaNo3.Text);
+            if (!String.IsNullOrEmpty(textBoxForcaNo4.Text.Trim()))
+                vetorCargasExternas[comecoNo4] = double.Parse(textBoxForcaNo4.Text);
+            if (!String.IsNullOrEmpty(textBoxForcaNo5.Text.Trim()))
+                vetorCargasExternas[comecoNo5] = double.Parse(textBoxForcaNo5.Text);
+            if (!String.IsNullOrEmpty(textBoxForcaNo6.Text.Trim()))
+                vetorCargasExternas[comecoNo6] = double.Parse(textBoxForcaNo6.Text);
+
+            for (int i2 = 0; i2 < vetorCargasExternas.Length; i2++)
+                Console.WriteLine("\r\nIndice [" + (i2 + 1) + "]" + vetorCargasExternas[i2]);
         }
 
         //MATRIZ INVERSA
@@ -972,8 +1006,7 @@ namespace Grelha_MEF
 
             return resultado;
         }
-
-
+        
         //EVENTOS
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
@@ -1009,104 +1042,218 @@ namespace Grelha_MEF
 
         public void selecaoUnicaNoCheckedlistbox(CheckedListBox check)
         {
-            if (check.Equals(0)) check.SetItemChecked(1, false);
-            else if (check.SelectedIndex.Equals(1)) check.SetItemChecked(0, false);
+            if (check.SelectedIndex.Equals(0)) check.SetItemChecked(1, false);
+            else if (check.SelectedIndex.Equals(1)) 
+            { 
+                check.SetItemChecked(0, false); 
+                
+            }
         }
 
+        public void verificaForcaNo1()
+        {
+            if (checkedListBoxNo1X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo1Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo1Z.SelectedIndex.Equals(0)) textBoxForcaNo1.Enabled = true;
+            else textBoxForcaNo1.Enabled = false;
+        }
+
+        public void verificaForcaNo2()
+        {
+            if (checkedListBoxNo2X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo2Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo2Z.SelectedIndex.Equals(0)) textBoxForcaNo2.Enabled = true;
+            else textBoxForcaNo2.Enabled = false;
+        }
+
+        public void verificaForcaNo3()
+        {
+            if (checkedListBoxNo3X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo3Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo3Z.SelectedIndex.Equals(0)) textBoxForcaNo3.Enabled = true;
+            else textBoxForcaNo3.Enabled = false;
+        }
+
+        public void verificaForcaNo4()
+        {
+            if (checkedListBoxNo4X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo4Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo4Z.SelectedIndex.Equals(0)) textBoxForcaNo4.Enabled = true;
+            else textBoxForcaNo4.Enabled = false;
+        }
+
+        public void verificaForcaNo5()
+        {
+            if (checkedListBoxNo5X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo5Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo5Z.SelectedIndex.Equals(0)) textBoxForcaNo5.Enabled = true;
+            else textBoxForcaNo5.Enabled = false;
+        }
+
+        public void verificaForcaNo6()
+        {
+            if (checkedListBoxNo6X.SelectedIndex.Equals(0) &&
+                checkedListBoxNo6Y.SelectedIndex.Equals(0) &&
+                checkedListBoxNo6Z.SelectedIndex.Equals(0)) textBoxForcaNo6.Enabled = true;
+            else textBoxForcaNo6.Enabled = false;
+        }
+
+        public bool verificaPossivelHabilitacaoDoCampoForca()
+        {
+            int i = 0;
+
+            if (textBoxForcaNo1.Enabled) i++;
+            if (textBoxForcaNo2.Enabled) i++;
+            if (textBoxForcaNo3.Enabled) i++;
+            if (textBoxForcaNo4.Enabled) i++;
+            if (textBoxForcaNo5.Enabled) i++;
+            if (textBoxForcaNo6.Enabled) i++;
+
+            if (i.Equals(Convert.ToInt32(textBoxQuantidadeNos.Text))) return false;
+            else return true;
+        }
+        
         private void checkedListBoxNo1X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo1X);
+            verificaForcaNo1();
         }
 
         private void checkedListBoxNo1Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Y);
+            verificaForcaNo1();
         }
 
         private void checkedListBoxNo1Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Z);
+            verificaForcaNo1();
         }
 
         private void checkedListBoxNo2X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo2X);
+            verificaForcaNo2();
         }
 
         private void checkedListBoxNo2Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Y);
+            verificaForcaNo2();
         }
 
         private void checkedListBoxNo2Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Z);
+            verificaForcaNo2();
         }
 
         private void checkedListBoxNo3X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo3X);
+            verificaForcaNo3();
         }
 
         private void checkedListBoxNo3Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Y);
+            verificaForcaNo3();
         }
 
         private void checkedListBoxNo3Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Z);
+            verificaForcaNo3();
         }
 
         private void checkedListBoxNo4X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo4X);
+            verificaForcaNo4();
         }
 
         private void checkedListBoxNo4Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Y);
+            verificaForcaNo4();
         }
 
         private void checkedListBoxNo4Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Z);
+            verificaForcaNo4();
         }
 
         private void checkedListBoxNo5X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo5X);
+            verificaForcaNo5();
         }
 
         private void checkedListBoxNo5Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Y);
+            verificaForcaNo5();
         }
 
         private void checkedListBoxNo5Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
+            verificaForcaNo5();
         }
 
         private void checkedListBoxNo6X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo6X);
+            verificaForcaNo6();
         }
 
         private void checkedListBoxNo6Y_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo6Y);
+            verificaForcaNo6();
         }
 
         private void checkedListBoxNo6Z_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
+            verificaForcaNo6();
         }
 
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
             inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 1, checkedListBoxNo1X.SelectedIndex, checkedListBoxNo1Y.SelectedIndex, checkedListBoxNo1Z.SelectedIndex, Convert.ToInt32(textBoxQuantidadeNos.Text));
         }
-        
+
+        private void textBoxForcaNo1_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo1.Enabled = false;
+        }
+
+        private void textBoxForcaNo2_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo2.Enabled = false;
+        }
+
+        private void textBoxForcaNo3_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo3.Enabled = false;
+        }
+
+        private void textBoxForcaNo4_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo4.Enabled = false;
+        }
+
+        private void textBoxForcaNo5_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo5.Enabled = false;
+        }
+
+        private void textBoxForcaNo6_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo6.Enabled = false;
+        }
     }
 }
