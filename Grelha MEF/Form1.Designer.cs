@@ -1029,7 +1029,6 @@
             // 
             // textBoxForcaNo4
             // 
-            this.textBoxForcaNo4.Enabled = false;
             this.textBoxForcaNo4.Location = new System.Drawing.Point(77, 76);
             this.textBoxForcaNo4.Name = "textBoxForcaNo4";
             this.textBoxForcaNo4.Size = new System.Drawing.Size(112, 20);
@@ -1130,7 +1129,6 @@
             // 
             // textBoxForcaNo3
             // 
-            this.textBoxForcaNo3.Enabled = false;
             this.textBoxForcaNo3.Location = new System.Drawing.Point(77, 76);
             this.textBoxForcaNo3.Name = "textBoxForcaNo3";
             this.textBoxForcaNo3.Size = new System.Drawing.Size(112, 20);
@@ -1231,7 +1229,6 @@
             // 
             // textBoxForcaNo2
             // 
-            this.textBoxForcaNo2.Enabled = false;
             this.textBoxForcaNo2.Location = new System.Drawing.Point(77, 79);
             this.textBoxForcaNo2.Name = "textBoxForcaNo2";
             this.textBoxForcaNo2.Size = new System.Drawing.Size(112, 20);
@@ -1333,12 +1330,10 @@
             // 
             // textBoxForcaNo1
             // 
-            this.textBoxForcaNo1.Enabled = false;
             this.textBoxForcaNo1.Location = new System.Drawing.Point(77, 79);
             this.textBoxForcaNo1.Name = "textBoxForcaNo1";
             this.textBoxForcaNo1.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo1.TabIndex = 27;
-            this.textBoxForcaNo1.Text = "10";
             this.textBoxForcaNo1.EnabledChanged += new System.EventHandler(this.textBoxForcaNo1_EnabledChanged);
             // 
             // checkedListBoxNo1Z

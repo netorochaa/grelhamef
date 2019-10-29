@@ -112,6 +112,7 @@ namespace Grelha_MEF
             matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
             double[,] matrizEstruturaComCondicoesDeContorno = inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 2, 1, 1, 1, 3);
             double[,] matrizInversaDaEstrutura = invert(matrizEstruturaComCondicoesDeContorno);
+            double[] vetorDeslocamentoERotacaoGlobal = multiplicacaoMatrizComVetor(matrizInversaDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL");
         }
 
         public void inicializaVetores()
@@ -196,12 +197,13 @@ namespace Grelha_MEF
         public double[,] multiplicacaoMatrizes(double[,] matrizA, double[,] matrizB, string nome)
         {
             double valorCelula = 0;
-            int quantidadeCelulas = 36;
+            int quantidadeCelulas = (matrizA.Length + matrizB.Length)/2;
+            int tamDimensao = (matrizA.GetLength(0) + matrizA.GetLength(1)) / 2;
             int celula = 0;
             int i = 0;
-            int cont = 0;
+            int cont = 0;            
 
-            double[,] matrizResultante = new double[6,6];
+            double[,] matrizResultante = new double[tamDimensao, tamDimensao];
 
             //Console.WriteLine("\r\n" + nome + "\r\n");
 
@@ -212,8 +214,8 @@ namespace Grelha_MEF
 
                 celula++;
 
-                if (celula.Equals(6) || celula.Equals(6 * 2) || celula.Equals(6 * 3) ||
-                   celula.Equals(6 * 4) || celula.Equals(6 * 5))
+                if (celula.Equals(tamDimensao) || celula.Equals(tamDimensao * 2) || celula.Equals(tamDimensao * 3) ||
+                   celula.Equals(tamDimensao * 4) || celula.Equals(tamDimensao * 5))
                 {
                     matrizResultante[i, cont] = valorCelula;
                     //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
@@ -222,7 +224,7 @@ namespace Grelha_MEF
                     cont++;
                     valorCelula = 0;
                 }
-                else if (celula.Equals(6 * 6) && i < 5)
+                else if (celula.Equals(tamDimensao * 6) && i < tamDimensao-1)
                 {
                     matrizResultante[i, cont] = valorCelula;
                     //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
@@ -233,7 +235,7 @@ namespace Grelha_MEF
                     celula = 0;
                     valorCelula = 0;
                 }
-                else if (i.Equals(5) && celula.Equals(6 * 6))
+                else if (i.Equals(tamDimensao - 1) && celula.Equals(tamDimensao * 6))
                 {
                     matrizResultante[i, cont] = valorCelula;
                     //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
@@ -244,6 +246,32 @@ namespace Grelha_MEF
             valorCelula = 0;
 
             return matrizResultante;
+
+        }
+
+        //ALGORITMO DE MULTIPLICAÇÃO DE MATRIZES
+        public double[] multiplicacaoMatrizComVetor(double[,] matriz, double[] vetor, string nome)
+        {
+            double valorCelula = 0;
+            int quantidadeCelulas = matriz.Length;
+            int tamDimensao = matriz.GetLength(1);
+
+            double[] vetorResultante = new double[tamDimensao];
+
+            Console.WriteLine("\r\n" + nome + "\r\n");
+
+            for (int i = 0; i < tamDimensao; i++)
+            {
+                for (int j = 0; j < tamDimensao; j++)
+                {
+                    valorCelula += matriz[i, j] * vetor[j];
+                    //Console.WriteLine(matriz[i, j] + " * " + vetor[j]);
+                }
+                Console.WriteLine("Índice [" + (i + 1) + "] " + valorCelula);
+                valorCelula = 0;
+            }
+
+            return vetorResultante;
 
         }
 
@@ -359,7 +387,7 @@ namespace Grelha_MEF
             int tamanhoMatriz = 3*quantidadeNos;
             double[,] matrizResultante = new double[,] { };
 
-            Console.WriteLine("MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO");
+            //Console.WriteLine("MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO");
 
             //RESTRINGINDO X Y Z
             if (condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1))
@@ -399,7 +427,7 @@ namespace Grelha_MEF
                             if(j.Equals(diminuendo) || j.Equals(diminuendo + 1) || j.Equals(diminuendo + 2)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI+1)+ ", " + (countJ+1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI+1)+ ", " + (countJ+1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -415,7 +443,7 @@ namespace Grelha_MEF
                         for (int j = comecoNo; j < tamanhoMatriz - diminuendo; j++)
                         {
                             matrizResultante[i, j] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                            //Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
                         }
                     }
                 }
@@ -443,7 +471,7 @@ namespace Grelha_MEF
                             if (j.Equals(diminuendo - 1) || j.Equals(diminuendo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -466,7 +494,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 1) || j.Equals(comecoNo + diminuendo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -486,7 +514,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 1) || j.Equals(comecoNo + diminuendo)) continue;
 
                             matrizResultante[i, j] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                            //Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
                         }
                     }
                 }
@@ -514,7 +542,7 @@ namespace Grelha_MEF
                             if (j.Equals(diminuendo - 2) || j.Equals(diminuendo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -536,7 +564,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 2) || j.Equals(comecoNo + diminuendo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -559,7 +587,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 2) || j.Equals(comecoNo + diminuendo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -589,7 +617,7 @@ namespace Grelha_MEF
                             if (j.Equals(diminuendo - 2) || j.Equals(diminuendo - 1)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -611,7 +639,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 2) || j.Equals((comecoNo + diminuendo) - 1)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -634,7 +662,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + diminuendo) - 2) || j.Equals((comecoNo + diminuendo) - 1)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -664,7 +692,7 @@ namespace Grelha_MEF
                             if (j.Equals(comecoNo)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -686,7 +714,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -709,7 +737,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -739,7 +767,7 @@ namespace Grelha_MEF
                             if (j.Equals(comecoNo + 1)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -761,7 +789,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + 1))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -784,7 +812,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + 1))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -814,7 +842,7 @@ namespace Grelha_MEF
                             if (j.Equals(comecoNo + 2)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -836,7 +864,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + 2))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -859,7 +887,7 @@ namespace Grelha_MEF
                             if (j.Equals((comecoNo + 2))) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
-                            Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
+                            //Console.WriteLine("Indice [" + (countI + 1) + ", " + (countJ + 1) + "] " + matrizResultante[countI, countJ]);
                             countJ++;
                         }
                         countI++;
@@ -885,17 +913,17 @@ namespace Grelha_MEF
             for (int i = 0; i < vetorCargasExternas.Length; i++)
                 vetorCargasExternas[i] = 0;
 
-            if (!String.IsNullOrEmpty(textBoxForcaNo1.Text.Trim()))
+            if (textBoxForcaNo1.Enabled && !String.IsNullOrEmpty(textBoxForcaNo1.Text.Trim()))
                 vetorCargasExternas[comecoNo1] = double.Parse(textBoxForcaNo1.Text);
-            if (!String.IsNullOrEmpty(textBoxForcaNo2.Text.Trim()))
+            if (textBoxForcaNo2.Enabled && !String.IsNullOrEmpty(textBoxForcaNo2.Text.Trim()))
                 vetorCargasExternas[comecoNo2] = double.Parse(textBoxForcaNo2.Text);
-            if (!String.IsNullOrEmpty(textBoxForcaNo3.Text.Trim()))
+            if (textBoxForcaNo3.Enabled && !String.IsNullOrEmpty(textBoxForcaNo3.Text.Trim()))
                 vetorCargasExternas[comecoNo3] = double.Parse(textBoxForcaNo3.Text);
-            if (!String.IsNullOrEmpty(textBoxForcaNo4.Text.Trim()))
+            if (textBoxForcaNo4.Enabled && !String.IsNullOrEmpty(textBoxForcaNo4.Text.Trim()))
                 vetorCargasExternas[comecoNo4] = double.Parse(textBoxForcaNo4.Text);
-            if (!String.IsNullOrEmpty(textBoxForcaNo5.Text.Trim()))
+            if (textBoxForcaNo5.Enabled && !String.IsNullOrEmpty(textBoxForcaNo5.Text.Trim()))
                 vetorCargasExternas[comecoNo5] = double.Parse(textBoxForcaNo5.Text);
-            if (!String.IsNullOrEmpty(textBoxForcaNo6.Text.Trim()))
+            if (textBoxForcaNo6.Enabled && String.IsNullOrEmpty(textBoxForcaNo6.Text.Trim()))
                 vetorCargasExternas[comecoNo6] = double.Parse(textBoxForcaNo6.Text);
 
             for (int i2 = 0; i2 < vetorCargasExternas.Length; i2++)
