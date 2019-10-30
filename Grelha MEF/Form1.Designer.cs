@@ -380,6 +380,7 @@
             this.groupBoxElemento3.TabIndex = 17;
             this.groupBoxElemento3.TabStop = false;
             this.groupBoxElemento3.Text = "Elemento 3";
+            this.groupBoxElemento3.Visible = false;
             // 
             // comboBoxAnguloE3
             // 
@@ -391,7 +392,7 @@
             this.comboBoxAnguloE3.Name = "comboBoxAnguloE3";
             this.comboBoxAnguloE3.Size = new System.Drawing.Size(100, 21);
             this.comboBoxAnguloE3.TabIndex = 11;
-            this.comboBoxAnguloE3.Text = "90";
+            this.comboBoxAnguloE3.Text = "0";
             // 
             // label11
             // 
@@ -408,7 +409,6 @@
             this.textBoxComprimentoE3.Name = "textBoxComprimentoE3";
             this.textBoxComprimentoE3.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE3.TabIndex = 9;
-            this.textBoxComprimentoE3.Text = "10.4";
             // 
             // label12
             // 
@@ -431,6 +431,7 @@
             this.groupBoxElemento4.TabIndex = 18;
             this.groupBoxElemento4.TabStop = false;
             this.groupBoxElemento4.Text = "Elemento 4";
+            this.groupBoxElemento4.Visible = false;
             // 
             // comboBoxAnguloE4
             // 
@@ -459,7 +460,6 @@
             this.textBoxComprimentoE4.Name = "textBoxComprimentoE4";
             this.textBoxComprimentoE4.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE4.TabIndex = 9;
-            this.textBoxComprimentoE4.Text = "10.4";
             // 
             // label14
             // 
@@ -482,6 +482,7 @@
             this.groupBoxElemento5.TabIndex = 19;
             this.groupBoxElemento5.TabStop = false;
             this.groupBoxElemento5.Text = "Elemento 5";
+            this.groupBoxElemento5.Visible = false;
             // 
             // comboBoxAnguloE5
             // 
@@ -510,7 +511,6 @@
             this.textBoxComprimentoE5.Name = "textBoxComprimentoE5";
             this.textBoxComprimentoE5.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE5.TabIndex = 9;
-            this.textBoxComprimentoE5.Text = "10.4";
             // 
             // label16
             // 
@@ -533,6 +533,7 @@
             this.groupBoxElemento6.TabIndex = 20;
             this.groupBoxElemento6.TabStop = false;
             this.groupBoxElemento6.Text = "Elemento 6";
+            this.groupBoxElemento6.Visible = false;
             // 
             // comboBoxAnguloE6
             // 
@@ -561,7 +562,6 @@
             this.textBoxComprimentoE6.Name = "textBoxComprimentoE6";
             this.textBoxComprimentoE6.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE6.TabIndex = 9;
-            this.textBoxComprimentoE6.Text = "10.4";
             // 
             // label18
             // 
@@ -584,6 +584,7 @@
             this.groupBoxElemento7.TabIndex = 21;
             this.groupBoxElemento7.TabStop = false;
             this.groupBoxElemento7.Text = "Elemento 7";
+            this.groupBoxElemento7.Visible = false;
             // 
             // comboBoxAnguloE7
             // 
@@ -612,7 +613,6 @@
             this.textBoxComprimentoE7.Name = "textBoxComprimentoE7";
             this.textBoxComprimentoE7.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE7.TabIndex = 9;
-            this.textBoxComprimentoE7.Text = "10.4";
             // 
             // label20
             // 
@@ -635,6 +635,7 @@
             this.groupBoxElemento8.TabIndex = 22;
             this.groupBoxElemento8.TabStop = false;
             this.groupBoxElemento8.Text = "Elemento 8";
+            this.groupBoxElemento8.Visible = false;
             // 
             // comboBoxAnguloE8
             // 
@@ -663,7 +664,6 @@
             this.textBoxComprimentoE8.Name = "textBoxComprimentoE8";
             this.textBoxComprimentoE8.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE8.TabIndex = 9;
-            this.textBoxComprimentoE8.Text = "10.4";
             // 
             // label22
             // 
@@ -686,6 +686,7 @@
             this.groupBoxElemento9.TabIndex = 23;
             this.groupBoxElemento9.TabStop = false;
             this.groupBoxElemento9.Text = "Elemento 9";
+            this.groupBoxElemento9.Visible = false;
             // 
             // comboBoxAnguloE9
             // 
@@ -714,7 +715,6 @@
             this.textBoxComprimentoE9.Name = "textBoxComprimentoE9";
             this.textBoxComprimentoE9.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE9.TabIndex = 9;
-            this.textBoxComprimentoE9.Text = "10.4";
             // 
             // label24
             // 
@@ -737,6 +737,7 @@
             this.groupBoxElemento10.TabIndex = 24;
             this.groupBoxElemento10.TabStop = false;
             this.groupBoxElemento10.Text = "Elemento 10";
+            this.groupBoxElemento10.Visible = false;
             // 
             // comboBoxComprimentoE10
             // 
@@ -765,7 +766,6 @@
             this.textBoxComprimentoE10.Name = "textBoxComprimentoE10";
             this.textBoxComprimentoE10.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE10.TabIndex = 9;
-            this.textBoxComprimentoE10.Text = "10.4";
             // 
             // label26
             // 

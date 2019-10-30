@@ -57,34 +57,44 @@ namespace Grelha_MEF
 
         //Graus de liberdade total
         public static int quantidadeGrausLiberdadeGlobal = sistemaGlobalGrausLiberdadeNo1.Length + sistemaGlobalGrausLiberdadeNo2.Length + sistemaGlobalGrausLiberdadeNo3.Length;
-        public static int[] grausLiberdadeGlobal         = new int[quantidadeGrausLiberdadeGlobal];
+        public static int[] vetorGrausLiberdadeGlobal         = new int[quantidadeGrausLiberdadeGlobal];
 
         //Vetores totais do elemento 1
         public static int quantidadeLocalElemento1 = sistemaLocalElemento1No1.Length + sistemaLocalElemento1No2.Length + sistemaLocalElemento2No3.Length;
         public static int[] localElemento1         = new int[quantidadeLocalElemento1];
         //Cria matriz local do elemento 2
-        double[,] matrizLocalSistemaGlobalElemeto1 = new double[grausLiberdadeGlobal.Length, grausLiberdadeGlobal.Length];
+        double[,] matrizLocalSistemaGlobalElemeto1 = new double[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
         //Vetores totais do elemento 2
         public static int quantidadeLocalElemento2 = sistemaLocalElemento2No1.Length + sistemaLocalElemento2No2.Length + sistemaLocalElemento2No3.Length;
         public static int[] localElemento2         = new int[quantidadeLocalElemento2];
         //Cria matriz local do elemento 2
-        double[,] matrizLocalSistemaGlobalElemeto2 = new double[grausLiberdadeGlobal.Length, grausLiberdadeGlobal.Length];
+        double[,] matrizLocalSistemaGlobalElemeto2 = new double[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
         //Matriz global dos elementos
-        string[,] matrizGlobalEstrutura = new string[grausLiberdadeGlobal.Length, grausLiberdadeGlobal.Length];
+        string[,] matrizGlobalEstrutura = new string[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
         //Associando nó global a nó local
         //elemento 1
-        public static int[] noLocalElemento1  = { 1, 2 };
-        public static int[] noGlobalElemento1 = { 1, 3 };
+        //public static int[] noLocalElemento1  = { 1, 2 };
+        public static double[] nosGlobaisDosElementos;
         //elemento 2
-        public static int[] noLocalElemento2  = { 1, 2 };
-        public static int[] noGlobalElemento2 = { 1, 2 };  
+        //public static int[] noLocalElemento2  = { 1, 2 };
+        //public static double[] noGlobalElemento2;
   
-        //
-        public static double[,] matrizGlobalDosElementos;
+        //Elementos em matrizes globais
+        static List<double[,]> elementosNaMatrizGlobal;
 
+        //Sistemas locais
+        static List<int[]> elementosLocais;
+        //Associação com elementos e nós
+        static int[] grausLiberdadeLocal = new int[6]{1, 2, 3, 4, 5, 6};
+
+        //Graus de liberdade
+        static int grausLiberdadeGlobal;
+        //quantidadeElementos
+        static int quantidadeElementos;
+        
         //Vetor das cargas externas
         public static double[] vetorCargasExternas;
 
@@ -92,42 +102,56 @@ namespace Grelha_MEF
         {
             InitializeComponent();
 
-            groupBoxElemento3.Visible = false;
-            groupBoxElemento4.Visible = false;
-            groupBoxElemento5.Visible = false;
-            groupBoxElemento6.Visible = false;
-            groupBoxElemento7.Visible = false;
-            groupBoxElemento8.Visible = false;
-            groupBoxElemento9.Visible = false;
-            groupBoxElemento10.Visible = false;
+            grausLiberdadeGlobal = Convert.ToInt32(textBoxQuantidadeNos.Text) * 3;
+            quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
-            inicializaVetores();
-            
-            double[,] matrizGlobalDoElemento1 = multiplicacaoMatrizes(multiplicacaoMatrizes(defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(comboBoxAnguloE1.Text)), inicializaMatrizRigidezEmCoordenadasLocais(textBoxComprimentoE1.Text), String.Empty), inicializaMatrizRotacao(Convert.ToInt32(comboBoxAnguloE1.Text)), "GLOBAL DOS ELEMENTOS 1 - ANGULO: " + comboBoxAnguloE1.Text);
-            double[,] matrizGlobalDoElemento2 = multiplicacaoMatrizes(multiplicacaoMatrizes(defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(comboBoxAnguloE2.Text)), inicializaMatrizRigidezEmCoordenadasLocais(textBoxComprimentoE2.Text), String.Empty), inicializaMatrizRotacao(Convert.ToInt32(comboBoxAnguloE2.Text)), "GLOBAL DOS ELEMENTOS 2 - ANGULO: " + comboBoxAnguloE2.Text);
+            inicializaVetores(grausLiberdadeGlobal, quantidadeElementos);
+            inicializaMatrizesGlobais();
 
-            double[,] matrizRigidezGlobalNoSistemaGlobalElemento1 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(matrizGlobalDoElemento1, quantidadeGrausLiberdadeGlobal, localElemento1, "matrizRigidezGlobalNoSistemaGlobalElemento1");
-            double[,] matrizRigidezGlobalNoSistemaGlobalElemento2 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(matrizGlobalDoElemento2, quantidadeGrausLiberdadeGlobal, localElemento2, "matrizRigidezGlobalNoSistemaGlobalElemento2");
+            double[,] matrizRigidezGlobalNoSistemaGlobalElemento1 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(elementosNaMatrizGlobal[0], quantidadeGrausLiberdadeGlobal, elementosLocais[0], "matrizRigidezGlobalNoSistemaGlobalElemento1");
+            double[,] matrizRigidezGlobalNoSistemaGlobalElemento2 = espalhamentoMatrizRigidezGlobalNoSistemaGlobal(elementosNaMatrizGlobal[1], quantidadeGrausLiberdadeGlobal, elementosLocais[1], "matrizRigidezGlobalNoSistemaGlobalElemento2");
 
-            matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
-            double[,] matrizEstruturaComCondicoesDeContorno = inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 2, 1, 1, 1, 3);
-            double[,] matrizInversaDaEstrutura = invert(matrizEstruturaComCondicoesDeContorno);
-            double[] vetorDeslocamentoERotacaoGlobal = multiplicacaoMatrizComVetor(matrizInversaDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL");
+            //matrizGlobalDosElementos = inicializaMatrizGlobalDosElementos(matrizRigidezGlobalNoSistemaGlobalElemento1, matrizRigidezGlobalNoSistemaGlobalElemento2, quantidadeGrausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
+            //double[,] matrizEstruturaComCondicoesDeContorno = inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 2, 1, 1, 1, 3);
+            //double[,] matrizInversaDaEstrutura = invert(matrizEstruturaComCondicoesDeContorno); 
+            //double[] vetorDeslocamentoERotacaoGlobal = multiplicacaoMatrizComVetor(matrizInversaDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL");
         }
 
-        public void inicializaVetores()
+        public void inicializaVetores(int gl, int qtdEle)
         {
-            sistemaGlobalGrausLiberdadeNo1.CopyTo(grausLiberdadeGlobal, 0);
-            sistemaGlobalGrausLiberdadeNo2.CopyTo(grausLiberdadeGlobal, sistemaGlobalGrausLiberdadeNo1.Length);
-            sistemaGlobalGrausLiberdadeNo3.CopyTo(grausLiberdadeGlobal, sistemaGlobalGrausLiberdadeNo1.Length + sistemaGlobalGrausLiberdadeNo2.Length);
+            elementosLocais = new List<int[]>();
 
-            sistemaLocalElemento1No1.CopyTo(localElemento1, 0);
-            sistemaLocalElemento1No2.CopyTo(localElemento1, sistemaLocalElemento1No1.Length);
-            sistemaLocalElemento1No3.CopyTo(localElemento1, sistemaLocalElemento1No1.Length + sistemaLocalElemento1No2.Length);
+            for (int i = 0; i < qtdEle; i++)
+            {
+                int[] teste = new int[gl];
+                for (int j = i; j < gl; j++)
+                {
+                    if ((i * j) % 3 == 0)
+                    {
+                        grausLiberdadeLocal.CopyTo(teste, i * j);
+                        break;
+                    }
+                    else teste[j] = 0;
+                }
+                elementosLocais.Add(teste);
+            }
+        }
+        
+        public void inicializaMatrizesGlobais()
+        {
+            int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
-            sistemaLocalElemento2No1.CopyTo(localElemento2, 0);
-            sistemaLocalElemento2No2.CopyTo(localElemento2, sistemaLocalElemento2No1.Length);
-            sistemaLocalElemento2No3.CopyTo(localElemento2, sistemaLocalElemento2No1.Length + sistemaLocalElemento2No2.Length);
+            elementosNaMatrizGlobal = new List<double[,]>();
+
+            for (int i = 1; i <= quantidadeElementos; i++)
+            {
+                Control[] combobox = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
+                ComboBox angulo = combobox[0] as ComboBox;
+                Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
+                TextBox comprimento = textbox[0] as TextBox;
+
+                elementosNaMatrizGlobal.Add(multiplicacaoMatrizes(multiplicacaoMatrizes(defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(angulo.Text)), calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text), String.Empty), inicializaMatrizRotacao(Convert.ToInt32(angulo.Text)), "GLOBAL DOS ELEMENTOS " + i + " - ANGULO: " + angulo.Text));
+            }
         }
 
         //Espalhamento da matriz de rigidez global no sistema global
@@ -147,16 +171,14 @@ namespace Grelha_MEF
                     //percorre elementos
                     if (!localElemento[j].Equals(0) && !localElemento[i].Equals(0))
                     {
-                        //matrizLocalSistemaGlobalElemeto1[i, j] = "K" + localElemento1[i] + "," + localElemento1[j] + "(1)";
                         matrizResultante[i, j] = matrizGlobalDoElemento[countI, countJ];
                         countJ++;
                     }
                     else
                     {
-                        //matrizLocalSistemaGlobalElemeto1[i, j] = "-";
                         matrizResultante[i, j] = double.NaN;
                     }
-                    //Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                    Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
                 }
                 countI++;
                 if (countI.Equals(6)) countI = countI - 3;
@@ -166,7 +188,7 @@ namespace Grelha_MEF
         }
 
         //MATRIZ GLOBAL DOS ELEMENTOS
-        public double[,] inicializaMatrizGlobalDosElementos(double[,] matrizRigidezGlobalNoSistemaGlobalElemento1, double[,] matrizRigidezGlobalNoSistemaGlobalElemento2, int quantidadeGrausLiberdadeGlobal, string nome)
+        public double[,] calculaMatrizGlobalDosElementos(double[,] matrizRigidezGlobalNoSistemaGlobalElemento1, double[,] matrizRigidezGlobalNoSistemaGlobalElemento2, int quantidadeGrausLiberdadeGlobal, string nome)
         {
             double[,] matrizResultante = new double[quantidadeGrausLiberdadeGlobal, quantidadeGrausLiberdadeGlobal];
 
@@ -276,7 +298,7 @@ namespace Grelha_MEF
         }
 
         //MATRIZ DE RIGIDEZ EM COORDENADAS LOCAIS | double b, double h, double moduloYoung, double coeficientePoisson, double comprimentoBarra**
-        public double[,] inicializaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraDoElemento)
+        public double[,] calculaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraDoElemento)
         {
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ".";
@@ -382,7 +404,7 @@ namespace Grelha_MEF
         }
         
         //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
-        public double[,] inicializaMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
+        public double[,] defineMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int no, int condicaoX, int condicaoY, int condicaoZ, int quantidadeNos) 
         {
             int tamanhoMatriz = 3*quantidadeNos;
             double[,] matrizResultante = new double[,] { };
@@ -393,13 +415,14 @@ namespace Grelha_MEF
             if (condicaoX.Equals(1) && condicaoY.Equals(1) && condicaoZ.Equals(1))
             {
                 int diminuendo = 3;
+                int comecoNo = 0;
                 int tamanhoMatrizAplicandoCondicoes = tamanhoMatriz - diminuendo;
                 matrizResultante = new double[tamanhoMatrizAplicandoCondicoes, tamanhoMatrizAplicandoCondicoes];
 
                 //NO 1 - XYZ
                 if (no.Equals(1))
                 {
-                    int comecoNo = diminuendo;
+                    comecoNo = diminuendo;
 
                     for (int i = comecoNo; i < tamanhoMatriz; i++)
                     {
@@ -413,7 +436,6 @@ namespace Grelha_MEF
                 //NO 2 - XYZ
                 else if (no.Equals(2))
                 {
-                    int comecoNo = 0;
                     int countI = 0;
                     int countJ = 0;
 
@@ -424,7 +446,7 @@ namespace Grelha_MEF
                         countJ = 0;
                         for (int j = comecoNo; j < tamanhoMatriz; j++)
                         {
-                            if(j.Equals(diminuendo) || j.Equals(diminuendo + 1) || j.Equals(diminuendo + 2)) continue;
+                            if (j.Equals(diminuendo) || j.Equals(diminuendo + 1) || j.Equals(diminuendo + 2)) continue;
 
                             matrizResultante[countI, countJ] = matrizGlobalDosElementos[i, j];
                             //Console.WriteLine("Indice [" + (countI+1)+ ", " + (countJ+1) + "] " + matrizResultante[countI, countJ]);
@@ -436,8 +458,6 @@ namespace Grelha_MEF
                 //NO 3 - XYZ
                 if (no.Equals(3))
                 {
-                    int comecoNo = 0;
-
                     for (int i = comecoNo; i < tamanhoMatriz - diminuendo; i++)
                     {
                         for (int j = comecoNo; j < tamanhoMatriz - diminuendo; j++)
@@ -476,7 +496,7 @@ namespace Grelha_MEF
                         }
                         countI++;
                     }
-                    
+
                 }
                 //NO 2 - YZ
                 if (no.Equals(2))
@@ -894,13 +914,14 @@ namespace Grelha_MEF
                     }
                 }
             }
-            inicializaVetorCargasExternas(matrizResultante.GetLength(1));
+            else matrizResultante = matrizGlobalDosElementos;
+            //inicializaVetorCargasExternas(matrizResultante.GetLength(1));
 
             return matrizResultante;
         }
 
         //INICIALIZA VETOR DE CARGAS EXTERNAS
-        public void inicializaVetorCargasExternas(int tamanhoMatriz)
+        public void inicializaVetorCargasExternas(int tamanhoMatriz, int noLiga1, int noLiga2)
         {
             int comecoNo1 = 0;
             int comecoNo2 = 3;
@@ -914,7 +935,10 @@ namespace Grelha_MEF
                 vetorCargasExternas[i] = 0;
 
             if (textBoxForcaNo1.Enabled && !String.IsNullOrEmpty(textBoxForcaNo1.Text.Trim()))
+            {
                 vetorCargasExternas[comecoNo1] = double.Parse(textBoxForcaNo1.Text);
+
+            }
             if (textBoxForcaNo2.Enabled && !String.IsNullOrEmpty(textBoxForcaNo2.Text.Trim()))
                 vetorCargasExternas[comecoNo2] = double.Parse(textBoxForcaNo2.Text);
             if (textBoxForcaNo3.Enabled && !String.IsNullOrEmpty(textBoxForcaNo3.Text.Trim()))
@@ -1251,7 +1275,6 @@ namespace Grelha_MEF
 
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
-            inicializaMatrizEstruturaComCondicoesDeContorno(matrizGlobalDosElementos, 1, checkedListBoxNo1X.SelectedIndex, checkedListBoxNo1Y.SelectedIndex, checkedListBoxNo1Z.SelectedIndex, Convert.ToInt32(textBoxQuantidadeNos.Text));
         }
 
         private void textBoxForcaNo1_EnabledChanged(object sender, EventArgs e)
