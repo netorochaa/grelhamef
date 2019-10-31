@@ -75,10 +75,13 @@ namespace Grelha_MEF
         static double[,] matrizGlobalEstrutura;
 
         //Vetor de deslocamento e rotação global
-        static double[] vetorDeslocamentoERotacaoGlobal;
+        //static double[] vetorDeslocamentoERotacaoGlobal;
   
         //Elementos em matrizes globais
         static List<double[,]> elementosNaMatrizGlobal;
+
+        
+        static List<double[]> vetoresDeslocamentoERotacaoGlobal;
 
         //Sistemas locais
         static List<int[]> elementosLocais;
@@ -294,6 +297,7 @@ namespace Grelha_MEF
                     //Console.WriteLine(matriz[i, j] + " * " + vetor[j]);
                 }
                 Console.WriteLine("Índice [" + (i + 1) + "] " + valorCelula);
+                vetorResultante[i] = valorCelula;
                 valorCelula = 0;
             }
 
@@ -481,6 +485,27 @@ namespace Grelha_MEF
                 Console.WriteLine("\r\nIndice [" + (i2 + 1) + "]" + vetorCargasExternas[i2]);
         }
 
+        public void defineVetoresDeslocamentoERotacaoGlobalPeloNo(double[] vetorDeslocamentoERotacaoGlobal, int quantidadeElementos, int grausLiberdadeGlobal)
+        {
+            vetoresDeslocamentoERotacaoGlobal = new List<double[]>();
+
+            for (int i = 0; i < quantidadeElementos; i++) 
+            {
+                int comecoNo = i * 3;
+                int count = 0;
+                double[] vetorResultante = new double[6];
+
+                for (int j = comecoNo; j < grausLiberdadeGlobal; j++)
+                {
+                    vetorResultante[count] = vetorDeslocamentoERotacaoGlobal[j];
+                    Console.WriteLine(vetorResultante[count]);
+                    count++;
+                    if (count == 6) break;
+                }
+                vetoresDeslocamentoERotacaoGlobal.Add(vetorResultante);
+            }
+        }
+
         //MATRIZ INVERSA
         public static double[,] invert(double[,] matriz)
         {
@@ -597,7 +622,7 @@ namespace Grelha_MEF
 
             double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
-            vetorDeslocamentoERotacaoGlobal = multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL");
+            defineVetoresDeslocamentoERotacaoGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
         }
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
