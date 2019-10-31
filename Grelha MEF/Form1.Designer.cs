@@ -1233,7 +1233,6 @@
             this.textBoxForcaNo2.Name = "textBoxForcaNo2";
             this.textBoxForcaNo2.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo2.TabIndex = 30;
-            this.textBoxForcaNo2.Text = "-2";
             this.textBoxForcaNo2.EnabledChanged += new System.EventHandler(this.textBoxForcaNo2_EnabledChanged);
             // 
             // checkedListBoxNo2Z
@@ -1334,6 +1333,7 @@
             this.textBoxForcaNo1.Name = "textBoxForcaNo1";
             this.textBoxForcaNo1.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo1.TabIndex = 27;
+            this.textBoxForcaNo1.Text = "-2";
             this.textBoxForcaNo1.EnabledChanged += new System.EventHandler(this.textBoxForcaNo1_EnabledChanged);
             // 
             // checkedListBoxNo1Z
