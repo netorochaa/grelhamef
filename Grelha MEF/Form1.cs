@@ -13,28 +13,6 @@ namespace Grelha_MEF
 {
     public partial class Form1 : Form
     {   
-        //Matriz de rigidez local
-        //elemento 1
-        public static double[,] rigidezLocalElemento1 = new double[6, 6] 
-            {  
-                {11, 12, 13, 14, 15, 16},
-                {21, 22, 23, 24, 25, 26},
-                {31, 32, 33, 34, 35, 36},
-                {41, 42, 43, 44, 45, 46},
-                {51, 52, 53, 54, 55, 56},
-                {61, 62, 63, 64, 65, 66}
-            };
-        //elemento 2
-        public static double[,] rigidezLocalElemento2 = new double[6, 6] 
-            {  
-                {11, 12, 13, 14, 15, 16},
-                {21, 22, 23, 24, 25, 26},
-                {31, 32, 33, 34, 35, 36},
-                {41, 42, 43, 44, 45, 46},
-                {51, 52, 53, 54, 55, 56},
-                {61, 62, 63, 64, 65, 66}
-            };
-
         //Graus de liberdade (associando local a global)
         //no 1
         public static int[] sistemaGlobalGrausLiberdadeNo1 = new int[] { 1, 2, 3 };
@@ -71,40 +49,35 @@ namespace Grelha_MEF
         //Cria matriz local do elemento 2
         double[,] matrizLocalSistemaGlobalElemeto2 = new double[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
-        //Matriz global dos elementos
-        static double[,] matrizGlobalEstrutura;
 
-        //Vetor de deslocamento e rotação global
-        //static double[] vetorDeslocamentoERotacaoGlobal;
-  
-        //Elementos em matrizes globais
-        static List<double[,]> elementosNaMatrizGlobal;
+        static List<double[,]> matrizesLocaisElementos;
 
-        
-        static List<double[]> vetoresDeslocamentoERotacaoGlobal;
+        static List<double[,]> matrizesGlobaisElementosEspalhamento;
 
-        //Sistemas locais
+        static List<double[,]> matrizesRotPorAnguloDoElem;
+
+        static List<double[]> vetoresDeslocGiroGlobalElem;
+
+        static List<double[]> vetoresEsforcosInternosElem;
+
         static List<int[]> elementosLocais;
-        //Associação com elementos e nós
+
         static int[] grausLiberdadeLocal = new int[6]{1, 2, 3, 4, 5, 6};
 
-        //Graus de liberdade
         static int grausLiberdadeGlobal;
-        //quantidadeElementos
+
         static int quantidadeElementos;
-        
-        //Vetor das cargas externas
-        public static double[] vetorCargasExternas;
+
+        static double[,] matrizGlobalEstrutura;
+
+        static double[] vetorCargasExternas;
 
         public Form1()
         {
             InitializeComponent();
-
-            //double[,] matrizInversaDaEstrutura = invert(matrizEstruturaComCondicoesDeContorno); 
-            //double[] vetorDeslocamentoERotacaoGlobal = multiplicacaoMatrizComVetor(matrizInversaDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL");
         }
 
-        public void inicializaVetores(int gl, int qtdEle)
+        public void inicializaVetoresElementosLocais(int gl, int qtdEle)
         {
             elementosLocais = new List<int[]>();
 
@@ -127,8 +100,10 @@ namespace Grelha_MEF
         public void inicializaMatrizGlobalEstrutura(int grausLiberdadeGlobal, int quantidadeElementos)
         {
             matrizGlobalEstrutura = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
+            matrizesRotPorAnguloDoElem = new List<double[,]>();
 
-            elementosNaMatrizGlobal = new List<double[,]>();
+            matrizesLocaisElementos = new List<double[,]>();
+            matrizesGlobaisElementosEspalhamento = new List<double[,]>();
 
             for (int i = 1; i <= quantidadeElementos; i++)
             {
@@ -137,32 +112,102 @@ namespace Grelha_MEF
                 Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
                 TextBox comprimento = textbox[0] as TextBox;
 
-                elementosNaMatrizGlobal.Add(espalhamentoMatrizRigidezGlobalNoSistemaGlobal(
-                                                multiplicacaoMatrizes(
-                                                    multiplicacaoMatrizes(
-                                                        defineMatrizRotacaoPeloAnguloInversa(Convert.ToInt32(angulo.Text)), calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text), String.Empty
-                                                    ),
-                                                    inicializaMatrizRotacao(Convert.ToInt32(angulo.Text)), String.Empty
-                                                ), grausLiberdadeGlobal, elementosLocais[i-1], String.Empty
-                                            ));
+                matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
+
+                matrizesGlobaisElementosEspalhamento.Add(espalhamentoMatrizRigidezGlobalNoSistemaGlobal(
+                                                            multiplicacaoMatrizes(
+                                                                multiplicacaoMatrizes(
+                                                                    inicializaMatrizRotacaoInversa(Convert.ToInt32(angulo.Text)), matrizesLocaisElementos[i - 1], String.Empty
+                                                                ),
+                                                                inicializaMatrizRotacao(Convert.ToInt32(angulo.Text)), String.Empty
+                                                            ), grausLiberdadeGlobal, elementosLocais[i - 1], String.Empty
+                                                         ));
             }
 
-            matrizGlobalEstrutura = calculaMatrizGlobalDosElementos(elementosNaMatrizGlobal, grausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
+            matrizGlobalEstrutura = calculaMatrizGlobalDosElementos(matrizesGlobaisElementosEspalhamento, grausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
         }
 
-        //Espalhamento da matriz de rigidez global no sistema global
-        public double[,] espalhamentoMatrizRigidezGlobalNoSistemaGlobal(double[,] matrizGlobalDoElemento, int quantidadeGrausLiberdadeGlobal, int[] localElemento, string nome)
+        public void inicializaVetorCargasExternas(int tamanhoVetor, int quantidadeNos)
+        {
+            vetorCargasExternas = new double[tamanhoVetor];
+
+            Console.WriteLine("\r\n VETOR DE CARGAS EXTERNAS \r\n");
+
+            for (int i = 1; i <= quantidadeNos; i++)
+            {
+                Control[] control = this.Controls.Find("textBoxForcaNo" + i.ToString(), true);
+                TextBox textbox = control[0] as TextBox;
+
+                if (textbox.Enabled && !String.IsNullOrEmpty(textbox.Text.Trim()))
+                {
+                    vetorCargasExternas[(i - 1) * quantidadeNos] = double.Parse(textbox.Text);
+                }
+            }
+
+            for (int i2 = 0; i2 < vetorCargasExternas.Length; i2++)
+                Console.WriteLine("Indice [" + (i2 + 1) + "]" + vetorCargasExternas[i2]);
+        }
+
+        public double[,] inicializaMatrizRotacao(int x)
+        {
+            double[,] matrizRotacao = new double[6, 6]
+                {
+                    {1, 0, 0, 0, 0, 0},
+                    {0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0), 0, 0, 0},
+                    {0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0), 0, 0, 0},
+                    {0, 0, 0, 1, 0, 0},
+                    {0, 0, 0, 0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0)},
+                    {0, 0, 0, 0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0)}
+                };
+
+            matrizesRotPorAnguloDoElem.Add(matrizRotacao);
+
+            return matrizRotacao;
+        }
+        
+        public double[,] inicializaMatrizRotacaoInversa(int x)
+        {
+            //Matriz de rotação para o ângulo 0
+            double[,] matrizRotacaoAngulo0Inversa = new double[6, 6] 
+                {  
+                    {1, 0, 0, 0, 0, 0},
+                    {0, 1, 0, 0, 0, 0},
+                    {0, 0, 1, 0, 0, 0},
+                    {0, 0, 0, 1, 0, 0},
+                    {0, 0, 0, 0, 1, 0},
+                    {0, 0, 0, 0, 0, 1}
+                };
+            //Matriz de rotação para o ângulo 90
+            double[,] matrizRotacaoAngulo90Inversa = new double[6, 6] 
+                {  
+                    {1, 0, 0, 0, 0, 0},
+                    {0, 0, -1, 0, 0, 0},
+                    {0, 1, 0, 0, 0, 0},
+                    {0, 0, 0, 1, 0, 0},
+                    {0, 0, 0, 0, 0, -1},
+                    {0, 0, 0, 0, 1, 0}
+                };
+            
+            double[,] matrizResultante;
+            
+            if (x == 90) matrizResultante = matrizRotacaoAngulo90Inversa;
+            else matrizResultante = matrizRotacaoAngulo0Inversa;
+            
+            return matrizResultante;
+        }
+
+        public double[,] espalhamentoMatrizRigidezGlobalNoSistemaGlobal(double[,] matrizGlobalDoElemento, int grausLiberdadeGlobal, int[] localElemento, string nome)
         {
             int countI = 0;
-            double[,] matrizResultante = new double[quantidadeGrausLiberdadeGlobal,quantidadeGrausLiberdadeGlobal];
+            double[,] matrizResultante = new double[grausLiberdadeGlobal,grausLiberdadeGlobal];
 
             //Console.WriteLine("\r\n" + nome + "\r\n");
 
-            for (int i = 0; i < quantidadeGrausLiberdadeGlobal; i++)
+            for (int i = 0; i < grausLiberdadeGlobal; i++)
             {
                 int countJ = 0;
 
-                for (int j = 0; j < quantidadeGrausLiberdadeGlobal; j++)
+                for (int j = 0; j < grausLiberdadeGlobal; j++)
                 {
                     //percorre elementos
                     if (!localElemento[j].Equals(0) && !localElemento[i].Equals(0))
@@ -183,10 +228,9 @@ namespace Grelha_MEF
             return matrizResultante;
         }
 
-        //MATRIZ GLOBAL DOS ELEMENTOS
-        public double[,] calculaMatrizGlobalDosElementos(List<double[,]> elementosNaMatrizGlobal, int quantidadeGrausLiberdadeGlobal, string nome)
+        public double[,] calculaMatrizGlobalDosElementos(List<double[,]> elementosNaMatrizGlobal, int grausLiberdadeGlobal, string nome)
         {
-            double[,] matrizResultante = new double[quantidadeGrausLiberdadeGlobal, quantidadeGrausLiberdadeGlobal];
+            double[,] matrizResultante = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
 
             for (int h = 0; h < elementosNaMatrizGlobal.Count; h++)
             {
@@ -195,9 +239,9 @@ namespace Grelha_MEF
                     matrizResultante = elementosNaMatrizGlobal[h];
                     continue;
                 }
-                for (int i = 0; i < quantidadeGrausLiberdadeGlobal; i++)
+                for (int i = 0; i < grausLiberdadeGlobal; i++)
                 {
-                    for (int j = 0; j < quantidadeGrausLiberdadeGlobal; j++)
+                    for (int j = 0; j < grausLiberdadeGlobal; j++)
                     {
                         //percorre elementos
                         if (!double.IsNaN(elementosNaMatrizGlobal[h][i, j]) && !double.IsNaN(matrizResultante[i, j]))
@@ -222,91 +266,7 @@ namespace Grelha_MEF
             return matrizResultante;
         }
 
-        //ALGORITMO DE MULTIPLICAÇÃO DE MATRIZES
-        public double[,] multiplicacaoMatrizes(double[,] matrizA, double[,] matrizB, string nome)
-        {
-            double valorCelula = 0;
-            int quantidadeCelulas = (matrizA.Length + matrizB.Length)/2;
-            int tamDimensao = (matrizA.GetLength(0) + matrizA.GetLength(1)) / 2;
-            int celula = 0;
-            int i = 0;
-            int cont = 0;            
-
-            double[,] matrizResultante = new double[tamDimensao, tamDimensao];
-
-            //Console.WriteLine("\r\n" + nome + "\r\n");
-
-            for (int j = 0; j < quantidadeCelulas; j++)
-            {
-                valorCelula += matrizA[i, j] * matrizB[j, cont];
-                //Console.WriteLine(matrizA[i, j] + " * " + matrizB[j, cont]);
-
-                celula++;
-
-                if (celula.Equals(tamDimensao) || celula.Equals(tamDimensao * 2) || celula.Equals(tamDimensao * 3) ||
-                   celula.Equals(tamDimensao * 4) || celula.Equals(tamDimensao * 5))
-                {
-                    matrizResultante[i, cont] = valorCelula;
-                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
-
-                    j = -1;
-                    cont++;
-                    valorCelula = 0;
-                }
-                else if (celula.Equals(tamDimensao * 6) && i < tamDimensao-1)
-                {
-                    matrizResultante[i, cont] = valorCelula;
-                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
-
-                    i++;
-                    cont = 0;
-                    j = -1;
-                    celula = 0;
-                    valorCelula = 0;
-                }
-                else if (i.Equals(tamDimensao - 1) && celula.Equals(tamDimensao * 6))
-                {
-                    matrizResultante[i, cont] = valorCelula;
-                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
-                    break;
-                }
-
-            }
-            valorCelula = 0;
-
-            return matrizResultante;
-
-        }
-
-        //ALGORITMO DE MULTIPLICAÇÃO DE MATRIZES
-        public double[] multiplicacaoMatrizComVetor(double[,] matriz, double[] vetor, string nome)
-        {
-            double valorCelula = 0;
-            int quantidadeCelulas = matriz.Length;
-            int tamDimensao = matriz.GetLength(1);
-
-            double[] vetorResultante = new double[tamDimensao];
-
-            Console.WriteLine("\r\n" + nome + "\r\n");
-
-            for (int i = 0; i < tamDimensao; i++)
-            {
-                for (int j = 0; j < tamDimensao; j++)
-                {
-                    valorCelula += matriz[i, j] * vetor[j];
-                    //Console.WriteLine(matriz[i, j] + " * " + vetor[j]);
-                }
-                Console.WriteLine("Índice [" + (i + 1) + "] " + valorCelula);
-                vetorResultante[i] = valorCelula;
-                valorCelula = 0;
-            }
-
-            return vetorResultante;
-
-        }
-
-        //MATRIZ DE RIGIDEZ EM COORDENADAS LOCAIS | double b, double h, double moduloYoung, double coeficientePoisson, double comprimentoBarra**
-        public double[,] calculaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraDoElemento)
+        public double[,] calculaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraElem)
         {
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ".";
@@ -316,7 +276,7 @@ namespace Grelha_MEF
             double h = double.Parse(textBoxH.Text, provider);
             double moduloYoung = double.Parse(textBoxModuloYoung.Text, provider) * Math.Pow(10, 9);
             double coeficientePoisson = double.Parse(textBoxCoeficientePoisson.Text, provider);
-            double comprimentoBarra = double.Parse(comprimentoBarraDoElemento, provider);
+            double comprimentoBarra = double.Parse(comprimentoBarraElem, provider);
 
             //Calculando Separadamente
             //momento inércia
@@ -358,49 +318,6 @@ namespace Grelha_MEF
                 };
 
             return matrizRigidezElementoEmCoordenadasLocais;
-        }
-
-        //MATRIZ DE ROTAÇÃO
-        public double[,] inicializaMatrizRotacao(int x)
-        {
-            double[,] matrizRotacao = new double[6, 6]
-                {
-                    {1, 0, 0, 0, 0, 0},
-                    {0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0), 0, 0, 0},
-                    {0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0), 0, 0, 0},
-                    {0, 0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, Math.Round(Math.Cos(x), 0), Math.Round(Math.Sin(x), 0)},
-                    {0, 0, 0, 0, Math.Round(-Math.Sin(x), 0), Math.Round(Math.Cos(x), 0)}
-                };
-
-            return matrizRotacao;
-        }
-
-        //MATRIZ DE ROTAÇÃO INVERSA
-        public double[,] defineMatrizRotacaoPeloAnguloInversa(int x)
-        {
-            //Matriz de rotação para o ângulo 0
-            double[,] matrizRotacaoAngulo0Inversa = new double[6, 6] 
-                {  
-                    {1, 0, 0, 0, 0, 0},
-                    {0, 1, 0, 0, 0, 0},
-                    {0, 0, 1, 0, 0, 0},
-                    {0, 0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, 1, 0},
-                    {0, 0, 0, 0, 0, 1}
-                };
-            //Matriz de rotação para o ângulo 90
-            double[,] matrizRotacaoAngulo90Inversa = new double[6, 6] 
-                {  
-                    {1, 0, 0, 0, 0, 0},
-                    {0, 0, -1, 0, 0, 0},
-                    {0, 1, 0, 0, 0, 0},
-                    {0, 0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, 0, -1},
-                    {0, 0, 0, 0, 1, 0}
-                };
-
-            return x == 90 ? matrizRotacaoAngulo90Inversa : matrizRotacaoAngulo0Inversa;
         }
         
         //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
@@ -465,52 +382,123 @@ namespace Grelha_MEF
             return checkedListBox.GetItemChecked(1);
         }
 
-        //INICIALIZA VETOR DE CARGAS EXTERNAS
-        public void inicializaVetorCargasExternas(int tamanhoVetor, int quantidadeNos)
+        public void defineVetoresDeslocRotGlobalPeloNo(double[] vetorDeslocamentoERotacaoGlobal, int quantidadeElementos, int grausLiberdadeGlobal)
         {
-            vetorCargasExternas = new double[tamanhoVetor];
-
-            for (int i = 1; i <= quantidadeNos; i++)
-            {
-                Control[] control = this.Controls.Find("textBoxForcaNo" + i.ToString(), true);
-                TextBox textbox = control[0] as TextBox;
-
-                if (textbox.Enabled && !String.IsNullOrEmpty(textbox.Text.Trim()))
-                {
-                    vetorCargasExternas[(i - 1) * quantidadeNos] = double.Parse(textbox.Text);
-                }
-            }
-
-            for (int i2 = 0; i2 < vetorCargasExternas.Length; i2++)
-                Console.WriteLine("\r\nIndice [" + (i2 + 1) + "]" + vetorCargasExternas[i2]);
-        }
-
-        public void defineVetoresDeslocamentoERotacaoGlobalPeloNo(double[] vetorDeslocamentoERotacaoGlobal, int quantidadeElementos, int grausLiberdadeGlobal)
-        {
-            vetoresDeslocamentoERotacaoGlobal = new List<double[]>();
+            vetoresDeslocGiroGlobalElem = new List<double[]>();
 
             for (int i = 0; i < quantidadeElementos; i++) 
             {
                 int comecoNo = i * 3;
                 int count = 0;
-                double[] vetorResultante = new double[6];
+                double[] vetorResultante = new double[grausLiberdadeLocal.Length];
 
                 for (int j = comecoNo; j < grausLiberdadeGlobal; j++)
                 {
                     vetorResultante[count] = vetorDeslocamentoERotacaoGlobal[j];
-                    Console.WriteLine(vetorResultante[count]);
+                    //Console.WriteLine(vetorResultante[count]);
                     count++;
-                    if (count == 6) break;
+                    if (count == grausLiberdadeLocal.Length) break;
                 }
-                vetoresDeslocamentoERotacaoGlobal.Add(vetorResultante);
+                vetoresDeslocGiroGlobalElem.Add(vetorResultante);
             }
+        }
+
+        public void aplicandoDeslocamentosLocaisElementos(int quantidadeElementos)
+        {
+            for(int i = 0; i < quantidadeElementos; i++)
+                vetoresDeslocGiroGlobalElem[i] = multiplicacaoMatrizComVetor(matrizesRotPorAnguloDoElem[i], vetoresDeslocGiroGlobalElem[i], "DESLOCAMENTOS E GIROS - LOCAIS - ELEMENTO: " + (i+1));
+        }
+
+        public void aplicandoDeslocamentosInternosElementos(int quantidadeElementos)
+        {
+            vetoresEsforcosInternosElem = new List<double[]>();
+            for (int i = 0; i < quantidadeElementos; i++)
+                vetoresEsforcosInternosElem.Add(multiplicacaoMatrizComVetor(matrizesLocaisElementos[i], vetoresDeslocGiroGlobalElem[i], "ESFORÇOS INTERNOS - ELEMENTO: " + (i+1)));
+        }
+
+        public double[,] multiplicacaoMatrizes(double[,] matrizA, double[,] matrizB, string nome)
+        {
+            double valorCelula = 0;
+            int quantidadeCelulas = (matrizA.Length + matrizB.Length) / 2;
+            int tamDimensao = (matrizA.GetLength(0) + matrizA.GetLength(1)) / 2;
+            int celula = 0;
+            int i = 0;
+            int cont = 0;
+
+            double[,] matrizResultante = new double[tamDimensao, tamDimensao];
+
+            //Console.WriteLine("\r\n" + nome + "\r\n");
+
+            for (int j = 0; j < quantidadeCelulas; j++)
+            {
+                valorCelula += matrizA[i, j] * matrizB[j, cont];
+                //Console.WriteLine(matrizA[i, j] + " * " + matrizB[j, cont]);
+
+                celula++;
+
+                if (celula.Equals(tamDimensao) || celula.Equals(tamDimensao * 2) || celula.Equals(tamDimensao * 3) ||
+                   celula.Equals(tamDimensao * 4) || celula.Equals(tamDimensao * 5))
+                {
+                    matrizResultante[i, cont] = valorCelula;
+                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
+
+                    j = -1;
+                    cont++;
+                    valorCelula = 0;
+                }
+                else if (celula.Equals(tamDimensao * grausLiberdadeLocal.Length) && i < tamDimensao - 1)
+                {
+                    matrizResultante[i, cont] = valorCelula;
+                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
+
+                    i++;
+                    cont = 0;
+                    j = -1;
+                    celula = 0;
+                    valorCelula = 0;
+                }
+                else if (i.Equals(tamDimensao - 1) && celula.Equals(tamDimensao * grausLiberdadeLocal.Length))
+                {
+                    matrizResultante[i, cont] = valorCelula;
+                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
+                    break;
+                }
+
+            }
+            valorCelula = 0;
+
+            return matrizResultante;
+
+        }
+
+        public double[] multiplicacaoMatrizComVetor(double[,] matriz, double[] vetor, string nome)
+        {
+            double valorCelula = 0;
+            int tamDimensao = vetor.Length;
+
+            double[] vetorResultante = new double[tamDimensao];
+
+            Console.WriteLine("\r\n" + nome + "\r\n");
+
+            for (int i = 0; i < tamDimensao; i++)
+            {
+                for (int j = 0; j < tamDimensao; j++)
+                {
+                    valorCelula += matriz[i, j] * vetor[j];
+                    //Console.WriteLine(matriz[i, j] + " * " + vetor[j]);
+                }
+                Console.WriteLine("Índice [" + (i + 1) + "] " + valorCelula);
+                vetorResultante[i] = valorCelula;
+                valorCelula = 0;
+            }
+
+            return vetorResultante;
+
         }
 
         //MATRIZ INVERSA
         public static double[,] invert(double[,] matriz)
         {
-            Console.WriteLine("matrizEstruturaComCondicoesDeContornoInversa");
-
             double[,] originalMatrix = matriz;
             double[,] cofator = new double[matriz.GetLength(0), matriz.GetLength(1)];
             double[,] adjunta = new double[matriz.GetLength(1), matriz.GetLength(0)];
@@ -526,16 +514,6 @@ namespace Grelha_MEF
             }
             adjunta = GerarTransposta(cofator);
             resultado = multiplicarPorNumeroQualquer(adjunta, 1 / gerarDeterminante(originalMatrix));
-
-            //for (int i = 0; i <= matriz.GetLength(0); i++)
-            //{
-            //    Console.Write("[");
-            //    for (int j = 0; j <= matriz.GetLength(1); j++)
-            //    {
-            //        Console.Write(resultado[i, j] + " ,");
-            //    }
-            //    Console.WriteLine("]");
-            //}
 
             return resultado;
         }
@@ -617,12 +595,14 @@ namespace Grelha_MEF
             grausLiberdadeGlobal = Convert.ToInt32(textBoxQuantidadeNos.Text) * 3;
             quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
-            inicializaVetores(grausLiberdadeGlobal, quantidadeElementos);
+            inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
 
             double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
-            defineVetoresDeslocamentoERotacaoGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E ROTAÇÃO GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
+            defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
+            aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
+            aplicandoDeslocamentosInternosElementos(quantidadeElementos);
         }
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
