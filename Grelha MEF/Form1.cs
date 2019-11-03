@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Grelha_MEF
 {
@@ -60,6 +61,12 @@ namespace Grelha_MEF
 
         static List<double[]> vetoresEsforcosInternosElem;
 
+        static List<double[]> elementosGraficos;
+
+        static List<double[]> pointsGraficoBase;
+
+        static List<double[]> pointsGraficoPorElementos;
+
         static List<int[]> elementosLocais;
 
         static int[] grausLiberdadeLocal = new int[6]{1, 2, 3, 4, 5, 6};
@@ -102,6 +109,7 @@ namespace Grelha_MEF
             matrizGlobalEstrutura = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
             matrizesRotPorAnguloDoElem = new List<double[,]>();
 
+            elementosGraficos = new List<double[]>();
             matrizesLocaisElementos = new List<double[,]>();
             matrizesGlobaisElementosEspalhamento = new List<double[,]>();
 
@@ -111,6 +119,8 @@ namespace Grelha_MEF
                 ComboBox angulo = combobox[0] as ComboBox;
                 Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
                 TextBox comprimento = textbox[0] as TextBox;
+
+                elementosGraficos.Add(new double[] {double.Parse(comprimento.Text), Convert.ToInt32(angulo.Text)});
 
                 matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
 
@@ -164,7 +174,7 @@ namespace Grelha_MEF
 
             return matrizRotacao;
         }
-        
+
         public double[,] inicializaMatrizRotacaoInversa(int x)
         {
             //Matriz de rotação para o ângulo 0
@@ -588,7 +598,101 @@ namespace Grelha_MEF
 
             return resultado;
         }
-        
+
+        public void definiGraficoBase()
+        {
+            chart1.Series.RemoveAt(0);
+            int indexVetor = 0;
+
+            for (int h = 1; h <= quantidadeElementos; h++)
+            {
+                string indexSeries = "Series";
+                indexSeries = string.Concat(indexSeries, h);
+
+                chart1.Series.Add(indexSeries);
+                chart1.Series[indexSeries].IsValueShownAsLabel = false;
+                chart1.Series[indexSeries].IsVisibleInLegend = false;
+                chart1.Series[indexSeries].ChartType = SeriesChartType.Spline;
+                chart1.ChartAreas[0].AxisY.Maximum = quantidadeElementos*2;
+                chart1.ChartAreas[0].AxisX.Maximum = quantidadeElementos*2;
+                //chart1.Series["Series" + h].IsXValueIndexed = true;
+                //chart1.Legends.Add(new Legend());
+                //chart1.Legends[h - 1].Name = "Elemento" + h;
+                //chart1.Series["Series" + h].Legend = chart1.Legends[h - 1].Name;
+
+                indexVetor = h - 1;
+                chart1.Series["Series" + h].Points.AddXY(1, 0);
+                Console.WriteLine(indexSeries + " [" + 1 + "]" + 0);
+
+                int ultimoPoint = chart1.Series[indexSeries].Points.Count - 1;
+                double ultimoValor = chart1.Series[indexSeries].Points[ultimoPoint].YValues[0];
+
+                if (elementosGraficos[indexVetor][1].Equals(90) && indexVetor != 0)
+                {
+                    chart1.Series[indexSeries].Points.AddXY(indexVetor, 1 * 2);
+                    Console.WriteLine(indexSeries + " [" + indexVetor + "]" + 1 * 2);
+                }
+                else if (elementosGraficos[indexVetor][1].Equals(90) && indexVetor == 0)
+                {
+                    chart1.Series[indexSeries].Points.AddXY(2, 2);
+                    Console.WriteLine(indexSeries + " [" + 2 + "]" + 1 * 2);
+                }
+                else
+                {
+                    chart1.Series["Series" + (indexVetor + 1)].Points.AddXY(indexVetor + 1, 0);
+                    Console.WriteLine("Series" + (indexVetor + 1) + " [" + (indexVetor + 1) + "]" + 0);
+                }
+            }
+        }
+
+        public void populaGrafico()
+        {
+            int indexSeries = chart1.Series.Count;
+            int indexVetor = 0;
+
+            for (int h = 0; h < 1; h++)
+            {
+                //DEC
+                for (int i = 0; i <= 3; i++)
+                {
+                    if (i % 3 == 0 && i <= 3)
+                    {
+                        indexSeries++;
+
+                        chart1.Series.Add("Series" + indexSeries);
+                        //chart1.Series["Series" + h].IsXValueIndexed = true;
+                        chart1.Series["Series" + indexSeries].IsValueShownAsLabel = false;
+                        chart1.Series["Series" + indexSeries].IsVisibleInLegend = false;
+                        //chart1.Legends.Add(new Legend());
+                        //chart1.Legends[h - 1].Name = "Elemento" + h;
+                        //chart1.Series["Series" + h].Legend = chart1.Legends[h - 1].Name;
+                        chart1.Series["Series" + indexSeries].ChartType = SeriesChartType.Line;
+
+                        double[] valor = vetoresEsforcosInternosElem[h];
+
+                        if (valor[i] > 0.0 && i < 3)
+                        {
+                            chart1.Series["Series" + indexSeries].Points.AddXY(1, 0);
+                            chart1.Series["Series" + indexSeries].Points.AddXY(2, 2);
+                            chart1.Series["Series" + indexSeries].Points.AddXY(2, 2.5);
+                            indexVetor++;
+                        }
+                        else if(valor[i] < 0.0 && i < 3)
+                        {
+                            chart1.Series["Series" + indexSeries].Points.AddXY(1, 0);
+                            chart1.Series["Series" + indexSeries].Points.AddXY(2, 2);
+                            chart1.Series["Series" + indexSeries].Points.AddXY(2, 1.5);
+                            indexVetor++;
+                        }
+                        //chart1.Series["Series" + indexSeries].Points.AddXY(1, 0);
+                        //chart1.Series["Series" + indexSeries].Points.AddXY(2, 1 * 2);
+                    }
+                    Console.WriteLine(chart1.Series["Series" + indexSeries].Points[2].YValues[0]);
+                    
+                }
+            }
+        }
+
         //EVENTOS
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
@@ -598,11 +702,15 @@ namespace Grelha_MEF
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
 
+            definiGraficoBase();
+            /*
             double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
             defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
             aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
             aplicandoDeslocamentosInternosElementos(quantidadeElementos);
+             * */
+            //populaGrafico();
         }
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
