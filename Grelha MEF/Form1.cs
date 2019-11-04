@@ -506,7 +506,8 @@ namespace Grelha_MEF
 
         }
 
-        //MATRIZ INVERSA
+        
+        /* MATRIZ INVERSA
         public static double[,] invert(double[,] matriz)
         {
             double[,] originalMatrix = matriz;
@@ -598,7 +599,48 @@ namespace Grelha_MEF
 
             return resultado;
         }
+        * */
 
+        public double[,] invert(double[,] matriz)
+        {
+            double pivo = 0, p = 0, m = 0;
+
+            double[,] matrizAuxiliar = new double[matriz.GetLength(0), matriz.GetLength(1)];
+            double[,] matrizIdentidade = inicializaMatrizRotacaoInversa(0);
+
+
+            for (int h = 0; h < matriz.GetLength(0); h++)
+            {
+                pivo = matriz[h, h];
+                p = pivo/pivo;
+
+                for (int i = 0; i < matriz.GetLength(1); i++)
+                {
+                    matrizAuxiliar[h, i] = matrizAuxiliar[h, i] / pivo;
+                    matrizIdentidade[h, i] = matrizIdentidade[h, i] / pivo;
+                }
+
+                for (int j = 0; j < matrizAuxiliar.GetLength(0); j++)
+                {
+                    if (j != h)
+                    {
+                        m = matrizAuxiliar[j, h] / p;
+
+                        for (int k = 0; k < matrizAuxiliar.GetLength(0); k++)
+                        {
+                            matrizAuxiliar[j, k] = matrizAuxiliar[j, k] - (m * matrizAuxiliar[h, k]);
+                            matrizIdentidade[j, k] = matrizIdentidade[j, k] - (m * matrizIdentidade[h, k]);
+                            Console.WriteLine("Indice ["+j+"]["+k+"]: " + matrizIdentidade[j, k]);
+                        }
+                    }
+                }
+            }
+
+
+            return matrizIdentidade;
+        }
+
+        
         public void definiGraficoBase()
         {
             chart1.Series.RemoveAt(0);
@@ -703,8 +745,9 @@ namespace Grelha_MEF
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
 
             definiGraficoBase();
-            /*
+            
             double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+            /*
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
             defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
             aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
