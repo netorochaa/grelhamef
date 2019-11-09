@@ -265,11 +265,12 @@ namespace Grelha_MEF
                     }
                 }
             }
+
             //for (int i = 0; i < matrizResultante.GetLength(0); i++)
             //{
             //    for (int j = 0; j < matrizResultante.GetLength(1); j++)
             //    {
-            //        Console.WriteLine("Indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+            //        Console.WriteLine("indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
             //    }
             //}
 
@@ -359,13 +360,13 @@ namespace Grelha_MEF
                 }
             }
 
-            //for (int i = 0; i < matrizResultante.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < matrizResultante.GetLength(1); j++)
-            //    {
-            //        Console.WriteLine("indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
-            //    }
-            //}
+            for (int i = 0; i < matrizResultante.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrizResultante.GetLength(1); j++)
+                {
+                    Console.WriteLine("indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
+                }
+            }
 
             //inicializaVetorCargasExternas(matrizResultante.GetLength(1));
 
@@ -543,6 +544,7 @@ namespace Grelha_MEF
                         continue;
 
                     result[j, u] = originalArray[i, k];
+                    //Console.WriteLine("Result [" + (j + 1) + "," + (u + 1) + "] " + result[j, u]);
                     u++;
                 }
                 j++;
@@ -559,6 +561,7 @@ namespace Grelha_MEF
                 for (int y = 0; y < matrizTransposta.GetLength(1); y++)
                 {
                     matrizTransposta[x, y] += matriz[y, x];
+
                 }
             }
             return matrizTransposta;
@@ -594,53 +597,74 @@ namespace Grelha_MEF
             for (int i = 0; i < parametro.GetLength(1); i++)
             {
                 matriz = TrimArray(0, i, parametro);
+                //Console.WriteLine("Resultado " + resultado + parametro[0, i] * (double)Math.Pow(-1, 0 + i) * gerarDeterminante(matriz));
                 resultado += parametro[0, i] * (double)Math.Pow(-1, 0 + i) * gerarDeterminante(matriz);
             }
 
             return resultado;
         }
-        * */
-
+        **/
+        
+        
         public double[,] invert(double[,] matriz)
         {
+            double[,] matrizResultante = eliminacaoGaussianaPivoteamento(matriz);
+
+            for (int i = 0; i < matriz.GetLength(0); ++i)
+                for (int j = 0; j < matriz.GetLength(1); ++j)
+                    Console.WriteLine("Índice [" + (i + 1) + "," + (j + 1) + "] " + matriz[i, j]);
+
+            return matrizResultante;
+        }
+
+        public double[,] eliminacaoGaussianaPivoteamento(double[,] matriz) 
+        {
+            double[,] matrizResultante = new double[matriz.GetLength(0), matriz.GetLength(1)];
+            double[,] matrizIdentidade = new double[matriz.GetLength(0), matriz.GetLength(1)];
             double pivo = 0, p = 0, m = 0;
 
-            double[,] matrizAuxiliar = new double[matriz.GetLength(0), matriz.GetLength(1)];
-            double[,] matrizIdentidade = inicializaMatrizRotacaoInversa(0);
-
-
-            for (int h = 0; h < matriz.GetLength(0); h++)
+            //Definindo matriz identidade
+            for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                pivo = matriz[h, h];
-                p = pivo/pivo;
-
-                for (int i = 0; i < matriz.GetLength(1); i++)
+                for (int j = 0; j < matriz.GetLength(1); j++)
                 {
-                    matrizAuxiliar[h, i] = matrizAuxiliar[h, i] / pivo;
-                    matrizIdentidade[h, i] = matrizIdentidade[h, i] / pivo;
-                }
-
-                for (int j = 0; j < matrizAuxiliar.GetLength(0); j++)
-                {
-                    if (j != h)
-                    {
-                        m = matrizAuxiliar[j, h] / p;
-
-                        for (int k = 0; k < matrizAuxiliar.GetLength(0); k++)
-                        {
-                            matrizAuxiliar[j, k] = matrizAuxiliar[j, k] - (m * matrizAuxiliar[h, k]);
-                            matrizIdentidade[j, k] = matrizIdentidade[j, k] - (m * matrizIdentidade[h, k]);
-                            Console.WriteLine("Indice ["+j+"]["+k+"]: " + matrizIdentidade[j, k]);
-                        }
-                    }
+                    if (i == j) matrizIdentidade[i, j] = 1;
+                    else matrizIdentidade[i, j] = 0;
                 }
             }
 
+            //Calculando matriz
+            for (int j = 0; j < matriz.GetLength(0); j++)
+            {
+                pivo = matriz[j, j];
+                p = pivo / pivo;
 
-            return matrizIdentidade;
+                for (int k = j; k < matriz.GetLength(1); k++)
+                {
+                    matrizResultante[j, k] = matriz[j, k] / pivo;
+                    matrizIdentidade[j, k] = matrizIdentidade[j, k] / pivo;
+                }
+
+                //for (int i = 0; i < matriz.GetLength(0); i++)
+                //{
+                //    if (i != j)
+                //    {
+                //        m = matrizResultante[i, j] / p;
+
+                //        for (int k = 0; k < matriz.GetLength(1); k++)
+                //        {
+                //            matrizResultante[i, k] = matrizResultante[i, k] - (m * matrizResultante[i, k]);
+                //            matrizIdentidade[i, k] = matrizIdentidade[i, k] - (m * matrizIdentidade[i, k]);
+                //        }
+                //    }
+                //}
+                
+            }
+
+            return matrizResultante;
         }
-
         
+
         public void definiGraficoBase()
         {
             chart1.Series.RemoveAt(0);
@@ -743,10 +767,14 @@ namespace Grelha_MEF
 
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
+            //defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal);
 
-            definiGraficoBase();
+            //definiGraficoBase();
             
             double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+            for (int i = 0; i < matrizInversaGlobalDaEstrutura.GetLength(0); ++i)
+                for (int j = 0; j < matrizInversaGlobalDaEstrutura.GetLength(1); ++j)
+                    Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
             /*
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
             defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
