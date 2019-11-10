@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -1418,41 +1418,44 @@
             // 
             // chart1
             // 
-            chartArea2.AxisX.Interval = 0.5D;
-            chartArea2.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea2.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.IsMarginVisible = false;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.LabelAutoFitMaxFontSize = 15;
-            chartArea2.AxisX.LabelAutoFitMinFontSize = 10;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.AxisX.MajorGrid.Interval = 0D;
-            chartArea2.AxisX.MajorGrid.IntervalOffset = 0D;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.AxisX.MaximumAutoSize = 100F;
-            chartArea2.AxisX.MinorGrid.Enabled = true;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.AxisX.MinorTickMark.Enabled = true;
-            chartArea2.AxisX.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea2.AxisY.MaximumAutoSize = 100F;
-            chartArea2.AxisY.MinorGrid.Enabled = true;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.AxisY.MinorTickMark.Enabled = true;
-            chartArea2.AxisY.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.Interval = 0.5D;
+            chartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.IsStartedFromZero = false;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 15;
+            chartArea1.AxisX.LabelAutoFitMinFontSize = 10;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.AxisX.MajorGrid.Interval = 0D;
+            chartArea1.AxisX.MajorGrid.IntervalOffset = 0D;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.AxisX.MaximumAutoSize = 100F;
+            chartArea1.AxisX.MinorGrid.Enabled = true;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.AxisX.MinorTickMark.Enabled = true;
+            chartArea1.AxisX.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
+            chartArea1.AxisY.Interval = 0.5D;
+            chartArea1.AxisY.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisY.MaximumAutoSize = 100F;
+            chartArea1.AxisY.MinorGrid.Enabled = true;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.AxisY.MinorTickMark.Enabled = true;
+            chartArea1.AxisY.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(652, 13);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.IsVisibleInLegend = false;
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsVisibleInLegend = false;
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(571, 435);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";
