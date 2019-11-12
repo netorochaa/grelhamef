@@ -771,8 +771,8 @@ namespace Grelha_MEF
                     {
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
-                            chart1.Series[indexSeries].Points.AddXY(0, ultimoValorY-1);
-                            Console.WriteLine(indexSeries + " [" + 0 + "] Y: " + (ultimoValorY-1));
+                            chart1.Series[indexSeries].Points.AddXY(ultimoValorX+1, ultimoValorY+1);
+                            Console.WriteLine(indexSeries + " [" + (ultimoValorX+1) + "] Y: " + (ultimoValorY +1));
                         }
                         else
                         {
@@ -783,8 +783,8 @@ namespace Grelha_MEF
                             }
                             else
                             {
-                                chart1.Series[indexSeries].Points.AddXY(1, ultimoValorY);
-                                Console.WriteLine(indexSeries + " [" + 1 + "] X: " + 1);
+                                chart1.Series[indexSeries].Points.AddXY(ultimoValorX+1, 0);
+                                Console.WriteLine(indexSeries + " [" + 1 + "] X: " + (ultimoValorX + 1));
                             }
                         }
                     }
