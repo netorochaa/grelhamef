@@ -86,7 +86,7 @@
             this.textBoxComprimentoE9 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBoxElemento10 = new System.Windows.Forms.GroupBox();
-            this.comboBoxComprimentoE10 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAnguloE10 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.textBoxComprimentoE10 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -731,7 +731,7 @@
             // 
             // groupBoxElemento10
             // 
-            this.groupBoxElemento10.Controls.Add(this.comboBoxComprimentoE10);
+            this.groupBoxElemento10.Controls.Add(this.comboBoxAnguloE10);
             this.groupBoxElemento10.Controls.Add(this.label25);
             this.groupBoxElemento10.Controls.Add(this.textBoxComprimentoE10);
             this.groupBoxElemento10.Controls.Add(this.label26);
@@ -743,17 +743,17 @@
             this.groupBoxElemento10.Text = "Elemento 10";
             this.groupBoxElemento10.Visible = false;
             // 
-            // comboBoxComprimentoE10
+            // comboBoxAnguloE10
             // 
-            this.comboBoxComprimentoE10.FormattingEnabled = true;
-            this.comboBoxComprimentoE10.Items.AddRange(new object[] {
+            this.comboBoxAnguloE10.FormattingEnabled = true;
+            this.comboBoxAnguloE10.Items.AddRange(new object[] {
             "90",
             "0"});
-            this.comboBoxComprimentoE10.Location = new System.Drawing.Point(119, 31);
-            this.comboBoxComprimentoE10.Name = "comboBoxComprimentoE10";
-            this.comboBoxComprimentoE10.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxComprimentoE10.TabIndex = 11;
-            this.comboBoxComprimentoE10.Text = "90";
+            this.comboBoxAnguloE10.Location = new System.Drawing.Point(119, 31);
+            this.comboBoxAnguloE10.Name = "comboBoxAnguloE10";
+            this.comboBoxAnguloE10.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxAnguloE10.TabIndex = 11;
+            this.comboBoxAnguloE10.Text = "90";
             // 
             // label25
             // 
@@ -1447,16 +1447,17 @@
             chartArea1.AxisY.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(652, 13);
+            this.chart1.Location = new System.Drawing.Point(457, 12);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.IsVisibleInLegend = false;
             series1.Name = "Series1";
             series1.YValuesPerPoint = 4;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(571, 435);
+            this.chart1.Size = new System.Drawing.Size(724, 680);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";
             // 
@@ -1464,7 +1465,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 478);
+            this.ClientSize = new System.Drawing.Size(1601, 895);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBoxNo6);
@@ -1594,7 +1595,7 @@
         private System.Windows.Forms.TextBox textBoxComprimentoE9;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBoxElemento10;
-        private System.Windows.Forms.ComboBox comboBoxComprimentoE10;
+        private System.Windows.Forms.ComboBox comboBoxAnguloE10;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBoxComprimentoE10;
         private System.Windows.Forms.Label label26;
