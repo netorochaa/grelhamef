@@ -231,7 +231,7 @@
             // textBoxB
             // 
             this.textBoxB.Location = new System.Drawing.Point(21, 37);
-            this.textBoxB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxB.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(132, 22);
             this.textBoxB.TabIndex = 1;
@@ -250,7 +250,7 @@
             // textBoxH
             // 
             this.textBoxH.Location = new System.Drawing.Point(175, 37);
-            this.textBoxH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxH.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxH.Name = "textBoxH";
             this.textBoxH.Size = new System.Drawing.Size(132, 22);
             this.textBoxH.TabIndex = 3;
@@ -269,7 +269,7 @@
             // textBoxModuloYoung
             // 
             this.textBoxModuloYoung.Location = new System.Drawing.Point(325, 37);
-            this.textBoxModuloYoung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxModuloYoung.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModuloYoung.Name = "textBoxModuloYoung";
             this.textBoxModuloYoung.Size = new System.Drawing.Size(132, 22);
             this.textBoxModuloYoung.TabIndex = 5;
@@ -288,7 +288,7 @@
             // textBoxCoeficientePoisson
             // 
             this.textBoxCoeficientePoisson.Location = new System.Drawing.Point(473, 37);
-            this.textBoxCoeficientePoisson.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCoeficientePoisson.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCoeficientePoisson.Name = "textBoxCoeficientePoisson";
             this.textBoxCoeficientePoisson.Size = new System.Drawing.Size(116, 22);
             this.textBoxCoeficientePoisson.TabIndex = 7;
@@ -307,7 +307,7 @@
             // textBoxComprimentoE1
             // 
             this.textBoxComprimentoE1.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE1.Name = "textBoxComprimentoE1";
             this.textBoxComprimentoE1.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE1.TabIndex = 9;
@@ -316,7 +316,7 @@
             // buttonCalculaMatrizRigidezElementoEmCoordenadasLocais
             // 
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Location = new System.Drawing.Point(606, 29);
-            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Name = "buttonCalculaMatrizRigidezElementoEmCoordenadasLocais";
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Size = new System.Drawing.Size(100, 73);
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.TabIndex = 10;
@@ -331,9 +331,9 @@
             this.groupBoxElemento1.Controls.Add(this.textBoxComprimentoE1);
             this.groupBoxElemento1.Controls.Add(this.label5);
             this.groupBoxElemento1.Location = new System.Drawing.Point(16, 117);
-            this.groupBoxElemento1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento1.Name = "groupBoxElemento1";
-            this.groupBoxElemento1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento1.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento1.TabIndex = 13;
             this.groupBoxElemento1.TabStop = false;
@@ -347,7 +347,7 @@
             this.comboBoxAnguloE1.Items.AddRange(new object[] {
             "90"});
             this.comboBoxAnguloE1.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE1.Name = "comboBoxAnguloE1";
             this.comboBoxAnguloE1.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE1.TabIndex = 11;
@@ -371,7 +371,7 @@
             0,
             0});
             this.numericUpDownQuantidadeElementos.Location = new System.Drawing.Point(175, 81);
-            this.numericUpDownQuantidadeElementos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownQuantidadeElementos.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownQuantidadeElementos.Maximum = new decimal(new int[] {
             10,
             0,
@@ -400,9 +400,9 @@
             this.groupBoxElemento2.Controls.Add(this.textBoxComprimentoE2);
             this.groupBoxElemento2.Controls.Add(this.label10);
             this.groupBoxElemento2.Location = new System.Drawing.Point(16, 198);
-            this.groupBoxElemento2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento2.Name = "groupBoxElemento2";
-            this.groupBoxElemento2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento2.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento2.TabIndex = 16;
             this.groupBoxElemento2.TabStop = false;
@@ -416,7 +416,7 @@
             this.comboBoxAnguloE2.Items.AddRange(new object[] {
             "0"});
             this.comboBoxAnguloE2.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE2.Name = "comboBoxAnguloE2";
             this.comboBoxAnguloE2.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE2.TabIndex = 11;
@@ -435,7 +435,7 @@
             // textBoxComprimentoE2
             // 
             this.textBoxComprimentoE2.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE2.Name = "textBoxComprimentoE2";
             this.textBoxComprimentoE2.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE2.TabIndex = 9;
@@ -458,9 +458,9 @@
             this.groupBoxElemento3.Controls.Add(this.textBoxComprimentoE3);
             this.groupBoxElemento3.Controls.Add(this.label12);
             this.groupBoxElemento3.Location = new System.Drawing.Point(16, 279);
-            this.groupBoxElemento3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento3.Name = "groupBoxElemento3";
-            this.groupBoxElemento3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento3.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento3.TabIndex = 17;
             this.groupBoxElemento3.TabStop = false;
@@ -474,7 +474,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE3.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE3.Name = "comboBoxAnguloE3";
             this.comboBoxAnguloE3.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE3.TabIndex = 11;
@@ -493,7 +493,7 @@
             // textBoxComprimentoE3
             // 
             this.textBoxComprimentoE3.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE3.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE3.Name = "textBoxComprimentoE3";
             this.textBoxComprimentoE3.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE3.TabIndex = 9;
@@ -515,9 +515,9 @@
             this.groupBoxElemento4.Controls.Add(this.textBoxComprimentoE4);
             this.groupBoxElemento4.Controls.Add(this.label14);
             this.groupBoxElemento4.Location = new System.Drawing.Point(16, 361);
-            this.groupBoxElemento4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento4.Name = "groupBoxElemento4";
-            this.groupBoxElemento4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento4.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento4.TabIndex = 18;
             this.groupBoxElemento4.TabStop = false;
@@ -531,7 +531,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE4.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE4.Name = "comboBoxAnguloE4";
             this.comboBoxAnguloE4.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE4.TabIndex = 11;
@@ -550,7 +550,7 @@
             // textBoxComprimentoE4
             // 
             this.textBoxComprimentoE4.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE4.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE4.Name = "textBoxComprimentoE4";
             this.textBoxComprimentoE4.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE4.TabIndex = 9;
@@ -572,9 +572,9 @@
             this.groupBoxElemento5.Controls.Add(this.textBoxComprimentoE5);
             this.groupBoxElemento5.Controls.Add(this.label16);
             this.groupBoxElemento5.Location = new System.Drawing.Point(16, 442);
-            this.groupBoxElemento5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento5.Name = "groupBoxElemento5";
-            this.groupBoxElemento5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento5.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento5.TabIndex = 19;
             this.groupBoxElemento5.TabStop = false;
@@ -588,7 +588,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE5.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE5.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE5.Name = "comboBoxAnguloE5";
             this.comboBoxAnguloE5.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE5.TabIndex = 11;
@@ -607,7 +607,7 @@
             // textBoxComprimentoE5
             // 
             this.textBoxComprimentoE5.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE5.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE5.Name = "textBoxComprimentoE5";
             this.textBoxComprimentoE5.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE5.TabIndex = 9;
@@ -629,9 +629,9 @@
             this.groupBoxElemento6.Controls.Add(this.textBoxComprimentoE6);
             this.groupBoxElemento6.Controls.Add(this.label18);
             this.groupBoxElemento6.Location = new System.Drawing.Point(16, 523);
-            this.groupBoxElemento6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento6.Name = "groupBoxElemento6";
-            this.groupBoxElemento6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento6.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento6.TabIndex = 20;
             this.groupBoxElemento6.TabStop = false;
@@ -645,7 +645,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE6.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE6.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE6.Name = "comboBoxAnguloE6";
             this.comboBoxAnguloE6.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE6.TabIndex = 11;
@@ -664,7 +664,7 @@
             // textBoxComprimentoE6
             // 
             this.textBoxComprimentoE6.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE6.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE6.Name = "textBoxComprimentoE6";
             this.textBoxComprimentoE6.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE6.TabIndex = 9;
@@ -686,9 +686,9 @@
             this.groupBoxElemento7.Controls.Add(this.textBoxComprimentoE7);
             this.groupBoxElemento7.Controls.Add(this.label20);
             this.groupBoxElemento7.Location = new System.Drawing.Point(16, 604);
-            this.groupBoxElemento7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento7.Name = "groupBoxElemento7";
-            this.groupBoxElemento7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento7.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento7.TabIndex = 21;
             this.groupBoxElemento7.TabStop = false;
@@ -702,7 +702,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE7.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE7.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE7.Name = "comboBoxAnguloE7";
             this.comboBoxAnguloE7.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE7.TabIndex = 11;
@@ -721,7 +721,7 @@
             // textBoxComprimentoE7
             // 
             this.textBoxComprimentoE7.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE7.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE7.Name = "textBoxComprimentoE7";
             this.textBoxComprimentoE7.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE7.TabIndex = 9;
@@ -743,9 +743,9 @@
             this.groupBoxElemento8.Controls.Add(this.textBoxComprimentoE8);
             this.groupBoxElemento8.Controls.Add(this.label22);
             this.groupBoxElemento8.Location = new System.Drawing.Point(16, 686);
-            this.groupBoxElemento8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento8.Name = "groupBoxElemento8";
-            this.groupBoxElemento8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento8.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento8.TabIndex = 22;
             this.groupBoxElemento8.TabStop = false;
@@ -759,7 +759,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE8.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE8.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE8.Name = "comboBoxAnguloE8";
             this.comboBoxAnguloE8.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE8.TabIndex = 11;
@@ -778,7 +778,7 @@
             // textBoxComprimentoE8
             // 
             this.textBoxComprimentoE8.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE8.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE8.Name = "textBoxComprimentoE8";
             this.textBoxComprimentoE8.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE8.TabIndex = 9;
@@ -800,9 +800,9 @@
             this.groupBoxElemento9.Controls.Add(this.textBoxComprimentoE9);
             this.groupBoxElemento9.Controls.Add(this.label24);
             this.groupBoxElemento9.Location = new System.Drawing.Point(16, 767);
-            this.groupBoxElemento9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento9.Name = "groupBoxElemento9";
-            this.groupBoxElemento9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento9.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento9.TabIndex = 23;
             this.groupBoxElemento9.TabStop = false;
@@ -816,7 +816,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE9.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE9.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE9.Name = "comboBoxAnguloE9";
             this.comboBoxAnguloE9.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE9.TabIndex = 11;
@@ -835,7 +835,7 @@
             // textBoxComprimentoE9
             // 
             this.textBoxComprimentoE9.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE9.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE9.Name = "textBoxComprimentoE9";
             this.textBoxComprimentoE9.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE9.TabIndex = 9;
@@ -857,9 +857,9 @@
             this.groupBoxElemento10.Controls.Add(this.textBoxComprimentoE10);
             this.groupBoxElemento10.Controls.Add(this.label26);
             this.groupBoxElemento10.Location = new System.Drawing.Point(16, 838);
-            this.groupBoxElemento10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento10.Name = "groupBoxElemento10";
-            this.groupBoxElemento10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxElemento10.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxElemento10.Size = new System.Drawing.Size(307, 74);
             this.groupBoxElemento10.TabIndex = 24;
             this.groupBoxElemento10.TabStop = false;
@@ -873,7 +873,7 @@
             "90",
             "0"});
             this.comboBoxAnguloE10.Location = new System.Drawing.Point(159, 38);
-            this.comboBoxAnguloE10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAnguloE10.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAnguloE10.Name = "comboBoxAnguloE10";
             this.comboBoxAnguloE10.Size = new System.Drawing.Size(132, 24);
             this.comboBoxAnguloE10.TabIndex = 11;
@@ -892,7 +892,7 @@
             // textBoxComprimentoE10
             // 
             this.textBoxComprimentoE10.Location = new System.Drawing.Point(12, 39);
-            this.textBoxComprimentoE10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxComprimentoE10.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxComprimentoE10.Name = "textBoxComprimentoE10";
             this.textBoxComprimentoE10.Size = new System.Drawing.Size(132, 22);
             this.textBoxComprimentoE10.TabIndex = 9;
@@ -921,7 +921,7 @@
             // textBoxQuantidadeNos
             // 
             this.textBoxQuantidadeNos.Location = new System.Drawing.Point(473, 81);
-            this.textBoxQuantidadeNos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxQuantidadeNos.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxQuantidadeNos.Name = "textBoxQuantidadeNos";
             this.textBoxQuantidadeNos.ReadOnly = true;
             this.textBoxQuantidadeNos.Size = new System.Drawing.Size(116, 22);
@@ -940,9 +940,9 @@
             this.groupBoxNo6.Controls.Add(this.label43);
             this.groupBoxNo6.Controls.Add(this.label44);
             this.groupBoxNo6.Location = new System.Drawing.Point(331, 811);
-            this.groupBoxNo6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo6.Name = "groupBoxNo6";
-            this.groupBoxNo6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo6.Size = new System.Drawing.Size(260, 127);
             this.groupBoxNo6.TabIndex = 32;
             this.groupBoxNo6.TabStop = false;
@@ -962,7 +962,7 @@
             // textBoxForcaNo6
             // 
             this.textBoxForcaNo6.Location = new System.Drawing.Point(103, 92);
-            this.textBoxForcaNo6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo6.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo6.Name = "textBoxForcaNo6";
             this.textBoxForcaNo6.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo6.TabIndex = 30;
@@ -976,7 +976,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo6Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo6Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo6Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo6Z.Name = "checkedListBoxNo6Z";
             this.checkedListBoxNo6Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo6Z.TabIndex = 25;
@@ -990,7 +990,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo6Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo6Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo6Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo6Y.Name = "checkedListBoxNo6Y";
             this.checkedListBoxNo6Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo6Y.TabIndex = 24;
@@ -1004,7 +1004,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo6X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo6X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo6X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo6X.Name = "checkedListBoxNo6X";
             this.checkedListBoxNo6X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo6X.TabIndex = 23;
@@ -1051,9 +1051,9 @@
             this.groupBoxNo5.Controls.Add(this.label40);
             this.groupBoxNo5.Controls.Add(this.label41);
             this.groupBoxNo5.Location = new System.Drawing.Point(331, 677);
-            this.groupBoxNo5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo5.Name = "groupBoxNo5";
-            this.groupBoxNo5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo5.Size = new System.Drawing.Size(260, 127);
             this.groupBoxNo5.TabIndex = 31;
             this.groupBoxNo5.TabStop = false;
@@ -1073,7 +1073,7 @@
             // textBoxForcaNo5
             // 
             this.textBoxForcaNo5.Location = new System.Drawing.Point(103, 92);
-            this.textBoxForcaNo5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo5.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo5.Name = "textBoxForcaNo5";
             this.textBoxForcaNo5.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo5.TabIndex = 30;
@@ -1087,7 +1087,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo5Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo5Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo5Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo5Z.Name = "checkedListBoxNo5Z";
             this.checkedListBoxNo5Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo5Z.TabIndex = 25;
@@ -1101,7 +1101,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo5Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo5Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo5Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo5Y.Name = "checkedListBoxNo5Y";
             this.checkedListBoxNo5Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo5Y.TabIndex = 24;
@@ -1115,7 +1115,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo5X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo5X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo5X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo5X.Name = "checkedListBoxNo5X";
             this.checkedListBoxNo5X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo5X.TabIndex = 23;
@@ -1162,9 +1162,9 @@
             this.groupBoxNo4.Controls.Add(this.label37);
             this.groupBoxNo4.Controls.Add(this.label38);
             this.groupBoxNo4.Location = new System.Drawing.Point(333, 537);
-            this.groupBoxNo4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo4.Name = "groupBoxNo4";
-            this.groupBoxNo4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo4.Size = new System.Drawing.Size(260, 133);
             this.groupBoxNo4.TabIndex = 30;
             this.groupBoxNo4.TabStop = false;
@@ -1184,7 +1184,7 @@
             // textBoxForcaNo4
             // 
             this.textBoxForcaNo4.Location = new System.Drawing.Point(103, 94);
-            this.textBoxForcaNo4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo4.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo4.Name = "textBoxForcaNo4";
             this.textBoxForcaNo4.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo4.TabIndex = 30;
@@ -1198,7 +1198,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo4Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo4Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo4Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo4Z.Name = "checkedListBoxNo4Z";
             this.checkedListBoxNo4Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo4Z.TabIndex = 25;
@@ -1212,7 +1212,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo4Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo4Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo4Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo4Y.Name = "checkedListBoxNo4Y";
             this.checkedListBoxNo4Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo4Y.TabIndex = 24;
@@ -1226,7 +1226,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo4X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo4X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo4X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo4X.Name = "checkedListBoxNo4X";
             this.checkedListBoxNo4X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo4X.TabIndex = 23;
@@ -1273,9 +1273,9 @@
             this.groupBoxNo3.Controls.Add(this.label34);
             this.groupBoxNo3.Controls.Add(this.label35);
             this.groupBoxNo3.Location = new System.Drawing.Point(333, 396);
-            this.groupBoxNo3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo3.Name = "groupBoxNo3";
-            this.groupBoxNo3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo3.Size = new System.Drawing.Size(260, 133);
             this.groupBoxNo3.TabIndex = 29;
             this.groupBoxNo3.TabStop = false;
@@ -1294,7 +1294,7 @@
             // textBoxForcaNo3
             // 
             this.textBoxForcaNo3.Location = new System.Drawing.Point(103, 94);
-            this.textBoxForcaNo3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo3.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo3.Name = "textBoxForcaNo3";
             this.textBoxForcaNo3.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo3.TabIndex = 30;
@@ -1308,9 +1308,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo3Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo3Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo3Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo3Z.Name = "checkedListBoxNo3Z";
-            this.checkedListBoxNo3Z.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo3Z.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo3Z.TabIndex = 25;
             this.checkedListBoxNo3Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3Z_SelectedIndexChanged);
             // 
@@ -1322,9 +1322,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo3Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo3Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo3Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo3Y.Name = "checkedListBoxNo3Y";
-            this.checkedListBoxNo3Y.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo3Y.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo3Y.TabIndex = 24;
             this.checkedListBoxNo3Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3Y_SelectedIndexChanged);
             // 
@@ -1336,9 +1336,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo3X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo3X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo3X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo3X.Name = "checkedListBoxNo3X";
-            this.checkedListBoxNo3X.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo3X.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo3X.TabIndex = 23;
             this.checkedListBoxNo3X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo3X_SelectedIndexChanged);
             // 
@@ -1383,9 +1383,9 @@
             this.groupBoxNo2.Controls.Add(this.label31);
             this.groupBoxNo2.Controls.Add(this.label32);
             this.groupBoxNo2.Location = new System.Drawing.Point(331, 260);
-            this.groupBoxNo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo2.Name = "groupBoxNo2";
-            this.groupBoxNo2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo2.Size = new System.Drawing.Size(260, 135);
             this.groupBoxNo2.TabIndex = 28;
             this.groupBoxNo2.TabStop = false;
@@ -1404,7 +1404,7 @@
             // textBoxForcaNo2
             // 
             this.textBoxForcaNo2.Location = new System.Drawing.Point(103, 97);
-            this.textBoxForcaNo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo2.Name = "textBoxForcaNo2";
             this.textBoxForcaNo2.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo2.TabIndex = 30;
@@ -1418,9 +1418,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo2Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo2Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo2Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo2Z.Name = "checkedListBoxNo2Z";
-            this.checkedListBoxNo2Z.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo2Z.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo2Z.TabIndex = 25;
             this.checkedListBoxNo2Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2Z_SelectedIndexChanged);
             // 
@@ -1432,9 +1432,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo2Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo2Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo2Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo2Y.Name = "checkedListBoxNo2Y";
-            this.checkedListBoxNo2Y.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo2Y.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo2Y.TabIndex = 24;
             this.checkedListBoxNo2Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2Y_SelectedIndexChanged);
             // 
@@ -1446,9 +1446,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo2X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo2X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo2X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo2X.Name = "checkedListBoxNo2X";
-            this.checkedListBoxNo2X.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo2X.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo2X.TabIndex = 23;
             this.checkedListBoxNo2X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo2X_SelectedIndexChanged);
             // 
@@ -1493,9 +1493,9 @@
             this.groupBoxNo1.Controls.Add(this.label27);
             this.groupBoxNo1.Controls.Add(this.label28);
             this.groupBoxNo1.Location = new System.Drawing.Point(331, 117);
-            this.groupBoxNo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo1.Name = "groupBoxNo1";
-            this.groupBoxNo1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo1.Size = new System.Drawing.Size(260, 135);
             this.groupBoxNo1.TabIndex = 27;
             this.groupBoxNo1.TabStop = false;
@@ -1514,7 +1514,7 @@
             // textBoxForcaNo1
             // 
             this.textBoxForcaNo1.Location = new System.Drawing.Point(103, 97);
-            this.textBoxForcaNo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxForcaNo1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxForcaNo1.Name = "textBoxForcaNo1";
             this.textBoxForcaNo1.Size = new System.Drawing.Size(148, 22);
             this.textBoxForcaNo1.TabIndex = 27;
@@ -1529,9 +1529,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo1Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo1Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo1Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo1Z.Name = "checkedListBoxNo1Z";
-            this.checkedListBoxNo1Z.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo1Z.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo1Z.TabIndex = 25;
             this.checkedListBoxNo1Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1Z_SelectedIndexChanged);
             // 
@@ -1543,9 +1543,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo1Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo1Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo1Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo1Y.Name = "checkedListBoxNo1Y";
-            this.checkedListBoxNo1Y.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo1Y.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo1Y.TabIndex = 24;
             this.checkedListBoxNo1Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1Y_SelectedIndexChanged);
             // 
@@ -1557,9 +1557,9 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo1X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo1X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo1X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo1X.Name = "checkedListBoxNo1X";
-            this.checkedListBoxNo1X.Size = new System.Drawing.Size(57, 38);
+            this.checkedListBoxNo1X.Size = new System.Drawing.Size(57, 55);
             this.checkedListBoxNo1X.TabIndex = 23;
             this.checkedListBoxNo1X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo1X_SelectedIndexChanged);
             // 
@@ -1635,7 +1635,7 @@
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(867, 11);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.BorderWidth = 5;
@@ -1660,9 +1660,9 @@
             this.groupBoxNo11.Controls.Add(this.label53);
             this.groupBoxNo11.Controls.Add(this.label54);
             this.groupBoxNo11.Location = new System.Drawing.Point(599, 677);
-            this.groupBoxNo11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo11.Name = "groupBoxNo11";
-            this.groupBoxNo11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo11.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo11.Size = new System.Drawing.Size(260, 127);
             this.groupBoxNo11.TabIndex = 39;
             this.groupBoxNo11.TabStop = false;
@@ -1682,7 +1682,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(103, 92);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 22);
             this.textBox1.TabIndex = 30;
@@ -1695,7 +1695,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo11Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo11Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo11Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo11Z.Name = "checkedListBoxNo11Z";
             this.checkedListBoxNo11Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo11Z.TabIndex = 25;
@@ -1708,7 +1708,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo11Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo11Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo11Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo11Y.Name = "checkedListBoxNo11Y";
             this.checkedListBoxNo11Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo11Y.TabIndex = 24;
@@ -1721,7 +1721,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo11X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo11X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo11X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo11X.Name = "checkedListBoxNo11X";
             this.checkedListBoxNo11X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo11X.TabIndex = 23;
@@ -1767,9 +1767,9 @@
             this.groupBoxNo10.Controls.Add(this.label57);
             this.groupBoxNo10.Controls.Add(this.label58);
             this.groupBoxNo10.Location = new System.Drawing.Point(601, 537);
-            this.groupBoxNo10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo10.Name = "groupBoxNo10";
-            this.groupBoxNo10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo10.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo10.Size = new System.Drawing.Size(260, 133);
             this.groupBoxNo10.TabIndex = 38;
             this.groupBoxNo10.TabStop = false;
@@ -1789,7 +1789,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(103, 94);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(148, 22);
             this.textBox2.TabIndex = 30;
@@ -1802,7 +1802,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo10Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo10Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo10Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo10Z.Name = "checkedListBoxNo10Z";
             this.checkedListBoxNo10Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo10Z.TabIndex = 25;
@@ -1815,7 +1815,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo10Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo10Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo10Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo10Y.Name = "checkedListBoxNo10Y";
             this.checkedListBoxNo10Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo10Y.TabIndex = 24;
@@ -1828,7 +1828,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo10X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo10X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo10X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo10X.Name = "checkedListBoxNo10X";
             this.checkedListBoxNo10X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo10X.TabIndex = 23;
@@ -1874,9 +1874,9 @@
             this.groupBoxNo9.Controls.Add(this.label61);
             this.groupBoxNo9.Controls.Add(this.label62);
             this.groupBoxNo9.Location = new System.Drawing.Point(601, 396);
-            this.groupBoxNo9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo9.Name = "groupBoxNo9";
-            this.groupBoxNo9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo9.Size = new System.Drawing.Size(260, 133);
             this.groupBoxNo9.TabIndex = 37;
             this.groupBoxNo9.TabStop = false;
@@ -1896,7 +1896,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(103, 94);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 22);
             this.textBox3.TabIndex = 30;
@@ -1909,7 +1909,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo9Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo9Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo9Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo9Z.Name = "checkedListBoxNo9Z";
             this.checkedListBoxNo9Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo9Z.TabIndex = 25;
@@ -1922,7 +1922,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo9Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo9Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo9Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo9Y.Name = "checkedListBoxNo9Y";
             this.checkedListBoxNo9Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo9Y.TabIndex = 24;
@@ -1935,7 +1935,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo9X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo9X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo9X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo9X.Name = "checkedListBoxNo9X";
             this.checkedListBoxNo9X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo9X.TabIndex = 23;
@@ -1981,9 +1981,9 @@
             this.groupBoxNo8.Controls.Add(this.label65);
             this.groupBoxNo8.Controls.Add(this.label66);
             this.groupBoxNo8.Location = new System.Drawing.Point(599, 260);
-            this.groupBoxNo8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo8.Name = "groupBoxNo8";
-            this.groupBoxNo8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo8.Size = new System.Drawing.Size(260, 135);
             this.groupBoxNo8.TabIndex = 36;
             this.groupBoxNo8.TabStop = false;
@@ -2003,7 +2003,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(103, 97);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(148, 22);
             this.textBox4.TabIndex = 30;
@@ -2016,7 +2016,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo8Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo8Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo8Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo8Z.Name = "checkedListBoxNo8Z";
             this.checkedListBoxNo8Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo8Z.TabIndex = 25;
@@ -2029,7 +2029,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo8Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo8Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo8Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo8Y.Name = "checkedListBoxNo8Y";
             this.checkedListBoxNo8Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo8Y.TabIndex = 24;
@@ -2042,7 +2042,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo8X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo8X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo8X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo8X.Name = "checkedListBoxNo8X";
             this.checkedListBoxNo8X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo8X.TabIndex = 23;
@@ -2088,9 +2088,9 @@
             this.groupBoxNo7.Controls.Add(this.label69);
             this.groupBoxNo7.Controls.Add(this.label70);
             this.groupBoxNo7.Location = new System.Drawing.Point(599, 117);
-            this.groupBoxNo7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNo7.Name = "groupBoxNo7";
-            this.groupBoxNo7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNo7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNo7.Size = new System.Drawing.Size(260, 135);
             this.groupBoxNo7.TabIndex = 35;
             this.groupBoxNo7.TabStop = false;
@@ -2110,7 +2110,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(103, 97);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(148, 22);
             this.textBox5.TabIndex = 27;
@@ -2123,7 +2123,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo7Z.Location = new System.Drawing.Point(193, 39);
-            this.checkedListBoxNo7Z.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo7Z.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo7Z.Name = "checkedListBoxNo7Z";
             this.checkedListBoxNo7Z.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo7Z.TabIndex = 25;
@@ -2136,7 +2136,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo7Y.Location = new System.Drawing.Point(103, 39);
-            this.checkedListBoxNo7Y.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo7Y.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo7Y.Name = "checkedListBoxNo7Y";
             this.checkedListBoxNo7Y.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo7Y.TabIndex = 24;
@@ -2149,7 +2149,7 @@
             "Free",
             "Fix"});
             this.checkedListBoxNo7X.Location = new System.Drawing.Point(8, 39);
-            this.checkedListBoxNo7X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxNo7X.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxNo7X.Name = "checkedListBoxNo7X";
             this.checkedListBoxNo7X.Size = new System.Drawing.Size(57, 38);
             this.checkedListBoxNo7X.TabIndex = 23;
@@ -2224,7 +2224,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxB);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBoxElemento1.ResumeLayout(false);
