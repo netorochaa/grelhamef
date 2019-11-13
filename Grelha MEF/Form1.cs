@@ -61,8 +61,8 @@ namespace Grelha_MEF
 
         static List<double[]> vetoresEsforcosInternosElem;
 
-        static List<double[]> seriesX;
-        static List<double[]> seriesY;
+        static List<double[]> extremidadesX;
+        static List<double[]> extremidadesY;
 
         static List<double[]> elementosGraficoBase;
         static List<double[]> elementosGraficoDEC;
@@ -693,17 +693,17 @@ namespace Grelha_MEF
         {
             chart1.Series.Clear();
 
-            seriesX = new List<double[]>();
-            seriesY = new List<double[]>();
+            extremidadesX = new List<double[]>();
+            extremidadesY = new List<double[]>();
 
             for (int h = 1; h <= quantidadeElementos; h++)
             {
-                tracaGrafico(h, addElementoGrafico());
+                tracaGrafico(h, addElementoGrafico(6));
             }
 
-            //inicializaDEC();
+            inicializaDEC();
         }
-        public string addElementoGrafico()
+        public string addElementoGrafico(int tam)
         {
             string indexSeries = "Series";
             int indexCount = chart1.Series.Count;
@@ -713,7 +713,7 @@ namespace Grelha_MEF
             chart1.Series[indexSeries].IsValueShownAsLabel = false;
             chart1.Series[indexSeries].IsVisibleInLegend = false;
             chart1.Series[indexSeries].ChartType = SeriesChartType.Line;
-            chart1.Series[indexSeries].BorderWidth = 6;
+            chart1.Series[indexSeries].BorderWidth = tam;
             //chart1.Series["Series" + h].IsXValueIndexed = true;
             //chart1.Legends.Add(new Legend());
             //chart1.Legends[h - 1].Name = "Elemento" + h;
@@ -741,13 +741,13 @@ namespace Grelha_MEF
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
                             chart1.Series[indexSeries].Points.AddXY(j, 1);
-                            seriesY.Add(new double[]{j, 1});
+                            extremidadesY.Add(new double[]{j, 1});
                             Console.WriteLine(indexSeries + " [" + j + "] Y: " + 1);
                         }
                         else
                         {
                             chart1.Series[indexSeries].Points.AddXY(1, 0);
-                            seriesY.Add(new double[]{1, 0});
+                            extremidadesY.Add(new double[]{1, 0});
                             Console.WriteLine(indexSeries + " [" + 0 + "] X: " + 1);
                         }
                     }
@@ -774,13 +774,13 @@ namespace Grelha_MEF
                         {
                             if (elementosGraficoBase[indexVetor][1].Equals(90))
                             {
-                                ultimoValorX = seriesY[seriesY.Count - 1][0];
-                                ultimoValorY = seriesY[seriesY.Count - 1][1];
+                                ultimoValorX = extremidadesY[extremidadesY.Count - 1][0];
+                                ultimoValorY = extremidadesY[extremidadesY.Count - 1][1];
                             }
                             else
                             {
-                                ultimoValorX = seriesX[seriesX.Count - 1][0];
-                                ultimoValorY = seriesX[seriesX.Count - 1][1];
+                                ultimoValorX = extremidadesX[extremidadesX.Count - 1][0];
+                                ultimoValorY = extremidadesX[extremidadesX.Count - 1][1];
                             }
 
                             chart1.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
@@ -798,7 +798,7 @@ namespace Grelha_MEF
                             valorXFinal = ultimoValorX+1;
                             
                             chart1.Series[indexSeries].Points.AddXY(valorXFinal, valorFinal);
-                            seriesY.Add(new double[]{valorXFinal, valorFinal});
+                            extremidadesY.Add(new double[]{valorXFinal, valorFinal});
                             Console.WriteLine(indexSeries + " [" + valorXFinal + "] Y: " + valorFinal);
                         }
                         else
@@ -807,7 +807,7 @@ namespace Grelha_MEF
                             if(indexVetor.Equals(1)) valorXFinal = 1;
 
                             chart1.Series[indexSeries].Points.AddXY(valorXFinal, 0);
-                            seriesX.Add(new double[]{valorXFinal, 0});
+                            extremidadesX.Add(new double[]{valorXFinal, 0});
                             Console.WriteLine(indexSeries + " [" + 0 + "] X: " + valorXFinal);
                         }
                     }
@@ -819,7 +819,7 @@ namespace Grelha_MEF
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
-                string indexSeries = addElementoGrafico();
+                string indexSeries = addElementoGrafico(1);
                 int indexVetor = i - 1;
                 int ultimoPoint = chart1.Series["Series" + indexVetor].Points.Count - 1;
                 double ultimoValorY = 0;
@@ -827,73 +827,79 @@ namespace Grelha_MEF
                 bool valorNegativo = false;
                 double angulo = elementosGraficoBase[indexVetor][1];
 
-                //TODO ELEMENTO GRÁFICO COMEÇARÁ DO 0
-                chart1.Series[indexSeries].Points.AddXY(1, 0);
-                Console.WriteLine(indexSeries + " [" + 1 + "] " + 0);
+                double valorDEC = Math.Round(Math.Abs(elementosGraficoDEC[indexVetor][0] / 10), 1);
 
-                //if (elementosGraficoBase[indexVetor][1].Equals(90))
-                //{
-                    ultimoValorY = chart1.Series["Series" + indexVetor].Points[ultimoPoint].YValues[0];
-                    ultimoValorX = chart1.Series["Series" + indexVetor].Points[ultimoPoint].XValue;
-
-                    if (angulo.Equals(90)) chart1.Series[indexSeries].Points.AddXY(2, ultimoValorY);
-                    else chart1.Series[indexSeries].Points.AddXY(ultimoValorX, 0);
-                    Console.WriteLine(indexSeries + " [" + 2 + "] " + ultimoValorY);
-
-                    for (int j = 0; j < elementosGraficoDEC[indexVetor].Length; j++)
+                if (angulo.Equals(90))
+                {
+                    for (int k = 0; k < extremidadesY.Count; k++)
                     {
-                        double valorDEC = Math.Abs(elementosGraficoDEC[indexVetor][j]);
-                        
-                        if (j < 1)
-                        {
-                            double valorPontoFinal = 0;
-                            if (elementosGraficoDEC[indexVetor][j] < 0)
-                            {
-                                valorNegativo = true;
-                                valorPontoFinal = ultimoValorY - valorDEC;
-                            }
-                            else valorPontoFinal = ultimoValorY + valorDEC;
+                        if (elementosGraficoDEC[indexVetor][0] < 0)
+                            valorNegativo = true;
 
-                            if (angulo.Equals(90)) chart1.Series[indexSeries].Points.AddXY(3, valorPontoFinal);
-                            else chart1.Series[indexSeries].Points.AddXY(ultimoValorX, valorPontoFinal); ;
+                        ultimoValorX = extremidadesY[k][0];
+                        ultimoValorY = extremidadesY[k][1];
 
-                            Console.WriteLine(indexSeries + " [" + 3 + "] " + valorPontoFinal);
-                        }
-                        else
-                        {
-                            string indexSeriesAnterior = indexSeries;
-                            indexSeries = addElementoGrafico();
+                        //INICIO DA BARRA INICIAL DEC
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorX - 1, ultimoValorY - 1);
+                        Console.WriteLine(indexSeries + " [" + (ultimoValorX - 1) + "] " + (ultimoValorY - 1));
 
-                            //TODO ELEMENTO GRÁFICO COMEÇARÁ DO 0
-                            chart1.Series[indexSeries].Points.AddXY(1, 0);
-                            Console.WriteLine(indexSeries + " [" + 1 + "] " + 0);
+                        //BARRA INICIAL DEC
+                        double valorX = valorDEC;
+                        double valorY = valorNegativo ? -valorDEC : valorDEC;
 
-                            if (valorNegativo)
-                            {
-                                if (angulo.Equals(90)) chart1.Series[indexSeries].Points.AddXY(2, -valorDEC);
-                                else chart1.Series[indexSeries].Points.AddXY(1, -valorDEC);
+                        chart1.Series[indexSeries].Points.AddXY(valorX, valorY);
+                        Console.WriteLine(indexSeries + " [" + valorX + "] " + valorY);
 
-                                Console.WriteLine(indexSeries + " [" + 2 + "] " + -valorDEC);
-                            }
-                            
-                            int ultimoPointAnterior = chart1.Series[indexSeriesAnterior].Points.Count - 1;
-                            double ultimoValorAnteriorY = chart1.Series[indexSeriesAnterior].Points[ultimoPointAnterior].YValues[0];
-                            double ultimoValorAnteriorX = chart1.Series[indexSeriesAnterior].Points[ultimoPointAnterior].XValue;
+                        //BARRA MAIOR DEC
+                        chart1.Series[indexSeries].Points.AddXY(Math.Round(ultimoValorY + valorDEC, 1), Math.Round(ultimoValorY - valorDEC, 1));
+                        Console.WriteLine(indexSeries + " [" + Math.Round(ultimoValorY + valorDEC, 1) + "] " + Math.Round((ultimoValorY - valorDEC), 1));
 
-
-                            if (angulo.Equals(90)) chart1.Series[indexSeries].Points.AddXY(3, ultimoValorAnteriorY);
-                            else chart1.Series[indexSeries].Points.AddXY(ultimoValorAnteriorX, ultimoValorAnteriorY);
-                            //chart1.Series[indexSeries].Points.AddXY(ultimoValorAnteriorX, ultimoValorAnteriorY);
-                            Console.WriteLine(indexSeries + " [" + ultimoValorAnteriorX + "] " + ultimoValorAnteriorY);
-                        }
+                        //BARRA FECHAMENTO DEC
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                        Console.WriteLine(indexSeries + " [" + ultimoValorY + "] " + (-ultimoValorY));
                     }
+                }
+                else
+                {
+                    for (int k = 0; k < extremidadesX.Count; k++)
+                    {
+                        if (elementosGraficoDEC[indexVetor][0] < 0)
+                            valorNegativo = true;
 
-                //}
-                //else
+                        ultimoValorX = extremidadesX[k][0];
+                        ultimoValorY = extremidadesX[k][1];
+
+                        double ultimoValorXaux = ultimoValorX - 1 < 0 ? 0.0 : ultimoValorX - 1;
+                        double ultimoValorYaux = ultimoValorY - 1 < 0 ? 0.0 : ultimoValorY - 1;
+
+                        //INICIO DA BARRA INICIAL DEC
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorYaux);
+                        Console.WriteLine(indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorYaux);
+
+                        //BARRA INICIAL DEC
+                        double valorX = valorDEC;
+                        double valorY = valorNegativo ? -valorDEC : valorDEC;
+
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
+                        Console.WriteLine(indexSeries + " [" + ultimoValorXaux + "] " + valorY);
+
+                        //BARRA MAIOR DEC
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorX, valorY);
+                        Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + valorY);
+
+                        //BARRA FECHAMENTO DEC
+                        chart1.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                        Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+
+                    }
+                }
+
+                //for (int j = 0; j < elementosGraficoDEC[indexVetor].Length; j++)
                 //{
-                //    ultimoValor = chart1.Series["Series" + indexVetor].Points[ultimoPoint].XValue;
-                //    chart1.Series[indexSeries].Points.AddXY(2, ultimoValor);
-                //    Console.WriteLine(indexSeries + " [" + 2 + "] " + ultimoValor);
+                    
+
+                    
+                //    //EXTREMIDADE INICIAL DE Y SEMPRE SERÁ extremidadesY[j][0] -1 E extremidadesY[j][1] -1
                 //}
             }
         }
@@ -907,16 +913,16 @@ namespace Grelha_MEF
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
             
-            //double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+            double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             //for (int i = 0; i < matrizInversaGlobalDaEstrutura.GetLength(0); ++i)
             //    for (int j = 0; j < matrizInversaGlobalDaEstrutura.GetLength(1); ++j)
-            /*        Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
+            //        Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
             
             inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
             defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
             aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
             aplicandoDeslocamentosInternosElementos(quantidadeElementos);
-            **/
+            
             defineGrafico();
             //populaGrafico();
         }
