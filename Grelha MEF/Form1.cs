@@ -61,6 +61,9 @@ namespace Grelha_MEF
 
         static List<double[]> vetoresEsforcosInternosElem;
 
+        static List<double[]> seriesX;
+        static List<double[]> seriesY;
+
         static List<double[]> elementosGraficoBase;
         static List<double[]> elementosGraficoDEC;
         static List<double[]> elementosGraficoDMF;
@@ -85,6 +88,7 @@ namespace Grelha_MEF
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public void inicializaVetoresElementosLocais(int gl, int qtdEle)
@@ -689,6 +693,9 @@ namespace Grelha_MEF
         {
             chart1.Series.Clear();
 
+            seriesX = new List<double[]>();
+            seriesY = new List<double[]>();
+
             for (int h = 1; h <= quantidadeElementos; h++)
             {
                 tracaGrafico(h, addElementoGrafico());
@@ -734,11 +741,13 @@ namespace Grelha_MEF
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
                             chart1.Series[indexSeries].Points.AddXY(j, 1);
+                            seriesY.Add(new double[]{j, 1});
                             Console.WriteLine(indexSeries + " [" + j + "] Y: " + 1);
                         }
                         else
                         {
                             chart1.Series[indexSeries].Points.AddXY(1, 0);
+                            seriesY.Add(new double[]{1, 0});
                             Console.WriteLine(indexSeries + " [" + 0 + "] X: " + 1);
                         }
                     }
@@ -763,29 +772,43 @@ namespace Grelha_MEF
                         }
                         else
                         {
+                            if (elementosGraficoBase[indexVetor][1].Equals(90))
+                            {
+                                ultimoValorX = seriesY[seriesY.Count - 1][0];
+                                ultimoValorY = seriesY[seriesY.Count - 1][1];
+                            }
+                            else
+                            {
+                                ultimoValorX = seriesX[seriesX.Count - 1][0];
+                                ultimoValorY = seriesX[seriesX.Count - 1][1];
+                            }
+
                             chart1.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                             Console.WriteLine(indexSeries + " [X " + ultimoValorX + "][Y " + ultimoValorY);
                         }
                     }
                     else
                     {
+                        double valorFinal = 0;
+                        double valorXFinal = 0;
+
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
-                            chart1.Series[indexSeries].Points.AddXY(ultimoValorX+1, ultimoValorY+1);
-                            Console.WriteLine(indexSeries + " [" + (ultimoValorX+1) + "] Y: " + (ultimoValorY +1));
+                            valorFinal = ultimoValorY+1;
+                            valorXFinal = ultimoValorX+1;
+                            
+                            chart1.Series[indexSeries].Points.AddXY(valorXFinal, valorFinal);
+                            seriesY.Add(new double[]{valorXFinal, valorFinal});
+                            Console.WriteLine(indexSeries + " [" + valorXFinal + "] Y: " + valorFinal);
                         }
                         else
                         {
-                            if (ultimoIndexSeries.Equals(0))
-                            {
-                                chart1.Series[indexSeries].Points.AddXY(1, 0);
-                                Console.WriteLine(indexSeries + " [Y " + 0 + "] X: " + 1);
-                            }
-                            else
-                            {
-                                chart1.Series[indexSeries].Points.AddXY(ultimoValorX+1, 0);
-                                Console.WriteLine(indexSeries + " [" + 1 + "] X: " + (ultimoValorX + 1));
-                            }
+                            valorXFinal = ultimoValorX + 1;
+                            if(indexVetor.Equals(1)) valorXFinal = 1;
+
+                            chart1.Series[indexSeries].Points.AddXY(valorXFinal, 0);
+                            seriesX.Add(new double[]{valorXFinal, 0});
+                            Console.WriteLine(indexSeries + " [" + 0 + "] X: " + valorXFinal);
                         }
                     }
                 }
@@ -901,31 +924,53 @@ namespace Grelha_MEF
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDownQuantidadeElementos.Value.Equals(2) || numericUpDownQuantidadeElementos.Value > 2)
-            { groupBoxElemento2.Visible = true; groupBoxNo3.Visible = true; }
-            else{ groupBoxElemento2.Visible = false; groupBoxNo3.Visible = false; }
-            if (numericUpDownQuantidadeElementos.Value.Equals(3) || numericUpDownQuantidadeElementos.Value > 3) 
-            { groupBoxElemento3.Visible = true; groupBoxNo4.Visible = true; }
-            else{ groupBoxElemento3.Visible = false; groupBoxNo4.Visible = false; }
+            {
+                groupBoxElemento2.Visible = true; groupBoxNo3.Visible = true; 
+            }
+            else
+            {
+                groupBoxElemento2.Visible = false; groupBoxNo3.Visible = false;
+            }
             if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4) 
-            { groupBoxElemento4.Visible = true; groupBoxNo5.Visible = true; }
-            else{ groupBoxElemento4.Visible = false; groupBoxNo5.Visible = false; }
-            if (numericUpDownQuantidadeElementos.Value.Equals(5) || numericUpDownQuantidadeElementos.Value > 5) 
-            { groupBoxElemento5.Visible = true; groupBoxNo6.Visible = true; }
-            else{ groupBoxElemento5.Visible = false; groupBoxNo6.Visible = false; }
+            {
+                groupBoxElemento3.Visible = true; groupBoxNo4.Visible = true;
+                groupBoxElemento4.Visible = true; groupBoxNo5.Visible = true;
+            }
+            else
+            {
+                groupBoxElemento3.Visible = false; groupBoxNo4.Visible = false;
+                groupBoxElemento4.Visible = false; groupBoxNo5.Visible = false;
+            }
             if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6) 
-                groupBoxElemento6.Visible = true;
-            else groupBoxElemento6.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(7) || numericUpDownQuantidadeElementos.Value > 7) 
-                groupBoxElemento7.Visible = true;
-            else groupBoxElemento7.Visible = false;
+            {
+                groupBoxElemento5.Visible = true; groupBoxNo6.Visible = true;
+                groupBoxElemento6.Visible = true; groupBoxNo7.Visible = true;
+            }
+            else
+            {
+                groupBoxElemento5.Visible = false; groupBoxNo6.Visible = false;
+                groupBoxElemento6.Visible = false; groupBoxNo7.Visible = false;
+            }
             if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8) 
-                groupBoxElemento8.Visible = true;
-            else groupBoxElemento8.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(9) || numericUpDownQuantidadeElementos.Value > 9) 
-                groupBoxElemento9.Visible = true;
-            else groupBoxElemento9.Visible = false;
-            if (numericUpDownQuantidadeElementos.Value.Equals(10)) groupBoxElemento10.Visible = true;
-            else groupBoxElemento10.Visible = false;
+            {
+                groupBoxElemento7.Visible = true; groupBoxNo8.Visible = true;
+                groupBoxElemento8.Visible = true; groupBoxNo9.Visible = true; 
+            }
+            else
+            {
+                groupBoxElemento7.Visible = false; groupBoxNo8.Visible = false;
+                groupBoxElemento8.Visible = false; groupBoxNo9.Visible = false;
+            }
+            if (numericUpDownQuantidadeElementos.Value.Equals(10) || numericUpDownQuantidadeElementos.Value > 10)
+            {
+                groupBoxElemento9.Visible = true; groupBoxNo10.Visible = true;
+                groupBoxElemento10.Visible = true; groupBoxNo11.Visible = true;
+            }
+            else
+            {
+                groupBoxElemento9.Visible = false; groupBoxNo10.Visible = false;
+                groupBoxElemento10.Visible = false; groupBoxNo11.Visible = false;
+            }
 
             textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString() ;
         }
