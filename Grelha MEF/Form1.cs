@@ -13,20 +13,20 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace Grelha_MEF
 {
     public partial class Form1 : Form
-    {   
+    {
         //Graus de liberdade (associando local a global)
         //no 1
         public static int[] sistemaGlobalGrausLiberdadeNo1 = new int[] { 1, 2, 3 };
-        public static int[] sistemaLocalElemento1No1       = new int[] { 1, 2, 3 };
-        public static int[] sistemaLocalElemento2No1       = new int[] { 1, 2, 3 };
+        public static int[] sistemaLocalElemento1No1 = new int[] { 1, 2, 3 };
+        public static int[] sistemaLocalElemento2No1 = new int[] { 1, 2, 3 };
         //no 2
         public static int[] sistemaGlobalGrausLiberdadeNo2 = new int[] { 4, 5, 6 };
-        public static int[] sistemaLocalElemento1No2       = new int[] { 0, 0, 0 };
-        public static int[] sistemaLocalElemento2No2       = new int[] { 4, 5, 6 };
+        public static int[] sistemaLocalElemento1No2 = new int[] { 0, 0, 0 };
+        public static int[] sistemaLocalElemento2No2 = new int[] { 4, 5, 6 };
         //no 3
         public static int[] sistemaGlobalGrausLiberdadeNo3 = new int[] { 7, 8, 9 };
-        public static int[] sistemaLocalElemento1No3       = new int[] { 4, 5, 6 };
-        public static int[] sistemaLocalElemento2No3       = new int[] { 0, 0, 0 };
+        public static int[] sistemaLocalElemento1No3 = new int[] { 4, 5, 6 };
+        public static int[] sistemaLocalElemento2No3 = new int[] { 0, 0, 0 };
         //item 1: graus de liberdade
         //item 2: elemento 1
         //item 3: elemento 2
@@ -36,17 +36,17 @@ namespace Grelha_MEF
 
         //Graus de liberdade total
         public static int quantidadeGrausLiberdadeGlobal = sistemaGlobalGrausLiberdadeNo1.Length + sistemaGlobalGrausLiberdadeNo2.Length + sistemaGlobalGrausLiberdadeNo3.Length;
-        public static int[] vetorGrausLiberdadeGlobal         = new int[quantidadeGrausLiberdadeGlobal];
+        public static int[] vetorGrausLiberdadeGlobal = new int[quantidadeGrausLiberdadeGlobal];
 
         //Vetores totais do elemento 1
         public static int quantidadeLocalElemento1 = sistemaLocalElemento1No1.Length + sistemaLocalElemento1No2.Length + sistemaLocalElemento2No3.Length;
-        public static int[] localElemento1         = new int[quantidadeLocalElemento1];
+        public static int[] localElemento1 = new int[quantidadeLocalElemento1];
         //Cria matriz local do elemento 2
         double[,] matrizLocalSistemaGlobalElemeto1 = new double[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
         //Vetores totais do elemento 2
         public static int quantidadeLocalElemento2 = sistemaLocalElemento2No1.Length + sistemaLocalElemento2No2.Length + sistemaLocalElemento2No3.Length;
-        public static int[] localElemento2         = new int[quantidadeLocalElemento2];
+        public static int[] localElemento2 = new int[quantidadeLocalElemento2];
         //Cria matriz local do elemento 2
         double[,] matrizLocalSistemaGlobalElemeto2 = new double[vetorGrausLiberdadeGlobal.Length, vetorGrausLiberdadeGlobal.Length];
 
@@ -75,7 +75,7 @@ namespace Grelha_MEF
 
         static List<int[]> elementosLocais;
 
-        static int[] grausLiberdadeLocal = new int[6]{1, 2, 3, 4, 5, 6};
+        static int[] grausLiberdadeLocal = new int[6] { 1, 2, 3, 4, 5, 6 };
 
         static int grausLiberdadeGlobal;
 
@@ -88,7 +88,7 @@ namespace Grelha_MEF
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
         public void inicializaVetoresElementosLocais(int gl, int qtdEle)
@@ -98,7 +98,7 @@ namespace Grelha_MEF
             for (int i = 0; i < qtdEle; i++)
             {
                 int[] aux = new int[gl];
-                for (int j = i*3; j < gl; j++)
+                for (int j = i * 3; j < gl; j++)
                 {
                     if (j % 3 == 0)
                     {
@@ -127,7 +127,7 @@ namespace Grelha_MEF
                 Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
                 TextBox comprimento = textbox[0] as TextBox;
 
-                elementosGraficoBase.Add(new double[] {double.Parse(comprimento.Text), Convert.ToInt32(angulo.Text)});
+                elementosGraficoBase.Add(new double[] { double.Parse(comprimento.Text), Convert.ToInt32(angulo.Text)});
 
                 matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
 
@@ -204,19 +204,19 @@ namespace Grelha_MEF
                     {0, 0, 0, 0, 0, -1},
                     {0, 0, 0, 0, 1, 0}
                 };
-            
+
             double[,] matrizResultante;
-            
+
             if (x == 90) matrizResultante = matrizRotacaoAngulo90Inversa;
             else matrizResultante = matrizRotacaoAngulo0Inversa;
-            
+
             return matrizResultante;
         }
 
         public double[,] espalhamentoMatrizRigidezGlobalNoSistemaGlobal(double[,] matrizGlobalDoElemento, int grausLiberdadeGlobal, int[] localElemento, string nome)
         {
             int countI = 0;
-            double[,] matrizResultante = new double[grausLiberdadeGlobal,grausLiberdadeGlobal];
+            double[,] matrizResultante = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
 
             //Console.WriteLine("\r\n" + nome + "\r\n");
 
@@ -337,9 +337,9 @@ namespace Grelha_MEF
 
             return matrizRigidezElementoEmCoordenadasLocais;
         }
-        
+
         //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
-        public double[,] defineMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int quantidadeNos, int grausLiberdadeGlobal) 
+        public double[,] defineMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int quantidadeNos, int grausLiberdadeGlobal)
         {
             double[,] matrizResultante = matrizGlobalDosElementos;
 
@@ -357,7 +357,7 @@ namespace Grelha_MEF
                 }
                 if (condicaoY)
                 {
-                    int comecoNO = ((i - 1) * 3)+1;
+                    int comecoNO = ((i - 1) * 3) + 1;
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
                 }
                 if (condicaoZ)
@@ -402,7 +402,7 @@ namespace Grelha_MEF
         {
             vetoresDeslocGiroGlobalElem = new List<double[]>();
 
-            for (int i = 0; i < quantidadeElementos; i++) 
+            for (int i = 0; i < quantidadeElementos; i++)
             {
                 int comecoNo = i * 3;
                 int count = 0;
@@ -421,15 +421,15 @@ namespace Grelha_MEF
 
         public void aplicandoDeslocamentosLocaisElementos(int quantidadeElementos)
         {
-            for(int i = 0; i < quantidadeElementos; i++)
-                vetoresDeslocGiroGlobalElem[i] = multiplicacaoMatrizComVetor(matrizesRotPorAnguloDoElem[i], vetoresDeslocGiroGlobalElem[i], "DESLOCAMENTOS E GIROS - LOCAIS - ELEMENTO: " + (i+1));
+            for (int i = 0; i < quantidadeElementos; i++)
+                vetoresDeslocGiroGlobalElem[i] = multiplicacaoMatrizComVetor(matrizesRotPorAnguloDoElem[i], vetoresDeslocGiroGlobalElem[i], "DESLOCAMENTOS E GIROS - LOCAIS - ELEMENTO: " + (i + 1));
         }
 
         public void aplicandoDeslocamentosInternosElementos(int quantidadeElementos)
         {
             vetoresEsforcosInternosElem = new List<double[]>();
             for (int i = 0; i < quantidadeElementos; i++)
-                vetoresEsforcosInternosElem.Add(multiplicacaoMatrizComVetor(matrizesLocaisElementos[i], vetoresDeslocGiroGlobalElem[i], "ESFORÇOS INTERNOS - ELEMENTO: " + (i+1)));
+                vetoresEsforcosInternosElem.Add(multiplicacaoMatrizComVetor(matrizesLocaisElementos[i], vetoresDeslocGiroGlobalElem[i], "ESFORÇOS INTERNOS - ELEMENTO: " + (i + 1)));
 
             incrementaElementosGrafResultadoFinal(vetoresEsforcosInternosElem);
         }
@@ -442,7 +442,7 @@ namespace Grelha_MEF
 
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], vetoresEsforcosInternosElem[i][3] }); //DEC
-            
+
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); // DMF
 
@@ -530,7 +530,7 @@ namespace Grelha_MEF
 
         }
 
-        
+
         // MATRIZ INVERSA
         public static double[,] invert(double[,] matriz)
         {
@@ -626,8 +626,8 @@ namespace Grelha_MEF
 
             return resultado;
         }
-        
-        
+
+
         /*
         public double[,] invert(double[,] matriz)
         {
@@ -701,7 +701,7 @@ namespace Grelha_MEF
                 tracaGrafico(h, addElementoGrafico(6));
             }
 
-            inicializaDEC();
+            //inicializaDEC();
         }
         public string addElementoGrafico(int tam)
         {
@@ -710,8 +710,8 @@ namespace Grelha_MEF
             indexSeries = string.Concat(indexSeries, indexCount);
 
             chart1.Series.Add(indexSeries);
-            chart1.Series[indexSeries].IsValueShownAsLabel = false;
-            chart1.Series[indexSeries].IsVisibleInLegend = false;
+            chart1.Series[indexSeries].IsValueShownAsLabel = true;
+            chart1.Series[indexSeries].IsVisibleInLegend = true;
             chart1.Series[indexSeries].ChartType = SeriesChartType.Line;
             chart1.Series[indexSeries].BorderWidth = tam;
             //chart1.Series["Series" + h].IsXValueIndexed = true;
@@ -727,6 +727,9 @@ namespace Grelha_MEF
             int indexVetor = h - 1;
             int ultimoIndexSeries = indexVetor - 1;
 
+            double valorElementoGrafico = 1;
+            string nameSeries = elementosGraficoBase[indexVetor][0].ToString();
+
             if (indexVetor == 0)
             {
                 for (int j = 0; j < 2; j++)
@@ -740,15 +743,17 @@ namespace Grelha_MEF
                     {
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
-                            chart1.Series[indexSeries].Points.AddXY(j, 1);
-                            extremidadesY.Add(new double[]{j, 1});
-                            Console.WriteLine(indexSeries + " [" + j + "] Y: " + 1);
+                            chart1.Series[indexSeries].Points.AddXY(j, valorElementoGrafico);
+                            extremidadesY.Add(new double[] { j, valorElementoGrafico, elementosGraficoBase[indexVetor][0] });
+                            chart1.Series[indexSeries].Label = nameSeries;
+                            Console.WriteLine(indexSeries + " [" + j + "] Y: " + valorElementoGrafico);
                         }
                         else
                         {
-                            chart1.Series[indexSeries].Points.AddXY(1, 0);
-                            extremidadesY.Add(new double[]{1, 0});
-                            Console.WriteLine(indexSeries + " [" + 0 + "] X: " + 1);
+                            chart1.Series[indexSeries].Points.AddXY(valorElementoGrafico, 0);
+                            extremidadesX.Add(new double[] { valorElementoGrafico, 0, elementosGraficoBase[indexVetor][0] });
+                            chart1.Series[indexSeries].Label = nameSeries;
+                            Console.WriteLine(indexSeries + " [" + 0 + "] X: " + valorElementoGrafico);
                         }
                     }
                 }
@@ -772,43 +777,47 @@ namespace Grelha_MEF
                         }
                         else
                         {
-                            if (elementosGraficoBase[indexVetor][1].Equals(90))
-                            {
-                                ultimoValorX = extremidadesY[extremidadesY.Count - 1][0];
-                                ultimoValorY = extremidadesY[extremidadesY.Count - 1][1];
-                            }
-                            else
-                            {
-                                ultimoValorX = extremidadesX[extremidadesX.Count - 1][0];
-                                ultimoValorY = extremidadesX[extremidadesX.Count - 1][1];
-                            }
-
                             chart1.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                             Console.WriteLine(indexSeries + " [X " + ultimoValorX + "][Y " + ultimoValorY);
                         }
                     }
                     else
                     {
-                        double valorFinal = 0;
-                        double valorXFinal = 0;
-
                         if (elementosGraficoBase[indexVetor][1].Equals(90))
                         {
-                            valorFinal = ultimoValorY+1;
-                            valorXFinal = ultimoValorX+1;
-                            
-                            chart1.Series[indexSeries].Points.AddXY(valorXFinal, valorFinal);
-                            extremidadesY.Add(new double[]{valorXFinal, valorFinal});
-                            Console.WriteLine(indexSeries + " [" + valorXFinal + "] Y: " + valorFinal);
+                            valorElementoGrafico = -Math.Abs(ultimoValorY - valorElementoGrafico);
+                            if (elementosGraficoBase[indexVetor - 1][1].Equals(90) && indexVetor.Equals(1)){ 
+                                valorElementoGrafico = -1;
+                                ultimoValorX = 0;
+                            }
+                            //else valorElementoGrafico = -valorElementoGrafico;
+
+                            chart1.Series[indexSeries].Points.AddXY(ultimoValorX-1, valorElementoGrafico);
+                            extremidadesY.Add(new double[] { ultimoValorX - 1, valorElementoGrafico, elementosGraficoBase[indexVetor ][0] });
+                            chart1.Series[indexSeries].Label = nameSeries;
+                            Console.WriteLine(indexSeries + " [X " + (ultimoValorX - 1) + "] Y: " + valorElementoGrafico);
                         }
                         else
                         {
-                            valorXFinal = ultimoValorX + 1;
-                            if(indexVetor.Equals(1)) valorXFinal = 1;
+                            if (ultimoIndexSeries.Equals(0))
+                            {
+                                double valor = valorElementoGrafico;
+                                if (elementosGraficoBase[indexVetor - 1][1].Equals(0)) valor = ultimoValorX + valorElementoGrafico;
 
-                            chart1.Series[indexSeries].Points.AddXY(valorXFinal, 0);
-                            extremidadesX.Add(new double[]{valorXFinal, 0});
-                            Console.WriteLine(indexSeries + " [" + 0 + "] X: " + valorXFinal);
+                                chart1.Series[indexSeries].Points.AddXY(valor, 0);
+                                extremidadesX.Add(new double[] { valor, 0, elementosGraficoBase[indexVetor][0] });
+                                chart1.Series[indexSeries].Label = nameSeries;
+                                Console.WriteLine(indexSeries + " [Y " + valor + "] X: " + 0);
+                            }
+                            else
+                            {
+                                double valor = ultimoValorX + valorElementoGrafico;
+
+                                chart1.Series[indexSeries].Points.AddXY(valor, ultimoValorY);
+                                extremidadesX.Add(new double[] { valor, ultimoValorY, elementosGraficoBase[indexVetor][0]});
+                                chart1.Series[indexSeries].Label = nameSeries;
+                                Console.WriteLine(indexSeries + " [Y " + ultimoValorY + "] X: " + valor);
+                            }
                         }
                     }
                 }
@@ -896,9 +905,9 @@ namespace Grelha_MEF
 
                 //for (int j = 0; j < elementosGraficoDEC[indexVetor].Length; j++)
                 //{
-                    
 
-                    
+
+
                 //    //EXTREMIDADE INICIAL DE Y SEMPRE SERÁ extremidadesY[j][0] -1 E extremidadesY[j][1] -1
                 //}
             }
@@ -912,17 +921,17 @@ namespace Grelha_MEF
 
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
-            
-            double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+
+            //double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             //for (int i = 0; i < matrizInversaGlobalDaEstrutura.GetLength(0); ++i)
             //    for (int j = 0; j < matrizInversaGlobalDaEstrutura.GetLength(1); ++j)
             //        Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
-            
-            inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
-            defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
-            aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
-            aplicandoDeslocamentosInternosElementos(quantidadeElementos);
-            
+
+            //inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
+            //defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
+            //aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
+            //aplicandoDeslocamentosInternosElementos(quantidadeElementos);
+
             defineGrafico();
             //populaGrafico();
         }
@@ -930,62 +939,40 @@ namespace Grelha_MEF
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDownQuantidadeElementos.Value.Equals(2) || numericUpDownQuantidadeElementos.Value > 2)
-            {
-                groupBoxElemento2.Visible = true; groupBoxNo3.Visible = true; 
-            }
-            else
-            {
-                groupBoxElemento2.Visible = false; groupBoxNo3.Visible = false;
-            }
-            if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4) 
-            {
-                groupBoxElemento3.Visible = true; groupBoxNo4.Visible = true;
-                groupBoxElemento4.Visible = true; groupBoxNo5.Visible = true;
-            }
-            else
-            {
-                groupBoxElemento3.Visible = false; groupBoxNo4.Visible = false;
-                groupBoxElemento4.Visible = false; groupBoxNo5.Visible = false;
-            }
-            if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6) 
-            {
-                groupBoxElemento5.Visible = true; groupBoxNo6.Visible = true;
-                groupBoxElemento6.Visible = true; groupBoxNo7.Visible = true;
-            }
-            else
-            {
-                groupBoxElemento5.Visible = false; groupBoxNo6.Visible = false;
-                groupBoxElemento6.Visible = false; groupBoxNo7.Visible = false;
-            }
-            if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8) 
-            {
-                groupBoxElemento7.Visible = true; groupBoxNo8.Visible = true;
-                groupBoxElemento8.Visible = true; groupBoxNo9.Visible = true; 
-            }
-            else
-            {
-                groupBoxElemento7.Visible = false; groupBoxNo8.Visible = false;
-                groupBoxElemento8.Visible = false; groupBoxNo9.Visible = false;
-            }
-            if (numericUpDownQuantidadeElementos.Value.Equals(10) || numericUpDownQuantidadeElementos.Value > 10)
-            {
-                groupBoxElemento9.Visible = true; groupBoxNo10.Visible = true;
-                groupBoxElemento10.Visible = true; groupBoxNo11.Visible = true;
-            }
-            else
-            {
-                groupBoxElemento9.Visible = false; groupBoxNo10.Visible = false;
-                groupBoxElemento10.Visible = false; groupBoxNo11.Visible = false;
-            }
+            { groupBoxElemento2.Visible = true; groupBoxNo3.Visible = true; }
+            else { groupBoxElemento2.Visible = false; groupBoxNo3.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(3) || numericUpDownQuantidadeElementos.Value > 3)
+            { groupBoxElemento3.Visible = true; groupBoxNo4.Visible = true; }
+            else { groupBoxElemento3.Visible = false; groupBoxNo4.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(4) || numericUpDownQuantidadeElementos.Value > 4)
+            { groupBoxElemento4.Visible = true; groupBoxNo5.Visible = true; }
+            else { groupBoxElemento4.Visible = false; groupBoxNo5.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(5) || numericUpDownQuantidadeElementos.Value > 5)
+            { groupBoxElemento5.Visible = true; groupBoxNo6.Visible = true; }
+            else { groupBoxElemento5.Visible = false; groupBoxNo6.Visible = false; }
+            if (numericUpDownQuantidadeElementos.Value.Equals(6) || numericUpDownQuantidadeElementos.Value > 6)
+                groupBoxElemento6.Visible = true;
+            else groupBoxElemento6.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(7) || numericUpDownQuantidadeElementos.Value > 7)
+                groupBoxElemento7.Visible = true;
+            else groupBoxElemento7.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(8) || numericUpDownQuantidadeElementos.Value > 8)
+                groupBoxElemento8.Visible = true;
+            else groupBoxElemento8.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(9) || numericUpDownQuantidadeElementos.Value > 9)
+                groupBoxElemento9.Visible = true;
+            else groupBoxElemento9.Visible = false;
+            if (numericUpDownQuantidadeElementos.Value.Equals(10)) groupBoxElemento10.Visible = true;
+            else groupBoxElemento10.Visible = false;
 
-            textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString() ;
+            textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString();
         }
 
         public void selecaoUnicaNoCheckedlistbox(CheckedListBox check)
         {
             if (check.SelectedIndex.Equals(0)) check.SetItemChecked(1, false);
-            else if (check.SelectedIndex.Equals(1)) 
-            { 
+            else if (check.SelectedIndex.Equals(1))
+            {
                 check.SetItemChecked(0, false);
             }
         }
@@ -1052,7 +1039,7 @@ namespace Grelha_MEF
             if (i.Equals(Convert.ToInt32(textBoxQuantidadeNos.Text))) return false;
             else return true;
         }
-        
+
         private void checkedListBoxNo1X_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecaoUnicaNoCheckedlistbox(checkedListBoxNo1X);
@@ -1190,5 +1177,6 @@ namespace Grelha_MEF
         {
             if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo6.Enabled = false;
         }
+
     }
 }
