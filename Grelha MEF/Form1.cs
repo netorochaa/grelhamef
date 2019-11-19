@@ -61,14 +61,16 @@ namespace Grelha_MEF
 
         static List<double[]> vetoresEsforcosInternosElem;
 
-        static List<double[]> extremidades;
+        static List<double[]> extremidadesDEC;
+        static List<double[]> extremidadesDMF;
+        static List<double[]> extremidadesDMT;
         //static List<double[]> extremidadesX;
         //static List<double[]> extremidadesY;
 
         static List<double[]> elementosGraficoBase;
-        static List<double[]> elementosGraficoDEC;
-        static List<double[]> elementosGraficoDMF;
-        static List<double[]> elementosGraficoDMT;
+        List<double[]> elementosGraficoDEC;
+        List<double[]> elementosGraficoDMF;
+        List<double[]> elementosGraficoDMT;
 
         static List<double[]> pointsGraficoBase;
 
@@ -534,7 +536,6 @@ namespace Grelha_MEF
 
         }
 
-
         // MATRIZ INVERSA
         public static double[,] invert(double[,] matriz)
         {
@@ -698,17 +699,18 @@ namespace Grelha_MEF
             chart1.Series.Clear();
             chart2.Series.Clear();
 
-            extremidades = new List<double[]>();
-            //extremidadesX = new List<double[]>();
-            //extremidadesY = new List<double[]>();
+            List<double[]> extremidadesDEC = new List<double[]>();
+            List<double[]> extremidadesDMF = new List<double[]>();
+            List<double[]> extremidadesDMT = new List<double[]>();
 
             for (int h = 1; h <= quantidadeElementos; h++)
             {
-                tracaGrafico(h, addElementoGrafico(6, chart1), chart1);
-                //tracaGrafico(h, addElementoGrafico(6, chart2), chart2);
+                tracaGrafico(h, addElementoGrafico(6, chart1), chart1, extremidadesDEC);
+                tracaGrafico(h, addElementoGrafico(6, chart2), chart2, extremidadesDMF);
             }
-
-            inicializaDEC(chart1);
+            
+            defineDEC(chart1, extremidadesDEC);
+            defineDMF(chart2, extremidadesDMF);
         }
         public string addElementoGrafico(int tam, Chart chart)
         {
@@ -718,7 +720,7 @@ namespace Grelha_MEF
 
             chart.Series.Add(indexSeries);
             chart.Series[indexSeries].IsValueShownAsLabel = true;
-            chart.Series[indexSeries].IsVisibleInLegend = true;
+            chart.Series[indexSeries].IsVisibleInLegend = false;
             chart.Series[indexSeries].ChartType = SeriesChartType.Line;
             chart.Series[indexSeries].BorderWidth = tam;
             //chart.Series["Series" + h].IsXValueIndexed = true;
@@ -728,7 +730,7 @@ namespace Grelha_MEF
 
             return indexSeries;
         }
-        public void tracaGrafico(int h, string indexSeries, Chart chart)
+        public void tracaGrafico(int h, string indexSeries, Chart chart, List<double[]> extremidades)
         {
             int indexVetor = h - 1;
             int ultimoIndexSeries = indexVetor - 1;
@@ -818,30 +820,32 @@ namespace Grelha_MEF
                 }
             }
         }
-
-        public void inicializaDEC(Chart chart)
+        public void defineDEC(Chart chart, List<double[]> extremidadesDEC)
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
                 string indexSeries = addElementoGrafico(1, chart);
                 int indexVetor = i - 1;
-                int ultimoPoint = chart1.Series["Series" + indexVetor].Points.Count - 1;
+                int ultimoPoint = chart.Series["Series" + indexVetor].Points.Count - 1;
                 double ultimoValorY = 0;
                 double ultimoValorX = 0;
                 bool valorNegativo = false;
                 double angulo = elementosGraficoBase[indexVetor][1];
 
-                double valorDEC = Math.Round(Math.Abs(elementosGraficoDEC[indexVetor][0] / 10), 1);
+                double valorDEC = 1;
+                    //Math.Round(Math.Abs(elementosGraficoDEC[indexVetor][0] / 10), 1);
+                string legendaValor = elementosGraficoDEC[indexVetor][0].ToString();
 
                 if (angulo.Equals(0)) 
                 {
-                    for (int k = 0; k < extremidades.Count; k++)
+                    for (int k = 0; k < extremidadesDEC.Count; k++)
                     {
                         if (elementosGraficoDEC[indexVetor][0] < 0)
                             valorNegativo = true;
+                        else valorNegativo = false;
 
-                        ultimoValorX = extremidades[k][0];
-                        ultimoValorY = extremidades[k][1];
+                        ultimoValorX = extremidadesDEC[k][0];
+                        ultimoValorY = extremidadesDEC[k][1];
 
                         double ultimoValorXaux = ultimoValorX - 1;
 
@@ -850,32 +854,33 @@ namespace Grelha_MEF
                         Console.WriteLine(indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorY);
 
                         //BARRA INICIAL DEC
-                        double valorX = ultimoValorX;
                         double valorY = valorNegativo ? ultimoValorY - valorDEC : ultimoValorY + valorDEC;
 
                         chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
                         Console.WriteLine(indexSeries + " [" + ultimoValorXaux + "] " + valorY);
 
                         //BARRA MAIOR DEC
-                        chart.Series[indexSeries].Points.AddXY(valorX, valorY);
-                        Console.WriteLine(indexSeries + " [" + valorX + "] " + valorY);
+                        chart.Series[indexSeries].Points.AddXY(ultimoValorX, valorY);
+                        chart.Series[indexSeries].Label = legendaValor;
+                        Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + valorY);
 
                         //BARRA FECHAMENTO DEC
                         chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                         Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
 
-                        extremidades.RemoveAt(k);
+                        extremidadesDEC.RemoveAt(k);
                     }
                 }
                 else if (angulo.Equals(90) || angulo.Equals(-90))
                 {
-                    for (int k = 0; k < extremidades.Count; k++)
+                    for (int k = 0; k < extremidadesDEC.Count; k++)
                     {
                         if (elementosGraficoDEC[indexVetor][0] < 0)
                             valorNegativo = true;
+                        else valorNegativo = false;
 
-                        ultimoValorX = extremidades[k][0];
-                        ultimoValorY = extremidades[k][1];
+                        ultimoValorX = extremidadesDEC[k][0];
+                        ultimoValorY = extremidadesDEC[k][1];
 
                         double ultimoValorXaux = ultimoValorX - 1;
                         double ultimoValorYaux = angulo.Equals(-90) ? ultimoValorY + 1 : ultimoValorY - 1;
@@ -885,7 +890,6 @@ namespace Grelha_MEF
                         Console.WriteLine(indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorYaux);
 
                         //BARRA INICIAL DEC
-                        double valorX = valorDEC;
                         double valorY = valorNegativo ? -valorDEC : valorDEC;
 
                         chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
@@ -893,26 +897,142 @@ namespace Grelha_MEF
 
                         //BARRA MAIOR DEC
                         chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY - valorDEC);
+                        chart.Series[indexSeries].Label = legendaValor;
                         Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + (ultimoValorY - valorDEC));
 
                         //BARRA FECHAMENTO DEC
                         chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                         Console.WriteLine(indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
 
-                        extremidades.RemoveAt(k);
+                        extremidadesDEC.RemoveAt(k);
                     }
                 }
-
-                //for (int j = 0; j < elementosGraficoDEC[indexVetor].Length; j++)
-                //{
-
-
-
-                //    //EXTREMIDADE INICIAL DE Y SEMPRE SERÁ extremidadesY[j][0] -1 E extremidadesY[j][1] -1
-                //}
             }
         }
+        public void defineDMF(Chart chart, List<double[]> extremidadesDMF)
+        {
+            for (int i = 1; i <= elementosGraficoBase.Count; i++)
+            {
+                string indexSeries = addElementoGrafico(1, chart);
+                int indexVetor = i - 1;
+                int ultimoPoint = chart.Series["Series" + indexVetor].Points.Count - 1;
+                double ultimoValorY = 0;
+                double ultimoValorX = 0;
+                bool valorNegativo = false;
+                double angulo = elementosGraficoBase[indexVetor][1];
 
+                double valorDMF = 1;
+                    //Math.Round(Math.Abs(elementosGraficoDMF[indexVetor][0] / 10), 1);
+
+                if (angulo.Equals(0))
+                {
+                    for (int k = 0; k < extremidadesDMF.Count; k++)
+                    {
+                        ultimoValorX = extremidadesDMF[k][0];
+                        ultimoValorY = extremidadesDMF[k][1];
+
+                        for (int h = 0; h < elementosGraficoDMF[indexVetor].Length; h++)
+                        {
+                            if (elementosGraficoDMF[indexVetor][h] < 0)
+                                valorNegativo = true;
+                            else valorNegativo = false;
+
+                            double ultimoValorXaux = ultimoValorX - 1;
+                            double valorY = valorNegativo ? ultimoValorY + valorDMF : ultimoValorY - valorDMF;
+
+                            if (h.Equals(0))
+                            {
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorY);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorY);
+
+                                if (elementosGraficoDMF[indexVetor][h] == 0)
+                                    continue;
+                                else
+                                {
+                                    //BARRA INICIAL DMF
+                                    chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
+                                    Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + valorY);
+                                }
+                            }
+                            else
+                            {
+                                if (elementosGraficoDMF[indexVetor][h] == 0)
+                                {
+                                    chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                                    Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                                    extremidadesDMF.RemoveAt(k);
+                                    continue;
+                                }
+
+                                //BARRA MAIOR DMF
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorX, valorY);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + valorY);
+
+                                //BARRA FECHAMENTO DMF
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+
+                                extremidadesDMF.RemoveAt(k);
+                            }
+                        }
+                    }
+                }
+                else if (angulo.Equals(90) || angulo.Equals(-90))
+                {
+                    for (int k = 0; k < extremidadesDMF.Count; k++)
+                    {
+                        ultimoValorX = extremidadesDMF[k][0];
+                        ultimoValorY = extremidadesDMF[k][1];
+
+                        for (int h = 0; h < elementosGraficoDMF[indexVetor].Length; h++)
+                        {
+                            if (elementosGraficoDMF[indexVetor][h] < 0)
+                                valorNegativo = true;
+                            else valorNegativo = false;
+
+                            double ultimoValorXaux = ultimoValorX - 1;
+                            double ultimoValorYaux = angulo.Equals(-90) ? ultimoValorY + 1 : ultimoValorY - 1;
+                            double valorY = valorNegativo ? valorDMF : -valorDMF;
+
+                            if (h.Equals(0))
+                            {
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorYaux);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorYaux);
+
+                                if (elementosGraficoDMF[indexVetor][h] == 0)
+                                    continue;
+                            }
+                            else
+                            {
+                                if (elementosGraficoDMF[indexVetor][h] == 0)
+                                {
+                                    chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                                    Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                                    extremidadesDMF.RemoveAt(k);
+                                    continue;
+                                }
+
+                                //BARRA INICIAL DMF
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + valorY);
+
+                                //BARRA MAIOR DMF
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY - valorDMF);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + (ultimoValorY - valorDMF));
+
+                                //BARRA FECHAMENTO DMF
+                                chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
+                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+
+                                extremidadesDMF.RemoveAt(k);
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+        }
         //EVENTOS
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
