@@ -279,14 +279,6 @@ namespace Grelha_MEF
                 }
             }
 
-            //for (int i = 0; i < matrizResultante.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < matrizResultante.GetLength(1); j++)
-            //    {
-            //        Console.WriteLine("indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
-            //    }
-            //}
-
             return matrizResultante;
         }
 
@@ -302,35 +294,21 @@ namespace Grelha_MEF
             double coeficientePoisson = double.Parse(textBoxCoeficientePoisson.Text, provider);
             double comprimentoBarra = double.Parse(comprimentoBarraElem, provider);
 
-            //Calculando Separadamente
             //momento inércia
             double I = (b * Math.Pow(h, 3)) / 12;
-            //string unidadeMedidaI = "m⁴";
-            //Console.WriteLine("I: " + I);
 
             //modulo young
             double E = moduloYoung;
-            //string unidadeMedidaE = "kN/m²";
-            //Console.WriteLine("E: " + E);
 
             //coeficiente Poisson
             double V = coeficientePoisson;
 
             //modulo de elasticidade transversal
             double G = E / (2 * (1 + V));
-            //string unidadeMedidaG = "kN/m²";
-            //Console.WriteLine("G: " + G);
 
             //momento inércia torção
             double J = h * Math.Pow(b, 3) * (((double)1 / 3) - 0.21 * (b / h) * (1 - (Math.Pow(b, 4) / (12 * Math.Pow(h, 4)))));
-            //string unidadeMedidaJ = "m⁴";
-            //Console.WriteLine("J: " + J);
-            //Console.WriteLine("1: " + h * Math.Pow(b, 3));
-            //Console.WriteLine("2: " + Math.Round((double)1 / 3, 3) + "-");
-            //Console.WriteLine("2-3: " + (0.21 * (b / h)) + "*");
-            //Console.WriteLine("3: " + (1 - (Math.Pow(b, 4)/(12 * Math.Pow(h, 4)))));
 
-            //Matriz de rigidez do elemento em coordenadas locais
             double[,] matrizRigidezElementoEmCoordenadasLocais = new double[6, 6]
                 {
                     {Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
@@ -372,16 +350,6 @@ namespace Grelha_MEF
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
                 }
             }
-
-            //for (int i = 0; i < matrizResultante.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < matrizResultante.GetLength(1); j++)
-            //    {
-            //        Console.WriteLine("indice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
-            //    }
-            //}
-
-            //inicializaVetorCargasExternas(matrizResultante.GetLength(1));
 
             return matrizResultante;
         }
@@ -631,67 +599,6 @@ namespace Grelha_MEF
 
             return resultado;
         }
-
-
-        /*
-        public double[,] invert(double[,] matriz)
-        {
-            double[,] matrizResultante = eliminacaoGaussianaPivoteamento(matriz);
-
-            for (int i = 0; i < matriz.GetLength(0); ++i)
-                for (int j = 0; j < matriz.GetLength(1); ++j)
-                    Console.WriteLine("Índice [" + (i + 1) + "," + (j + 1) + "] " + matriz[i, j]);
-
-            return matrizResultante;
-        }
-
-        public double[,] eliminacaoGaussianaPivoteamento(double[,] matriz) 
-        {
-            double[,] matrizResultante = new double[matriz.GetLength(0), matriz.GetLength(1)];
-            double[,] matrizIdentidade = new double[matriz.GetLength(0), matriz.GetLength(1)];
-            double pivo = 0, p = 0, m = 0;
-
-            //Definindo matriz identidade
-            for (int i = 0; i < matriz.GetLength(0); i++)
-            {
-                for (int j = 0; j < matriz.GetLength(1); j++)
-                {
-                    if (i == j) matrizIdentidade[i, j] = 1;
-                    else matrizIdentidade[i, j] = 0;
-                }
-            }
-
-            //Calculando matriz
-            for (int j = 0; j < matriz.GetLength(0); j++)
-            {
-                pivo = matriz[j, j];
-                p = pivo / pivo;
-
-                for (int k = j; k < matriz.GetLength(1); k++)
-                {
-                    matrizResultante[j, k] = matriz[j, k] / pivo;
-                    matrizIdentidade[j, k] = matrizIdentidade[j, k] / pivo;
-                }
-
-                //for (int i = 0; i < matriz.GetLength(0); i++)
-                //{
-                //    if (i != j)
-                //    {
-                //        m = matrizResultante[i, j] / p;
-
-                //        for (int k = 0; k < matriz.GetLength(1); k++)
-                //        {
-                //            matrizResultante[i, k] = matrizResultante[i, k] - (m * matrizResultante[i, k]);
-                //            matrizIdentidade[i, k] = matrizIdentidade[i, k] - (m * matrizIdentidade[i, k]);
-                //        }
-                //    }
-                //}
-                
-            }
-
-            return matrizResultante;
-        }
-        **/
 
         //GRÁFICO
         public void defineGrafico()
