@@ -600,6 +600,72 @@ namespace Grelha_MEF
             return resultado;
         }
 
+        public static double[,] inverse(double[,] a)
+        {
+            //double[,] a = new double[,]{};
+            double[,] inverse = new double[a.GetLength(0), a.GetLength(1)];
+            double[,] b = new double[a.GetLength(0), a.GetLength(1)];
+            double c, d;
+            double[] temp = new double[a.GetLength(0)];
+            int i, j, k, m, imax;
+            int[] ipvt = new int[a.GetLength(0)];
+            int n = a.GetLength(0);
+            
+            b = a;
+            for (i = 0; i < ipvt.Length; i++ ) ipvt[i] = (i+1);
+            
+            for(k = 0; k < n; k++)
+            {
+                imax = 0;
+                
+                for (int g = 0; g < n; g++) imax = Math.Abs(b[k, g]) > Math.Abs(b[k, imax]) ? g : imax;
+                    //Console.WriteLine(Math.Abs(b[k, g]) + ">" + Math.Abs(b[k, imax]) + ": imax = " + imax);
+                m = k-1 + imax;
+                m = m >= n ? n-1 : m;
+
+                if (m != k)
+                {
+                    ipvt[k] = ipvt[m];
+                    
+                    for (int h = 0; h < n; h++)
+                    {
+                        Console.WriteLine(b[k, h] + " = " + b[m, h]);
+                        b[k, h] = b[m, h];
+                    }
+                    
+                    d = 1 / b[k, k];
+                    
+                    for (int l = 0; l < n; l++)
+                        temp[l] = b[l, k];
+
+                    for (j = 0; j < n; j++)
+                    {
+                        c = b[k, j] * d;
+
+                        for (int o = 0; o < n; o++)
+                        {
+                            b[o, j] = b[o, j] - temp[o] * c;
+                            b[k, j] = d;
+                        }
+                    }
+
+                    for (int p = 0; p < n; p++)
+                    {
+                        b[p, k] = temp[p] * (-d);
+                        b[k, k] = d;
+                    }
+                }
+
+                for (int s = 0; s < n; s++)
+                {
+                    inverse[s, s] = b[s, k];
+                    Console.WriteLine("Índice [" + s + ", " + ipvt[s] + " ]: " + b[s, k]);
+                }
+            }
+
+            return inverse;
+        }
+
         //GRÁFICO
         public void defineGrafico()
         {
@@ -1028,7 +1094,8 @@ namespace Grelha_MEF
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
 
-            double[,] matrizInversaGlobalDaEstrutura = invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+            double[,] matrizInversaGlobalDaEstrutura = inverse(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
+                //invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
             //for (int i = 0; i < matrizInversaGlobalDaEstrutura.GetLength(0); ++i)
             //    for (int j = 0; j < matrizInversaGlobalDaEstrutura.GetLength(1); ++j)
             //        Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
