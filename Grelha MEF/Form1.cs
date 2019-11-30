@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing.Drawing2D;
+using System.Diagnostics;
 
 namespace Grelha_MEF
 {
@@ -81,7 +83,7 @@ namespace Grelha_MEF
         static int[] grausLiberdadeLocal = new int[6] { 1, 2, 3, 4, 5, 6 };
 
         static int grausLiberdadeGlobal;
-
+        static int quantidadeNos;
         static int quantidadeElementos;
 
         static double[,] matrizGlobalEstrutura;
@@ -350,7 +352,8 @@ namespace Grelha_MEF
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
                 }
             }
-
+            Console.WriteLine("defineMatrizEstruturaComCondicoesDeContorno");
+            Console.WriteLine(MatrixAsString(matrizResultante));
             return matrizResultante;
         }
         public double[,] aplicaCondicoesContornoPorGrauLiberdade(double[,] matrizResultante, int comecoNO, int grausLiberdadeGlobal)
@@ -504,166 +507,147 @@ namespace Grelha_MEF
 
         }
 
-        // MATRIZ INVERSA
-        public static double[,] invert(double[,] matriz)
-        {
-            double[,] originalMatrix = matriz;
-            double[,] cofator = new double[matriz.GetLength(0), matriz.GetLength(1)];
-            double[,] adjunta = new double[matriz.GetLength(1), matriz.GetLength(0)];
-            double[,] resultado = new double[matriz.GetLength(1), matriz.GetLength(0)];
-
-            for (int i = 0; i <= matriz.GetLength(0); i++)
-            {
-                for (int j = 0; j <= matriz.GetLength(1); j++)
-                {
-                    matriz = TrimArray(i, j, originalMatrix);
-                    cofator[i, j] = Math.Round(Math.Pow(-1, i + j) * gerarDeterminante(matriz));
-                }
-            }
-            adjunta = GerarTransposta(cofator);
-            resultado = multiplicarPorNumeroQualquer(adjunta, 1 / gerarDeterminante(originalMatrix));
-
-            return resultado;
+        //MATRIZ INVERSA DOC MICROSOFT
+        static double[][] MatrixCreate(int rows, int cols) 
+        {   // creates a matrix initialized to all 0.0s   // do error checking here?
+            double[][] result = new double[rows][];   
+            for (int i = 0; i < rows; ++i)     
+                result[i] = new double[cols]; // auto init to 0.0   
+            return result; 
         }
-        public static double[,] TrimArray(int rowToRemove, int columnToRemove, double[,] originalArray)
-        {
-            double[,] result = new double[originalArray.GetLength(0) - 1, originalArray.GetLength(1) - 1];
-
-            for (int i = 0, j = 0; i < originalArray.GetLength(0); i++)
+        static double[][] MatrixDuplicate(double[][] matrix) 
+        {   
+            // assumes matrix is not null.
+            double[][] result = MatrixCreate(matrix.Length, matrix[0].Length);
+            for (int i = 0; i < matrix.Length; ++i) // copy the values     
+                for (int j = 0; j < matrix[i].Length; ++j)       
+                    result[i][j] = matrix[i][j];   
+            return result; 
+        }
+        static double[][] MatrixDecompose(double[][] matrix, out int[] perm, out int toggle) 
+        {   
+            // Doolittle LUP decomposition.
+            // assumes matrix is square.
+            int n = matrix.Length; // convenience   
+            double[][] result = MatrixDuplicate(matrix);   
+            perm = new int[n];
+            for (int i = 0; i < n; ++i)
             {
-                if (i == rowToRemove)
-                    continue;
-
-                for (int k = 0, u = 0; k < originalArray.GetLength(1); k++)
-                {
-                    if (k == columnToRemove)
-                        continue;
-
-                    result[j, u] = originalArray[i, k];
-                    //Console.WriteLine("Result [" + (j + 1) + "," + (u + 1) + "] " + result[j, u]);
-                    u++;
-                }
-                j++;
+                perm[i] = i;
             }
+            toggle = 1;
 
+            for (int j = 0; j < n - 1; ++j) // each column
+            {
+                double colMax = Math.Abs(result[j][j]); // largest val in col j
+                int pRow = j;
+                for (int i = j + 1; i < n; ++i)
+                {
+                    if (result[i][j] > colMax)
+                    {
+                        colMax = result[i][j];
+                        pRow = i;
+                    }
+                }
+                if (pRow != j) // swap rows
+                {       double[] rowPtr = result[pRow];
+                    result[pRow] = result[j];
+                    result[j] = rowPtr;
+                    int tmp = perm[pRow]; // and swap perm info
+                    perm[pRow] = perm[j];
+                    perm[j] = tmp;
+                    toggle = -toggle; // row-swap toggle
+                }
+                if (Math.Abs(result[j][j]) < 1.0E-20)
+                    return null; // consider a throw
+                for (int i = j + 1; i < n; ++i)
+                {
+                    result[i][j] /= result[j][j];
+                    for (int k = j + 1; k < n; ++k)
+                        result[i][k] -= result[i][j] * result[j][k];
+                }
+            } // main j column loop
             return result;
         }
-        public static double[,] GerarTransposta(double[,] matriz)
+        static double[] HelperSolve(double[][] luMatrix, double[] b)
         {
-            double[,] matrizTransposta = new double[matriz.GetLength(1), matriz.GetLength(0)];
-
-            for (int x = 0; x < matrizTransposta.GetLength(0); x++)
+            // solve luMatrix * x = b
+            int n = luMatrix.Length;
+            double[] x = new double[n];
+            b.CopyTo(x, 0);
+            for (int i = 1; i < n; ++i)
             {
-                for (int y = 0; y < matrizTransposta.GetLength(1); y++)
-                {
-                    matrizTransposta[x, y] += matriz[y, x];
-
-                }
+                double sum = x[i];
+                for (int j = 0; j < i; ++j)
+                    sum -= luMatrix[i][j] * x[j];
+                x[i] = sum;
             }
-            return matrizTransposta;
+            x[n - 1] /= luMatrix[n - 1][n - 1];
+            for (int i = n - 2; i >= 0; --i)
+            {
+                double sum = x[i];
+                for (int j = i + 1; j < n; ++j)
+                    sum -= luMatrix[i][j] * x[j];
+                x[i] = sum / luMatrix[i][i];
+            }
+            return x;
         }
-        public static double[,] multiplicarPorNumeroQualquer(double[,] matriz, double numeroQualquer)
+        static double[][] MatrixInverse(double[,] a) 
         {
-            double[,] matrizResultado = new double[matriz.GetLength(0), matriz.GetLength(1)];
-            int linhas = matriz.GetLength(0);
-            int colunas = matriz.GetLength(1);
-
-
-            for (int x = 0; x < linhas; x++)
+            double[][] m = MatrixConverter(a); 
+            int n = m.Length;
+            double[][] result = MatrixDuplicate(m); 
+            int[] perm; int toggle;
+            double[][] lum = MatrixDecompose(m, out perm, out toggle);
+            if (lum == null)
             {
-                for (int y = 0; y < colunas; y++)
-                {
-                    matrizResultado[x, y] = matriz[x, y] * numeroQualquer;
-                }
+                MessageBox.Show("Matriz não pode ser invertida.");
+                //throw new Exception("Unable to compute inverse");
+                return null;
             }
-
-            return matrizResultado;
+            double[] b = new double[n]; 
+            for (int i = 0; i < n; ++i) 
+            { 
+                for (int j = 0; j < n; ++j) 
+                { 
+                    if (i == perm[j])
+                        b[j] = 1.0; 
+                    else
+                        b[j] = 0.0; 
+                } 
+                double[] x = HelperSolve(lum, b); 
+                for (int j = 0; j < n; ++j)       
+                    result[j][i] = x[j]; 
+            } 
+            return result; 
         }
-        public static double gerarDeterminante(double[,] matriz)
-        {
-            double[,] parametro = matriz;
-            double resultado = 0;
-
-
-            if (matriz.GetLength(0) == 1)
-            {
-                return matriz[0, 0];
-            }
-
-            for (int i = 0; i < parametro.GetLength(1); i++)
-            {
-                matriz = TrimArray(0, i, parametro);
-                //Console.WriteLine("Resultado " + resultado + parametro[0, i] * (double)Math.Pow(-1, 0 + i) * gerarDeterminante(matriz));
-                resultado += parametro[0, i] * (double)Math.Pow(-1, 0 + i) * gerarDeterminante(matriz);
-            }
-
-            return resultado;
+        static double[][] MatrixConverter(double[,] matrizIncorporada) {
+            // return matrix with values between minVal and maxVal
+            int n = matrizIncorporada.GetLength(0);
+            double[][] result = MatrixCreate(n, n);
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < n; ++j)
+                    result[i][j] = matrizIncorporada[i, j];
+            return result;
         }
-
-        public static double[,] inverse(double[,] a)
+        static double[,] MatrixReConverter(double[][] matrizDeMatrizes)
         {
-            //double[,] a = new double[,]{};
-            double[,] inverse = new double[a.GetLength(0), a.GetLength(1)];
-            double[,] b = new double[a.GetLength(0), a.GetLength(1)];
-            double c, d;
-            double[] temp = new double[a.GetLength(0)];
-            int i, j, k, m, imax;
-            int[] ipvt = new int[a.GetLength(0)];
-            int n = a.GetLength(0);
-            
-            b = a;
-            for (i = 0; i < ipvt.Length; i++ ) ipvt[i] = (i+1);
-            
-            for(k = 0; k < n; k++)
+            int n = matrizDeMatrizes.Length;
+            double[,] result = new double[n, n];
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < n; ++j)
+                    result[i, j] = matrizDeMatrizes[i][j];
+            return result;
+        }
+        static string MatrixAsString(double[,] matrix) 
+        {
+            string s = "";
+            for (int i = 0; i < matrix.GetLength(0); ++i) 
             {
-                imax = 0;
-                
-                for (int g = 0; g < n; g++) imax = Math.Abs(b[k, g]) > Math.Abs(b[k, imax]) ? g : imax;
-                    //Console.WriteLine(Math.Abs(b[k, g]) + ">" + Math.Abs(b[k, imax]) + ": imax = " + imax);
-                m = k-1 + imax;
-                m = m >= n ? n-1 : m;
-
-                if (m != k)
-                {
-                    ipvt[k] = ipvt[m];
-                    
-                    for (int h = 0; h < n; h++)
-                    {
-                        Console.WriteLine(b[k, h] + " = " + b[m, h]);
-                        b[k, h] = b[m, h];
-                    }
-                    
-                    d = 1 / b[k, k];
-                    
-                    for (int l = 0; l < n; l++)
-                        temp[l] = b[l, k];
-
-                    for (j = 0; j < n; j++)
-                    {
-                        c = b[k, j] * d;
-
-                        for (int o = 0; o < n; o++)
-                        {
-                            b[o, j] = b[o, j] - temp[o] * c;
-                            b[k, j] = d;
-                        }
-                    }
-
-                    for (int p = 0; p < n; p++)
-                    {
-                        b[p, k] = temp[p] * (-d);
-                        b[k, k] = d;
-                    }
-                }
-
-                for (int s = 0; s < n; s++)
-                {
-                    inverse[s, s] = b[s, k];
-                    Console.WriteLine("Índice [" + s + ", " + ipvt[s] + " ]: " + b[s, k]);
-                }
+                for (int j = 0; j < matrix.GetLength(1); ++j)
+                    s += matrix[i, j].ToString("F3").PadLeft(8) + " "; s += Environment.NewLine;
             }
-
-            return inverse;
+            return s; 
         }
 
         //GRÁFICO
@@ -1088,23 +1072,23 @@ namespace Grelha_MEF
         //EVENTOS
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
-            grausLiberdadeGlobal = Convert.ToInt32(textBoxQuantidadeNos.Text) * 3;
+            quantidadeNos = Convert.ToInt32(textBoxQuantidadeNos.Text);
+            grausLiberdadeGlobal = Convert.ToInt32(quantidadeNos * 3);
             quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
 
-            double[,] matrizInversaGlobalDaEstrutura = inverse(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
-                //invert(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeGrausLiberdadeGlobal / 3, grausLiberdadeGlobal));
-            //for (int i = 0; i < matrizInversaGlobalDaEstrutura.GetLength(0); ++i)
-            //    for (int j = 0; j < matrizInversaGlobalDaEstrutura.GetLength(1); ++j)
-            //        Console.WriteLine("INVERSA - Índice [" + (i + 1) + "," + (j + 1) + "] " + matrizInversaGlobalDaEstrutura[i, j]);
+            double[][] inverse = MatrixInverse(defineMatrizEstruturaComCondicoesDeContorno(matrizGlobalEstrutura, quantidadeNos, grausLiberdadeGlobal));
+            if (inverse == null) return;
+            double[,] matrizInversaGlobalDaEstrutura = MatrixReConverter(inverse);
+            Console.WriteLine(MatrixAsString(matrizInversaGlobalDaEstrutura));
 
-            inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeGrausLiberdadeGlobal / 3);
+            inicializaVetorCargasExternas(matrizInversaGlobalDaEstrutura.GetLength(1), quantidadeNos);
             defineVetoresDeslocRotGlobalPeloNo(multiplicacaoMatrizComVetor(matrizInversaGlobalDaEstrutura, vetorCargasExternas, "VETOR DE DESLOCAMENTO E GIROS - GLOBAL"), quantidadeElementos, grausLiberdadeGlobal);
             aplicandoDeslocamentosLocaisElementos(quantidadeElementos);
             aplicandoDeslocamentosInternosElementos(quantidadeElementos);
-            
+
             defineGrafico();
             //populaGrafico();
         }

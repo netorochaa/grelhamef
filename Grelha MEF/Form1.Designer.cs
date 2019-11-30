@@ -1092,7 +1092,7 @@
             "Fix"});
             this.checkedListBoxNo6Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo6Z.Name = "checkedListBoxNo6Z";
-            this.checkedListBoxNo6Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo6Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo6Z.TabIndex = 25;
             this.checkedListBoxNo6Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6Z_SelectedIndexChanged);
             // 
@@ -1105,7 +1105,7 @@
             "Fix"});
             this.checkedListBoxNo6Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo6Y.Name = "checkedListBoxNo6Y";
-            this.checkedListBoxNo6Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo6Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo6Y.TabIndex = 24;
             this.checkedListBoxNo6Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6Y_SelectedIndexChanged);
             // 
@@ -1118,7 +1118,7 @@
             "Fix"});
             this.checkedListBoxNo6X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo6X.Name = "checkedListBoxNo6X";
-            this.checkedListBoxNo6X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo6X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo6X.TabIndex = 23;
             this.checkedListBoxNo6X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo6X_SelectedIndexChanged);
             // 
@@ -1193,7 +1193,7 @@
             "Fix"});
             this.checkedListBoxNo5Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo5Z.Name = "checkedListBoxNo5Z";
-            this.checkedListBoxNo5Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo5Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo5Z.TabIndex = 25;
             this.checkedListBoxNo5Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5Z_SelectedIndexChanged);
             // 
@@ -1206,7 +1206,7 @@
             "Fix"});
             this.checkedListBoxNo5Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo5Y.Name = "checkedListBoxNo5Y";
-            this.checkedListBoxNo5Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo5Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo5Y.TabIndex = 24;
             this.checkedListBoxNo5Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5Y_SelectedIndexChanged);
             // 
@@ -1219,7 +1219,7 @@
             "Fix"});
             this.checkedListBoxNo5X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo5X.Name = "checkedListBoxNo5X";
-            this.checkedListBoxNo5X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo5X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo5X.TabIndex = 23;
             this.checkedListBoxNo5X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo5X_SelectedIndexChanged);
             // 
@@ -1294,7 +1294,7 @@
             "Fix"});
             this.checkedListBoxNo4Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo4Z.Name = "checkedListBoxNo4Z";
-            this.checkedListBoxNo4Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo4Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo4Z.TabIndex = 25;
             this.checkedListBoxNo4Z.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4Z_SelectedIndexChanged);
             // 
@@ -1307,7 +1307,7 @@
             "Fix"});
             this.checkedListBoxNo4Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo4Y.Name = "checkedListBoxNo4Y";
-            this.checkedListBoxNo4Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo4Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo4Y.TabIndex = 24;
             this.checkedListBoxNo4Y.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4Y_SelectedIndexChanged);
             // 
@@ -1320,7 +1320,7 @@
             "Fix"});
             this.checkedListBoxNo4X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo4X.Name = "checkedListBoxNo4X";
-            this.checkedListBoxNo4X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo4X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo4X.TabIndex = 23;
             this.checkedListBoxNo4X.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxNo4X_SelectedIndexChanged);
             // 
@@ -1751,7 +1751,7 @@
             "Fix"});
             this.checkedListBoxNo11Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo11Z.Name = "checkedListBoxNo11Z";
-            this.checkedListBoxNo11Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo11Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo11Z.TabIndex = 25;
             // 
             // checkedListBoxNo11Y
@@ -1763,7 +1763,7 @@
             "Fix"});
             this.checkedListBoxNo11Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo11Y.Name = "checkedListBoxNo11Y";
-            this.checkedListBoxNo11Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo11Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo11Y.TabIndex = 24;
             // 
             // checkedListBoxNo11X
@@ -1775,7 +1775,7 @@
             "Fix"});
             this.checkedListBoxNo11X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo11X.Name = "checkedListBoxNo11X";
-            this.checkedListBoxNo11X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo11X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo11X.TabIndex = 23;
             // 
             // label52
@@ -1848,7 +1848,7 @@
             "Fix"});
             this.checkedListBoxNo10Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo10Z.Name = "checkedListBoxNo10Z";
-            this.checkedListBoxNo10Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo10Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo10Z.TabIndex = 25;
             // 
             // checkedListBoxNo10Y
@@ -1860,7 +1860,7 @@
             "Fix"});
             this.checkedListBoxNo10Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo10Y.Name = "checkedListBoxNo10Y";
-            this.checkedListBoxNo10Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo10Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo10Y.TabIndex = 24;
             // 
             // checkedListBoxNo10X
@@ -1872,7 +1872,7 @@
             "Fix"});
             this.checkedListBoxNo10X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo10X.Name = "checkedListBoxNo10X";
-            this.checkedListBoxNo10X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo10X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo10X.TabIndex = 23;
             // 
             // label56
@@ -1945,7 +1945,7 @@
             "Fix"});
             this.checkedListBoxNo9Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo9Z.Name = "checkedListBoxNo9Z";
-            this.checkedListBoxNo9Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo9Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo9Z.TabIndex = 25;
             // 
             // checkedListBoxNo9Y
@@ -1957,7 +1957,7 @@
             "Fix"});
             this.checkedListBoxNo9Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo9Y.Name = "checkedListBoxNo9Y";
-            this.checkedListBoxNo9Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo9Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo9Y.TabIndex = 24;
             // 
             // checkedListBoxNo9X
@@ -1969,7 +1969,7 @@
             "Fix"});
             this.checkedListBoxNo9X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo9X.Name = "checkedListBoxNo9X";
-            this.checkedListBoxNo9X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo9X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo9X.TabIndex = 23;
             // 
             // label60
@@ -2042,7 +2042,7 @@
             "Fix"});
             this.checkedListBoxNo8Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo8Z.Name = "checkedListBoxNo8Z";
-            this.checkedListBoxNo8Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo8Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo8Z.TabIndex = 25;
             // 
             // checkedListBoxNo8Y
@@ -2054,7 +2054,7 @@
             "Fix"});
             this.checkedListBoxNo8Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo8Y.Name = "checkedListBoxNo8Y";
-            this.checkedListBoxNo8Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo8Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo8Y.TabIndex = 24;
             // 
             // checkedListBoxNo8X
@@ -2066,7 +2066,7 @@
             "Fix"});
             this.checkedListBoxNo8X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo8X.Name = "checkedListBoxNo8X";
-            this.checkedListBoxNo8X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo8X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo8X.TabIndex = 23;
             // 
             // label64
@@ -2139,7 +2139,7 @@
             "Fix"});
             this.checkedListBoxNo7Z.Location = new System.Drawing.Point(145, 32);
             this.checkedListBoxNo7Z.Name = "checkedListBoxNo7Z";
-            this.checkedListBoxNo7Z.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo7Z.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo7Z.TabIndex = 25;
             // 
             // checkedListBoxNo7Y
@@ -2151,7 +2151,7 @@
             "Fix"});
             this.checkedListBoxNo7Y.Location = new System.Drawing.Point(77, 32);
             this.checkedListBoxNo7Y.Name = "checkedListBoxNo7Y";
-            this.checkedListBoxNo7Y.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo7Y.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo7Y.TabIndex = 24;
             // 
             // checkedListBoxNo7X
@@ -2163,7 +2163,7 @@
             "Fix"});
             this.checkedListBoxNo7X.Location = new System.Drawing.Point(6, 32);
             this.checkedListBoxNo7X.Name = "checkedListBoxNo7X";
-            this.checkedListBoxNo7X.Size = new System.Drawing.Size(44, 19);
+            this.checkedListBoxNo7X.Size = new System.Drawing.Size(44, 34);
             this.checkedListBoxNo7X.TabIndex = 23;
             // 
             // label68
