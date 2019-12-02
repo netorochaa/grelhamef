@@ -69,5 +69,15 @@ namespace Grelha_MEF.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fd7536b6_b875_4923_87c6_3f2fae888120_INTRO_200x200 {
+            get {
+                object obj = ResourceManager.GetObject("fd7536b6-b875-4923-87c6-3f2fae888120_INTRO_200x200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

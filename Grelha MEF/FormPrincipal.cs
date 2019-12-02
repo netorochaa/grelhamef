@@ -65,22 +65,17 @@ namespace Grelha_MEF
             elementosGraficoBase                 = new List<double[]>();
             matrizesLocaisElementos              = new List<double[,]>();
             matrizesGlobaisElementosEspalhamento = new List<double[,]>();
-
             for (int i = 1; i <= quantidadeElementos; i++)
             {
-                Control[] combobox = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
-                ComboBox angulo = combobox[0] as ComboBox;
-                Control[] comboboxDirecao = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
-                ComboBox anguloDir = comboboxDirecao[0] as ComboBox;
-                Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
-                TextBox comprimento = textbox[0] as TextBox;
-
-                double anguloConvertido = anguloDir.Text == "-" ? -Convert.ToInt32(angulo.Text) : Convert.ToInt32(angulo.Text);
-
+                Control[] combobox          = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
+                ComboBox angulo             = combobox[0] as ComboBox;
+                Control[] comboboxDirecao   = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
+                ComboBox anguloDir          = comboboxDirecao[0] as ComboBox;
+                Control[] textbox           = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
+                TextBox comprimento         = textbox[0] as TextBox;
+                double anguloConvertido     = anguloDir.Text == "-" ? -Convert.ToInt32(angulo.Text) : Convert.ToInt32(angulo.Text);
                 elementosGraficoBase.Add(new double[] { double.Parse(comprimento.Text), anguloConvertido });
-
                 matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
-
                 matrizesGlobaisElementosEspalhamento.Add(espalhamentoMatrizRigidezGlobalNoSistemaGlobal(
                                                            MatrixUtil.multiplicacaoMatrizes( 
                                                                grausLiberdadeLocal,
@@ -93,42 +88,31 @@ namespace Grelha_MEF
                                                                string.Empty
                                                          ));
             }
-
             matrizGlobalEstrutura = calculaMatrizGlobalDosElementos(matrizesGlobaisElementosEspalhamento, grausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
         }
 
         public void inicializaVetorCargasExternas(int tamanhoVetor, int quantidadeNos)
         {
             vetorCargasExternas = new double[tamanhoVetor];
-
-            //Console.WriteLine("\r\n VETOR DE CARGAS EXTERNAS \r\n");
-
             for (int i = 1; i <= quantidadeNos; i++)
             {
                 Control[] control = this.Controls.Find("textBoxForcaNo" + i.ToString(), true);
                 TextBox textbox = control[0] as TextBox;
-
                 if (textbox.Enabled && !String.IsNullOrEmpty(textbox.Text.Trim()))
                 {
-                    vetorCargasExternas[(i - 1) * quantidadeNos] = double.Parse(textbox.Text);
+                    int indice = (i - 1) * 3;
+                    vetorCargasExternas[indice] = double.Parse(textbox.Text);
                 }
             }
-
-            //for (int i2 = 0; i2 < vetorCargasExternas.Length; i2++)
-            //    Console.WriteLine("Indice [" + (i2 + 1) + "]" + vetorCargasExternas[i2]);
         }
 
         public double[,] espalhamentoMatrizRigidezGlobalNoSistemaGlobal(double[,] matrizGlobalDoElemento, int grausLiberdadeGlobal, int[] localElemento, string nome)
         {
             int countI = 0;
             double[,] matrizResultante = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
-
-            //Console.WriteLine("\r\n" + nome + "\r\n");
-
             for (int i = 0; i < grausLiberdadeGlobal; i++)
             {
                 int countJ = 0;
-
                 for (int j = 0; j < grausLiberdadeGlobal; j++)
                 {
                     //percorre elementos
@@ -138,22 +122,16 @@ namespace Grelha_MEF
                         countJ++;
                     }
                     else
-                    {
                         matrizResultante[i, j] = double.NaN;
-                    }
-                    //Console.WriteLine("\r\nIndice [" + (i + 1) + ", " + (j + 1) + "] " + matrizResultante[i, j]);
                 }
                 if (!localElemento[i].Equals(0) && !localElemento[i].Equals(0)) countI++;
-                //if (countI.Equals(6)) countI = countI - 3;
             }
-
             return matrizResultante;
         }
 
         public double[,] calculaMatrizGlobalDosElementos(List<double[,]> elementosNaMatrizGlobal, int grausLiberdadeGlobal, string nome)
         {
             double[,] matrizResultante = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
-
             for (int h = 0; h < elementosNaMatrizGlobal.Count; h++)
             {
                 if (h.Equals(0))
@@ -177,7 +155,6 @@ namespace Grelha_MEF
                     }
                 }
             }
-
             return matrizResultante;
         }
 
@@ -187,37 +164,31 @@ namespace Grelha_MEF
             provider.NumberDecimalSeparator = ".";
             provider.NumberDecimalDigits = 2;
 
-            double b = double.Parse(textBoxB.Text, provider);
-            double h = double.Parse(textBoxH.Text, provider);
-            double moduloYoung = double.Parse(textBoxModuloYoung.Text, provider) * Math.Pow(10, 9);
-            double coeficientePoisson = double.Parse(textBoxCoeficientePoisson.Text, provider);
-            double comprimentoBarra = double.Parse(comprimentoBarraElem, provider);
+            double b                    = double.Parse(textBoxB.Text, provider);
+            double h                    = double.Parse(textBoxH.Text, provider);
+            double moduloYoung          = double.Parse(textBoxModuloYoung.Text, provider) * Math.Pow(10, 9);
+            double coeficientePoisson   = double.Parse(textBoxCoeficientePoisson.Text, provider);
+            double comprimentoBarra     = double.Parse(comprimentoBarraElem, provider);
 
             //momento inércia
             double I = (b * Math.Pow(h, 3)) / 12;
-
             //modulo young
             double E = moduloYoung;
-
             //coeficiente Poisson
             double V = coeficientePoisson;
-
             //modulo de elasticidade transversal
             double G = E / (2 * (1 + V));
-
             //momento inércia torção
             double J = h * Math.Pow(b, 3) * (((double)1 / 3) - 0.21 * (b / h) * (1 - (Math.Pow(b, 4) / (12 * Math.Pow(h, 4)))));
-
             double[,] matrizRigidezElementoEmCoordenadasLocais = new double[6, 6]
-                {
-                    {Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
-                    {0, Math.Round((G*J)/comprimentoBarra, 3), 0, 0, Math.Round((-G*J)/comprimentoBarra, 3), 0},
-                    {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3)},
-                    {Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
-                    {0, Math.Round((-G*J)/comprimentoBarra, 3), 0, 0, Math.Round((G*J)/comprimentoBarra, 3), 0},
-                    {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3)}
-                };
-
+            {
+                {Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
+                {0, Math.Round((G*J)/comprimentoBarra, 3), 0, 0, Math.Round((-G*J)/comprimentoBarra, 3), 0},
+                {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3)},
+                {Math.Round((-12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), Math.Round((12*E*I)/Math.Pow(comprimentoBarra, 3), 3), 0, Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3)},
+                {0, Math.Round((-G*J)/comprimentoBarra, 3), 0, 0, Math.Round((G*J)/comprimentoBarra, 3), 0},
+                {Math.Round((6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((2*E*I)/comprimentoBarra, 3), Math.Round((-6*E*I)/Math.Pow(comprimentoBarra, 2), 3), 0, Math.Round((4*E*I)/comprimentoBarra, 3)}
+            };
             return matrizRigidezElementoEmCoordenadasLocais;
         }
 
@@ -225,18 +196,15 @@ namespace Grelha_MEF
         public double[,] defineMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int quantidadeNos, int grausLiberdadeGlobal)
         {
             double[,] matrizResultante = matrizGlobalDosElementos;
-
             for (int i = 1; i <= quantidadeNos; i++)
             {
                 bool condicaoX = defineSeRestrito(i, "X");
                 bool condicaoY = defineSeRestrito(i, "Y");
                 bool condicaoZ = defineSeRestrito(i, "Z");
-
                 if (condicaoX)
                 {
                     int comecoNO = (i - 1) * 3;
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
-
                 }
                 if (condicaoY)
                 {
@@ -260,32 +228,27 @@ namespace Grelha_MEF
                 matrizResultante[comecoNO, j] = 0;
                 matrizResultante[j, comecoNO] = 0;
             }
-
             matrizResultante[comecoNO, comecoNO] = 1;
-
             return matrizResultante;
         }
         public bool defineSeRestrito(int no, string grauLiberdade)
         {
-            Control[] control = this.Controls.Find("checkedListBoxNo" + no.ToString() + grauLiberdade, true);
-            CheckedListBox checkedListBox = control[0] as CheckedListBox;
-            return checkedListBox.GetItemChecked(1);
+            Control[] control = this.Controls.Find("checkBoxFixaNo" + no.ToString() + grauLiberdade, true);
+            CheckBox checkBox = control[0] as CheckBox;
+            return checkBox.Checked;
         }
 
         public void defineVetoresDeslocRotGlobalPeloNo(double[] vetorDeslocamentoERotacaoGlobal, int quantidadeElementos, int grausLiberdadeGlobal)
         {
             vetoresDeslocGiroGlobalElem = new List<double[]>();
-
             for (int i = 0; i < quantidadeElementos; i++)
             {
-                int comecoNo = i * 3;
-                int count = 0;
+                int comecoNo             = i * 3;
+                int count                = 0;
                 double[] vetorResultante = new double[grausLiberdadeLocal.Length];
-
                 for (int j = comecoNo; j < grausLiberdadeGlobal; j++)
                 {
                     vetorResultante[count] = vetorDeslocamentoERotacaoGlobal[j];
-                    //Console.WriteLine(vetorResultante[count]);
                     count++;
                     if (count == grausLiberdadeLocal.Length) break;
                 }
@@ -313,45 +276,41 @@ namespace Grelha_MEF
             elementosGraficoDEC = new List<double[]>();
             elementosGraficoDMF = new List<double[]>();
             elementosGraficoDMT = new List<double[]>();
-
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], vetoresEsforcosInternosElem[i][3] }); //DEC
-
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
-                elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); // DMF
-
+                elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); //DMF
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
-                elementosGraficoDMT.Add(new double[] { vetoresEsforcosInternosElem[i][2], vetoresEsforcosInternosElem[i][5] }); // DMT
+                elementosGraficoDMT.Add(new double[] { vetoresEsforcosInternosElem[i][2], vetoresEsforcosInternosElem[i][5] }); //DMT
         }
         //EVENTOS
         private void limpaCamposElementosNos()
         {
             for (int j = 1; j <= 26; j++)
             {
-                Control[] textBoxE = this.Controls.Find("textBoxComprimentoE"+j.ToString(), true);
+                Control[] textBoxE   = this.Controls.Find("textBoxComprimentoE"+j.ToString(), true);
                 TextBox thistextBoxE = textBoxE[0] as TextBox;
-                thistextBoxE.Text = string.Empty;
+                thistextBoxE.Text    = string.Empty;
 
-                Control[] comboBoxAng = this.Controls.Find("comboBoxAnguloE" + j.ToString(), true);
-                ComboBox thiscomboBoxAng = comboBoxAng[0] as ComboBox;
+                Control[] comboBoxAng         = this.Controls.Find("comboBoxAnguloE" + j.ToString(), true);
+                ComboBox thiscomboBoxAng      = comboBoxAng[0] as ComboBox;
                 thiscomboBoxAng.SelectedIndex = 0;
 
-                Control[] comboBoxDir = this.Controls.Find("comboBoxAnguloDirE" + j.ToString(), true);
-                ComboBox thiscomboBoxDir = comboBoxDir[0] as ComboBox;
+                Control[] comboBoxDir         = this.Controls.Find("comboBoxAnguloDirE" + j.ToString(), true);
+                ComboBox thiscomboBoxDir      = comboBoxDir[0] as ComboBox;
                 thiscomboBoxDir.SelectedIndex = 0;
 
-                Control[] textBoxForca = this.Controls.Find("textBoxForcaNo" + j.ToString(), true);
+                Control[] textBoxForca   = this.Controls.Find("textBoxForcaNo" + j.ToString(), true);
                 TextBox thistextBoxForca = textBoxForca[0] as TextBox;
-                thistextBoxForca.Text = string.Empty;
-                
+                thistextBoxForca.Text    = string.Empty;
             }
         }
 
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
-            quantidadeNos = Convert.ToInt32(textBoxQuantidadeNos.Text);
+            quantidadeNos        = Convert.ToInt32(textBoxQuantidadeNos.Text);
             grausLiberdadeGlobal = Convert.ToInt32(quantidadeNos * 3);
-            quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
+            quantidadeElementos  = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
             inicializaMatrizGlobalEstrutura(grausLiberdadeGlobal, quantidadeElementos);
@@ -377,18 +336,23 @@ namespace Grelha_MEF
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
+            int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
+
+            FormGrafico graf    = new FormGrafico(quantidadeElementos);
+            graf.defineGrafico(chart1);
+
             int elementos = (int)numericUpDownQuantidadeElementos.Value;
             //LOOP PARA DESABILITAR GRUPBOXS
             for (int j = elementos; j < 24; j++)
             {
-                Control[] groupBoxElemento = this.Controls.Find("groupBoxElemento" + j.ToString(), true);
+                Control[] groupBoxElemento    = this.Controls.Find("groupBoxElemento" + j.ToString(), true);
                 GroupBox thisGroupBoxElemento = groupBoxElemento[0] as GroupBox;
 
-                Control[] groupBoxNo = this.Controls.Find("groupBoxNo" + (j + 1).ToString(), true);
+                Control[] groupBoxNo    = this.Controls.Find("groupBoxNo" + (j + 1).ToString(), true);
                 GroupBox thisGroupBoxNo = groupBoxNo[0] as GroupBox;
 
-                thisGroupBoxNo.Visible = false;
-                thisGroupBoxNo.Enabled = false;
+                thisGroupBoxNo.Visible       = false;
+                thisGroupBoxNo.Enabled       = false;
                 thisGroupBoxElemento.Visible = false;
                 thisGroupBoxElemento.Enabled = false;
             }
@@ -408,215 +372,28 @@ namespace Grelha_MEF
             }
             textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString();
         }
-
-        public void selecaoUnicaNoCheckedlistbox(CheckedListBox check)
+        /*
+         * HABILITA OU DESABILITA TEXTBOX DA FORÇA DO NÓ
+         * */
+        public void verificaForcaNo(int numero)
         {
-            if (check.SelectedIndex.Equals(0)) check.SetItemChecked(1, false);
-            else if (check.SelectedIndex.Equals(1))
+            string[] letras = new string[] { "X", "Y", "Z" };
+
+            Control[] textBoxForcaNo    = this.Controls.Find("textBoxForcaNo" + numero.ToString(), true);
+            TextBox thistextBoxForcaNo  = textBoxForcaNo[0] as TextBox;
+
+            for (int i = 0; i < letras.Length; i++)
             {
-                check.SetItemChecked(0, false);
+                Control[] control = this.Controls.Find("checkBoxFixaNo" + numero.ToString() + letras[i], true);
+                CheckBox checkBox = control[0] as CheckBox;
+
+                if (!checkBox.Checked) thistextBoxForcaNo.Enabled = true;
+                else
+                {
+                    thistextBoxForcaNo.Enabled = false;
+                    break;
+                }
             }
-        }
-
-        public void verificaForcaNo1()
-        {
-            if (checkedListBoxNo1X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo1Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo1Z.SelectedIndex.Equals(0)) textBoxForcaNo1.Enabled = true;
-            else textBoxForcaNo1.Enabled = false;
-        }
-
-        public void verificaForcaNo2()
-        {
-            if (checkedListBoxNo2X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo2Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo2Z.SelectedIndex.Equals(0)) textBoxForcaNo2.Enabled = true;
-            else textBoxForcaNo2.Enabled = false;
-        }
-
-        public void verificaForcaNo3()
-        {
-            if (checkedListBoxNo3X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo3Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo3Z.SelectedIndex.Equals(0)) textBoxForcaNo3.Enabled = true;
-            else textBoxForcaNo3.Enabled = false;
-        }
-
-        public void verificaForcaNo4()
-        {
-            if (checkedListBoxNo4X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo4Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo4Z.SelectedIndex.Equals(0)) textBoxForcaNo4.Enabled = true;
-            else textBoxForcaNo4.Enabled = false;
-        }
-
-        public void verificaForcaNo5()
-        {
-            if (checkedListBoxNo5X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo5Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo5Z.SelectedIndex.Equals(0)) textBoxForcaNo5.Enabled = true;
-            else textBoxForcaNo5.Enabled = false;
-        }
-
-        public void verificaForcaNo6()
-        {
-            if (checkedListBoxNo6X.SelectedIndex.Equals(0) &&
-                checkedListBoxNo6Y.SelectedIndex.Equals(0) &&
-                checkedListBoxNo6Z.SelectedIndex.Equals(0)) textBoxForcaNo6.Enabled = true;
-            else textBoxForcaNo6.Enabled = false;
-        }
-
-        public bool verificaPossivelHabilitacaoDoCampoForca()
-        {
-            int i = 0;
-
-            if (textBoxForcaNo1.Enabled) i++;
-            if (textBoxForcaNo2.Enabled) i++;
-            if (textBoxForcaNo3.Enabled) i++;
-            if (textBoxForcaNo4.Enabled) i++;
-            if (textBoxForcaNo5.Enabled) i++;
-            if (textBoxForcaNo6.Enabled) i++;
-
-            if (i.Equals(Convert.ToInt32(textBoxQuantidadeNos.Text))) return false;
-            else return true;
-        }
-
-        private void checkedListBoxNo1X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1X);
-            verificaForcaNo1();
-        }
-
-        private void checkedListBoxNo1Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Y);
-            verificaForcaNo1();
-        }
-
-        private void checkedListBoxNo1Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo1Z);
-            verificaForcaNo1();
-        }
-
-        private void checkedListBoxNo2X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2X);
-            verificaForcaNo2();
-        }
-
-        private void checkedListBoxNo2Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Y);
-            verificaForcaNo2();
-        }
-
-        private void checkedListBoxNo2Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo2Z);
-            verificaForcaNo2();
-        }
-
-        private void checkedListBoxNo3X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3X);
-            verificaForcaNo3();
-        }
-
-        private void checkedListBoxNo3Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Y);
-            verificaForcaNo3();
-        }
-
-        private void checkedListBoxNo3Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo3Z);
-            verificaForcaNo3();
-        }
-
-        private void checkedListBoxNo4X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4X);
-            verificaForcaNo4();
-        }
-
-        private void checkedListBoxNo4Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Y);
-            verificaForcaNo4();
-        }
-
-        private void checkedListBoxNo4Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo4Z);
-            verificaForcaNo4();
-        }
-
-        private void checkedListBoxNo5X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5X);
-            verificaForcaNo5();
-        }
-
-        private void checkedListBoxNo5Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Y);
-            verificaForcaNo5();
-        }
-
-        private void checkedListBoxNo5Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
-            verificaForcaNo5();
-        }
-
-        private void checkedListBoxNo6X_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo6X);
-            verificaForcaNo6();
-        }
-
-        private void checkedListBoxNo6Y_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo6Y);
-            verificaForcaNo6();
-        }
-
-        private void checkedListBoxNo6Z_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selecaoUnicaNoCheckedlistbox(checkedListBoxNo5Z);
-            verificaForcaNo6();
-        }
-
-        private void textBoxForcaNo1_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo1.Enabled = false;
-        }
-
-        private void textBoxForcaNo2_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo2.Enabled = false;
-        }
-
-        private void textBoxForcaNo3_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo3.Enabled = false;
-        }
-
-        private void textBoxForcaNo4_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo4.Enabled = false;
-        }
-
-        private void textBoxForcaNo5_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo5.Enabled = false;
-        }
-
-        private void textBoxForcaNo6_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!verificaPossivelHabilitacaoDoCampoForca()) textBoxForcaNo6.Enabled = false;
         }
 
         private void comboBoxAnguloE1_SelectedValueChanged(object sender, EventArgs e)
@@ -694,6 +471,7 @@ namespace Grelha_MEF
                 textBoxH.ReadOnly = true;
                 buttonProximo.Enabled = false;
                 buttonLimpar.Enabled = true;
+                elementosGraficoBase = new List<double[]>();
             }
             else
             {
@@ -720,8 +498,202 @@ namespace Grelha_MEF
 
         private void timerintro_Tick(object sender, EventArgs e)
         {
-            this.Controls.Remove(panelintro);
-            panelintro.Dispose();
+            //this.Controls.Remove(panelintro);
+            //panelintro.Dispose();
+            panel1.Visible = true;
+            timerintro.Enabled = false;
+        }
+
+        string[] separador = { "No" };
+
+        private void checkBoxFixaNo1_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo1X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo2_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo2X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo3_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo3X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo4_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo4X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo5_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo5X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo6_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo6X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo7_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo7X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo8_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo8X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo9_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo9X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo10_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo10X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo11_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo11X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo12_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo12X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo13_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString   = checkBoxFixaNo13X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo14_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo14X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo15_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo15X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo16_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo16X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo17_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo17X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo18_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo18X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo19_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo19X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo20_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo20X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo21_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo21X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo22_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo22X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo23_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo23X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo24_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo24X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo25_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo25X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo26_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo26X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
+        }
+
+        private void checkBoxFixaNo27_CheckedChanged(object sender, EventArgs e)
+        {
+            string[] quebraString = checkBoxFixaNo27X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            verificaForcaNo(numeroNo);
         }
     }
 }

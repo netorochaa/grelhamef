@@ -19,6 +19,11 @@ namespace Grelha_MEF
         int             quantidadeElementos;
         List<double[]>  elementosGraficoBase;
 
+        public FormGrafico(int quantidadeElementos)
+        {
+            this.quantidadeElementos = quantidadeElementos;
+        }
+
         public FormGrafico( List<double[]> elementosGraficoDEC, List<double[]> elementosGraficoDMF, List<double[]> elementosGraficoDMT,
                         int quantidadeElementos, List<double[]> elementosGraficoBase)
         {
@@ -30,28 +35,37 @@ namespace Grelha_MEF
             this.quantidadeElementos    = quantidadeElementos;
             this.elementosGraficoBase   = elementosGraficoBase;
 
-            defineGrafico();
+            defineGrafico(null);
         }
-        public void defineGrafico()
+        public void defineGrafico(Chart chart)
         {
-            chart1.Series.Clear();
-            chart2.Series.Clear();
-            chart3.Series.Clear();
-
-            List<double[]> extremidadesDEC = new List<double[]>();
-            List<double[]> extremidadesDMF = new List<double[]>();
-            List<double[]> extremidadesDMT = new List<double[]>();
-
-            for (int h = 1; h <= quantidadeElementos; h++)
+            if(chart != null)
             {
-                tracaGrafico(h, addElementoGrafico(1, chart1), chart1, extremidadesDEC);
-                tracaGrafico(h, addElementoGrafico(1, chart2), chart2, extremidadesDMF);
-                tracaGrafico(h, addElementoGrafico(1, chart3), chart3, extremidadesDMT);
-            }
+                chart.Series.Clear();
 
-            defineDECeDMT(chart1, extremidadesDEC, true);
-            defineDMF(chart2, extremidadesDMF);
-            defineDECeDMT(chart3, extremidadesDMT, false);
+                for (int h = 1; h <= quantidadeElementos; h++)
+                {
+                    tracaGrafico(h, addElementoGrafico(1, chart), chart, null);
+                }
+            }
+            else
+            {
+                chart1.Series.Clear();
+                chart2.Series.Clear();
+                chart3.Series.Clear();
+                List<double[]> extremidadesDEC = new List<double[]>();
+                List<double[]> extremidadesDMF = new List<double[]>();
+                List<double[]> extremidadesDMT = new List<double[]>();
+                for (int h = 1; h <= quantidadeElementos; h++)
+                {
+                    tracaGrafico(h, addElementoGrafico(1, chart1), chart1, extremidadesDEC);
+                    tracaGrafico(h, addElementoGrafico(1, chart2), chart2, extremidadesDMF);
+                    tracaGrafico(h, addElementoGrafico(1, chart3), chart3, extremidadesDMT);
+                }
+                defineDECeDMT(chart1, extremidadesDEC, true);
+                defineDMF(chart2, extremidadesDMF);
+                defineDECeDMT(chart3, extremidadesDMT, false);
+            }
         }
         public string addElementoGrafico(int tam, Chart chart)
         {
@@ -64,20 +78,15 @@ namespace Grelha_MEF
             chart.Series[indexSeries].IsVisibleInLegend = true;
             chart.Series[indexSeries].ChartType = SeriesChartType.Line;
             chart.Series[indexSeries].BorderWidth = tam;
-            //chart.Series["Series" + h].IsXValueIndexed = true;
-            //chart.Legends.Add(new Legend());
-            //chart.Legends[h - 1].Name = "Elemento" + h;
-            //chart.Series["Series" + h].Legend = chart1.Legends[h - 1].Name;
-
+            
             return indexSeries;
         }
         public void tracaGrafico(int h, string indexSeries, Chart chart, List<double[]> extremidades)
         {
-            int indexVetor = h - 1;
-            int ultimoIndexSeries = indexVetor - 1;
-
+            int indexVetor              = h - 1;
+            int ultimoIndexSeries       = indexVetor - 1;
             double valorElementoGrafico = 1;
-            string nameSeries = elementosGraficoBase[indexVetor][0].ToString();
+            string nameSeries           = elementosGraficoBase[indexVetor][0].ToString();
 
             chart.ChartAreas[0].AxisY.Maximum = quantidadeElementos + 1;
             chart.ChartAreas[0].AxisY.Minimum = -(quantidadeElementos + 1);
@@ -99,15 +108,15 @@ namespace Grelha_MEF
                             valorElementoGrafico = elementosGraficoBase[indexVetor][1].Equals(-90) ? -valorElementoGrafico : valorElementoGrafico;
 
                             chart.Series[indexSeries].Points.AddXY(j, valorElementoGrafico);
-                            extremidades.Add(new double[] { j, valorElementoGrafico, elementosGraficoBase[indexVetor][0] });
-                            //chart.Series[indexSeries].Label = nameSeries;
+                            if(extremidades != null)
+                                extremidades.Add(new double[] { j, valorElementoGrafico, elementosGraficoBase[indexVetor][0] });
                             Console.WriteLine(indexSeries + " [" + j + "] Y: " + valorElementoGrafico);
                         }
                         else if (elementosGraficoBase[indexVetor][1].Equals(0))
                         {
                             chart.Series[indexSeries].Points.AddXY(valorElementoGrafico, 0);
-                            extremidades.Add(new double[] { valorElementoGrafico, 0, elementosGraficoBase[indexVetor][0] });
-                            //chart.Series[indexSeries].Label = nameSeries;
+                            if (extremidades != null)
+                                extremidades.Add(new double[] { valorElementoGrafico, 0, elementosGraficoBase[indexVetor][0] });
                             Console.WriteLine(indexSeries + " [" + 0 + "] X: " + valorElementoGrafico);
                         }
                     }
@@ -135,7 +144,8 @@ namespace Grelha_MEF
                             double valor = ultimoValorX + valorElementoGrafico;
 
                             chart.Series[indexSeries].Points.AddXY(valor, ultimoValorY);
-                            extremidades.Add(new double[] { valor, ultimoValorY, elementosGraficoBase[indexVetor][0] });
+                            if (extremidades != null)
+                                extremidades.Add(new double[] { valor, ultimoValorY, elementosGraficoBase[indexVetor][0] });
                             //chart.Series[indexSeries].Label = nameSeries;
                             Console.WriteLine(indexSeries + " [Y " + ultimoValorY + "] X: " + valor);
                         }
@@ -153,7 +163,8 @@ namespace Grelha_MEF
                             }
 
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, valorElementoGrafico);
-                            extremidades.Add(new double[] { ultimoValorX, valorElementoGrafico, elementosGraficoBase[indexVetor][0] });
+                            if (extremidades != null) 
+                                extremidades.Add(new double[] { ultimoValorX, valorElementoGrafico, elementosGraficoBase[indexVetor][0] });
                             //chart.Series[indexSeries].Label = nameSeries;
                             Console.WriteLine(indexSeries + " [X " + ultimoValorX + "] Y: " + valorElementoGrafico);
                         }
