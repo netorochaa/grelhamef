@@ -213,6 +213,7 @@
             this.buttonProximo = new System.Windows.Forms.Button();
             this.label72 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label176 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxNo27 = new System.Windows.Forms.GroupBox();
@@ -460,7 +461,6 @@
             this.label75 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.timerintro = new System.Windows.Forms.Timer(this.components);
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -486,6 +486,7 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBoxNo27.SuspendLayout();
             this.groupBoxNo26.SuspendLayout();
@@ -519,7 +520,6 @@
             this.groupBoxNo12.SuspendLayout();
             this.groupBoxElemento12.SuspendLayout();
             this.groupBoxElemento11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -2535,6 +2535,23 @@
             this.panel3.Size = new System.Drawing.Size(360, 318);
             this.panel3.TabIndex = 42;
             this.panel3.Visible = false;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(0, 23);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(360, 295);
+            this.chart1.TabIndex = 47;
+            this.chart1.Text = "chart1";
             // 
             // label176
             // 
@@ -5306,23 +5323,6 @@
             this.timerintro.Interval = 3000;
             this.timerintro.Tick += new System.EventHandler(this.timerintro_Tick);
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 23);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(360, 295);
-            this.chart1.TabIndex = 47;
-            this.chart1.Text = "chart1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5383,6 +5383,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBoxNo27.ResumeLayout(false);
@@ -5449,7 +5450,6 @@
             this.groupBoxElemento12.PerformLayout();
             this.groupBoxElemento11.ResumeLayout(false);
             this.groupBoxElemento11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

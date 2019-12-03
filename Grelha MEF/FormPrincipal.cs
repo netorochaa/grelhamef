@@ -336,10 +336,10 @@ namespace Grelha_MEF
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
-            int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
+            //int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
-            FormGrafico graf    = new FormGrafico(quantidadeElementos);
-            graf.defineGrafico(chart1);
+            //FormGrafico graf    = new FormGrafico(quantidadeElementos);
+            //graf.defineGrafico(chart1);
 
             int elementos = (int)numericUpDownQuantidadeElementos.Value;
             //LOOP PARA DESABILITAR GRUPBOXS
