@@ -14,8 +14,8 @@ namespace Grelha_MEF
     public partial class FormGrafico : Form
     {
         List<double[]>  elementosGraficoDEC;
-        List<double[]>  elementosGraficoDMF;
         List<double[]>  elementosGraficoDMT;
+        List<double[]>  elementosGraficoDMF;
         int             quantidadeElementos;
         List<double[]>  elementosGraficoBase;
 
@@ -24,14 +24,14 @@ namespace Grelha_MEF
             this.quantidadeElementos = quantidadeElementos;
         }
 
-        public FormGrafico( List<double[]> elementosGraficoDEC, List<double[]> elementosGraficoDMF, List<double[]> elementosGraficoDMT,
-                        int quantidadeElementos, List<double[]> elementosGraficoBase)
+        public FormGrafico( List<double[]> elementosGraficoDEC, List<double[]> elementosGraficoDMT, List<double[]> elementosGraficoDMF,
+                            int quantidadeElementos, List<double[]> elementosGraficoBase)
         {
             InitializeComponent();
 
             this.elementosGraficoDEC    = elementosGraficoDEC;
-            this.elementosGraficoDMF    = elementosGraficoDMF;
             this.elementosGraficoDMT    = elementosGraficoDMT;
+            this.elementosGraficoDMF    = elementosGraficoDMF;
             this.quantidadeElementos    = quantidadeElementos;
             this.elementosGraficoBase   = elementosGraficoBase;
 
@@ -54,17 +54,17 @@ namespace Grelha_MEF
                 chart2.Series.Clear();
                 chart3.Series.Clear();
                 List<double[]> extremidadesDEC = new List<double[]>();
-                List<double[]> extremidadesDMF = new List<double[]>();
                 List<double[]> extremidadesDMT = new List<double[]>();
+                List<double[]> extremidadesDMF = new List<double[]>();
                 for (int h = 1; h <= quantidadeElementos; h++)
                 {
                     tracaGrafico(h, addElementoGrafico(1, chart1), chart1, extremidadesDEC);
-                    tracaGrafico(h, addElementoGrafico(1, chart2), chart2, extremidadesDMF);
-                    tracaGrafico(h, addElementoGrafico(1, chart3), chart3, extremidadesDMT);
+                    tracaGrafico(h, addElementoGrafico(1, chart2), chart2, extremidadesDMT);
+                    tracaGrafico(h, addElementoGrafico(1, chart3), chart3, extremidadesDMF);
                 }
-                defineDECeDMT(chart1, extremidadesDEC, true);
-                defineDMF(chart2, extremidadesDMF);
-                defineDECeDMT(chart3, extremidadesDMT, false);
+                defineDECeDMF(chart1, extremidadesDEC, true);
+                defineDECeDMF(chart2, extremidadesDMF, false);
+                defineDMT(chart3, extremidadesDMT);
             }
         }
         public string addElementoGrafico(int tam, Chart chart)
@@ -173,7 +173,7 @@ namespace Grelha_MEF
             }
             chart.Series[indexSeries].LegendText = " Elemento " + h + ": " + nameSeries;
         }
-        public void defineDECeDMT(Chart chart, List<double[]> extremidades, bool dec)
+        public void defineDECeDMF(Chart chart, List<double[]> extremidades, bool dec)
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
@@ -186,7 +186,7 @@ namespace Grelha_MEF
                 bool valorNegativoAnterior = false;
                 double angulo = elementosGraficoBase[indexVetor][1];
 
-                List<double[]> elementosGraficos = dec ? elementosGraficoDEC : elementosGraficoDMT;
+                List<double[]> elementosGraficos = dec ? elementosGraficoDEC : elementosGraficoDMF;
 
                 double valorDEC = 1;
                 //Math.Round(Math.Abs(elementosGraficoDEC[indexVetor][0] / 10), 1);
@@ -216,7 +216,7 @@ namespace Grelha_MEF
                         {
                             //INICIO DA BARRA INICIAL
                             chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorY);
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorXaux + " Y " + ultimoValorY);
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorXaux + " Y " + ultimoValorY);
 
                             if (elementosGraficos[indexVetor][h] == 0) // extremidadesDEC[indexVetor][h] == 0 || 
                                 continue;
@@ -226,7 +226,7 @@ namespace Grelha_MEF
 
                                 //BARRA INICIAL
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
-                                Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorXaux + " Y " + valorY);
+                                Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorXaux + " Y " + valorY);
                             }
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
@@ -242,7 +242,7 @@ namespace Grelha_MEF
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                                 chart.Series[indexSeries].Points.Last().Label = legendaValor;
                                 chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                                Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
+                                Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
                                 continue;
                             }
 
@@ -251,11 +251,11 @@ namespace Grelha_MEF
                             //chart.Series[indexSeries].Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + valorY + " Y " + ultimoValorX);
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + valorY + " Y " + ultimoValorX);
 
                             //BARRA FECHAMENTO
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
                         }
                     }
                 }
@@ -284,7 +284,7 @@ namespace Grelha_MEF
                         if (h.Equals(0))
                         {
                             chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorYaux);
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorXaux + " Y " + ultimoValorYaux);
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorXaux + " Y " + ultimoValorYaux);
 
                             if (elementosGraficoDEC[indexVetor][h] == 0)
                                 continue;
@@ -292,7 +292,7 @@ namespace Grelha_MEF
                             {
                                 //BARRA INICIAL
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
-                                Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorXaux + " Y " + valorY);
+                                Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorXaux + " Y " + valorY);
                             }
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
@@ -306,7 +306,7 @@ namespace Grelha_MEF
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                                 chart.Series[indexSeries].Points.Last().Label = legendaValor;
                                 chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                                Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
+                                Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
                                 continue;
                             }
 
@@ -315,17 +315,17 @@ namespace Grelha_MEF
                             //chart.Series[indexSeries].Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorX + " Y " + (ultimoValorY - valorDEC));
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorX + " Y " + (ultimoValorY - valorDEC));
 
                             //BARRA FECHAMENTO
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
-                            Console.WriteLine("DEC||DMT " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
+                            Console.WriteLine("DEC||DMF " + indexSeries + " X " + ultimoValorX + " Y " + ultimoValorY);
                         }
                     }
                 }
             }
         }
-        public void defineDMF(Chart chart, List<double[]> extremidadesDMF)
+        public void defineDMT(Chart chart, List<double[]> extremidadesDMT)
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
@@ -338,22 +338,19 @@ namespace Grelha_MEF
                 double angulo = elementosGraficoBase[indexVetor][1];
 
                 double valorDMF = 1;
-                //Math.Round(Math.Abs(elementosGraficoDMF[indexVetor][0] / 10), 1);
                 string legendaValor = string.Empty;
 
                 if (angulo.Equals(0))
                 {
-                    //for (int k = 0; k < extremidadesDMF.Count; k++)
-                    //{
-                    ultimoValorX = extremidadesDMF[indexVetor][0];
-                    ultimoValorY = extremidadesDMF[indexVetor][1];
+                    ultimoValorX = extremidadesDMT[indexVetor][0];
+                    ultimoValorY = extremidadesDMT[indexVetor][1];
 
-                    for (int h = 0; h < elementosGraficoDMF[indexVetor].Length; h++)
+                    for (int h = 0; h < elementosGraficoDMT[indexVetor].Length; h++)
                     {
-                        legendaValor = Math.Round(elementosGraficoDMF[indexVetor][h], 2).ToString();
+                        legendaValor = Math.Round(elementosGraficoDMT[indexVetor][h], 2).ToString();
                         chart.Series[indexSeries].LegendText += legendaValor + " | ";
 
-                        if (elementosGraficoDMF[indexVetor][h] < 0)
+                        if (elementosGraficoDMT[indexVetor][h] < 0)
                             valorNegativo = true;
                         else valorNegativo = false;
 
@@ -363,9 +360,9 @@ namespace Grelha_MEF
                         if (h.Equals(0))
                         {
                             chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorY);
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorY);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorY);
 
-                            if (elementosGraficoDMF[indexVetor][h] == 0)
+                            if (elementosGraficoDMT[indexVetor][h] == 0)
                                 continue;
                             else
                             {
@@ -378,38 +375,38 @@ namespace Grelha_MEF
                         }
                         else
                         {
-                            if (elementosGraficoDMF[indexVetor][h] == 0)
+                            if (elementosGraficoDMT[indexVetor][h] == 0)
                             {
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
                                 chart.Series[indexSeries].Points.Last().Label = legendaValor;
                                 chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                                Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
                                 continue;
                             }
 
-                            //BARRA MAIOR DMF
+                            //BARRA MAIOR DMT
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, valorY);
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + valorY);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + valorY);
 
-                            //BARRA FECHAMENTO DMF
+                            //BARRA FECHAMENTO DMT
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
                         }
                     }
                 }
                 else if (angulo.Equals(90) || angulo.Equals(-90))
                 {
-                    ultimoValorX = extremidadesDMF[indexVetor][0];
-                    ultimoValorY = extremidadesDMF[indexVetor][1];
+                    ultimoValorX = extremidadesDMT[indexVetor][0];
+                    ultimoValorY = extremidadesDMT[indexVetor][1];
 
-                    for (int h = 0; h < elementosGraficoDMF[indexVetor].Length; h++)
+                    for (int h = 0; h < elementosGraficoDMT[indexVetor].Length; h++)
                     {
-                        legendaValor = Math.Round(elementosGraficoDMF[indexVetor][h], 2).ToString();
+                        legendaValor = Math.Round(elementosGraficoDMT[indexVetor][h], 2).ToString();
                         chart.Series[indexSeries].LegendText += legendaValor + " | ";
 
-                        if (elementosGraficoDMF[indexVetor][h] < 0)
+                        if (elementosGraficoDMT[indexVetor][h] < 0)
                             valorNegativo = true;
                         else valorNegativo = false;
 
@@ -420,9 +417,9 @@ namespace Grelha_MEF
                         if (h.Equals(0))
                         {
                             chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, ultimoValorYaux);
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorYaux);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorXaux + "] " + ultimoValorYaux);
 
-                            if (elementosGraficoDMF[indexVetor][h] == 0)
+                            if (elementosGraficoDMT[indexVetor][h] == 0)
                                 continue;
 
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
@@ -430,29 +427,29 @@ namespace Grelha_MEF
                         }
                         else
                         {
-                            if (elementosGraficoDMF[indexVetor][h] == 0)
+                            if (elementosGraficoDMT[indexVetor][h] == 0)
                             {
                                 chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
-                                Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                                Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
                                 chart.Series[indexSeries].Points.Last().Label = legendaValor;
                                 chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
 
                                 continue;
                             }
 
-                            //BARRA INICIAL DMF
+                            //BARRA INICIAL DMT
                             chart.Series[indexSeries].Points.AddXY(ultimoValorXaux, valorY);
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorXaux + "] " + valorY);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorXaux + "] " + valorY);
 
-                            //BARRA MAIOR DMF
+                            //BARRA MAIOR DMT
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY - valorDMF);
                             chart.Series[indexSeries].Points.Last().Label = legendaValor;
                             chart.Series[indexSeries].Points.Last().LegendText += legendaValor + " | ";
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + (ultimoValorY - valorDMF));
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + (ultimoValorY - valorDMF));
 
-                            //BARRA FECHAMENTO DMF
+                            //BARRA FECHAMENTO DMT
                             chart.Series[indexSeries].Points.AddXY(ultimoValorX, ultimoValorY);
-                            Console.WriteLine("DMF " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
+                            Console.WriteLine("DMT " + indexSeries + " [" + ultimoValorX + "] " + ultimoValorY);
                         }
 
                     }
