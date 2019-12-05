@@ -276,6 +276,7 @@ namespace Grelha_MEF
             elementosGraficoDEC = new List<double[]>();
             elementosGraficoDMF = new List<double[]>();
             elementosGraficoDMT = new List<double[]>();
+
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], vetoresEsforcosInternosElem[i][3] }); //DEC
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
