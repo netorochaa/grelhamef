@@ -337,11 +337,6 @@ namespace Grelha_MEF
 
         private void numericUpDownQuantidadeElementos_ValueChanged(object sender, EventArgs e)
         {
-            //int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
-
-            //FormGrafico graf    = new FormGrafico(quantidadeElementos);
-            //graf.defineGrafico(chart1);
-
             int elementos = (int)numericUpDownQuantidadeElementos.Value;
             //LOOP PARA DESABILITAR GRUPBOXS
             for (int j = elementos; j < 24; j++)
@@ -695,6 +690,48 @@ namespace Grelha_MEF
             string[] quebraString = checkBoxFixaNo27X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
+        }
+
+        private void comboBoxAngulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
+            List<double[]> elementosGraficoBase = new List<double[]>();
+
+            for (int i = 1; i <= quantidadeElementos; i++)
+            {
+                Control[] control = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
+                ComboBox comboBox = control[0] as ComboBox;
+
+                if(comboBox.Text != string.Empty) elementosGraficoBase.Add(new double[] { 0.0, double.Parse(comboBox.Text)});
+            }
+            FormGrafico graf = new FormGrafico(quantidadeElementos, elementosGraficoBase);
+            graf.defineGrafico(chart1);
+        }
+
+        private void comboBoxAnguloE1_EnabledChanged(object sender, EventArgs e)
+        {
+            ComboBox combobox = sender as ComboBox;
+            combobox.Text = "0";
+        }
+
+        private void comboBoxAnguloDir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
+            List<double[]> elementosGraficoBase = new List<double[]>();
+
+            for (int i = 1; i <= quantidadeElementos; i++)
+            {
+                Control[] control1 = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
+                ComboBox comboBox = control1[0] as ComboBox;
+                Control[] control2 = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
+                ComboBox comboBoxDir = control2[0] as ComboBox;
+
+                double anguloConvertido = comboBoxDir.Text == "-" ? -Convert.ToInt32(comboBox.Text) : Convert.ToInt32(comboBox.Text);
+
+                if (comboBox.Text != string.Empty) elementosGraficoBase.Add(new double[] { 0.0, anguloConvertido});
+            }
+            FormGrafico graf = new FormGrafico(quantidadeElementos, elementosGraficoBase);
+            graf.defineGrafico(chart1);
         }
     }
 }

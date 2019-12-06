@@ -216,6 +216,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label176 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label174 = new System.Windows.Forms.Label();
             this.groupBoxNo27 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo27Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo27Y = new System.Windows.Forms.CheckBox();
@@ -572,9 +573,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
             this.label3.Location = new System.Drawing.Point(310, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 21);
+            this.label3.Size = new System.Drawing.Size(174, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Modulo Young (KN/m2)";
+            this.label3.Text = "Modulo Young (KN/m²)";
             // 
             // textBoxModuloYoung
             // 
@@ -632,10 +633,11 @@
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Location = new System.Drawing.Point(0, 928);
+            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Location = new System.Drawing.Point(0, 947);
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Name = "buttonCalculaMatrizRigidezElementoEmCoordenadasLocais";
-            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Size = new System.Drawing.Size(1090, 30);
+            this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Size = new System.Drawing.Size(1102, 35);
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.TabIndex = 10;
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.Text = "Calcular";
             this.buttonCalculaMatrizRigidezElementoEmCoordenadasLocais.UseVisualStyleBackColor = false;
@@ -672,6 +674,7 @@
             this.comboBoxAnguloDirE1.Name = "comboBoxAnguloDirE1";
             this.comboBoxAnguloDirE1.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE1.TabIndex = 13;
+            this.comboBoxAnguloDirE1.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // label71
             // 
@@ -693,7 +696,9 @@
             this.comboBoxAnguloE1.Name = "comboBoxAnguloE1";
             this.comboBoxAnguloE1.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE1.TabIndex = 11;
+            this.comboBoxAnguloE1.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE1.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE1_SelectedValueChanged);
+            this.comboBoxAnguloE1.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label7
             // 
@@ -762,6 +767,7 @@
             this.comboBoxAnguloDirE2.Name = "comboBoxAnguloDirE2";
             this.comboBoxAnguloDirE2.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE2.TabIndex = 14;
+            this.comboBoxAnguloDirE2.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE2
             // 
@@ -776,7 +782,9 @@
             this.comboBoxAnguloE2.Name = "comboBoxAnguloE2";
             this.comboBoxAnguloE2.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE2.TabIndex = 11;
+            this.comboBoxAnguloE2.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE2.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE2_SelectedValueChanged);
+            this.comboBoxAnguloE2.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label9
             // 
@@ -835,6 +843,7 @@
             this.comboBoxAnguloDirE3.Name = "comboBoxAnguloDirE3";
             this.comboBoxAnguloDirE3.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE3.TabIndex = 15;
+            this.comboBoxAnguloDirE3.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE3
             // 
@@ -848,7 +857,9 @@
             this.comboBoxAnguloE3.Name = "comboBoxAnguloE3";
             this.comboBoxAnguloE3.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE3.TabIndex = 11;
+            this.comboBoxAnguloE3.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE3.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE3_SelectedValueChanged);
+            this.comboBoxAnguloE3.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label11
             // 
@@ -906,6 +917,7 @@
             this.comboBoxAnguloDirE4.Name = "comboBoxAnguloDirE4";
             this.comboBoxAnguloDirE4.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE4.TabIndex = 16;
+            this.comboBoxAnguloDirE4.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE4
             // 
@@ -919,7 +931,9 @@
             this.comboBoxAnguloE4.Name = "comboBoxAnguloE4";
             this.comboBoxAnguloE4.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE4.TabIndex = 11;
+            this.comboBoxAnguloE4.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE4.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE4_SelectedValueChanged);
+            this.comboBoxAnguloE4.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label13
             // 
@@ -977,6 +991,7 @@
             this.comboBoxAnguloDirE5.Name = "comboBoxAnguloDirE5";
             this.comboBoxAnguloDirE5.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE5.TabIndex = 17;
+            this.comboBoxAnguloDirE5.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE5
             // 
@@ -990,7 +1005,9 @@
             this.comboBoxAnguloE5.Name = "comboBoxAnguloE5";
             this.comboBoxAnguloE5.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE5.TabIndex = 11;
+            this.comboBoxAnguloE5.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE5.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE5_SelectedValueChanged);
+            this.comboBoxAnguloE5.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label15
             // 
@@ -1048,6 +1065,7 @@
             this.comboBoxAnguloDirE6.Name = "comboBoxAnguloDirE6";
             this.comboBoxAnguloDirE6.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE6.TabIndex = 18;
+            this.comboBoxAnguloDirE6.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE6
             // 
@@ -1061,7 +1079,9 @@
             this.comboBoxAnguloE6.Name = "comboBoxAnguloE6";
             this.comboBoxAnguloE6.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE6.TabIndex = 11;
+            this.comboBoxAnguloE6.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
             this.comboBoxAnguloE6.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE6_SelectedValueChanged);
+            this.comboBoxAnguloE6.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label17
             // 
@@ -1120,6 +1140,7 @@
             this.comboBoxAnguloDirE7.Name = "comboBoxAnguloDirE7";
             this.comboBoxAnguloDirE7.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE7.TabIndex = 19;
+            this.comboBoxAnguloDirE7.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE7
             // 
@@ -1134,6 +1155,7 @@
             this.comboBoxAnguloE7.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE7.TabIndex = 11;
             this.comboBoxAnguloE7.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE7_SelectedValueChanged);
+            this.comboBoxAnguloE7.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label19
             // 
@@ -1192,6 +1214,7 @@
             this.comboBoxAnguloDirE8.Name = "comboBoxAnguloDirE8";
             this.comboBoxAnguloDirE8.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE8.TabIndex = 20;
+            this.comboBoxAnguloDirE8.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE8
             // 
@@ -1206,6 +1229,7 @@
             this.comboBoxAnguloE8.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE8.TabIndex = 11;
             this.comboBoxAnguloE8.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE8_SelectedValueChanged);
+            this.comboBoxAnguloE8.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label21
             // 
@@ -1264,6 +1288,7 @@
             this.comboBoxAnguloDirE9.Name = "comboBoxAnguloDirE9";
             this.comboBoxAnguloDirE9.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE9.TabIndex = 20;
+            this.comboBoxAnguloDirE9.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE9
             // 
@@ -1278,6 +1303,7 @@
             this.comboBoxAnguloE9.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE9.TabIndex = 11;
             this.comboBoxAnguloE9.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE9_SelectedValueChanged);
+            this.comboBoxAnguloE9.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label23
             // 
@@ -1336,6 +1362,7 @@
             this.comboBoxAnguloDirE10.Name = "comboBoxAnguloDirE10";
             this.comboBoxAnguloDirE10.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE10.TabIndex = 21;
+            this.comboBoxAnguloDirE10.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE10
             // 
@@ -1350,6 +1377,7 @@
             this.comboBoxAnguloE10.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE10.TabIndex = 11;
             this.comboBoxAnguloE10.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE10_SelectedValueChanged);
+            this.comboBoxAnguloE10.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label25
             // 
@@ -2451,7 +2479,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(364, 962);
+            this.panel1.Size = new System.Drawing.Size(364, 986);
             this.panel1.TabIndex = 40;
             this.panel1.Visible = false;
             // 
@@ -2530,14 +2558,24 @@
             this.panel3.Controls.Add(this.chart1);
             this.panel3.Controls.Add(this.label176);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 640);
+            this.panel3.Location = new System.Drawing.Point(0, 376);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 318);
+            this.panel3.Size = new System.Drawing.Size(360, 606);
             this.panel3.TabIndex = 42;
             this.panel3.Visible = false;
             // 
             // chart1
             // 
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2546,10 +2584,11 @@
             this.chart1.Location = new System.Drawing.Point(0, 23);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(360, 295);
+            this.chart1.Size = new System.Drawing.Size(360, 583);
             this.chart1.TabIndex = 47;
             this.chart1.Text = "chart1";
             // 
@@ -2572,6 +2611,7 @@
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label174);
             this.panel2.Controls.Add(this.groupBoxNo27);
             this.panel2.Controls.Add(this.groupBoxNo26);
             this.panel2.Controls.Add(this.groupBoxElemento26);
@@ -2636,9 +2676,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(364, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1094, 962);
+            this.panel2.Size = new System.Drawing.Size(1106, 986);
             this.panel2.TabIndex = 41;
             this.panel2.Visible = false;
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label174.Location = new System.Drawing.Point(172, 15);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(79, 23);
+            this.label174.TabIndex = 77;
+            this.label174.Text = "FÍSICAS";
             // 
             // groupBoxNo27
             // 
@@ -2860,6 +2910,7 @@
             this.comboBoxAnguloDirE26.Name = "comboBoxAnguloDirE26";
             this.comboBoxAnguloDirE26.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE26.TabIndex = 21;
+            this.comboBoxAnguloDirE26.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE26
             // 
@@ -2873,6 +2924,7 @@
             this.comboBoxAnguloE26.Name = "comboBoxAnguloE26";
             this.comboBoxAnguloE26.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE26.TabIndex = 11;
+            this.comboBoxAnguloE26.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label163
             // 
@@ -2931,6 +2983,7 @@
             this.comboBoxAnguloDirE25.Name = "comboBoxAnguloDirE25";
             this.comboBoxAnguloDirE25.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE25.TabIndex = 21;
+            this.comboBoxAnguloDirE25.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE25
             // 
@@ -2944,6 +2997,7 @@
             this.comboBoxAnguloE25.Name = "comboBoxAnguloE25";
             this.comboBoxAnguloE25.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE25.TabIndex = 11;
+            this.comboBoxAnguloE25.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label161
             // 
@@ -3013,6 +3067,7 @@
             this.comboBoxAnguloDirE24.Name = "comboBoxAnguloDirE24";
             this.comboBoxAnguloDirE24.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE24.TabIndex = 21;
+            this.comboBoxAnguloDirE24.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE24
             // 
@@ -3026,6 +3081,7 @@
             this.comboBoxAnguloE24.Name = "comboBoxAnguloE24";
             this.comboBoxAnguloE24.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE24.TabIndex = 11;
+            this.comboBoxAnguloE24.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label158
             // 
@@ -3189,6 +3245,7 @@
             this.comboBoxAnguloDirE23.Name = "comboBoxAnguloDirE23";
             this.comboBoxAnguloDirE23.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE23.TabIndex = 21;
+            this.comboBoxAnguloDirE23.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE23
             // 
@@ -3202,6 +3259,7 @@
             this.comboBoxAnguloE23.Name = "comboBoxAnguloE23";
             this.comboBoxAnguloE23.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE23.TabIndex = 11;
+            this.comboBoxAnguloE23.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label78
             // 
@@ -3259,6 +3317,7 @@
             this.comboBoxAnguloDirE14.Name = "comboBoxAnguloDirE14";
             this.comboBoxAnguloDirE14.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE14.TabIndex = 14;
+            this.comboBoxAnguloDirE14.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE14
             // 
@@ -3273,6 +3332,7 @@
             this.comboBoxAnguloE14.Name = "comboBoxAnguloE14";
             this.comboBoxAnguloE14.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE14.TabIndex = 11;
+            this.comboBoxAnguloE14.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label101
             // 
@@ -3331,6 +3391,7 @@
             this.comboBoxAnguloDirE22.Name = "comboBoxAnguloDirE22";
             this.comboBoxAnguloDirE22.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE22.TabIndex = 21;
+            this.comboBoxAnguloDirE22.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE22
             // 
@@ -3344,6 +3405,7 @@
             this.comboBoxAnguloE22.Name = "comboBoxAnguloE22";
             this.comboBoxAnguloE22.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE22.TabIndex = 11;
+            this.comboBoxAnguloE22.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label93
             // 
@@ -3401,6 +3463,7 @@
             this.comboBoxAnguloDirE17.Name = "comboBoxAnguloDirE17";
             this.comboBoxAnguloDirE17.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE17.TabIndex = 17;
+            this.comboBoxAnguloDirE17.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE17
             // 
@@ -3414,6 +3477,7 @@
             this.comboBoxAnguloE17.Name = "comboBoxAnguloE17";
             this.comboBoxAnguloE17.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE17.TabIndex = 11;
+            this.comboBoxAnguloE17.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label95
             // 
@@ -3472,6 +3536,7 @@
             this.comboBoxAnguloDirE21.Name = "comboBoxAnguloDirE21";
             this.comboBoxAnguloDirE21.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE21.TabIndex = 20;
+            this.comboBoxAnguloDirE21.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE21
             // 
@@ -3485,6 +3550,7 @@
             this.comboBoxAnguloE21.Name = "comboBoxAnguloE21";
             this.comboBoxAnguloE21.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE21.TabIndex = 11;
+            this.comboBoxAnguloE21.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label89
             // 
@@ -3542,6 +3608,7 @@
             this.comboBoxAnguloDirE18.Name = "comboBoxAnguloDirE18";
             this.comboBoxAnguloDirE18.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE18.TabIndex = 18;
+            this.comboBoxAnguloDirE18.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE18
             // 
@@ -3555,6 +3622,7 @@
             this.comboBoxAnguloE18.Name = "comboBoxAnguloE18";
             this.comboBoxAnguloE18.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE18.TabIndex = 11;
+            this.comboBoxAnguloE18.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label91
             // 
@@ -3613,6 +3681,7 @@
             this.comboBoxAnguloDirE20.Name = "comboBoxAnguloDirE20";
             this.comboBoxAnguloDirE20.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE20.TabIndex = 20;
+            this.comboBoxAnguloDirE20.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE20
             // 
@@ -3626,6 +3695,7 @@
             this.comboBoxAnguloE20.Name = "comboBoxAnguloE20";
             this.comboBoxAnguloE20.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE20.TabIndex = 11;
+            this.comboBoxAnguloE20.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label85
             // 
@@ -3684,6 +3754,7 @@
             this.comboBoxAnguloDirE19.Name = "comboBoxAnguloDirE19";
             this.comboBoxAnguloDirE19.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE19.TabIndex = 19;
+            this.comboBoxAnguloDirE19.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE19
             // 
@@ -3697,6 +3768,7 @@
             this.comboBoxAnguloE19.Name = "comboBoxAnguloE19";
             this.comboBoxAnguloE19.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE19.TabIndex = 11;
+            this.comboBoxAnguloE19.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label87
             // 
@@ -3754,6 +3826,7 @@
             this.comboBoxAnguloDirE16.Name = "comboBoxAnguloDirE16";
             this.comboBoxAnguloDirE16.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE16.TabIndex = 16;
+            this.comboBoxAnguloDirE16.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE16
             // 
@@ -3767,6 +3840,7 @@
             this.comboBoxAnguloE16.Name = "comboBoxAnguloE16";
             this.comboBoxAnguloE16.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE16.TabIndex = 11;
+            this.comboBoxAnguloE16.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label97
             // 
@@ -3824,6 +3898,7 @@
             this.comboBoxAnguloDirE15.Name = "comboBoxAnguloDirE15";
             this.comboBoxAnguloDirE15.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE15.TabIndex = 15;
+            this.comboBoxAnguloDirE15.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE15
             // 
@@ -3837,6 +3912,7 @@
             this.comboBoxAnguloE15.Name = "comboBoxAnguloE15";
             this.comboBoxAnguloE15.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE15.TabIndex = 11;
+            this.comboBoxAnguloE15.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label99
             // 
@@ -3895,6 +3971,7 @@
             this.comboBoxAnguloDirE13.Name = "comboBoxAnguloDirE13";
             this.comboBoxAnguloDirE13.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE13.TabIndex = 13;
+            this.comboBoxAnguloDirE13.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // label82
             // 
@@ -3917,6 +3994,7 @@
             this.comboBoxAnguloE13.Name = "comboBoxAnguloE13";
             this.comboBoxAnguloE13.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE13.TabIndex = 11;
+            this.comboBoxAnguloE13.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label83
             // 
@@ -5197,6 +5275,7 @@
             this.comboBoxAnguloDirE12.Name = "comboBoxAnguloDirE12";
             this.comboBoxAnguloDirE12.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE12.TabIndex = 21;
+            this.comboBoxAnguloDirE12.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE12
             // 
@@ -5210,6 +5289,7 @@
             this.comboBoxAnguloE12.Name = "comboBoxAnguloE12";
             this.comboBoxAnguloE12.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE12.TabIndex = 11;
+            this.comboBoxAnguloE12.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label76
             // 
@@ -5268,6 +5348,7 @@
             this.comboBoxAnguloDirE11.Name = "comboBoxAnguloDirE11";
             this.comboBoxAnguloDirE11.Size = new System.Drawing.Size(37, 21);
             this.comboBoxAnguloDirE11.TabIndex = 21;
+            this.comboBoxAnguloDirE11.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnguloDir_SelectedIndexChanged);
             // 
             // comboBoxAnguloE11
             // 
@@ -5281,6 +5362,7 @@
             this.comboBoxAnguloE11.Name = "comboBoxAnguloE11";
             this.comboBoxAnguloE11.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE11.TabIndex = 11;
+            this.comboBoxAnguloE11.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
             // 
             // label74
             // 
@@ -5328,13 +5410,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1458, 962);
+            this.ClientSize = new System.Drawing.Size(1470, 986);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grelha MEF";
+            this.Text = "GreMEF";
             this.groupBoxElemento1.ResumeLayout(false);
             this.groupBoxElemento1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).EndInit();
@@ -5885,6 +5967,7 @@
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.Label label106;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label174;
 
     }
 }

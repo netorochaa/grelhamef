@@ -241,7 +241,6 @@ namespace Grelha_MEF
                 else if (i.Equals(tamDimensao - 1) && celula.Equals(tamDimensao * grausLiberdadeLocal.Length))
                 {
                     matrizResultante[i, cont] = valorCelula;
-                    //Console.WriteLine("Índice [" + (i + 1) + "," + (cont + 1) + "] " + valorCelula);
                     break;
                 }
 
