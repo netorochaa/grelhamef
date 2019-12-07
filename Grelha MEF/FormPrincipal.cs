@@ -278,12 +278,13 @@ namespace Grelha_MEF
             elementosGraficoDMT = new List<double[]>();
 
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
-                elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], vetoresEsforcosInternosElem[i][3] }); //DEC
+                elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], -(vetoresEsforcosInternosElem[i][3]) }); //DEC
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); //DMF
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDMT.Add(new double[] { vetoresEsforcosInternosElem[i][2], vetoresEsforcosInternosElem[i][5] }); //DMT
         }
+        
         //EVENTOS
         private void limpaCamposElementosNos()
         {

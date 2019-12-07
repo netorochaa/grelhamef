@@ -2558,9 +2558,9 @@
             this.panel3.Controls.Add(this.chart1);
             this.panel3.Controls.Add(this.label176);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 376);
+            this.panel3.Location = new System.Drawing.Point(0, 532);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 606);
+            this.panel3.Size = new System.Drawing.Size(360, 450);
             this.panel3.TabIndex = 42;
             this.panel3.Visible = false;
             // 
@@ -2588,7 +2588,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(360, 583);
+            this.chart1.Size = new System.Drawing.Size(360, 427);
             this.chart1.TabIndex = 47;
             this.chart1.Text = "chart1";
             // 

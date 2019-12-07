@@ -75,7 +75,7 @@
             chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.WhiteSmoke;
             chartArea1.Name = "ChartArea3";
             this.chart3.ChartAreas.Add(chartArea1);
-            this.chart3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart3.Legends.Add(legend1);
             this.chart3.Location = new System.Drawing.Point(0, 0);
@@ -87,7 +87,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart3.Series.Add(series1);
-            this.chart3.Size = new System.Drawing.Size(477, 772);
+            this.chart3.Size = new System.Drawing.Size(1460, 772);
             this.chart3.TabIndex = 44;
             this.chart3.Text = "chart3";
             // 
@@ -106,7 +106,7 @@
             chartArea2.BorderColor = System.Drawing.Color.LightGray;
             chartArea2.Name = "ChartArea2";
             this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(3, 3);
@@ -117,7 +117,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(477, 766);
+            this.chart2.Size = new System.Drawing.Size(1454, 766);
             this.chart2.TabIndex = 43;
             this.chart2.Text = "chart2";
             // 
@@ -143,7 +143,7 @@
             chartArea3.AxisY.MinorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis;
             chartArea3.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea3);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend3.Name = "Legend1";
             this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(3, 3);
@@ -163,7 +163,7 @@
             | System.Windows.Forms.DataVisualization.Charting.LabelAlignmentStyles.BottomRight)));
             series3.YValuesPerPoint = 4;
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(477, 766);
+            this.chart1.Size = new System.Drawing.Size(1454, 766);
             this.chart1.TabIndex = 42;
             this.chart1.Text = "chart1";
             // 
