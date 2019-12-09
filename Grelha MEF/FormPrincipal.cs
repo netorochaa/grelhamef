@@ -332,7 +332,8 @@ namespace Grelha_MEF
             aplicandoDeslocamentosInternosElementos(quantidadeElementos);
             //subtracaoEsforcosIntVetorCargasEle(vetoresEsforcosInternosElem, vetor);
 
-            FormGrafico graf = new FormGrafico(elementosGraficoDEC, elementosGraficoDMF, elementosGraficoDMT, quantidadeElementos, elementosGraficoBase);
+            FormGrafico graf = new FormGrafico(elementosGraficoDEC, elementosGraficoDMF, elementosGraficoDMT, quantidadeElementos,
+                                                elementosGraficoBase, vetoresDeslocGiroGlobalElem, vetoresEsforcosInternosElem);
             graf.Show();
         }
 
@@ -393,82 +394,24 @@ namespace Grelha_MEF
             }
         }
 
-        private void comboBoxAnguloE1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE1.SelectedItem.Equals("0")) comboBoxAnguloDirE1.Enabled = false;
-            else comboBoxAnguloDirE1.Enabled = true;
-        }
-
-        private void comboBoxAnguloE2_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE2.SelectedItem.Equals("0")) comboBoxAnguloDirE2.Enabled = false;
-            else comboBoxAnguloDirE2.Enabled = true;
-        }
-
-        private void comboBoxAnguloE3_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE3.SelectedItem.Equals("0")) comboBoxAnguloDirE3.Enabled = false;
-            else comboBoxAnguloDirE3.Enabled = true;
-        }
-
-        private void comboBoxAnguloE4_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE4.SelectedItem.Equals("0")) comboBoxAnguloDirE4.Enabled = false;
-            else comboBoxAnguloDirE4.Enabled = true;
-        }
-
-        private void comboBoxAnguloE5_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE5.SelectedItem.Equals("0")) comboBoxAnguloDirE5.Enabled = false;
-            else comboBoxAnguloDirE5.Enabled = true;
-        }
-
-        private void comboBoxAnguloE6_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE6.SelectedItem.Equals("0")) comboBoxAnguloDirE6.Enabled = false;
-            else comboBoxAnguloDirE6.Enabled = true;
-        }
-
-        private void comboBoxAnguloE7_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE7.SelectedItem.Equals("0")) comboBoxAnguloDirE7.Enabled = false;
-            else comboBoxAnguloDirE7.Enabled = true;
-        }
-
-        private void comboBoxAnguloE8_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE8.SelectedItem.Equals("0")) comboBoxAnguloDirE8.Enabled = false;
-            else comboBoxAnguloDirE8.Enabled = true;
-        }
-
-        private void comboBoxAnguloE9_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE9.SelectedItem.Equals("0")) comboBoxAnguloDirE9.Enabled = false;
-            else comboBoxAnguloDirE9.Enabled = true;
-        }
-
-        private void comboBoxAnguloE10_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAnguloE10.SelectedItem.Equals("0")) comboBoxAnguloDirE10.Enabled = false;
-            else comboBoxAnguloDirE10.Enabled = true;
-        }
-
         private void buttonProximo_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxB.Text) &&
                 !string.IsNullOrEmpty(textBoxH.Text))
             {
-                panel2.Enabled = true;
-                panel2.Visible = true;
-                panel3.Enabled = true;
-                panel3.Visible = true;
-                chart1.Enabled = true;
-                chart1.Visible = true;
-                textBoxB.ReadOnly = true;
-                textBoxH.ReadOnly = true;
-                buttonProximo.Enabled = false;
-                buttonLimpar.Enabled = true;
-                elementosGraficoBase = new List<double[]>();
+                panel2.Enabled                           = true;
+                panel2.Visible                           = true;
+                panel3.Enabled                           = true;
+                panel3.Visible                           = true;
+                chart1.Enabled                           = true;
+                chart1.Visible                           = true;
+                buttonProximo.Visible                    = false;
+                buttonLimpar.Enabled                     = true;
+                elementosGraficoBase                     = new List<double[]>();
+                labelQtdEementos.Visible                 = true;
+                labelQtdNos.Visible                      = true;
+                numericUpDownQuantidadeElementos.Visible = true;
+                textBoxQuantidadeNos.Visible             = true;
             }
             else
             {
@@ -479,18 +422,20 @@ namespace Grelha_MEF
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
             limpaCamposElementosNos();
-            numericUpDownQuantidadeElementos.Value = 1;
-            textBoxQuantidadeNos.Text = ((int)(numericUpDownQuantidadeElementos.Value + 1)).ToString();
             chart1.Series.Clear();
-            textBoxB.Text = string.Empty;
-            textBoxH.Text = string.Empty;
-            textBoxModuloYoung.Text = string.Empty;
-            textBoxCoeficientePoisson.Text = string.Empty;
-            panel2.Visible = false;
-            panel3.Visible = false;
-            textBoxB.ReadOnly = false;
-            textBoxH.ReadOnly = false;
-            buttonProximo.Enabled = true;
+            numericUpDownQuantidadeElementos.Value   = 1;
+            textBoxQuantidadeNos.Text                = ((int)(numericUpDownQuantidadeElementos.Value + 1)).ToString();
+            textBoxB.Text                            = string.Empty;
+            textBoxH.Text                            = string.Empty;
+            textBoxModuloYoung.Text                  = string.Empty;
+            textBoxCoeficientePoisson.Text           = string.Empty;
+            panel2.Visible                           = false;
+            panel3.Visible                           = false;
+            buttonProximo.Visible                    = true;
+            labelQtdEementos.Visible                 = false;
+            labelQtdNos.Visible                      = false;
+            numericUpDownQuantidadeElementos.Visible = false;
+            textBoxQuantidadeNos.Visible             = false;
         }
 
         private void timerintro_Tick(object sender, EventArgs e)
@@ -510,189 +455,163 @@ namespace Grelha_MEF
 
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo2_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo2X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo3_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo3X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo4_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo4X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo5_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo5X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo6_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo6X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo7_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo7X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo8_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo8X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo9_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo9X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo10_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo10X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo11_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo11X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo12_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo12X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo13_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo13X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo14_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo14X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo15_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo15X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo16_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo16X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo17_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo17X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo18_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo18X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo19_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo19X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo20_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo20X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo21_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo21X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo22_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo22X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo23_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo23X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo24_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo24X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo25_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo25X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo26_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo26X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
         private void checkBoxFixaNo27_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo27X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
             verificaForcaNo(numeroNo);
         }
-
+        
         private void comboBoxAngulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             int quantidadeElementos = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
@@ -709,7 +628,7 @@ namespace Grelha_MEF
             graf.defineGrafico(chart1);
         }
 
-        private void comboBoxAnguloE1_EnabledChanged(object sender, EventArgs e)
+        private void comboBoxAnguloE_EnabledChanged(object sender, EventArgs e)
         {
             ComboBox combobox = sender as ComboBox;
             combobox.Text = "0";
@@ -727,12 +646,34 @@ namespace Grelha_MEF
                 Control[] control2 = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
                 ComboBox comboBoxDir = control2[0] as ComboBox;
 
+                if (comboBox.Text == string.Empty) return;
+
                 double anguloConvertido = comboBoxDir.Text == "-" ? -Convert.ToInt32(comboBox.Text) : Convert.ToInt32(comboBox.Text);
 
                 if (comboBox.Text != string.Empty) elementosGraficoBase.Add(new double[] { 0.0, anguloConvertido});
             }
             FormGrafico graf = new FormGrafico(quantidadeElementos, elementosGraficoBase);
             graf.defineGrafico(chart1);
+        }
+
+        private void comboBoxAnguloE_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ComboBox combobox = sender as ComboBox;
+            string[] separador = { "AnguloE" };
+
+            string[] numeroE = combobox.Name.Split(separador, 2, StringSplitOptions.RemoveEmptyEntries);
+
+            Control[] control = this.Controls.Find("comboBoxAnguloDirE" + numeroE[1].ToString(), true);
+            ComboBox comboboxDir = control[0] as ComboBox;
+
+            if (combobox.SelectedItem.Equals("0")) comboboxDir.Enabled = false;
+            else comboboxDir.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSobre sobre = new FormSobre();
+            sobre.Show();
         }
     }
 }

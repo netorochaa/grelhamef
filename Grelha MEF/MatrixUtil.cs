@@ -151,6 +151,25 @@ namespace Grelha_MEF
             }
             return s;
         }
+        public static string VectorAsString(double[] vector)
+        {
+            string s = "";
+            for (int i = 0; i < vector.GetLength(0); ++i)
+            {
+                    s += vector[i].ToString("F3").PadLeft(8) + " "; s += Environment.NewLine;
+            }
+            return s;
+        }
+        public static string VectorAsStringForLogForm(double[] vector)
+        {
+            string s = "";
+            for (int i = 0; i < vector.GetLength(0); ++i)
+            {
+                s += vector[i].ToString("F3").PadLeft(8) + " "; 
+                s += Environment.NewLine;
+            }
+            return s;
+        }
         public static double[,] matrizRotacaoInversa(int x)
         {
             //Matriz de rotação para o ângulo 0

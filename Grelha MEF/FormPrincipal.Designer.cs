@@ -104,7 +104,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.textBoxComprimentoE10 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelQtdNos = new System.Windows.Forms.Label();
             this.textBoxQuantidadeNos = new System.Windows.Forms.TextBox();
             this.groupBoxNo6 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo6Z = new System.Windows.Forms.CheckBox();
@@ -160,7 +160,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelQtdEementos = new System.Windows.Forms.Label();
             this.groupBoxNo11 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo11Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo11Y = new System.Windows.Forms.CheckBox();
@@ -462,6 +462,7 @@
             this.label75 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.timerintro = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -697,8 +698,8 @@
             this.comboBoxAnguloE1.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE1.TabIndex = 11;
             this.comboBoxAnguloE1.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE1.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE1_SelectedValueChanged);
-            this.comboBoxAnguloE1.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE1.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE1.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label7
             // 
@@ -716,7 +717,7 @@
             this.numericUpDownQuantidadeElementos.ForeColor = System.Drawing.SystemColors.Window;
             this.numericUpDownQuantidadeElementos.Location = new System.Drawing.Point(30, 210);
             this.numericUpDownQuantidadeElementos.Maximum = new decimal(new int[] {
-            23,
+            26,
             0,
             0,
             0});
@@ -734,6 +735,7 @@
             0,
             0,
             0});
+            this.numericUpDownQuantidadeElementos.Visible = false;
             this.numericUpDownQuantidadeElementos.ValueChanged += new System.EventHandler(this.numericUpDownQuantidadeElementos_ValueChanged);
             // 
             // groupBoxElemento2
@@ -783,8 +785,8 @@
             this.comboBoxAnguloE2.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE2.TabIndex = 11;
             this.comboBoxAnguloE2.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE2.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE2_SelectedValueChanged);
-            this.comboBoxAnguloE2.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE2.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE2.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label9
             // 
@@ -858,8 +860,8 @@
             this.comboBoxAnguloE3.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE3.TabIndex = 11;
             this.comboBoxAnguloE3.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE3.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE3_SelectedValueChanged);
-            this.comboBoxAnguloE3.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE3.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE3.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label11
             // 
@@ -932,8 +934,8 @@
             this.comboBoxAnguloE4.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE4.TabIndex = 11;
             this.comboBoxAnguloE4.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE4.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE4_SelectedValueChanged);
-            this.comboBoxAnguloE4.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE4.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE4.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label13
             // 
@@ -1006,8 +1008,8 @@
             this.comboBoxAnguloE5.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE5.TabIndex = 11;
             this.comboBoxAnguloE5.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE5.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE5_SelectedValueChanged);
-            this.comboBoxAnguloE5.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE5.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE5.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label15
             // 
@@ -1080,8 +1082,8 @@
             this.comboBoxAnguloE6.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE6.TabIndex = 11;
             this.comboBoxAnguloE6.SelectedIndexChanged += new System.EventHandler(this.comboBoxAngulo_SelectedIndexChanged);
-            this.comboBoxAnguloE6.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE6_SelectedValueChanged);
-            this.comboBoxAnguloE6.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE6.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE6.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label17
             // 
@@ -1127,7 +1129,6 @@
             // 
             this.comboBoxAnguloDirE7.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE7.AllowDrop = true;
-            this.comboBoxAnguloDirE7.DropDownHeight = 1;
             this.comboBoxAnguloDirE7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE7.Enabled = false;
             this.comboBoxAnguloDirE7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1154,8 +1155,8 @@
             this.comboBoxAnguloE7.Name = "comboBoxAnguloE7";
             this.comboBoxAnguloE7.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE7.TabIndex = 11;
-            this.comboBoxAnguloE7.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE7_SelectedValueChanged);
-            this.comboBoxAnguloE7.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE7.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE7.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label19
             // 
@@ -1201,7 +1202,6 @@
             // 
             this.comboBoxAnguloDirE8.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE8.AllowDrop = true;
-            this.comboBoxAnguloDirE8.DropDownHeight = 1;
             this.comboBoxAnguloDirE8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE8.Enabled = false;
             this.comboBoxAnguloDirE8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1228,8 +1228,8 @@
             this.comboBoxAnguloE8.Name = "comboBoxAnguloE8";
             this.comboBoxAnguloE8.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE8.TabIndex = 11;
-            this.comboBoxAnguloE8.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE8_SelectedValueChanged);
-            this.comboBoxAnguloE8.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE8.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE8.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label21
             // 
@@ -1275,7 +1275,6 @@
             // 
             this.comboBoxAnguloDirE9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE9.AllowDrop = true;
-            this.comboBoxAnguloDirE9.DropDownHeight = 1;
             this.comboBoxAnguloDirE9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE9.Enabled = false;
             this.comboBoxAnguloDirE9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1302,8 +1301,8 @@
             this.comboBoxAnguloE9.Name = "comboBoxAnguloE9";
             this.comboBoxAnguloE9.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE9.TabIndex = 11;
-            this.comboBoxAnguloE9.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE9_SelectedValueChanged);
-            this.comboBoxAnguloE9.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE9.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE9.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label23
             // 
@@ -1349,7 +1348,6 @@
             // 
             this.comboBoxAnguloDirE10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE10.AllowDrop = true;
-            this.comboBoxAnguloDirE10.DropDownHeight = 1;
             this.comboBoxAnguloDirE10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE10.Enabled = false;
             this.comboBoxAnguloDirE10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1376,8 +1374,8 @@
             this.comboBoxAnguloE10.Name = "comboBoxAnguloE10";
             this.comboBoxAnguloE10.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE10.TabIndex = 11;
-            this.comboBoxAnguloE10.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE10_SelectedValueChanged);
-            this.comboBoxAnguloE10.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE10.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE10.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label25
             // 
@@ -1404,15 +1402,16 @@
             this.label26.TabIndex = 8;
             this.label26.Text = "Comprimento (m)";
             // 
-            // label6
+            // labelQtdNos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.label6.Location = new System.Drawing.Point(26, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 21);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Quantidade de Nós";
+            this.labelQtdNos.AutoSize = true;
+            this.labelQtdNos.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.labelQtdNos.Location = new System.Drawing.Point(26, 246);
+            this.labelQtdNos.Name = "labelQtdNos";
+            this.labelQtdNos.Size = new System.Drawing.Size(144, 21);
+            this.labelQtdNos.TabIndex = 25;
+            this.labelQtdNos.Text = "Quantidade de Nós";
+            this.labelQtdNos.Visible = false;
             // 
             // textBoxQuantidadeNos
             // 
@@ -1426,6 +1425,7 @@
             this.textBoxQuantidadeNos.TabIndex = 26;
             this.textBoxQuantidadeNos.Text = "2";
             this.textBoxQuantidadeNos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxQuantidadeNos.Visible = false;
             // 
             // groupBoxNo6
             // 
@@ -1990,15 +1990,16 @@
             this.label28.TabIndex = 8;
             this.label28.Text = "X";
             // 
-            // label8
+            // labelQtdEementos
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.label8.Location = new System.Drawing.Point(26, 186);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 21);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Quantidade Elementos";
+            this.labelQtdEementos.AutoSize = true;
+            this.labelQtdEementos.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.labelQtdEementos.Location = new System.Drawing.Point(26, 186);
+            this.labelQtdEementos.Name = "labelQtdEementos";
+            this.labelQtdEementos.Size = new System.Drawing.Size(167, 21);
+            this.labelQtdEementos.TabIndex = 33;
+            this.labelQtdEementos.Text = "Quantidade Elementos";
+            this.labelQtdEementos.Visible = false;
             // 
             // groupBoxNo11
             // 
@@ -2485,13 +2486,14 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label173);
             this.panel4.Controls.Add(this.textBoxB);
             this.panel4.Controls.Add(this.buttonLimpar);
             this.panel4.Controls.Add(this.textBoxQuantidadeNos);
             this.panel4.Controls.Add(this.buttonProximo);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.labelQtdEementos);
+            this.panel4.Controls.Add(this.labelQtdNos);
             this.panel4.Controls.Add(this.label72);
             this.panel4.Controls.Add(this.numericUpDownQuantidadeElementos);
             this.panel4.Controls.Add(this.textBoxH);
@@ -2558,9 +2560,9 @@
             this.panel3.Controls.Add(this.chart1);
             this.panel3.Controls.Add(this.label176);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 532);
+            this.panel3.Location = new System.Drawing.Point(0, 611);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 450);
+            this.panel3.Size = new System.Drawing.Size(360, 371);
             this.panel3.TabIndex = 42;
             this.panel3.Visible = false;
             // 
@@ -2588,7 +2590,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(360, 427);
+            this.chart1.Size = new System.Drawing.Size(360, 348);
             this.chart1.TabIndex = 47;
             this.chart1.Text = "chart1";
             // 
@@ -2897,7 +2899,6 @@
             // 
             this.comboBoxAnguloDirE26.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE26.AllowDrop = true;
-            this.comboBoxAnguloDirE26.DropDownHeight = 1;
             this.comboBoxAnguloDirE26.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE26.Enabled = false;
             this.comboBoxAnguloDirE26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2924,7 +2925,8 @@
             this.comboBoxAnguloE26.Name = "comboBoxAnguloE26";
             this.comboBoxAnguloE26.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE26.TabIndex = 11;
-            this.comboBoxAnguloE26.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE26.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE26.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label163
             // 
@@ -2970,7 +2972,6 @@
             // 
             this.comboBoxAnguloDirE25.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE25.AllowDrop = true;
-            this.comboBoxAnguloDirE25.DropDownHeight = 1;
             this.comboBoxAnguloDirE25.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE25.Enabled = false;
             this.comboBoxAnguloDirE25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2997,7 +2998,8 @@
             this.comboBoxAnguloE25.Name = "comboBoxAnguloE25";
             this.comboBoxAnguloE25.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE25.TabIndex = 11;
-            this.comboBoxAnguloE25.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE25.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE25.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label161
             // 
@@ -3054,7 +3056,6 @@
             // 
             this.comboBoxAnguloDirE24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE24.AllowDrop = true;
-            this.comboBoxAnguloDirE24.DropDownHeight = 1;
             this.comboBoxAnguloDirE24.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE24.Enabled = false;
             this.comboBoxAnguloDirE24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3081,7 +3082,8 @@
             this.comboBoxAnguloE24.Name = "comboBoxAnguloE24";
             this.comboBoxAnguloE24.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE24.TabIndex = 11;
-            this.comboBoxAnguloE24.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE24.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE24.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label158
             // 
@@ -3232,7 +3234,6 @@
             // 
             this.comboBoxAnguloDirE23.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE23.AllowDrop = true;
-            this.comboBoxAnguloDirE23.DropDownHeight = 1;
             this.comboBoxAnguloDirE23.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE23.Enabled = false;
             this.comboBoxAnguloDirE23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3259,7 +3260,8 @@
             this.comboBoxAnguloE23.Name = "comboBoxAnguloE23";
             this.comboBoxAnguloE23.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE23.TabIndex = 11;
-            this.comboBoxAnguloE23.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE23.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE23.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label78
             // 
@@ -3332,7 +3334,8 @@
             this.comboBoxAnguloE14.Name = "comboBoxAnguloE14";
             this.comboBoxAnguloE14.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE14.TabIndex = 11;
-            this.comboBoxAnguloE14.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE14.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE14.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label101
             // 
@@ -3378,7 +3381,6 @@
             // 
             this.comboBoxAnguloDirE22.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE22.AllowDrop = true;
-            this.comboBoxAnguloDirE22.DropDownHeight = 1;
             this.comboBoxAnguloDirE22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE22.Enabled = false;
             this.comboBoxAnguloDirE22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3405,7 +3407,8 @@
             this.comboBoxAnguloE22.Name = "comboBoxAnguloE22";
             this.comboBoxAnguloE22.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE22.TabIndex = 11;
-            this.comboBoxAnguloE22.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE22.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE22.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label93
             // 
@@ -3477,7 +3480,8 @@
             this.comboBoxAnguloE17.Name = "comboBoxAnguloE17";
             this.comboBoxAnguloE17.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE17.TabIndex = 11;
-            this.comboBoxAnguloE17.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE17.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE17.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label95
             // 
@@ -3523,7 +3527,6 @@
             // 
             this.comboBoxAnguloDirE21.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE21.AllowDrop = true;
-            this.comboBoxAnguloDirE21.DropDownHeight = 1;
             this.comboBoxAnguloDirE21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE21.Enabled = false;
             this.comboBoxAnguloDirE21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3550,7 +3553,8 @@
             this.comboBoxAnguloE21.Name = "comboBoxAnguloE21";
             this.comboBoxAnguloE21.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE21.TabIndex = 11;
-            this.comboBoxAnguloE21.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE21.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE21.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label89
             // 
@@ -3622,7 +3626,8 @@
             this.comboBoxAnguloE18.Name = "comboBoxAnguloE18";
             this.comboBoxAnguloE18.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE18.TabIndex = 11;
-            this.comboBoxAnguloE18.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE18.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE18.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label91
             // 
@@ -3668,7 +3673,6 @@
             // 
             this.comboBoxAnguloDirE20.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE20.AllowDrop = true;
-            this.comboBoxAnguloDirE20.DropDownHeight = 1;
             this.comboBoxAnguloDirE20.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE20.Enabled = false;
             this.comboBoxAnguloDirE20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3695,7 +3699,8 @@
             this.comboBoxAnguloE20.Name = "comboBoxAnguloE20";
             this.comboBoxAnguloE20.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE20.TabIndex = 11;
-            this.comboBoxAnguloE20.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE20.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE20.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label85
             // 
@@ -3741,7 +3746,6 @@
             // 
             this.comboBoxAnguloDirE19.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE19.AllowDrop = true;
-            this.comboBoxAnguloDirE19.DropDownHeight = 1;
             this.comboBoxAnguloDirE19.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE19.Enabled = false;
             this.comboBoxAnguloDirE19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3768,7 +3772,8 @@
             this.comboBoxAnguloE19.Name = "comboBoxAnguloE19";
             this.comboBoxAnguloE19.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE19.TabIndex = 11;
-            this.comboBoxAnguloE19.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE19.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE19.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label87
             // 
@@ -3840,7 +3845,8 @@
             this.comboBoxAnguloE16.Name = "comboBoxAnguloE16";
             this.comboBoxAnguloE16.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE16.TabIndex = 11;
-            this.comboBoxAnguloE16.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE16.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE16.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label97
             // 
@@ -3912,7 +3918,8 @@
             this.comboBoxAnguloE15.Name = "comboBoxAnguloE15";
             this.comboBoxAnguloE15.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE15.TabIndex = 11;
-            this.comboBoxAnguloE15.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE15.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE15.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label99
             // 
@@ -3994,7 +4001,8 @@
             this.comboBoxAnguloE13.Name = "comboBoxAnguloE13";
             this.comboBoxAnguloE13.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE13.TabIndex = 11;
-            this.comboBoxAnguloE13.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE13.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE13.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label83
             // 
@@ -5262,7 +5270,6 @@
             // 
             this.comboBoxAnguloDirE12.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE12.AllowDrop = true;
-            this.comboBoxAnguloDirE12.DropDownHeight = 1;
             this.comboBoxAnguloDirE12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE12.Enabled = false;
             this.comboBoxAnguloDirE12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -5289,7 +5296,8 @@
             this.comboBoxAnguloE12.Name = "comboBoxAnguloE12";
             this.comboBoxAnguloE12.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE12.TabIndex = 11;
-            this.comboBoxAnguloE12.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE12.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE12.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label76
             // 
@@ -5335,7 +5343,6 @@
             // 
             this.comboBoxAnguloDirE11.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.comboBoxAnguloDirE11.AllowDrop = true;
-            this.comboBoxAnguloDirE11.DropDownHeight = 1;
             this.comboBoxAnguloDirE11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloDirE11.Enabled = false;
             this.comboBoxAnguloDirE11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -5362,7 +5369,8 @@
             this.comboBoxAnguloE11.Name = "comboBoxAnguloE11";
             this.comboBoxAnguloE11.Size = new System.Drawing.Size(58, 21);
             this.comboBoxAnguloE11.TabIndex = 11;
-            this.comboBoxAnguloE11.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE1_EnabledChanged);
+            this.comboBoxAnguloE11.SelectedValueChanged += new System.EventHandler(this.comboBoxAnguloE_SelectedValueChanged);
+            this.comboBoxAnguloE11.EnabledChanged += new System.EventHandler(this.comboBoxAnguloE_EnabledChanged);
             // 
             // label74
             // 
@@ -5404,6 +5412,19 @@
             this.timerintro.Enabled = true;
             this.timerintro.Interval = 3000;
             this.timerintro.Tick += new System.EventHandler(this.timerintro_Tick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(338, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(18, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -5599,7 +5620,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBoxComprimentoE10;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelQtdNos;
         private System.Windows.Forms.TextBox textBoxQuantidadeNos;
         private System.Windows.Forms.GroupBox groupBoxNo6;
         private System.Windows.Forms.GroupBox groupBoxNo5;
@@ -5619,7 +5640,7 @@
         private System.Windows.Forms.TextBox textBoxForcaNo2;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox textBoxForcaNo1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelQtdEementos;
         private System.Windows.Forms.GroupBox groupBoxNo11;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox textBoxForcaNo11;
@@ -5968,6 +5989,7 @@
         private System.Windows.Forms.Label label106;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.Button button1;
 
     }
 }
