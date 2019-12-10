@@ -102,10 +102,7 @@ namespace Grelha_MEF
             int[] perm; int toggle;
             double[][] lum = MatrixDecompose(m, out perm, out toggle);
             if (lum == null)
-            {
-                //throw new Exception("Unable to compute inverse");
                 return null;
-            }
             double[] b = new double[n];
             for (int i = 0; i < n; ++i)
             {
@@ -118,7 +115,11 @@ namespace Grelha_MEF
                 }
                 double[] x = HelperSolve(lum, b);
                 for (int j = 0; j < n; ++j)
-                    result[j][i] = x[j];
+                {
+                    if (!double.IsNaN(x[j]))
+                        result[j][i] = x[j];
+                    else return null;
+                }
             }
             return result;
         }

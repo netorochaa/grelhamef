@@ -334,6 +334,9 @@ namespace Grelha_MEF
 
             FormGrafico graf = new FormGrafico(elementosGraficoDEC, elementosGraficoDMF, elementosGraficoDMT, quantidadeElementos,
                                                 elementosGraficoBase, vetoresDeslocGiroGlobalElem, vetoresEsforcosInternosElem);
+
+            inverse = null;
+
             graf.Show();
         }
 
@@ -341,7 +344,7 @@ namespace Grelha_MEF
         {
             int elementos = (int)numericUpDownQuantidadeElementos.Value;
             //LOOP PARA DESABILITAR GRUPBOXS
-            for (int j = elementos; j < 24; j++)
+            for (int j = elementos; j < 27; j++)
             {
                 Control[] groupBoxElemento    = this.Controls.Find("groupBoxElemento" + j.ToString(), true);
                 GroupBox thisGroupBoxElemento = groupBoxElemento[0] as GroupBox;
@@ -369,6 +372,7 @@ namespace Grelha_MEF
                 thisGroupBoxElemento.Enabled = true;
             }
             textBoxQuantidadeNos.Text = ((int)numericUpDownQuantidadeElementos.Value + 1).ToString();
+            comboBoxAngulo_SelectedIndexChanged(numericUpDownQuantidadeElementos, null);
         }
         /*
          * HABILITA OU DESABILITA TEXTBOX DA FORÇA DO NÓ
@@ -452,163 +456,216 @@ namespace Grelha_MEF
         {
             string[] quebraString   = checkBoxFixaNo1X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
-
+            if (checkBoxFixaNo1X.Checked) checkBoxFixaNo1Z.Enabled = false; else checkBoxFixaNo1Z.Enabled = true;
+            if (checkBoxFixaNo1Z.Checked) checkBoxFixaNo1X.Enabled = false; else checkBoxFixaNo1X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo2_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo2X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo2X.Checked) checkBoxFixaNo2Z.Enabled = false; else checkBoxFixaNo2Z.Enabled = true;
+            if (checkBoxFixaNo2Z.Checked) checkBoxFixaNo2X.Enabled = false; else checkBoxFixaNo2X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo3_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo3X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo3X.Checked) checkBoxFixaNo3Z.Enabled = false; else checkBoxFixaNo3Z.Enabled = true;
+            if (checkBoxFixaNo3Z.Checked) checkBoxFixaNo3X.Enabled = false; else checkBoxFixaNo3X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo4_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo4X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo4X.Checked) checkBoxFixaNo4Z.Enabled = false; else checkBoxFixaNo4Z.Enabled = true;
+            if (checkBoxFixaNo4Z.Checked) checkBoxFixaNo4X.Enabled = false; else checkBoxFixaNo4X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo5_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo5X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo5X.Checked) checkBoxFixaNo5Z.Enabled = false; else checkBoxFixaNo5Z.Enabled = true;
+            if (checkBoxFixaNo5Z.Checked) checkBoxFixaNo5X.Enabled = false; else checkBoxFixaNo5X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo6_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo6X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo6X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo6X.Checked) checkBoxFixaNo6Z.Enabled = false; else checkBoxFixaNo6Z.Enabled = true;
+            if (checkBoxFixaNo6Z.Checked) checkBoxFixaNo6X.Enabled = false; else checkBoxFixaNo6X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo7_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo7X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo7X.Checked) checkBoxFixaNo7Z.Enabled = false; else checkBoxFixaNo7Z.Enabled = true;
+            if (checkBoxFixaNo7Z.Checked) checkBoxFixaNo7X.Enabled = false; else checkBoxFixaNo7X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo8_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo8X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo8X.Checked) checkBoxFixaNo8Z.Enabled = false; else checkBoxFixaNo8Z.Enabled = true;
+            if (checkBoxFixaNo8Z.Checked) checkBoxFixaNo8X.Enabled = false; else checkBoxFixaNo8X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo9_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo9X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo9X.Checked) checkBoxFixaNo9Z.Enabled = false; else checkBoxFixaNo9Z.Enabled = true;
+            if (checkBoxFixaNo9Z.Checked) checkBoxFixaNo9X.Enabled = false; else checkBoxFixaNo9X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo10_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo10X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo10X.Checked) checkBoxFixaNo10Z.Enabled = false; else checkBoxFixaNo10Z.Enabled = true;
+            if (checkBoxFixaNo10Z.Checked) checkBoxFixaNo10X.Enabled = false; else checkBoxFixaNo10X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo11_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo11X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo11X.Checked) checkBoxFixaNo11Z.Enabled = false; else checkBoxFixaNo11Z.Enabled = true;
+            if (checkBoxFixaNo11Z.Checked) checkBoxFixaNo11X.Enabled = false; else checkBoxFixaNo11X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo12_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo12X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo12X.Checked) checkBoxFixaNo12Z.Enabled = false; else checkBoxFixaNo12Z.Enabled = true;
+            if (checkBoxFixaNo12Z.Checked) checkBoxFixaNo12X.Enabled = false; else checkBoxFixaNo12X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo13_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString   = checkBoxFixaNo13X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo13X.Checked) checkBoxFixaNo13Z.Enabled = false; else checkBoxFixaNo13Z.Enabled = true;
+            if (checkBoxFixaNo13Z.Checked) checkBoxFixaNo13X.Enabled = false; else checkBoxFixaNo13X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo14_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo14X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo14X.Checked) checkBoxFixaNo14Z.Enabled = false; else checkBoxFixaNo14Z.Enabled = true;
+            if (checkBoxFixaNo14Z.Checked) checkBoxFixaNo14X.Enabled = false; else checkBoxFixaNo14X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo15_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo15X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo15X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo15X.Checked) checkBoxFixaNo15Z.Enabled = false; else checkBoxFixaNo15Z.Enabled = true;
+            if (checkBoxFixaNo15Z.Checked) checkBoxFixaNo15X.Enabled = false; else checkBoxFixaNo15X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo16_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo16X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo16X.Checked) checkBoxFixaNo16Z.Enabled = false; else checkBoxFixaNo16Z.Enabled = true;
+            if (checkBoxFixaNo16Z.Checked) checkBoxFixaNo16X.Enabled = false; else checkBoxFixaNo16X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo17_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo17X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo17X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo17X.Checked) checkBoxFixaNo17Z.Enabled = false; else checkBoxFixaNo17Z.Enabled = true;
+            if (checkBoxFixaNo17Z.Checked) checkBoxFixaNo17X.Enabled = false; else checkBoxFixaNo17X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo18_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo18X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo18X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo18X.Checked) checkBoxFixaNo18Z.Enabled = false; else checkBoxFixaNo18Z.Enabled = true;
+            if (checkBoxFixaNo18Z.Checked) checkBoxFixaNo18X.Enabled = false; else checkBoxFixaNo18X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo19_CheckedChanged(object sender, EventArgs e)
         {
             string[] quebraString = checkBoxFixaNo19X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
             int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo19X.Checked) checkBoxFixaNo19Z.Enabled = false; else checkBoxFixaNo19Z.Enabled = true;
+            if (checkBoxFixaNo19Z.Checked) checkBoxFixaNo19X.Enabled = false; else checkBoxFixaNo19X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo20_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo20X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo20X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo20X.Checked) checkBoxFixaNo20Z.Enabled = false; else checkBoxFixaNo20Z.Enabled = true;
+            if (checkBoxFixaNo20Z.Checked) checkBoxFixaNo20X.Enabled = false; else checkBoxFixaNo20X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo21_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo21X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo21X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo21X.Checked) checkBoxFixaNo21Z.Enabled = false; else checkBoxFixaNo21Z.Enabled = true;
+            if (checkBoxFixaNo21Z.Checked) checkBoxFixaNo21X.Enabled = false; else checkBoxFixaNo21X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo22_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo22X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo22X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo22X.Checked) checkBoxFixaNo22Z.Enabled = false; else checkBoxFixaNo22Z.Enabled = true;
+            if (checkBoxFixaNo22Z.Checked) checkBoxFixaNo22X.Enabled = false; else checkBoxFixaNo22X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo23_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo23X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo23X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo23X.Checked) checkBoxFixaNo23Z.Enabled = false; else checkBoxFixaNo23Z.Enabled = true;
+            if (checkBoxFixaNo23Z.Checked) checkBoxFixaNo23X.Enabled = false; else checkBoxFixaNo23X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo24_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo24X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo24X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo24X.Checked) checkBoxFixaNo24Z.Enabled = false; else checkBoxFixaNo24Z.Enabled = true;
+            if (checkBoxFixaNo24Z.Checked) checkBoxFixaNo24X.Enabled = false; else checkBoxFixaNo24X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo25_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo25X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo25X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo25X.Checked) checkBoxFixaNo25Z.Enabled = false; else checkBoxFixaNo25Z.Enabled = true;
+            if (checkBoxFixaNo25Z.Checked) checkBoxFixaNo25X.Enabled = false; else checkBoxFixaNo25X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo26_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo26X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo26X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo26X.Checked) checkBoxFixaNo26Z.Enabled = false; else checkBoxFixaNo26Z.Enabled = true;
+            if (checkBoxFixaNo26Z.Checked) checkBoxFixaNo26X.Enabled = false; else checkBoxFixaNo26X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         private void checkBoxFixaNo27_CheckedChanged(object sender, EventArgs e)
         {
-            string[] quebraString = checkBoxFixaNo27X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
-            int numeroNo = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            string[] quebraString   = checkBoxFixaNo27X.Name.Split(separador, 3, StringSplitOptions.RemoveEmptyEntries);
+            int numeroNo            = Convert.ToInt32(quebraString[1].Remove(quebraString[1].Length - 1));
+            if (checkBoxFixaNo27X.Checked) checkBoxFixaNo27Z.Enabled = false; else checkBoxFixaNo27Z.Enabled = true;
+            if (checkBoxFixaNo27Z.Checked) checkBoxFixaNo27X.Enabled = false; else checkBoxFixaNo27X.Enabled = true;
             verificaForcaNo(numeroNo);
         }
         

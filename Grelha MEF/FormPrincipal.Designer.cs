@@ -110,47 +110,47 @@
             this.checkBoxFixaNo6Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo6Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo6X = new System.Windows.Forms.CheckBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo6 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo6 = new System.Windows.Forms.TextBox();
             this.groupBoxNo5 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo5Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo5Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo5X = new System.Windows.Forms.CheckBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo5 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo5 = new System.Windows.Forms.TextBox();
             this.groupBoxNo4 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo4Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo4Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo4X = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.textBoxForcaNo4 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.groupBoxNo3 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo3Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo3Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo3X = new System.Windows.Forms.CheckBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo3 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo3 = new System.Windows.Forms.TextBox();
             this.groupBoxNo2 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo2Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo2Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo2X = new System.Windows.Forms.CheckBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo2 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo2 = new System.Windows.Forms.TextBox();
             this.groupBoxNo1 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo1Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo1Y = new System.Windows.Forms.CheckBox();
@@ -165,49 +165,50 @@
             this.checkBoxFixaNo11Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo11Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo11X = new System.Windows.Forms.CheckBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo11 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo11 = new System.Windows.Forms.TextBox();
             this.groupBoxNo10 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo10Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo10Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo10X = new System.Windows.Forms.CheckBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo10 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo10 = new System.Windows.Forms.TextBox();
             this.groupBoxNo9 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo9Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo9Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo9X = new System.Windows.Forms.CheckBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo9 = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo9 = new System.Windows.Forms.TextBox();
             this.groupBoxNo8 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo8Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo8Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo8X = new System.Windows.Forms.CheckBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo8 = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo8 = new System.Windows.Forms.TextBox();
             this.groupBoxNo7 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo7Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo7Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo7X = new System.Windows.Forms.CheckBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.textBoxForcaNo7 = new System.Windows.Forms.TextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label173 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonProximo = new System.Windows.Forms.Button();
@@ -221,20 +222,20 @@
             this.checkBoxFixaNo27Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo27Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo27X = new System.Windows.Forms.CheckBox();
+            this.label167 = new System.Windows.Forms.Label();
+            this.label168 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
             this.label169 = new System.Windows.Forms.Label();
             this.textBoxForcaNo27 = new System.Windows.Forms.TextBox();
-            this.label170 = new System.Windows.Forms.Label();
-            this.label171 = new System.Windows.Forms.Label();
-            this.label172 = new System.Windows.Forms.Label();
             this.groupBoxNo26 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo26Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo26Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo26X = new System.Windows.Forms.CheckBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
             this.label165 = new System.Windows.Forms.Label();
             this.textBoxForcaNo26 = new System.Windows.Forms.TextBox();
-            this.label166 = new System.Windows.Forms.Label();
-            this.label167 = new System.Windows.Forms.Label();
-            this.label168 = new System.Windows.Forms.Label();
             this.groupBoxElemento26 = new System.Windows.Forms.GroupBox();
             this.comboBoxAnguloDirE26 = new System.Windows.Forms.ComboBox();
             this.comboBoxAnguloE26 = new System.Windows.Forms.ComboBox();
@@ -258,11 +259,11 @@
             this.checkBoxFixaNo25Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo25Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo25X = new System.Windows.Forms.CheckBox();
+            this.label145 = new System.Windows.Forms.Label();
+            this.label146 = new System.Windows.Forms.Label();
+            this.label155 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.textBoxForcaNo25 = new System.Windows.Forms.TextBox();
-            this.label155 = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.groupBoxElemento23 = new System.Windows.Forms.GroupBox();
             this.comboBoxAnguloDirE23 = new System.Windows.Forms.ComboBox();
@@ -335,119 +336,119 @@
             this.checkBoxFixaNo24Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo24Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo24X = new System.Windows.Forms.CheckBox();
-            this.label151 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo24 = new System.Windows.Forms.TextBox();
             this.label152 = new System.Windows.Forms.Label();
             this.label153 = new System.Windows.Forms.Label();
             this.label154 = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo24 = new System.Windows.Forms.TextBox();
             this.groupBoxNo23 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo23Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo23Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo23X = new System.Windows.Forms.CheckBox();
-            this.label147 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo23 = new System.Windows.Forms.TextBox();
             this.label148 = new System.Windows.Forms.Label();
             this.label149 = new System.Windows.Forms.Label();
             this.label150 = new System.Windows.Forms.Label();
+            this.label147 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo23 = new System.Windows.Forms.TextBox();
             this.groupBoxNo22 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo22Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo22Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo22X = new System.Windows.Forms.CheckBox();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
             this.label143 = new System.Windows.Forms.Label();
             this.textBoxForcaNo22 = new System.Windows.Forms.TextBox();
-            this.label144 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.label146 = new System.Windows.Forms.Label();
             this.groupBoxNo21 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo21Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo21Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo21X = new System.Windows.Forms.CheckBox();
-            this.label139 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo21 = new System.Windows.Forms.TextBox();
             this.label140 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
             this.label142 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo21 = new System.Windows.Forms.TextBox();
             this.groupBoxNo20 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo20Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo20Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo20X = new System.Windows.Forms.CheckBox();
-            this.label135 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo20 = new System.Windows.Forms.TextBox();
             this.label136 = new System.Windows.Forms.Label();
             this.label137 = new System.Windows.Forms.Label();
             this.label138 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo20 = new System.Windows.Forms.TextBox();
             this.groupBoxNo19 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo19Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo19Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo19X = new System.Windows.Forms.CheckBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label132 = new System.Windows.Forms.Label();
             this.label131 = new System.Windows.Forms.Label();
             this.textBoxForcaNo19 = new System.Windows.Forms.TextBox();
-            this.label132 = new System.Windows.Forms.Label();
-            this.label133 = new System.Windows.Forms.Label();
-            this.label134 = new System.Windows.Forms.Label();
             this.groupBoxNo18 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo18Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo18Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo18X = new System.Windows.Forms.CheckBox();
-            this.label127 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo18 = new System.Windows.Forms.TextBox();
             this.label128 = new System.Windows.Forms.Label();
             this.label129 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo18 = new System.Windows.Forms.TextBox();
             this.groupBoxNo17 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo17Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo17Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo17X = new System.Windows.Forms.CheckBox();
-            this.label123 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo17 = new System.Windows.Forms.TextBox();
             this.label124 = new System.Windows.Forms.Label();
             this.label125 = new System.Windows.Forms.Label();
             this.label126 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo17 = new System.Windows.Forms.TextBox();
             this.groupBoxNo16 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo16Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo16Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo16X = new System.Windows.Forms.CheckBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
             this.textBoxForcaNo16 = new System.Windows.Forms.TextBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.label122 = new System.Windows.Forms.Label();
             this.groupBoxNo15 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo15Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo15Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo15X = new System.Windows.Forms.CheckBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo15 = new System.Windows.Forms.TextBox();
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
             this.label118 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo15 = new System.Windows.Forms.TextBox();
             this.groupBoxNo14 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo14Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo14Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo14X = new System.Windows.Forms.CheckBox();
-            this.label111 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo14 = new System.Windows.Forms.TextBox();
             this.label112 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo14 = new System.Windows.Forms.TextBox();
             this.groupBoxNo13 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo13Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo13Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo13X = new System.Windows.Forms.CheckBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
             this.label107 = new System.Windows.Forms.Label();
             this.textBoxForcaNo13 = new System.Windows.Forms.TextBox();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
             this.groupBoxNo12 = new System.Windows.Forms.GroupBox();
             this.checkBoxFixaNo12Z = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo12Y = new System.Windows.Forms.CheckBox();
             this.checkBoxFixaNo12X = new System.Windows.Forms.CheckBox();
-            this.label103 = new System.Windows.Forms.Label();
-            this.textBoxForcaNo12 = new System.Windows.Forms.TextBox();
             this.label104 = new System.Windows.Forms.Label();
             this.label105 = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
+            this.textBoxForcaNo12 = new System.Windows.Forms.TextBox();
             this.groupBoxElemento12 = new System.Windows.Forms.GroupBox();
             this.comboBoxAnguloDirE12 = new System.Windows.Forms.ComboBox();
             this.comboBoxAnguloE12 = new System.Windows.Forms.ComboBox();
@@ -462,7 +463,6 @@
             this.label75 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.timerintro = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxElemento1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidadeElementos)).BeginInit();
             this.groupBoxElemento2.SuspendLayout();
@@ -689,6 +689,7 @@
             // 
             this.comboBoxAnguloE1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnguloE1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxAnguloE1.FormattingEnabled = true;
             this.comboBoxAnguloE1.IntegralHeight = false;
             this.comboBoxAnguloE1.Items.AddRange(new object[] {
             "90",
@@ -1432,14 +1433,14 @@
             this.groupBoxNo6.Controls.Add(this.checkBoxFixaNo6Z);
             this.groupBoxNo6.Controls.Add(this.checkBoxFixaNo6Y);
             this.groupBoxNo6.Controls.Add(this.checkBoxFixaNo6X);
-            this.groupBoxNo6.Controls.Add(this.label50);
-            this.groupBoxNo6.Controls.Add(this.textBoxForcaNo6);
             this.groupBoxNo6.Controls.Add(this.label42);
             this.groupBoxNo6.Controls.Add(this.label43);
             this.groupBoxNo6.Controls.Add(this.label44);
+            this.groupBoxNo6.Controls.Add(this.label50);
+            this.groupBoxNo6.Controls.Add(this.textBoxForcaNo6);
             this.groupBoxNo6.Location = new System.Drawing.Point(891, 170);
             this.groupBoxNo6.Name = "groupBoxNo6";
-            this.groupBoxNo6.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo6.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo6.TabIndex = 32;
             this.groupBoxNo6.TabStop = false;
             this.groupBoxNo6.Text = "Nó 6";
@@ -1448,10 +1449,10 @@
             // checkBoxFixaNo6Z
             // 
             this.checkBoxFixaNo6Z.AutoSize = true;
-            this.checkBoxFixaNo6Z.Location = new System.Drawing.Point(136, 32);
+            this.checkBoxFixaNo6Z.Location = new System.Drawing.Point(135, 43);
             this.checkBoxFixaNo6Z.Name = "checkBoxFixaNo6Z";
             this.checkBoxFixaNo6Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo6Z.TabIndex = 40;
+            this.checkBoxFixaNo6Z.TabIndex = 49;
             this.checkBoxFixaNo6Z.Text = "Fixo";
             this.checkBoxFixaNo6Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo6Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo6_CheckedChanged);
@@ -1459,10 +1460,10 @@
             // checkBoxFixaNo6Y
             // 
             this.checkBoxFixaNo6Y.AutoSize = true;
-            this.checkBoxFixaNo6Y.Location = new System.Drawing.Point(75, 32);
+            this.checkBoxFixaNo6Y.Location = new System.Drawing.Point(135, 7);
             this.checkBoxFixaNo6Y.Name = "checkBoxFixaNo6Y";
             this.checkBoxFixaNo6Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo6Y.TabIndex = 39;
+            this.checkBoxFixaNo6Y.TabIndex = 48;
             this.checkBoxFixaNo6Y.Text = "Fixo";
             this.checkBoxFixaNo6Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo6Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo6_CheckedChanged);
@@ -1470,18 +1471,48 @@
             // checkBoxFixaNo6X
             // 
             this.checkBoxFixaNo6X.AutoSize = true;
-            this.checkBoxFixaNo6X.Location = new System.Drawing.Point(7, 32);
+            this.checkBoxFixaNo6X.Location = new System.Drawing.Point(135, 25);
             this.checkBoxFixaNo6X.Name = "checkBoxFixaNo6X";
             this.checkBoxFixaNo6X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo6X.TabIndex = 38;
+            this.checkBoxFixaNo6X.TabIndex = 47;
             this.checkBoxFixaNo6X.Text = "Fixo";
             this.checkBoxFixaNo6X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo6X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo6_CheckedChanged);
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label42.Location = new System.Drawing.Point(36, 45);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(79, 12);
+            this.label42.TabIndex = 46;
+            this.label42.Text = "Rotação no eixo Z";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(36, 8);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(98, 12);
+            this.label43.TabIndex = 45;
+            this.label43.Text = "Deslocamento vertical";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label44.Location = new System.Drawing.Point(36, 27);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 12);
+            this.label44.TabIndex = 44;
+            this.label44.Text = "Rotação no eixo X";
+            // 
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(2, 58);
+            this.label50.Location = new System.Drawing.Point(2, 66);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(57, 13);
             this.label50.TabIndex = 31;
@@ -1489,51 +1520,24 @@
             // 
             // textBoxForcaNo6
             // 
-            this.textBoxForcaNo6.Location = new System.Drawing.Point(63, 55);
+            this.textBoxForcaNo6.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo6.Name = "textBoxForcaNo6";
             this.textBoxForcaNo6.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo6.TabIndex = 30;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(141, 16);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(14, 13);
-            this.label42.TabIndex = 22;
-            this.label42.Text = "Z";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(87, 16);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(14, 13);
-            this.label43.TabIndex = 10;
-            this.label43.Text = "Y";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(20, 16);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(14, 13);
-            this.label44.TabIndex = 8;
-            this.label44.Text = "X";
             // 
             // groupBoxNo5
             // 
             this.groupBoxNo5.Controls.Add(this.checkBoxFixaNo5Z);
             this.groupBoxNo5.Controls.Add(this.checkBoxFixaNo5Y);
             this.groupBoxNo5.Controls.Add(this.checkBoxFixaNo5X);
-            this.groupBoxNo5.Controls.Add(this.label49);
-            this.groupBoxNo5.Controls.Add(this.textBoxForcaNo5);
             this.groupBoxNo5.Controls.Add(this.label39);
             this.groupBoxNo5.Controls.Add(this.label40);
             this.groupBoxNo5.Controls.Add(this.label41);
+            this.groupBoxNo5.Controls.Add(this.label49);
+            this.groupBoxNo5.Controls.Add(this.textBoxForcaNo5);
             this.groupBoxNo5.Location = new System.Drawing.Point(693, 170);
             this.groupBoxNo5.Name = "groupBoxNo5";
-            this.groupBoxNo5.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo5.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo5.TabIndex = 31;
             this.groupBoxNo5.TabStop = false;
             this.groupBoxNo5.Text = "Nó 5";
@@ -1542,10 +1546,10 @@
             // checkBoxFixaNo5Z
             // 
             this.checkBoxFixaNo5Z.AutoSize = true;
-            this.checkBoxFixaNo5Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo5Z.Location = new System.Drawing.Point(137, 43);
             this.checkBoxFixaNo5Z.Name = "checkBoxFixaNo5Z";
             this.checkBoxFixaNo5Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo5Z.TabIndex = 40;
+            this.checkBoxFixaNo5Z.TabIndex = 49;
             this.checkBoxFixaNo5Z.Text = "Fixo";
             this.checkBoxFixaNo5Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo5Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo5_CheckedChanged);
@@ -1553,10 +1557,10 @@
             // checkBoxFixaNo5Y
             // 
             this.checkBoxFixaNo5Y.AutoSize = true;
-            this.checkBoxFixaNo5Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo5Y.Location = new System.Drawing.Point(137, 7);
             this.checkBoxFixaNo5Y.Name = "checkBoxFixaNo5Y";
             this.checkBoxFixaNo5Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo5Y.TabIndex = 39;
+            this.checkBoxFixaNo5Y.TabIndex = 48;
             this.checkBoxFixaNo5Y.Text = "Fixo";
             this.checkBoxFixaNo5Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo5Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo5_CheckedChanged);
@@ -1564,18 +1568,48 @@
             // checkBoxFixaNo5X
             // 
             this.checkBoxFixaNo5X.AutoSize = true;
-            this.checkBoxFixaNo5X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo5X.Location = new System.Drawing.Point(137, 25);
             this.checkBoxFixaNo5X.Name = "checkBoxFixaNo5X";
             this.checkBoxFixaNo5X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo5X.TabIndex = 38;
+            this.checkBoxFixaNo5X.TabIndex = 47;
             this.checkBoxFixaNo5X.Text = "Fixo";
             this.checkBoxFixaNo5X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo5X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo5_CheckedChanged);
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label39.Location = new System.Drawing.Point(38, 45);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(79, 12);
+            this.label39.TabIndex = 46;
+            this.label39.Text = "Rotação no eixo Z";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(38, 8);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(98, 12);
+            this.label40.TabIndex = 45;
+            this.label40.Text = "Deslocamento vertical";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label41.Location = new System.Drawing.Point(38, 27);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(79, 12);
+            this.label41.TabIndex = 44;
+            this.label41.Text = "Rotação no eixo X";
+            // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(5, 58);
+            this.label49.Location = new System.Drawing.Point(6, 67);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(57, 13);
             this.label49.TabIndex = 31;
@@ -1583,51 +1617,24 @@
             // 
             // textBoxForcaNo5
             // 
-            this.textBoxForcaNo5.Location = new System.Drawing.Point(63, 55);
+            this.textBoxForcaNo5.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo5.Name = "textBoxForcaNo5";
             this.textBoxForcaNo5.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo5.TabIndex = 30;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(141, 16);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(14, 13);
-            this.label39.TabIndex = 22;
-            this.label39.Text = "Z";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(88, 16);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(14, 13);
-            this.label40.TabIndex = 10;
-            this.label40.Text = "Y";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(20, 16);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(14, 13);
-            this.label41.TabIndex = 8;
-            this.label41.Text = "X";
             // 
             // groupBoxNo4
             // 
             this.groupBoxNo4.Controls.Add(this.checkBoxFixaNo4Z);
             this.groupBoxNo4.Controls.Add(this.checkBoxFixaNo4Y);
             this.groupBoxNo4.Controls.Add(this.checkBoxFixaNo4X);
+            this.groupBoxNo4.Controls.Add(this.label6);
+            this.groupBoxNo4.Controls.Add(this.label8);
+            this.groupBoxNo4.Controls.Add(this.label36);
             this.groupBoxNo4.Controls.Add(this.label48);
             this.groupBoxNo4.Controls.Add(this.textBoxForcaNo4);
-            this.groupBoxNo4.Controls.Add(this.label36);
-            this.groupBoxNo4.Controls.Add(this.label37);
-            this.groupBoxNo4.Controls.Add(this.label38);
             this.groupBoxNo4.Location = new System.Drawing.Point(499, 170);
             this.groupBoxNo4.Name = "groupBoxNo4";
-            this.groupBoxNo4.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo4.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo4.TabIndex = 30;
             this.groupBoxNo4.TabStop = false;
             this.groupBoxNo4.Text = "Nó 4";
@@ -1636,10 +1643,10 @@
             // checkBoxFixaNo4Z
             // 
             this.checkBoxFixaNo4Z.AutoSize = true;
-            this.checkBoxFixaNo4Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo4Z.Location = new System.Drawing.Point(138, 43);
             this.checkBoxFixaNo4Z.Name = "checkBoxFixaNo4Z";
             this.checkBoxFixaNo4Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo4Z.TabIndex = 40;
+            this.checkBoxFixaNo4Z.TabIndex = 43;
             this.checkBoxFixaNo4Z.Text = "Fixo";
             this.checkBoxFixaNo4Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo4Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo4_CheckedChanged);
@@ -1647,10 +1654,10 @@
             // checkBoxFixaNo4Y
             // 
             this.checkBoxFixaNo4Y.AutoSize = true;
-            this.checkBoxFixaNo4Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo4Y.Location = new System.Drawing.Point(138, 7);
             this.checkBoxFixaNo4Y.Name = "checkBoxFixaNo4Y";
             this.checkBoxFixaNo4Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo4Y.TabIndex = 39;
+            this.checkBoxFixaNo4Y.TabIndex = 42;
             this.checkBoxFixaNo4Y.Text = "Fixo";
             this.checkBoxFixaNo4Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo4Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo4_CheckedChanged);
@@ -1658,18 +1665,48 @@
             // checkBoxFixaNo4X
             // 
             this.checkBoxFixaNo4X.AutoSize = true;
-            this.checkBoxFixaNo4X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo4X.Location = new System.Drawing.Point(138, 25);
             this.checkBoxFixaNo4X.Name = "checkBoxFixaNo4X";
             this.checkBoxFixaNo4X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo4X.TabIndex = 38;
+            this.checkBoxFixaNo4X.TabIndex = 41;
             this.checkBoxFixaNo4X.Text = "Fixo";
             this.checkBoxFixaNo4X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo4X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo4_CheckedChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label6.Location = new System.Drawing.Point(40, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 12);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Rotação no eixo Z";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(40, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 12);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Deslocamento vertical";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label36.Location = new System.Drawing.Point(40, 27);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(79, 12);
+            this.label36.TabIndex = 38;
+            this.label36.Text = "Rotação no eixo X";
+            // 
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(4, 58);
+            this.label48.Location = new System.Drawing.Point(3, 66);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(57, 13);
             this.label48.TabIndex = 31;
@@ -1677,51 +1714,24 @@
             // 
             // textBoxForcaNo4
             // 
-            this.textBoxForcaNo4.Location = new System.Drawing.Point(64, 55);
+            this.textBoxForcaNo4.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo4.Name = "textBoxForcaNo4";
             this.textBoxForcaNo4.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo4.TabIndex = 30;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(146, 18);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(14, 13);
-            this.label36.TabIndex = 22;
-            this.label36.Text = "Z";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(88, 16);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(14, 13);
-            this.label37.TabIndex = 10;
-            this.label37.Text = "Y";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(20, 16);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(14, 13);
-            this.label38.TabIndex = 8;
-            this.label38.Text = "X";
             // 
             // groupBoxNo3
             // 
             this.groupBoxNo3.Controls.Add(this.checkBoxFixaNo3Z);
             this.groupBoxNo3.Controls.Add(this.checkBoxFixaNo3Y);
             this.groupBoxNo3.Controls.Add(this.checkBoxFixaNo3X);
-            this.groupBoxNo3.Controls.Add(this.label47);
-            this.groupBoxNo3.Controls.Add(this.textBoxForcaNo3);
             this.groupBoxNo3.Controls.Add(this.label33);
             this.groupBoxNo3.Controls.Add(this.label34);
             this.groupBoxNo3.Controls.Add(this.label35);
+            this.groupBoxNo3.Controls.Add(this.label47);
+            this.groupBoxNo3.Controls.Add(this.textBoxForcaNo3);
             this.groupBoxNo3.Location = new System.Drawing.Point(890, 78);
             this.groupBoxNo3.Name = "groupBoxNo3";
-            this.groupBoxNo3.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo3.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo3.TabIndex = 29;
             this.groupBoxNo3.TabStop = false;
             this.groupBoxNo3.Text = "Nó 3";
@@ -1730,10 +1740,10 @@
             // checkBoxFixaNo3Z
             // 
             this.checkBoxFixaNo3Z.AutoSize = true;
-            this.checkBoxFixaNo3Z.Location = new System.Drawing.Point(134, 30);
+            this.checkBoxFixaNo3Z.Location = new System.Drawing.Point(136, 43);
             this.checkBoxFixaNo3Z.Name = "checkBoxFixaNo3Z";
             this.checkBoxFixaNo3Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo3Z.TabIndex = 37;
+            this.checkBoxFixaNo3Z.TabIndex = 49;
             this.checkBoxFixaNo3Z.Text = "Fixo";
             this.checkBoxFixaNo3Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo3Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo3_CheckedChanged);
@@ -1741,10 +1751,10 @@
             // checkBoxFixaNo3Y
             // 
             this.checkBoxFixaNo3Y.AutoSize = true;
-            this.checkBoxFixaNo3Y.Location = new System.Drawing.Point(73, 30);
+            this.checkBoxFixaNo3Y.Location = new System.Drawing.Point(136, 7);
             this.checkBoxFixaNo3Y.Name = "checkBoxFixaNo3Y";
             this.checkBoxFixaNo3Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo3Y.TabIndex = 36;
+            this.checkBoxFixaNo3Y.TabIndex = 48;
             this.checkBoxFixaNo3Y.Text = "Fixo";
             this.checkBoxFixaNo3Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo3Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo3_CheckedChanged);
@@ -1752,18 +1762,48 @@
             // checkBoxFixaNo3X
             // 
             this.checkBoxFixaNo3X.AutoSize = true;
-            this.checkBoxFixaNo3X.Location = new System.Drawing.Point(5, 30);
+            this.checkBoxFixaNo3X.Location = new System.Drawing.Point(136, 25);
             this.checkBoxFixaNo3X.Name = "checkBoxFixaNo3X";
             this.checkBoxFixaNo3X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo3X.TabIndex = 35;
+            this.checkBoxFixaNo3X.TabIndex = 47;
             this.checkBoxFixaNo3X.Text = "Fixo";
             this.checkBoxFixaNo3X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo3X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo3_CheckedChanged);
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label33.Location = new System.Drawing.Point(37, 45);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(79, 12);
+            this.label33.TabIndex = 46;
+            this.label33.Text = "Rotação no eixo Z";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(37, 8);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(98, 12);
+            this.label34.TabIndex = 45;
+            this.label34.Text = "Deslocamento vertical";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label35.Location = new System.Drawing.Point(37, 27);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(79, 12);
+            this.label35.TabIndex = 44;
+            this.label35.Text = "Rotação no eixo X";
+            // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(6, 56);
+            this.label47.Location = new System.Drawing.Point(3, 66);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(57, 13);
             this.label47.TabIndex = 31;
@@ -1771,51 +1811,24 @@
             // 
             // textBoxForcaNo3
             // 
-            this.textBoxForcaNo3.Location = new System.Drawing.Point(64, 53);
+            this.textBoxForcaNo3.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo3.Name = "textBoxForcaNo3";
             this.textBoxForcaNo3.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo3.TabIndex = 30;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(142, 14);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(14, 13);
-            this.label33.TabIndex = 22;
-            this.label33.Text = "Z";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(88, 16);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(14, 13);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "Y";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(21, 16);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(14, 13);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "X";
             // 
             // groupBoxNo2
             // 
             this.groupBoxNo2.Controls.Add(this.checkBoxFixaNo2Z);
             this.groupBoxNo2.Controls.Add(this.checkBoxFixaNo2Y);
             this.groupBoxNo2.Controls.Add(this.checkBoxFixaNo2X);
-            this.groupBoxNo2.Controls.Add(this.label46);
-            this.groupBoxNo2.Controls.Add(this.textBoxForcaNo2);
             this.groupBoxNo2.Controls.Add(this.label30);
             this.groupBoxNo2.Controls.Add(this.label31);
             this.groupBoxNo2.Controls.Add(this.label32);
+            this.groupBoxNo2.Controls.Add(this.label46);
+            this.groupBoxNo2.Controls.Add(this.textBoxForcaNo2);
             this.groupBoxNo2.Location = new System.Drawing.Point(693, 76);
             this.groupBoxNo2.Name = "groupBoxNo2";
-            this.groupBoxNo2.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo2.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo2.TabIndex = 28;
             this.groupBoxNo2.TabStop = false;
             this.groupBoxNo2.Text = "Nó 2";
@@ -1823,10 +1836,10 @@
             // checkBoxFixaNo2Z
             // 
             this.checkBoxFixaNo2Z.AutoSize = true;
-            this.checkBoxFixaNo2Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo2Z.Location = new System.Drawing.Point(137, 43);
             this.checkBoxFixaNo2Z.Name = "checkBoxFixaNo2Z";
             this.checkBoxFixaNo2Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo2Z.TabIndex = 34;
+            this.checkBoxFixaNo2Z.TabIndex = 43;
             this.checkBoxFixaNo2Z.Text = "Fixo";
             this.checkBoxFixaNo2Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo2Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo2_CheckedChanged);
@@ -1834,10 +1847,10 @@
             // checkBoxFixaNo2Y
             // 
             this.checkBoxFixaNo2Y.AutoSize = true;
-            this.checkBoxFixaNo2Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo2Y.Location = new System.Drawing.Point(137, 7);
             this.checkBoxFixaNo2Y.Name = "checkBoxFixaNo2Y";
             this.checkBoxFixaNo2Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo2Y.TabIndex = 33;
+            this.checkBoxFixaNo2Y.TabIndex = 42;
             this.checkBoxFixaNo2Y.Text = "Fixo";
             this.checkBoxFixaNo2Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo2Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo2_CheckedChanged);
@@ -1845,18 +1858,48 @@
             // checkBoxFixaNo2X
             // 
             this.checkBoxFixaNo2X.AutoSize = true;
-            this.checkBoxFixaNo2X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo2X.Location = new System.Drawing.Point(137, 25);
             this.checkBoxFixaNo2X.Name = "checkBoxFixaNo2X";
             this.checkBoxFixaNo2X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo2X.TabIndex = 32;
+            this.checkBoxFixaNo2X.TabIndex = 41;
             this.checkBoxFixaNo2X.Text = "Fixo";
             this.checkBoxFixaNo2X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo2X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo2_CheckedChanged);
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label30.Location = new System.Drawing.Point(38, 45);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(79, 12);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "Rotação no eixo Z";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(38, 8);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(98, 12);
+            this.label31.TabIndex = 39;
+            this.label31.Text = "Deslocamento vertical";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label32.Location = new System.Drawing.Point(38, 27);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(79, 12);
+            this.label32.TabIndex = 38;
+            this.label32.Text = "Rotação no eixo X";
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(2, 58);
+            this.label46.Location = new System.Drawing.Point(3, 68);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(57, 13);
             this.label46.TabIndex = 31;
@@ -1864,37 +1907,10 @@
             // 
             // textBoxForcaNo2
             // 
-            this.textBoxForcaNo2.Location = new System.Drawing.Point(63, 55);
+            this.textBoxForcaNo2.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo2.Name = "textBoxForcaNo2";
             this.textBoxForcaNo2.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo2.TabIndex = 30;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(141, 16);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 13);
-            this.label30.TabIndex = 22;
-            this.label30.Text = "Z";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(88, 16);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(14, 13);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "Y";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(20, 16);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(14, 13);
-            this.label32.TabIndex = 8;
-            this.label32.Text = "X";
             // 
             // groupBoxNo1
             // 
@@ -1908,7 +1924,7 @@
             this.groupBoxNo1.Controls.Add(this.label28);
             this.groupBoxNo1.Location = new System.Drawing.Point(498, 76);
             this.groupBoxNo1.Name = "groupBoxNo1";
-            this.groupBoxNo1.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo1.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo1.TabIndex = 27;
             this.groupBoxNo1.TabStop = false;
             this.groupBoxNo1.Text = "Nó 1";
@@ -1916,7 +1932,7 @@
             // checkBoxFixaNo1Z
             // 
             this.checkBoxFixaNo1Z.AutoSize = true;
-            this.checkBoxFixaNo1Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo1Z.Location = new System.Drawing.Point(139, 43);
             this.checkBoxFixaNo1Z.Name = "checkBoxFixaNo1Z";
             this.checkBoxFixaNo1Z.Size = new System.Drawing.Size(45, 17);
             this.checkBoxFixaNo1Z.TabIndex = 37;
@@ -1927,7 +1943,7 @@
             // checkBoxFixaNo1Y
             // 
             this.checkBoxFixaNo1Y.AutoSize = true;
-            this.checkBoxFixaNo1Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo1Y.Location = new System.Drawing.Point(139, 7);
             this.checkBoxFixaNo1Y.Name = "checkBoxFixaNo1Y";
             this.checkBoxFixaNo1Y.Size = new System.Drawing.Size(45, 17);
             this.checkBoxFixaNo1Y.TabIndex = 36;
@@ -1938,7 +1954,7 @@
             // checkBoxFixaNo1X
             // 
             this.checkBoxFixaNo1X.AutoSize = true;
-            this.checkBoxFixaNo1X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo1X.Location = new System.Drawing.Point(139, 25);
             this.checkBoxFixaNo1X.Name = "checkBoxFixaNo1X";
             this.checkBoxFixaNo1X.Size = new System.Drawing.Size(45, 17);
             this.checkBoxFixaNo1X.TabIndex = 35;
@@ -1949,7 +1965,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(4, 58);
+            this.label45.Location = new System.Drawing.Point(4, 67);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(57, 13);
             this.label45.TabIndex = 28;
@@ -1957,7 +1973,7 @@
             // 
             // textBoxForcaNo1
             // 
-            this.textBoxForcaNo1.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo1.Location = new System.Drawing.Point(65, 64);
             this.textBoxForcaNo1.Name = "textBoxForcaNo1";
             this.textBoxForcaNo1.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo1.TabIndex = 27;
@@ -1966,29 +1982,32 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(147, 16);
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label29.Location = new System.Drawing.Point(40, 45);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(14, 13);
+            this.label29.Size = new System.Drawing.Size(79, 12);
             this.label29.TabIndex = 22;
-            this.label29.Text = "Z";
+            this.label29.Text = "Rotação no eixo Z";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(89, 16);
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(40, 8);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(14, 13);
+            this.label27.Size = new System.Drawing.Size(98, 12);
             this.label27.TabIndex = 10;
-            this.label27.Text = "Y";
+            this.label27.Text = "Deslocamento vertical";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(20, 16);
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label28.Location = new System.Drawing.Point(40, 27);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(14, 13);
+            this.label28.Size = new System.Drawing.Size(79, 12);
             this.label28.TabIndex = 8;
-            this.label28.Text = "X";
+            this.label28.Text = "Rotação no eixo X";
             // 
             // labelQtdEementos
             // 
@@ -2006,14 +2025,14 @@
             this.groupBoxNo11.Controls.Add(this.checkBoxFixaNo11Z);
             this.groupBoxNo11.Controls.Add(this.checkBoxFixaNo11Y);
             this.groupBoxNo11.Controls.Add(this.checkBoxFixaNo11X);
-            this.groupBoxNo11.Controls.Add(this.label51);
-            this.groupBoxNo11.Controls.Add(this.textBoxForcaNo11);
             this.groupBoxNo11.Controls.Add(this.label52);
             this.groupBoxNo11.Controls.Add(this.label53);
             this.groupBoxNo11.Controls.Add(this.label54);
+            this.groupBoxNo11.Controls.Add(this.label51);
+            this.groupBoxNo11.Controls.Add(this.textBoxForcaNo11);
             this.groupBoxNo11.Location = new System.Drawing.Point(694, 359);
             this.groupBoxNo11.Name = "groupBoxNo11";
-            this.groupBoxNo11.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo11.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo11.TabIndex = 39;
             this.groupBoxNo11.TabStop = false;
             this.groupBoxNo11.Text = "Nó 11";
@@ -2022,10 +2041,10 @@
             // checkBoxFixaNo11Z
             // 
             this.checkBoxFixaNo11Z.AutoSize = true;
-            this.checkBoxFixaNo11Z.Location = new System.Drawing.Point(134, 31);
+            this.checkBoxFixaNo11Z.Location = new System.Drawing.Point(136, 44);
             this.checkBoxFixaNo11Z.Name = "checkBoxFixaNo11Z";
             this.checkBoxFixaNo11Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo11Z.TabIndex = 40;
+            this.checkBoxFixaNo11Z.TabIndex = 49;
             this.checkBoxFixaNo11Z.Text = "Fixo";
             this.checkBoxFixaNo11Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo11Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo11_CheckedChanged);
@@ -2033,10 +2052,10 @@
             // checkBoxFixaNo11Y
             // 
             this.checkBoxFixaNo11Y.AutoSize = true;
-            this.checkBoxFixaNo11Y.Location = new System.Drawing.Point(73, 31);
+            this.checkBoxFixaNo11Y.Location = new System.Drawing.Point(136, 8);
             this.checkBoxFixaNo11Y.Name = "checkBoxFixaNo11Y";
             this.checkBoxFixaNo11Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo11Y.TabIndex = 39;
+            this.checkBoxFixaNo11Y.TabIndex = 48;
             this.checkBoxFixaNo11Y.Text = "Fixo";
             this.checkBoxFixaNo11Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo11Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo11_CheckedChanged);
@@ -2044,18 +2063,48 @@
             // checkBoxFixaNo11X
             // 
             this.checkBoxFixaNo11X.AutoSize = true;
-            this.checkBoxFixaNo11X.Location = new System.Drawing.Point(5, 31);
+            this.checkBoxFixaNo11X.Location = new System.Drawing.Point(136, 26);
             this.checkBoxFixaNo11X.Name = "checkBoxFixaNo11X";
             this.checkBoxFixaNo11X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo11X.TabIndex = 38;
+            this.checkBoxFixaNo11X.TabIndex = 47;
             this.checkBoxFixaNo11X.Text = "Fixo";
             this.checkBoxFixaNo11X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo11X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo11_CheckedChanged);
             // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label52.Location = new System.Drawing.Point(37, 46);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(79, 12);
+            this.label52.TabIndex = 46;
+            this.label52.Text = "Rotação no eixo Z";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(37, 9);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(98, 12);
+            this.label53.TabIndex = 45;
+            this.label53.Text = "Deslocamento vertical";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label54.Location = new System.Drawing.Point(37, 28);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(79, 12);
+            this.label54.TabIndex = 44;
+            this.label54.Text = "Rotação no eixo X";
+            // 
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(2, 57);
+            this.label51.Location = new System.Drawing.Point(2, 66);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(57, 13);
             this.label51.TabIndex = 31;
@@ -2063,51 +2112,24 @@
             // 
             // textBoxForcaNo11
             // 
-            this.textBoxForcaNo11.Location = new System.Drawing.Point(62, 54);
+            this.textBoxForcaNo11.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo11.Name = "textBoxForcaNo11";
             this.textBoxForcaNo11.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo11.TabIndex = 30;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(141, 16);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(14, 13);
-            this.label52.TabIndex = 22;
-            this.label52.Text = "Z";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(87, 13);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(14, 13);
-            this.label53.TabIndex = 10;
-            this.label53.Text = "Y";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(20, 16);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(14, 13);
-            this.label54.TabIndex = 8;
-            this.label54.Text = "X";
             // 
             // groupBoxNo10
             // 
             this.groupBoxNo10.Controls.Add(this.checkBoxFixaNo10Z);
             this.groupBoxNo10.Controls.Add(this.checkBoxFixaNo10Y);
             this.groupBoxNo10.Controls.Add(this.checkBoxFixaNo10X);
-            this.groupBoxNo10.Controls.Add(this.label55);
-            this.groupBoxNo10.Controls.Add(this.textBoxForcaNo10);
             this.groupBoxNo10.Controls.Add(this.label56);
             this.groupBoxNo10.Controls.Add(this.label57);
             this.groupBoxNo10.Controls.Add(this.label58);
+            this.groupBoxNo10.Controls.Add(this.label55);
+            this.groupBoxNo10.Controls.Add(this.textBoxForcaNo10);
             this.groupBoxNo10.Location = new System.Drawing.Point(499, 358);
             this.groupBoxNo10.Name = "groupBoxNo10";
-            this.groupBoxNo10.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo10.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo10.TabIndex = 38;
             this.groupBoxNo10.TabStop = false;
             this.groupBoxNo10.Text = "Nó 10";
@@ -2116,10 +2138,10 @@
             // checkBoxFixaNo10Z
             // 
             this.checkBoxFixaNo10Z.AutoSize = true;
-            this.checkBoxFixaNo10Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo10Z.Location = new System.Drawing.Point(138, 43);
             this.checkBoxFixaNo10Z.Name = "checkBoxFixaNo10Z";
             this.checkBoxFixaNo10Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo10Z.TabIndex = 40;
+            this.checkBoxFixaNo10Z.TabIndex = 49;
             this.checkBoxFixaNo10Z.Text = "Fixo";
             this.checkBoxFixaNo10Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo10Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo10_CheckedChanged);
@@ -2127,10 +2149,10 @@
             // checkBoxFixaNo10Y
             // 
             this.checkBoxFixaNo10Y.AutoSize = true;
-            this.checkBoxFixaNo10Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo10Y.Location = new System.Drawing.Point(138, 7);
             this.checkBoxFixaNo10Y.Name = "checkBoxFixaNo10Y";
             this.checkBoxFixaNo10Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo10Y.TabIndex = 39;
+            this.checkBoxFixaNo10Y.TabIndex = 48;
             this.checkBoxFixaNo10Y.Text = "Fixo";
             this.checkBoxFixaNo10Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo10Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo10_CheckedChanged);
@@ -2138,18 +2160,48 @@
             // checkBoxFixaNo10X
             // 
             this.checkBoxFixaNo10X.AutoSize = true;
-            this.checkBoxFixaNo10X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo10X.Location = new System.Drawing.Point(138, 25);
             this.checkBoxFixaNo10X.Name = "checkBoxFixaNo10X";
             this.checkBoxFixaNo10X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo10X.TabIndex = 38;
+            this.checkBoxFixaNo10X.TabIndex = 47;
             this.checkBoxFixaNo10X.Text = "Fixo";
             this.checkBoxFixaNo10X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo10X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo10_CheckedChanged);
             // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label56.Location = new System.Drawing.Point(40, 45);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(79, 12);
+            this.label56.TabIndex = 46;
+            this.label56.Text = "Rotação no eixo Z";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(40, 8);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(98, 12);
+            this.label57.TabIndex = 45;
+            this.label57.Text = "Deslocamento vertical";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label58.Location = new System.Drawing.Point(40, 27);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(79, 12);
+            this.label58.TabIndex = 44;
+            this.label58.Text = "Rotação no eixo X";
+            // 
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(3, 58);
+            this.label55.Location = new System.Drawing.Point(6, 68);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(57, 13);
             this.label55.TabIndex = 31;
@@ -2157,51 +2209,24 @@
             // 
             // textBoxForcaNo10
             // 
-            this.textBoxForcaNo10.Location = new System.Drawing.Point(64, 55);
+            this.textBoxForcaNo10.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo10.Name = "textBoxForcaNo10";
             this.textBoxForcaNo10.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo10.TabIndex = 30;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(146, 16);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(14, 13);
-            this.label56.TabIndex = 22;
-            this.label56.Text = "Z";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(88, 16);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(14, 13);
-            this.label57.TabIndex = 10;
-            this.label57.Text = "Y";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(20, 16);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(14, 13);
-            this.label58.TabIndex = 8;
-            this.label58.Text = "X";
             // 
             // groupBoxNo9
             // 
             this.groupBoxNo9.Controls.Add(this.checkBoxFixaNo9Z);
             this.groupBoxNo9.Controls.Add(this.checkBoxFixaNo9Y);
             this.groupBoxNo9.Controls.Add(this.checkBoxFixaNo9X);
-            this.groupBoxNo9.Controls.Add(this.label59);
-            this.groupBoxNo9.Controls.Add(this.textBoxForcaNo9);
             this.groupBoxNo9.Controls.Add(this.label60);
             this.groupBoxNo9.Controls.Add(this.label61);
             this.groupBoxNo9.Controls.Add(this.label62);
+            this.groupBoxNo9.Controls.Add(this.label59);
+            this.groupBoxNo9.Controls.Add(this.textBoxForcaNo9);
             this.groupBoxNo9.Location = new System.Drawing.Point(891, 264);
             this.groupBoxNo9.Name = "groupBoxNo9";
-            this.groupBoxNo9.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo9.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo9.TabIndex = 37;
             this.groupBoxNo9.TabStop = false;
             this.groupBoxNo9.Text = "Nó 9";
@@ -2210,10 +2235,10 @@
             // checkBoxFixaNo9Z
             // 
             this.checkBoxFixaNo9Z.AutoSize = true;
-            this.checkBoxFixaNo9Z.Location = new System.Drawing.Point(134, 30);
+            this.checkBoxFixaNo9Z.Location = new System.Drawing.Point(135, 45);
             this.checkBoxFixaNo9Z.Name = "checkBoxFixaNo9Z";
             this.checkBoxFixaNo9Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo9Z.TabIndex = 40;
+            this.checkBoxFixaNo9Z.TabIndex = 49;
             this.checkBoxFixaNo9Z.Text = "Fixo";
             this.checkBoxFixaNo9Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo9Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo9_CheckedChanged);
@@ -2221,10 +2246,10 @@
             // checkBoxFixaNo9Y
             // 
             this.checkBoxFixaNo9Y.AutoSize = true;
-            this.checkBoxFixaNo9Y.Location = new System.Drawing.Point(73, 30);
+            this.checkBoxFixaNo9Y.Location = new System.Drawing.Point(135, 9);
             this.checkBoxFixaNo9Y.Name = "checkBoxFixaNo9Y";
             this.checkBoxFixaNo9Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo9Y.TabIndex = 39;
+            this.checkBoxFixaNo9Y.TabIndex = 48;
             this.checkBoxFixaNo9Y.Text = "Fixo";
             this.checkBoxFixaNo9Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo9Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo9_CheckedChanged);
@@ -2232,18 +2257,48 @@
             // checkBoxFixaNo9X
             // 
             this.checkBoxFixaNo9X.AutoSize = true;
-            this.checkBoxFixaNo9X.Location = new System.Drawing.Point(5, 30);
+            this.checkBoxFixaNo9X.Location = new System.Drawing.Point(135, 27);
             this.checkBoxFixaNo9X.Name = "checkBoxFixaNo9X";
             this.checkBoxFixaNo9X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo9X.TabIndex = 38;
+            this.checkBoxFixaNo9X.TabIndex = 47;
             this.checkBoxFixaNo9X.Text = "Fixo";
             this.checkBoxFixaNo9X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo9X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo9_CheckedChanged);
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label60.Location = new System.Drawing.Point(36, 47);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(79, 12);
+            this.label60.TabIndex = 46;
+            this.label60.Text = "Rotação no eixo Z";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(36, 10);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(98, 12);
+            this.label61.TabIndex = 45;
+            this.label61.Text = "Deslocamento vertical";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label62.Location = new System.Drawing.Point(36, 29);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(79, 12);
+            this.label62.TabIndex = 44;
+            this.label62.Text = "Rotação no eixo X";
+            // 
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(5, 56);
+            this.label59.Location = new System.Drawing.Point(6, 64);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(57, 13);
             this.label59.TabIndex = 31;
@@ -2251,51 +2306,24 @@
             // 
             // textBoxForcaNo9
             // 
-            this.textBoxForcaNo9.Location = new System.Drawing.Point(63, 53);
+            this.textBoxForcaNo9.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo9.Name = "textBoxForcaNo9";
             this.textBoxForcaNo9.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo9.TabIndex = 30;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(141, 16);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(14, 13);
-            this.label60.TabIndex = 22;
-            this.label60.Text = "Z";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(87, 16);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(14, 13);
-            this.label61.TabIndex = 10;
-            this.label61.Text = "Y";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(20, 16);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(14, 13);
-            this.label62.TabIndex = 8;
-            this.label62.Text = "X";
             // 
             // groupBoxNo8
             // 
             this.groupBoxNo8.Controls.Add(this.checkBoxFixaNo8Z);
             this.groupBoxNo8.Controls.Add(this.checkBoxFixaNo8Y);
             this.groupBoxNo8.Controls.Add(this.checkBoxFixaNo8X);
-            this.groupBoxNo8.Controls.Add(this.label63);
-            this.groupBoxNo8.Controls.Add(this.textBoxForcaNo8);
             this.groupBoxNo8.Controls.Add(this.label64);
             this.groupBoxNo8.Controls.Add(this.label65);
             this.groupBoxNo8.Controls.Add(this.label66);
+            this.groupBoxNo8.Controls.Add(this.label63);
+            this.groupBoxNo8.Controls.Add(this.textBoxForcaNo8);
             this.groupBoxNo8.Location = new System.Drawing.Point(694, 264);
             this.groupBoxNo8.Name = "groupBoxNo8";
-            this.groupBoxNo8.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo8.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo8.TabIndex = 36;
             this.groupBoxNo8.TabStop = false;
             this.groupBoxNo8.Text = "Nó 8";
@@ -2304,10 +2332,10 @@
             // checkBoxFixaNo8Z
             // 
             this.checkBoxFixaNo8Z.AutoSize = true;
-            this.checkBoxFixaNo8Z.Location = new System.Drawing.Point(134, 30);
+            this.checkBoxFixaNo8Z.Location = new System.Drawing.Point(136, 45);
             this.checkBoxFixaNo8Z.Name = "checkBoxFixaNo8Z";
             this.checkBoxFixaNo8Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo8Z.TabIndex = 40;
+            this.checkBoxFixaNo8Z.TabIndex = 49;
             this.checkBoxFixaNo8Z.Text = "Fixo";
             this.checkBoxFixaNo8Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo8Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo8_CheckedChanged);
@@ -2315,10 +2343,10 @@
             // checkBoxFixaNo8Y
             // 
             this.checkBoxFixaNo8Y.AutoSize = true;
-            this.checkBoxFixaNo8Y.Location = new System.Drawing.Point(73, 30);
+            this.checkBoxFixaNo8Y.Location = new System.Drawing.Point(136, 9);
             this.checkBoxFixaNo8Y.Name = "checkBoxFixaNo8Y";
             this.checkBoxFixaNo8Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo8Y.TabIndex = 39;
+            this.checkBoxFixaNo8Y.TabIndex = 48;
             this.checkBoxFixaNo8Y.Text = "Fixo";
             this.checkBoxFixaNo8Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo8Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo8_CheckedChanged);
@@ -2326,18 +2354,48 @@
             // checkBoxFixaNo8X
             // 
             this.checkBoxFixaNo8X.AutoSize = true;
-            this.checkBoxFixaNo8X.Location = new System.Drawing.Point(5, 30);
+            this.checkBoxFixaNo8X.Location = new System.Drawing.Point(136, 27);
             this.checkBoxFixaNo8X.Name = "checkBoxFixaNo8X";
             this.checkBoxFixaNo8X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo8X.TabIndex = 38;
+            this.checkBoxFixaNo8X.TabIndex = 47;
             this.checkBoxFixaNo8X.Text = "Fixo";
             this.checkBoxFixaNo8X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo8X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo8_CheckedChanged);
             // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label64.Location = new System.Drawing.Point(37, 47);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(79, 12);
+            this.label64.TabIndex = 46;
+            this.label64.Text = "Rotação no eixo Z";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(37, 10);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(98, 12);
+            this.label65.TabIndex = 45;
+            this.label65.Text = "Deslocamento vertical";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label66.Location = new System.Drawing.Point(37, 29);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(79, 12);
+            this.label66.TabIndex = 44;
+            this.label66.Text = "Rotação no eixo X";
+            // 
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(5, 56);
+            this.label63.Location = new System.Drawing.Point(5, 64);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(57, 13);
             this.label63.TabIndex = 31;
@@ -2345,51 +2403,24 @@
             // 
             // textBoxForcaNo8
             // 
-            this.textBoxForcaNo8.Location = new System.Drawing.Point(62, 53);
+            this.textBoxForcaNo8.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo8.Name = "textBoxForcaNo8";
             this.textBoxForcaNo8.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo8.TabIndex = 30;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(138, 16);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(14, 13);
-            this.label64.TabIndex = 22;
-            this.label64.Text = "Z";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(84, 15);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(14, 13);
-            this.label65.TabIndex = 10;
-            this.label65.Text = "Y";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(20, 16);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(14, 13);
-            this.label66.TabIndex = 8;
-            this.label66.Text = "X";
             // 
             // groupBoxNo7
             // 
             this.groupBoxNo7.Controls.Add(this.checkBoxFixaNo7Z);
             this.groupBoxNo7.Controls.Add(this.checkBoxFixaNo7Y);
             this.groupBoxNo7.Controls.Add(this.checkBoxFixaNo7X);
+            this.groupBoxNo7.Controls.Add(this.label37);
+            this.groupBoxNo7.Controls.Add(this.label38);
+            this.groupBoxNo7.Controls.Add(this.label68);
             this.groupBoxNo7.Controls.Add(this.label67);
             this.groupBoxNo7.Controls.Add(this.textBoxForcaNo7);
-            this.groupBoxNo7.Controls.Add(this.label68);
-            this.groupBoxNo7.Controls.Add(this.label69);
-            this.groupBoxNo7.Controls.Add(this.label70);
             this.groupBoxNo7.Location = new System.Drawing.Point(499, 263);
             this.groupBoxNo7.Name = "groupBoxNo7";
-            this.groupBoxNo7.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo7.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo7.TabIndex = 35;
             this.groupBoxNo7.TabStop = false;
             this.groupBoxNo7.Text = "Nó 7";
@@ -2398,10 +2429,10 @@
             // checkBoxFixaNo7Z
             // 
             this.checkBoxFixaNo7Z.AutoSize = true;
-            this.checkBoxFixaNo7Z.Location = new System.Drawing.Point(134, 31);
+            this.checkBoxFixaNo7Z.Location = new System.Drawing.Point(138, 43);
             this.checkBoxFixaNo7Z.Name = "checkBoxFixaNo7Z";
             this.checkBoxFixaNo7Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo7Z.TabIndex = 40;
+            this.checkBoxFixaNo7Z.TabIndex = 49;
             this.checkBoxFixaNo7Z.Text = "Fixo";
             this.checkBoxFixaNo7Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo7Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo7_CheckedChanged);
@@ -2409,10 +2440,10 @@
             // checkBoxFixaNo7Y
             // 
             this.checkBoxFixaNo7Y.AutoSize = true;
-            this.checkBoxFixaNo7Y.Location = new System.Drawing.Point(73, 31);
+            this.checkBoxFixaNo7Y.Location = new System.Drawing.Point(138, 7);
             this.checkBoxFixaNo7Y.Name = "checkBoxFixaNo7Y";
             this.checkBoxFixaNo7Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo7Y.TabIndex = 39;
+            this.checkBoxFixaNo7Y.TabIndex = 48;
             this.checkBoxFixaNo7Y.Text = "Fixo";
             this.checkBoxFixaNo7Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo7Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo7_CheckedChanged);
@@ -2420,18 +2451,48 @@
             // checkBoxFixaNo7X
             // 
             this.checkBoxFixaNo7X.AutoSize = true;
-            this.checkBoxFixaNo7X.Location = new System.Drawing.Point(5, 31);
+            this.checkBoxFixaNo7X.Location = new System.Drawing.Point(138, 25);
             this.checkBoxFixaNo7X.Name = "checkBoxFixaNo7X";
             this.checkBoxFixaNo7X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo7X.TabIndex = 38;
+            this.checkBoxFixaNo7X.TabIndex = 47;
             this.checkBoxFixaNo7X.Text = "Fixo";
             this.checkBoxFixaNo7X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo7X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo7_CheckedChanged);
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label37.Location = new System.Drawing.Point(40, 45);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(79, 12);
+            this.label37.TabIndex = 46;
+            this.label37.Text = "Rotação no eixo Z";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(40, 8);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(98, 12);
+            this.label38.TabIndex = 45;
+            this.label38.Text = "Deslocamento vertical";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label68.Location = new System.Drawing.Point(40, 27);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(79, 12);
+            this.label68.TabIndex = 44;
+            this.label68.Text = "Rotação no eixo X";
+            // 
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(2, 57);
+            this.label67.Location = new System.Drawing.Point(2, 65);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(57, 13);
             this.label67.TabIndex = 28;
@@ -2439,37 +2500,10 @@
             // 
             // textBoxForcaNo7
             // 
-            this.textBoxForcaNo7.Location = new System.Drawing.Point(64, 54);
+            this.textBoxForcaNo7.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo7.Name = "textBoxForcaNo7";
             this.textBoxForcaNo7.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo7.TabIndex = 27;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(146, 16);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(14, 13);
-            this.label68.TabIndex = 22;
-            this.label68.Text = "Z";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(88, 16);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(14, 13);
-            this.label69.TabIndex = 10;
-            this.label69.Text = "Y";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(20, 16);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(14, 13);
-            this.label70.TabIndex = 8;
-            this.label70.Text = "X";
             // 
             // panel1
             // 
@@ -2504,6 +2538,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(360, 356);
             this.panel4.TabIndex = 45;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(338, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(18, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label173
             // 
@@ -2697,14 +2744,14 @@
             this.groupBoxNo27.Controls.Add(this.checkBoxFixaNo27Z);
             this.groupBoxNo27.Controls.Add(this.checkBoxFixaNo27Y);
             this.groupBoxNo27.Controls.Add(this.checkBoxFixaNo27X);
+            this.groupBoxNo27.Controls.Add(this.label167);
+            this.groupBoxNo27.Controls.Add(this.label168);
+            this.groupBoxNo27.Controls.Add(this.label170);
             this.groupBoxNo27.Controls.Add(this.label169);
             this.groupBoxNo27.Controls.Add(this.textBoxForcaNo27);
-            this.groupBoxNo27.Controls.Add(this.label170);
-            this.groupBoxNo27.Controls.Add(this.label171);
-            this.groupBoxNo27.Controls.Add(this.label172);
             this.groupBoxNo27.Location = new System.Drawing.Point(888, 833);
             this.groupBoxNo27.Name = "groupBoxNo27";
-            this.groupBoxNo27.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo27.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo27.TabIndex = 76;
             this.groupBoxNo27.TabStop = false;
             this.groupBoxNo27.Text = "Nó 27";
@@ -2713,10 +2760,10 @@
             // checkBoxFixaNo27Z
             // 
             this.checkBoxFixaNo27Z.AutoSize = true;
-            this.checkBoxFixaNo27Z.Location = new System.Drawing.Point(135, 31);
+            this.checkBoxFixaNo27Z.Location = new System.Drawing.Point(138, 44);
             this.checkBoxFixaNo27Z.Name = "checkBoxFixaNo27Z";
             this.checkBoxFixaNo27Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo27Z.TabIndex = 40;
+            this.checkBoxFixaNo27Z.TabIndex = 49;
             this.checkBoxFixaNo27Z.Text = "Fixo";
             this.checkBoxFixaNo27Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo27Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo27_CheckedChanged);
@@ -2724,10 +2771,10 @@
             // checkBoxFixaNo27Y
             // 
             this.checkBoxFixaNo27Y.AutoSize = true;
-            this.checkBoxFixaNo27Y.Location = new System.Drawing.Point(74, 31);
+            this.checkBoxFixaNo27Y.Location = new System.Drawing.Point(138, 8);
             this.checkBoxFixaNo27Y.Name = "checkBoxFixaNo27Y";
             this.checkBoxFixaNo27Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo27Y.TabIndex = 39;
+            this.checkBoxFixaNo27Y.TabIndex = 48;
             this.checkBoxFixaNo27Y.Text = "Fixo";
             this.checkBoxFixaNo27Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo27Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo27_CheckedChanged);
@@ -2735,18 +2782,48 @@
             // checkBoxFixaNo27X
             // 
             this.checkBoxFixaNo27X.AutoSize = true;
-            this.checkBoxFixaNo27X.Location = new System.Drawing.Point(6, 31);
+            this.checkBoxFixaNo27X.Location = new System.Drawing.Point(138, 26);
             this.checkBoxFixaNo27X.Name = "checkBoxFixaNo27X";
             this.checkBoxFixaNo27X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo27X.TabIndex = 38;
+            this.checkBoxFixaNo27X.TabIndex = 47;
             this.checkBoxFixaNo27X.Text = "Fixo";
             this.checkBoxFixaNo27X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo27X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo27_CheckedChanged);
             // 
+            // label167
+            // 
+            this.label167.AutoSize = true;
+            this.label167.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label167.Location = new System.Drawing.Point(39, 46);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(79, 12);
+            this.label167.TabIndex = 46;
+            this.label167.Text = "Rotação no eixo Z";
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label168.Location = new System.Drawing.Point(39, 9);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(98, 12);
+            this.label168.TabIndex = 45;
+            this.label168.Text = "Deslocamento vertical";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label170.Location = new System.Drawing.Point(39, 28);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(79, 12);
+            this.label170.TabIndex = 44;
+            this.label170.Text = "Rotação no eixo X";
+            // 
             // label169
             // 
             this.label169.AutoSize = true;
-            this.label169.Location = new System.Drawing.Point(3, 57);
+            this.label169.Location = new System.Drawing.Point(3, 67);
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(57, 13);
             this.label169.TabIndex = 31;
@@ -2754,51 +2831,24 @@
             // 
             // textBoxForcaNo27
             // 
-            this.textBoxForcaNo27.Location = new System.Drawing.Point(66, 54);
+            this.textBoxForcaNo27.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo27.Name = "textBoxForcaNo27";
             this.textBoxForcaNo27.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo27.TabIndex = 30;
-            // 
-            // label170
-            // 
-            this.label170.AutoSize = true;
-            this.label170.Location = new System.Drawing.Point(141, 16);
-            this.label170.Name = "label170";
-            this.label170.Size = new System.Drawing.Size(14, 13);
-            this.label170.TabIndex = 22;
-            this.label170.Text = "Z";
-            // 
-            // label171
-            // 
-            this.label171.AutoSize = true;
-            this.label171.Location = new System.Drawing.Point(90, 16);
-            this.label171.Name = "label171";
-            this.label171.Size = new System.Drawing.Size(14, 13);
-            this.label171.TabIndex = 10;
-            this.label171.Text = "Y";
-            // 
-            // label172
-            // 
-            this.label172.AutoSize = true;
-            this.label172.Location = new System.Drawing.Point(20, 16);
-            this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(14, 13);
-            this.label172.TabIndex = 8;
-            this.label172.Text = "X";
             // 
             // groupBoxNo26
             // 
             this.groupBoxNo26.Controls.Add(this.checkBoxFixaNo26Z);
             this.groupBoxNo26.Controls.Add(this.checkBoxFixaNo26Y);
             this.groupBoxNo26.Controls.Add(this.checkBoxFixaNo26X);
+            this.groupBoxNo26.Controls.Add(this.label156);
+            this.groupBoxNo26.Controls.Add(this.label157);
+            this.groupBoxNo26.Controls.Add(this.label166);
             this.groupBoxNo26.Controls.Add(this.label165);
             this.groupBoxNo26.Controls.Add(this.textBoxForcaNo26);
-            this.groupBoxNo26.Controls.Add(this.label166);
-            this.groupBoxNo26.Controls.Add(this.label167);
-            this.groupBoxNo26.Controls.Add(this.label168);
             this.groupBoxNo26.Location = new System.Drawing.Point(693, 833);
             this.groupBoxNo26.Name = "groupBoxNo26";
-            this.groupBoxNo26.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo26.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo26.TabIndex = 75;
             this.groupBoxNo26.TabStop = false;
             this.groupBoxNo26.Text = "Nó 26";
@@ -2807,10 +2857,10 @@
             // checkBoxFixaNo26Z
             // 
             this.checkBoxFixaNo26Z.AutoSize = true;
-            this.checkBoxFixaNo26Z.Location = new System.Drawing.Point(133, 31);
+            this.checkBoxFixaNo26Z.Location = new System.Drawing.Point(141, 45);
             this.checkBoxFixaNo26Z.Name = "checkBoxFixaNo26Z";
             this.checkBoxFixaNo26Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo26Z.TabIndex = 40;
+            this.checkBoxFixaNo26Z.TabIndex = 61;
             this.checkBoxFixaNo26Z.Text = "Fixo";
             this.checkBoxFixaNo26Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo26Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo26_CheckedChanged);
@@ -2818,10 +2868,10 @@
             // checkBoxFixaNo26Y
             // 
             this.checkBoxFixaNo26Y.AutoSize = true;
-            this.checkBoxFixaNo26Y.Location = new System.Drawing.Point(72, 31);
+            this.checkBoxFixaNo26Y.Location = new System.Drawing.Point(141, 8);
             this.checkBoxFixaNo26Y.Name = "checkBoxFixaNo26Y";
             this.checkBoxFixaNo26Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo26Y.TabIndex = 39;
+            this.checkBoxFixaNo26Y.TabIndex = 60;
             this.checkBoxFixaNo26Y.Text = "Fixo";
             this.checkBoxFixaNo26Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo26Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo26_CheckedChanged);
@@ -2829,18 +2879,48 @@
             // checkBoxFixaNo26X
             // 
             this.checkBoxFixaNo26X.AutoSize = true;
-            this.checkBoxFixaNo26X.Location = new System.Drawing.Point(4, 31);
+            this.checkBoxFixaNo26X.Location = new System.Drawing.Point(141, 26);
             this.checkBoxFixaNo26X.Name = "checkBoxFixaNo26X";
             this.checkBoxFixaNo26X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo26X.TabIndex = 38;
+            this.checkBoxFixaNo26X.TabIndex = 59;
             this.checkBoxFixaNo26X.Text = "Fixo";
             this.checkBoxFixaNo26X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo26X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo26_CheckedChanged);
             // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label156.Location = new System.Drawing.Point(38, 48);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(79, 12);
+            this.label156.TabIndex = 58;
+            this.label156.Text = "Rotação no eixo Z";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label157.Location = new System.Drawing.Point(38, 9);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(98, 12);
+            this.label157.TabIndex = 57;
+            this.label157.Text = "Deslocamento vertical";
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label166.Location = new System.Drawing.Point(38, 28);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(79, 12);
+            this.label166.TabIndex = 56;
+            this.label166.Text = "Rotação no eixo X";
+            // 
             // label165
             // 
             this.label165.AutoSize = true;
-            this.label165.Location = new System.Drawing.Point(3, 57);
+            this.label165.Location = new System.Drawing.Point(3, 67);
             this.label165.Name = "label165";
             this.label165.Size = new System.Drawing.Size(57, 13);
             this.label165.TabIndex = 31;
@@ -2848,37 +2928,10 @@
             // 
             // textBoxForcaNo26
             // 
-            this.textBoxForcaNo26.Location = new System.Drawing.Point(63, 54);
+            this.textBoxForcaNo26.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo26.Name = "textBoxForcaNo26";
             this.textBoxForcaNo26.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo26.TabIndex = 30;
-            // 
-            // label166
-            // 
-            this.label166.AutoSize = true;
-            this.label166.Location = new System.Drawing.Point(141, 16);
-            this.label166.Name = "label166";
-            this.label166.Size = new System.Drawing.Size(14, 13);
-            this.label166.TabIndex = 22;
-            this.label166.Text = "Z";
-            // 
-            // label167
-            // 
-            this.label167.AutoSize = true;
-            this.label167.Location = new System.Drawing.Point(88, 16);
-            this.label167.Name = "label167";
-            this.label167.Size = new System.Drawing.Size(14, 13);
-            this.label167.TabIndex = 10;
-            this.label167.Text = "Y";
-            // 
-            // label168
-            // 
-            this.label168.AutoSize = true;
-            this.label168.Location = new System.Drawing.Point(20, 16);
-            this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(14, 13);
-            this.label168.TabIndex = 8;
-            this.label168.Text = "X";
             // 
             // groupBoxElemento26
             // 
@@ -3115,14 +3168,14 @@
             this.groupBoxNo25.Controls.Add(this.checkBoxFixaNo25Z);
             this.groupBoxNo25.Controls.Add(this.checkBoxFixaNo25Y);
             this.groupBoxNo25.Controls.Add(this.checkBoxFixaNo25X);
+            this.groupBoxNo25.Controls.Add(this.label145);
+            this.groupBoxNo25.Controls.Add(this.label146);
+            this.groupBoxNo25.Controls.Add(this.label155);
             this.groupBoxNo25.Controls.Add(this.label81);
             this.groupBoxNo25.Controls.Add(this.textBoxForcaNo25);
-            this.groupBoxNo25.Controls.Add(this.label155);
-            this.groupBoxNo25.Controls.Add(this.label156);
-            this.groupBoxNo25.Controls.Add(this.label157);
             this.groupBoxNo25.Location = new System.Drawing.Point(499, 833);
             this.groupBoxNo25.Name = "groupBoxNo25";
-            this.groupBoxNo25.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo25.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo25.TabIndex = 70;
             this.groupBoxNo25.TabStop = false;
             this.groupBoxNo25.Text = "Nó 25";
@@ -3131,10 +3184,10 @@
             // checkBoxFixaNo25Z
             // 
             this.checkBoxFixaNo25Z.AutoSize = true;
-            this.checkBoxFixaNo25Z.Location = new System.Drawing.Point(134, 31);
+            this.checkBoxFixaNo25Z.Location = new System.Drawing.Point(138, 43);
             this.checkBoxFixaNo25Z.Name = "checkBoxFixaNo25Z";
             this.checkBoxFixaNo25Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo25Z.TabIndex = 40;
+            this.checkBoxFixaNo25Z.TabIndex = 61;
             this.checkBoxFixaNo25Z.Text = "Fixo";
             this.checkBoxFixaNo25Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo25Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo25_CheckedChanged);
@@ -3142,10 +3195,10 @@
             // checkBoxFixaNo25Y
             // 
             this.checkBoxFixaNo25Y.AutoSize = true;
-            this.checkBoxFixaNo25Y.Location = new System.Drawing.Point(73, 31);
+            this.checkBoxFixaNo25Y.Location = new System.Drawing.Point(138, 7);
             this.checkBoxFixaNo25Y.Name = "checkBoxFixaNo25Y";
             this.checkBoxFixaNo25Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo25Y.TabIndex = 39;
+            this.checkBoxFixaNo25Y.TabIndex = 60;
             this.checkBoxFixaNo25Y.Text = "Fixo";
             this.checkBoxFixaNo25Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo25Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo25_CheckedChanged);
@@ -3153,18 +3206,48 @@
             // checkBoxFixaNo25X
             // 
             this.checkBoxFixaNo25X.AutoSize = true;
-            this.checkBoxFixaNo25X.Location = new System.Drawing.Point(5, 31);
+            this.checkBoxFixaNo25X.Location = new System.Drawing.Point(138, 25);
             this.checkBoxFixaNo25X.Name = "checkBoxFixaNo25X";
             this.checkBoxFixaNo25X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo25X.TabIndex = 38;
+            this.checkBoxFixaNo25X.TabIndex = 59;
             this.checkBoxFixaNo25X.Text = "Fixo";
             this.checkBoxFixaNo25X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo25X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo25_CheckedChanged);
             // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label145.Location = new System.Drawing.Point(40, 45);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(79, 12);
+            this.label145.TabIndex = 58;
+            this.label145.Text = "Rotação no eixo Z";
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label146.Location = new System.Drawing.Point(40, 8);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(98, 12);
+            this.label146.TabIndex = 57;
+            this.label146.Text = "Deslocamento vertical";
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label155.Location = new System.Drawing.Point(40, 27);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(79, 12);
+            this.label155.TabIndex = 56;
+            this.label155.Text = "Rotação no eixo X";
+            // 
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(1, 57);
+            this.label81.Location = new System.Drawing.Point(3, 67);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(57, 13);
             this.label81.TabIndex = 31;
@@ -3172,37 +3255,10 @@
             // 
             // textBoxForcaNo25
             // 
-            this.textBoxForcaNo25.Location = new System.Drawing.Point(64, 54);
+            this.textBoxForcaNo25.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo25.Name = "textBoxForcaNo25";
             this.textBoxForcaNo25.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo25.TabIndex = 30;
-            // 
-            // label155
-            // 
-            this.label155.AutoSize = true;
-            this.label155.Location = new System.Drawing.Point(146, 16);
-            this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(14, 13);
-            this.label155.TabIndex = 22;
-            this.label155.Text = "Z";
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Location = new System.Drawing.Point(88, 16);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(14, 13);
-            this.label156.TabIndex = 10;
-            this.label156.Text = "Y";
-            // 
-            // label157
-            // 
-            this.label157.AutoSize = true;
-            this.label157.Location = new System.Drawing.Point(20, 16);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(14, 13);
-            this.label157.TabIndex = 8;
-            this.label157.Text = "X";
             // 
             // label80
             // 
@@ -4034,14 +4090,14 @@
             this.groupBoxNo24.Controls.Add(this.checkBoxFixaNo24Z);
             this.groupBoxNo24.Controls.Add(this.checkBoxFixaNo24Y);
             this.groupBoxNo24.Controls.Add(this.checkBoxFixaNo24X);
-            this.groupBoxNo24.Controls.Add(this.label151);
-            this.groupBoxNo24.Controls.Add(this.textBoxForcaNo24);
             this.groupBoxNo24.Controls.Add(this.label152);
             this.groupBoxNo24.Controls.Add(this.label153);
             this.groupBoxNo24.Controls.Add(this.label154);
+            this.groupBoxNo24.Controls.Add(this.label151);
+            this.groupBoxNo24.Controls.Add(this.textBoxForcaNo24);
             this.groupBoxNo24.Location = new System.Drawing.Point(889, 736);
             this.groupBoxNo24.Name = "groupBoxNo24";
-            this.groupBoxNo24.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo24.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo24.TabIndex = 67;
             this.groupBoxNo24.TabStop = false;
             this.groupBoxNo24.Text = "Nó 24";
@@ -4050,10 +4106,10 @@
             // checkBoxFixaNo24Z
             // 
             this.checkBoxFixaNo24Z.AutoSize = true;
-            this.checkBoxFixaNo24Z.Location = new System.Drawing.Point(134, 31);
+            this.checkBoxFixaNo24Z.Location = new System.Drawing.Point(137, 46);
             this.checkBoxFixaNo24Z.Name = "checkBoxFixaNo24Z";
             this.checkBoxFixaNo24Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo24Z.TabIndex = 40;
+            this.checkBoxFixaNo24Z.TabIndex = 49;
             this.checkBoxFixaNo24Z.Text = "Fixo";
             this.checkBoxFixaNo24Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo24Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo24_CheckedChanged);
@@ -4061,10 +4117,10 @@
             // checkBoxFixaNo24Y
             // 
             this.checkBoxFixaNo24Y.AutoSize = true;
-            this.checkBoxFixaNo24Y.Location = new System.Drawing.Point(73, 31);
+            this.checkBoxFixaNo24Y.Location = new System.Drawing.Point(137, 10);
             this.checkBoxFixaNo24Y.Name = "checkBoxFixaNo24Y";
             this.checkBoxFixaNo24Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo24Y.TabIndex = 39;
+            this.checkBoxFixaNo24Y.TabIndex = 48;
             this.checkBoxFixaNo24Y.Text = "Fixo";
             this.checkBoxFixaNo24Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo24Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo24_CheckedChanged);
@@ -4072,18 +4128,48 @@
             // checkBoxFixaNo24X
             // 
             this.checkBoxFixaNo24X.AutoSize = true;
-            this.checkBoxFixaNo24X.Location = new System.Drawing.Point(5, 31);
+            this.checkBoxFixaNo24X.Location = new System.Drawing.Point(137, 28);
             this.checkBoxFixaNo24X.Name = "checkBoxFixaNo24X";
             this.checkBoxFixaNo24X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo24X.TabIndex = 38;
+            this.checkBoxFixaNo24X.TabIndex = 47;
             this.checkBoxFixaNo24X.Text = "Fixo";
             this.checkBoxFixaNo24X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo24X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo24_CheckedChanged);
             // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label152.Location = new System.Drawing.Point(38, 48);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(79, 12);
+            this.label152.TabIndex = 46;
+            this.label152.Text = "Rotação no eixo Z";
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label153.Location = new System.Drawing.Point(38, 11);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(98, 12);
+            this.label153.TabIndex = 45;
+            this.label153.Text = "Deslocamento vertical";
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label154.Location = new System.Drawing.Point(38, 30);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(79, 12);
+            this.label154.TabIndex = 44;
+            this.label154.Text = "Rotação no eixo X";
+            // 
             // label151
             // 
             this.label151.AutoSize = true;
-            this.label151.Location = new System.Drawing.Point(3, 56);
+            this.label151.Location = new System.Drawing.Point(3, 67);
             this.label151.Name = "label151";
             this.label151.Size = new System.Drawing.Size(57, 13);
             this.label151.TabIndex = 31;
@@ -4091,51 +4177,24 @@
             // 
             // textBoxForcaNo24
             // 
-            this.textBoxForcaNo24.Location = new System.Drawing.Point(66, 54);
+            this.textBoxForcaNo24.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo24.Name = "textBoxForcaNo24";
             this.textBoxForcaNo24.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo24.TabIndex = 30;
-            // 
-            // label152
-            // 
-            this.label152.AutoSize = true;
-            this.label152.Location = new System.Drawing.Point(141, 16);
-            this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(14, 13);
-            this.label152.TabIndex = 22;
-            this.label152.Text = "Z";
-            // 
-            // label153
-            // 
-            this.label153.AutoSize = true;
-            this.label153.Location = new System.Drawing.Point(89, 16);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(14, 13);
-            this.label153.TabIndex = 10;
-            this.label153.Text = "Y";
-            // 
-            // label154
-            // 
-            this.label154.AutoSize = true;
-            this.label154.Location = new System.Drawing.Point(20, 16);
-            this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(14, 13);
-            this.label154.TabIndex = 8;
-            this.label154.Text = "X";
             // 
             // groupBoxNo23
             // 
             this.groupBoxNo23.Controls.Add(this.checkBoxFixaNo23Z);
             this.groupBoxNo23.Controls.Add(this.checkBoxFixaNo23Y);
             this.groupBoxNo23.Controls.Add(this.checkBoxFixaNo23X);
-            this.groupBoxNo23.Controls.Add(this.label147);
-            this.groupBoxNo23.Controls.Add(this.textBoxForcaNo23);
             this.groupBoxNo23.Controls.Add(this.label148);
             this.groupBoxNo23.Controls.Add(this.label149);
             this.groupBoxNo23.Controls.Add(this.label150);
+            this.groupBoxNo23.Controls.Add(this.label147);
+            this.groupBoxNo23.Controls.Add(this.textBoxForcaNo23);
             this.groupBoxNo23.Location = new System.Drawing.Point(693, 736);
             this.groupBoxNo23.Name = "groupBoxNo23";
-            this.groupBoxNo23.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo23.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo23.TabIndex = 66;
             this.groupBoxNo23.TabStop = false;
             this.groupBoxNo23.Text = "Nó 23";
@@ -4144,10 +4203,10 @@
             // checkBoxFixaNo23Z
             // 
             this.checkBoxFixaNo23Z.AutoSize = true;
-            this.checkBoxFixaNo23Z.Location = new System.Drawing.Point(135, 31);
+            this.checkBoxFixaNo23Z.Location = new System.Drawing.Point(139, 43);
             this.checkBoxFixaNo23Z.Name = "checkBoxFixaNo23Z";
             this.checkBoxFixaNo23Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo23Z.TabIndex = 40;
+            this.checkBoxFixaNo23Z.TabIndex = 49;
             this.checkBoxFixaNo23Z.Text = "Fixo";
             this.checkBoxFixaNo23Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo23Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo23_CheckedChanged);
@@ -4155,10 +4214,10 @@
             // checkBoxFixaNo23Y
             // 
             this.checkBoxFixaNo23Y.AutoSize = true;
-            this.checkBoxFixaNo23Y.Location = new System.Drawing.Point(74, 31);
+            this.checkBoxFixaNo23Y.Location = new System.Drawing.Point(139, 7);
             this.checkBoxFixaNo23Y.Name = "checkBoxFixaNo23Y";
             this.checkBoxFixaNo23Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo23Y.TabIndex = 39;
+            this.checkBoxFixaNo23Y.TabIndex = 48;
             this.checkBoxFixaNo23Y.Text = "Fixo";
             this.checkBoxFixaNo23Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo23Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo23_CheckedChanged);
@@ -4166,18 +4225,48 @@
             // checkBoxFixaNo23X
             // 
             this.checkBoxFixaNo23X.AutoSize = true;
-            this.checkBoxFixaNo23X.Location = new System.Drawing.Point(6, 31);
+            this.checkBoxFixaNo23X.Location = new System.Drawing.Point(139, 25);
             this.checkBoxFixaNo23X.Name = "checkBoxFixaNo23X";
             this.checkBoxFixaNo23X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo23X.TabIndex = 38;
+            this.checkBoxFixaNo23X.TabIndex = 47;
             this.checkBoxFixaNo23X.Text = "Fixo";
             this.checkBoxFixaNo23X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo23X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo23_CheckedChanged);
             // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label148.Location = new System.Drawing.Point(40, 45);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(79, 12);
+            this.label148.TabIndex = 46;
+            this.label148.Text = "Rotação no eixo Z";
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label149.Location = new System.Drawing.Point(40, 8);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(98, 12);
+            this.label149.TabIndex = 45;
+            this.label149.Text = "Deslocamento vertical";
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label150.Location = new System.Drawing.Point(40, 27);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(79, 12);
+            this.label150.TabIndex = 44;
+            this.label150.Text = "Rotação no eixo X";
+            // 
             // label147
             // 
             this.label147.AutoSize = true;
-            this.label147.Location = new System.Drawing.Point(1, 56);
+            this.label147.Location = new System.Drawing.Point(3, 67);
             this.label147.Name = "label147";
             this.label147.Size = new System.Drawing.Size(57, 13);
             this.label147.TabIndex = 31;
@@ -4185,51 +4274,24 @@
             // 
             // textBoxForcaNo23
             // 
-            this.textBoxForcaNo23.Location = new System.Drawing.Point(63, 54);
+            this.textBoxForcaNo23.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo23.Name = "textBoxForcaNo23";
             this.textBoxForcaNo23.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo23.TabIndex = 30;
-            // 
-            // label148
-            // 
-            this.label148.AutoSize = true;
-            this.label148.Location = new System.Drawing.Point(141, 16);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(14, 13);
-            this.label148.TabIndex = 22;
-            this.label148.Text = "Z";
-            // 
-            // label149
-            // 
-            this.label149.AutoSize = true;
-            this.label149.Location = new System.Drawing.Point(88, 16);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(14, 13);
-            this.label149.TabIndex = 10;
-            this.label149.Text = "Y";
-            // 
-            // label150
-            // 
-            this.label150.AutoSize = true;
-            this.label150.Location = new System.Drawing.Point(20, 16);
-            this.label150.Name = "label150";
-            this.label150.Size = new System.Drawing.Size(14, 13);
-            this.label150.TabIndex = 8;
-            this.label150.Text = "X";
             // 
             // groupBoxNo22
             // 
             this.groupBoxNo22.Controls.Add(this.checkBoxFixaNo22Z);
             this.groupBoxNo22.Controls.Add(this.checkBoxFixaNo22Y);
             this.groupBoxNo22.Controls.Add(this.checkBoxFixaNo22X);
+            this.groupBoxNo22.Controls.Add(this.label133);
+            this.groupBoxNo22.Controls.Add(this.label134);
+            this.groupBoxNo22.Controls.Add(this.label144);
             this.groupBoxNo22.Controls.Add(this.label143);
             this.groupBoxNo22.Controls.Add(this.textBoxForcaNo22);
-            this.groupBoxNo22.Controls.Add(this.label144);
-            this.groupBoxNo22.Controls.Add(this.label145);
-            this.groupBoxNo22.Controls.Add(this.label146);
             this.groupBoxNo22.Location = new System.Drawing.Point(499, 735);
             this.groupBoxNo22.Name = "groupBoxNo22";
-            this.groupBoxNo22.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo22.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo22.TabIndex = 65;
             this.groupBoxNo22.TabStop = false;
             this.groupBoxNo22.Text = "Nó 22";
@@ -4238,10 +4300,10 @@
             // checkBoxFixaNo22Z
             // 
             this.checkBoxFixaNo22Z.AutoSize = true;
-            this.checkBoxFixaNo22Z.Location = new System.Drawing.Point(133, 32);
+            this.checkBoxFixaNo22Z.Location = new System.Drawing.Point(137, 44);
             this.checkBoxFixaNo22Z.Name = "checkBoxFixaNo22Z";
             this.checkBoxFixaNo22Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo22Z.TabIndex = 40;
+            this.checkBoxFixaNo22Z.TabIndex = 61;
             this.checkBoxFixaNo22Z.Text = "Fixo";
             this.checkBoxFixaNo22Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo22Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo22_CheckedChanged);
@@ -4249,10 +4311,10 @@
             // checkBoxFixaNo22Y
             // 
             this.checkBoxFixaNo22Y.AutoSize = true;
-            this.checkBoxFixaNo22Y.Location = new System.Drawing.Point(72, 32);
+            this.checkBoxFixaNo22Y.Location = new System.Drawing.Point(137, 7);
             this.checkBoxFixaNo22Y.Name = "checkBoxFixaNo22Y";
             this.checkBoxFixaNo22Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo22Y.TabIndex = 39;
+            this.checkBoxFixaNo22Y.TabIndex = 60;
             this.checkBoxFixaNo22Y.Text = "Fixo";
             this.checkBoxFixaNo22Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo22Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo22_CheckedChanged);
@@ -4260,18 +4322,48 @@
             // checkBoxFixaNo22X
             // 
             this.checkBoxFixaNo22X.AutoSize = true;
-            this.checkBoxFixaNo22X.Location = new System.Drawing.Point(4, 32);
+            this.checkBoxFixaNo22X.Location = new System.Drawing.Point(137, 26);
             this.checkBoxFixaNo22X.Name = "checkBoxFixaNo22X";
             this.checkBoxFixaNo22X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo22X.TabIndex = 38;
+            this.checkBoxFixaNo22X.TabIndex = 59;
             this.checkBoxFixaNo22X.Text = "Fixo";
             this.checkBoxFixaNo22X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo22X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo22_CheckedChanged);
             // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label133.Location = new System.Drawing.Point(39, 46);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(79, 12);
+            this.label133.TabIndex = 58;
+            this.label133.Text = "Rotação no eixo Z";
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label134.Location = new System.Drawing.Point(39, 9);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(98, 12);
+            this.label134.TabIndex = 57;
+            this.label134.Text = "Deslocamento vertical";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label144.Location = new System.Drawing.Point(39, 28);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(79, 12);
+            this.label144.TabIndex = 56;
+            this.label144.Text = "Rotação no eixo X";
+            // 
             // label143
             // 
             this.label143.AutoSize = true;
-            this.label143.Location = new System.Drawing.Point(1, 58);
+            this.label143.Location = new System.Drawing.Point(3, 68);
             this.label143.Name = "label143";
             this.label143.Size = new System.Drawing.Size(57, 13);
             this.label143.TabIndex = 31;
@@ -4279,51 +4371,24 @@
             // 
             // textBoxForcaNo22
             // 
-            this.textBoxForcaNo22.Location = new System.Drawing.Point(64, 55);
+            this.textBoxForcaNo22.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo22.Name = "textBoxForcaNo22";
             this.textBoxForcaNo22.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo22.TabIndex = 30;
-            // 
-            // label144
-            // 
-            this.label144.AutoSize = true;
-            this.label144.Location = new System.Drawing.Point(146, 16);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(14, 13);
-            this.label144.TabIndex = 22;
-            this.label144.Text = "Z";
-            // 
-            // label145
-            // 
-            this.label145.AutoSize = true;
-            this.label145.Location = new System.Drawing.Point(88, 16);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(14, 13);
-            this.label145.TabIndex = 10;
-            this.label145.Text = "Y";
-            // 
-            // label146
-            // 
-            this.label146.AutoSize = true;
-            this.label146.Location = new System.Drawing.Point(20, 16);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(14, 13);
-            this.label146.TabIndex = 8;
-            this.label146.Text = "X";
             // 
             // groupBoxNo21
             // 
             this.groupBoxNo21.Controls.Add(this.checkBoxFixaNo21Z);
             this.groupBoxNo21.Controls.Add(this.checkBoxFixaNo21Y);
             this.groupBoxNo21.Controls.Add(this.checkBoxFixaNo21X);
-            this.groupBoxNo21.Controls.Add(this.label139);
-            this.groupBoxNo21.Controls.Add(this.textBoxForcaNo21);
             this.groupBoxNo21.Controls.Add(this.label140);
             this.groupBoxNo21.Controls.Add(this.label141);
             this.groupBoxNo21.Controls.Add(this.label142);
+            this.groupBoxNo21.Controls.Add(this.label139);
+            this.groupBoxNo21.Controls.Add(this.textBoxForcaNo21);
             this.groupBoxNo21.Location = new System.Drawing.Point(888, 641);
             this.groupBoxNo21.Name = "groupBoxNo21";
-            this.groupBoxNo21.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo21.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo21.TabIndex = 64;
             this.groupBoxNo21.TabStop = false;
             this.groupBoxNo21.Text = "Nó 21";
@@ -4332,10 +4397,10 @@
             // checkBoxFixaNo21Z
             // 
             this.checkBoxFixaNo21Z.AutoSize = true;
-            this.checkBoxFixaNo21Z.Location = new System.Drawing.Point(136, 33);
+            this.checkBoxFixaNo21Z.Location = new System.Drawing.Point(138, 44);
             this.checkBoxFixaNo21Z.Name = "checkBoxFixaNo21Z";
             this.checkBoxFixaNo21Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo21Z.TabIndex = 40;
+            this.checkBoxFixaNo21Z.TabIndex = 49;
             this.checkBoxFixaNo21Z.Text = "Fixo";
             this.checkBoxFixaNo21Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo21Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo21_CheckedChanged);
@@ -4343,10 +4408,10 @@
             // checkBoxFixaNo21Y
             // 
             this.checkBoxFixaNo21Y.AutoSize = true;
-            this.checkBoxFixaNo21Y.Location = new System.Drawing.Point(75, 33);
+            this.checkBoxFixaNo21Y.Location = new System.Drawing.Point(138, 8);
             this.checkBoxFixaNo21Y.Name = "checkBoxFixaNo21Y";
             this.checkBoxFixaNo21Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo21Y.TabIndex = 39;
+            this.checkBoxFixaNo21Y.TabIndex = 48;
             this.checkBoxFixaNo21Y.Text = "Fixo";
             this.checkBoxFixaNo21Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo21Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo21_CheckedChanged);
@@ -4354,18 +4419,48 @@
             // checkBoxFixaNo21X
             // 
             this.checkBoxFixaNo21X.AutoSize = true;
-            this.checkBoxFixaNo21X.Location = new System.Drawing.Point(7, 33);
+            this.checkBoxFixaNo21X.Location = new System.Drawing.Point(138, 26);
             this.checkBoxFixaNo21X.Name = "checkBoxFixaNo21X";
             this.checkBoxFixaNo21X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo21X.TabIndex = 38;
+            this.checkBoxFixaNo21X.TabIndex = 47;
             this.checkBoxFixaNo21X.Text = "Fixo";
             this.checkBoxFixaNo21X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo21X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo21_CheckedChanged);
             // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label140.Location = new System.Drawing.Point(39, 46);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(79, 12);
+            this.label140.TabIndex = 46;
+            this.label140.Text = "Rotação no eixo Z";
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label141.Location = new System.Drawing.Point(39, 9);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(98, 12);
+            this.label141.TabIndex = 45;
+            this.label141.Text = "Deslocamento vertical";
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label142.Location = new System.Drawing.Point(39, 28);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(79, 12);
+            this.label142.TabIndex = 44;
+            this.label142.Text = "Rotação no eixo X";
+            // 
             // label139
             // 
             this.label139.AutoSize = true;
-            this.label139.Location = new System.Drawing.Point(3, 59);
+            this.label139.Location = new System.Drawing.Point(6, 66);
             this.label139.Name = "label139";
             this.label139.Size = new System.Drawing.Size(57, 13);
             this.label139.TabIndex = 31;
@@ -4373,51 +4468,24 @@
             // 
             // textBoxForcaNo21
             // 
-            this.textBoxForcaNo21.Location = new System.Drawing.Point(66, 56);
+            this.textBoxForcaNo21.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo21.Name = "textBoxForcaNo21";
             this.textBoxForcaNo21.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo21.TabIndex = 30;
-            // 
-            // label140
-            // 
-            this.label140.AutoSize = true;
-            this.label140.Location = new System.Drawing.Point(141, 16);
-            this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(14, 13);
-            this.label140.TabIndex = 22;
-            this.label140.Text = "Z";
-            // 
-            // label141
-            // 
-            this.label141.AutoSize = true;
-            this.label141.Location = new System.Drawing.Point(90, 16);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(14, 13);
-            this.label141.TabIndex = 10;
-            this.label141.Text = "Y";
-            // 
-            // label142
-            // 
-            this.label142.AutoSize = true;
-            this.label142.Location = new System.Drawing.Point(20, 16);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(14, 13);
-            this.label142.TabIndex = 8;
-            this.label142.Text = "X";
             // 
             // groupBoxNo20
             // 
             this.groupBoxNo20.Controls.Add(this.checkBoxFixaNo20Z);
             this.groupBoxNo20.Controls.Add(this.checkBoxFixaNo20Y);
             this.groupBoxNo20.Controls.Add(this.checkBoxFixaNo20X);
-            this.groupBoxNo20.Controls.Add(this.label135);
-            this.groupBoxNo20.Controls.Add(this.textBoxForcaNo20);
             this.groupBoxNo20.Controls.Add(this.label136);
             this.groupBoxNo20.Controls.Add(this.label137);
             this.groupBoxNo20.Controls.Add(this.label138);
+            this.groupBoxNo20.Controls.Add(this.label135);
+            this.groupBoxNo20.Controls.Add(this.textBoxForcaNo20);
             this.groupBoxNo20.Location = new System.Drawing.Point(692, 641);
             this.groupBoxNo20.Name = "groupBoxNo20";
-            this.groupBoxNo20.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo20.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo20.TabIndex = 63;
             this.groupBoxNo20.TabStop = false;
             this.groupBoxNo20.Text = "Nó 20";
@@ -4426,10 +4494,10 @@
             // checkBoxFixaNo20Z
             // 
             this.checkBoxFixaNo20Z.AutoSize = true;
-            this.checkBoxFixaNo20Z.Location = new System.Drawing.Point(134, 31);
+            this.checkBoxFixaNo20Z.Location = new System.Drawing.Point(138, 46);
             this.checkBoxFixaNo20Z.Name = "checkBoxFixaNo20Z";
             this.checkBoxFixaNo20Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo20Z.TabIndex = 40;
+            this.checkBoxFixaNo20Z.TabIndex = 49;
             this.checkBoxFixaNo20Z.Text = "Fixo";
             this.checkBoxFixaNo20Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo20Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo20_CheckedChanged);
@@ -4437,10 +4505,10 @@
             // checkBoxFixaNo20Y
             // 
             this.checkBoxFixaNo20Y.AutoSize = true;
-            this.checkBoxFixaNo20Y.Location = new System.Drawing.Point(73, 31);
+            this.checkBoxFixaNo20Y.Location = new System.Drawing.Point(138, 10);
             this.checkBoxFixaNo20Y.Name = "checkBoxFixaNo20Y";
             this.checkBoxFixaNo20Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo20Y.TabIndex = 39;
+            this.checkBoxFixaNo20Y.TabIndex = 48;
             this.checkBoxFixaNo20Y.Text = "Fixo";
             this.checkBoxFixaNo20Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo20Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo20_CheckedChanged);
@@ -4448,18 +4516,48 @@
             // checkBoxFixaNo20X
             // 
             this.checkBoxFixaNo20X.AutoSize = true;
-            this.checkBoxFixaNo20X.Location = new System.Drawing.Point(5, 31);
+            this.checkBoxFixaNo20X.Location = new System.Drawing.Point(138, 28);
             this.checkBoxFixaNo20X.Name = "checkBoxFixaNo20X";
             this.checkBoxFixaNo20X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo20X.TabIndex = 38;
+            this.checkBoxFixaNo20X.TabIndex = 47;
             this.checkBoxFixaNo20X.Text = "Fixo";
             this.checkBoxFixaNo20X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo20X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo20_CheckedChanged);
             // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label136.Location = new System.Drawing.Point(39, 48);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(79, 12);
+            this.label136.TabIndex = 46;
+            this.label136.Text = "Rotação no eixo Z";
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label137.Location = new System.Drawing.Point(39, 11);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(98, 12);
+            this.label137.TabIndex = 45;
+            this.label137.Text = "Deslocamento vertical";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label138.Location = new System.Drawing.Point(39, 30);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(79, 12);
+            this.label138.TabIndex = 44;
+            this.label138.Text = "Rotação no eixo X";
+            // 
             // label135
             // 
             this.label135.AutoSize = true;
-            this.label135.Location = new System.Drawing.Point(1, 57);
+            this.label135.Location = new System.Drawing.Point(1, 66);
             this.label135.Name = "label135";
             this.label135.Size = new System.Drawing.Size(57, 13);
             this.label135.TabIndex = 31;
@@ -4467,51 +4565,24 @@
             // 
             // textBoxForcaNo20
             // 
-            this.textBoxForcaNo20.Location = new System.Drawing.Point(64, 54);
+            this.textBoxForcaNo20.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo20.Name = "textBoxForcaNo20";
             this.textBoxForcaNo20.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo20.TabIndex = 30;
-            // 
-            // label136
-            // 
-            this.label136.AutoSize = true;
-            this.label136.Location = new System.Drawing.Point(141, 16);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(14, 13);
-            this.label136.TabIndex = 22;
-            this.label136.Text = "Z";
-            // 
-            // label137
-            // 
-            this.label137.AutoSize = true;
-            this.label137.Location = new System.Drawing.Point(89, 16);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(14, 13);
-            this.label137.TabIndex = 10;
-            this.label137.Text = "Y";
-            // 
-            // label138
-            // 
-            this.label138.AutoSize = true;
-            this.label138.Location = new System.Drawing.Point(20, 16);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(14, 13);
-            this.label138.TabIndex = 8;
-            this.label138.Text = "X";
             // 
             // groupBoxNo19
             // 
             this.groupBoxNo19.Controls.Add(this.checkBoxFixaNo19Z);
             this.groupBoxNo19.Controls.Add(this.checkBoxFixaNo19Y);
             this.groupBoxNo19.Controls.Add(this.checkBoxFixaNo19X);
+            this.groupBoxNo19.Controls.Add(this.label121);
+            this.groupBoxNo19.Controls.Add(this.label122);
+            this.groupBoxNo19.Controls.Add(this.label132);
             this.groupBoxNo19.Controls.Add(this.label131);
             this.groupBoxNo19.Controls.Add(this.textBoxForcaNo19);
-            this.groupBoxNo19.Controls.Add(this.label132);
-            this.groupBoxNo19.Controls.Add(this.label133);
-            this.groupBoxNo19.Controls.Add(this.label134);
             this.groupBoxNo19.Location = new System.Drawing.Point(498, 640);
             this.groupBoxNo19.Name = "groupBoxNo19";
-            this.groupBoxNo19.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo19.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo19.TabIndex = 62;
             this.groupBoxNo19.TabStop = false;
             this.groupBoxNo19.Text = "Nó 19";
@@ -4520,10 +4591,10 @@
             // checkBoxFixaNo19Z
             // 
             this.checkBoxFixaNo19Z.AutoSize = true;
-            this.checkBoxFixaNo19Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo19Z.Location = new System.Drawing.Point(139, 43);
             this.checkBoxFixaNo19Z.Name = "checkBoxFixaNo19Z";
             this.checkBoxFixaNo19Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo19Z.TabIndex = 40;
+            this.checkBoxFixaNo19Z.TabIndex = 55;
             this.checkBoxFixaNo19Z.Text = "Fixo";
             this.checkBoxFixaNo19Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo19Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo19_CheckedChanged);
@@ -4531,10 +4602,10 @@
             // checkBoxFixaNo19Y
             // 
             this.checkBoxFixaNo19Y.AutoSize = true;
-            this.checkBoxFixaNo19Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo19Y.Location = new System.Drawing.Point(139, 7);
             this.checkBoxFixaNo19Y.Name = "checkBoxFixaNo19Y";
             this.checkBoxFixaNo19Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo19Y.TabIndex = 39;
+            this.checkBoxFixaNo19Y.TabIndex = 54;
             this.checkBoxFixaNo19Y.Text = "Fixo";
             this.checkBoxFixaNo19Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo19Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo19_CheckedChanged);
@@ -4542,18 +4613,48 @@
             // checkBoxFixaNo19X
             // 
             this.checkBoxFixaNo19X.AutoSize = true;
-            this.checkBoxFixaNo19X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo19X.Location = new System.Drawing.Point(139, 25);
             this.checkBoxFixaNo19X.Name = "checkBoxFixaNo19X";
             this.checkBoxFixaNo19X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo19X.TabIndex = 38;
+            this.checkBoxFixaNo19X.TabIndex = 53;
             this.checkBoxFixaNo19X.Text = "Fixo";
             this.checkBoxFixaNo19X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo19X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo19_CheckedChanged);
             // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label121.Location = new System.Drawing.Point(40, 45);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(79, 12);
+            this.label121.TabIndex = 52;
+            this.label121.Text = "Rotação no eixo Z";
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label122.Location = new System.Drawing.Point(40, 8);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(98, 12);
+            this.label122.TabIndex = 51;
+            this.label122.Text = "Deslocamento vertical";
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label132.Location = new System.Drawing.Point(40, 27);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(79, 12);
+            this.label132.TabIndex = 50;
+            this.label132.Text = "Rotação no eixo X";
+            // 
             // label131
             // 
             this.label131.AutoSize = true;
-            this.label131.Location = new System.Drawing.Point(2, 58);
+            this.label131.Location = new System.Drawing.Point(3, 67);
             this.label131.Name = "label131";
             this.label131.Size = new System.Drawing.Size(57, 13);
             this.label131.TabIndex = 31;
@@ -4561,51 +4662,24 @@
             // 
             // textBoxForcaNo19
             // 
-            this.textBoxForcaNo19.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo19.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo19.Name = "textBoxForcaNo19";
             this.textBoxForcaNo19.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo19.TabIndex = 30;
-            // 
-            // label132
-            // 
-            this.label132.AutoSize = true;
-            this.label132.Location = new System.Drawing.Point(147, 16);
-            this.label132.Name = "label132";
-            this.label132.Size = new System.Drawing.Size(14, 13);
-            this.label132.TabIndex = 22;
-            this.label132.Text = "Z";
-            // 
-            // label133
-            // 
-            this.label133.AutoSize = true;
-            this.label133.Location = new System.Drawing.Point(89, 16);
-            this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(14, 13);
-            this.label133.TabIndex = 10;
-            this.label133.Text = "Y";
-            // 
-            // label134
-            // 
-            this.label134.AutoSize = true;
-            this.label134.Location = new System.Drawing.Point(20, 16);
-            this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(14, 13);
-            this.label134.TabIndex = 8;
-            this.label134.Text = "X";
             // 
             // groupBoxNo18
             // 
             this.groupBoxNo18.Controls.Add(this.checkBoxFixaNo18Z);
             this.groupBoxNo18.Controls.Add(this.checkBoxFixaNo18Y);
             this.groupBoxNo18.Controls.Add(this.checkBoxFixaNo18X);
-            this.groupBoxNo18.Controls.Add(this.label127);
-            this.groupBoxNo18.Controls.Add(this.textBoxForcaNo18);
             this.groupBoxNo18.Controls.Add(this.label128);
             this.groupBoxNo18.Controls.Add(this.label129);
             this.groupBoxNo18.Controls.Add(this.label130);
+            this.groupBoxNo18.Controls.Add(this.label127);
+            this.groupBoxNo18.Controls.Add(this.textBoxForcaNo18);
             this.groupBoxNo18.Location = new System.Drawing.Point(889, 547);
             this.groupBoxNo18.Name = "groupBoxNo18";
-            this.groupBoxNo18.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo18.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo18.TabIndex = 61;
             this.groupBoxNo18.TabStop = false;
             this.groupBoxNo18.Text = "Nó 18";
@@ -4614,10 +4688,10 @@
             // checkBoxFixaNo18Z
             // 
             this.checkBoxFixaNo18Z.AutoSize = true;
-            this.checkBoxFixaNo18Z.Location = new System.Drawing.Point(136, 32);
+            this.checkBoxFixaNo18Z.Location = new System.Drawing.Point(137, 45);
             this.checkBoxFixaNo18Z.Name = "checkBoxFixaNo18Z";
             this.checkBoxFixaNo18Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo18Z.TabIndex = 40;
+            this.checkBoxFixaNo18Z.TabIndex = 49;
             this.checkBoxFixaNo18Z.Text = "Fixo";
             this.checkBoxFixaNo18Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo18Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo18_CheckedChanged);
@@ -4625,10 +4699,10 @@
             // checkBoxFixaNo18Y
             // 
             this.checkBoxFixaNo18Y.AutoSize = true;
-            this.checkBoxFixaNo18Y.Location = new System.Drawing.Point(75, 32);
+            this.checkBoxFixaNo18Y.Location = new System.Drawing.Point(137, 9);
             this.checkBoxFixaNo18Y.Name = "checkBoxFixaNo18Y";
             this.checkBoxFixaNo18Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo18Y.TabIndex = 39;
+            this.checkBoxFixaNo18Y.TabIndex = 48;
             this.checkBoxFixaNo18Y.Text = "Fixo";
             this.checkBoxFixaNo18Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo18Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo18_CheckedChanged);
@@ -4636,18 +4710,48 @@
             // checkBoxFixaNo18X
             // 
             this.checkBoxFixaNo18X.AutoSize = true;
-            this.checkBoxFixaNo18X.Location = new System.Drawing.Point(7, 32);
+            this.checkBoxFixaNo18X.Location = new System.Drawing.Point(137, 27);
             this.checkBoxFixaNo18X.Name = "checkBoxFixaNo18X";
             this.checkBoxFixaNo18X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo18X.TabIndex = 38;
+            this.checkBoxFixaNo18X.TabIndex = 47;
             this.checkBoxFixaNo18X.Text = "Fixo";
             this.checkBoxFixaNo18X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo18X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo18_CheckedChanged);
             // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label128.Location = new System.Drawing.Point(38, 47);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(79, 12);
+            this.label128.TabIndex = 46;
+            this.label128.Text = "Rotação no eixo Z";
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label129.Location = new System.Drawing.Point(38, 10);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(98, 12);
+            this.label129.TabIndex = 45;
+            this.label129.Text = "Deslocamento vertical";
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label130.Location = new System.Drawing.Point(38, 29);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(79, 12);
+            this.label130.TabIndex = 44;
+            this.label130.Text = "Rotação no eixo X";
+            // 
             // label127
             // 
             this.label127.AutoSize = true;
-            this.label127.Location = new System.Drawing.Point(2, 58);
+            this.label127.Location = new System.Drawing.Point(4, 65);
             this.label127.Name = "label127";
             this.label127.Size = new System.Drawing.Size(57, 13);
             this.label127.TabIndex = 31;
@@ -4655,51 +4759,24 @@
             // 
             // textBoxForcaNo18
             // 
-            this.textBoxForcaNo18.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo18.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo18.Name = "textBoxForcaNo18";
             this.textBoxForcaNo18.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo18.TabIndex = 30;
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Location = new System.Drawing.Point(141, 16);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(14, 13);
-            this.label128.TabIndex = 22;
-            this.label128.Text = "Z";
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(89, 16);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(14, 13);
-            this.label129.TabIndex = 10;
-            this.label129.Text = "Y";
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Location = new System.Drawing.Point(20, 16);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(14, 13);
-            this.label130.TabIndex = 8;
-            this.label130.Text = "X";
             // 
             // groupBoxNo17
             // 
             this.groupBoxNo17.Controls.Add(this.checkBoxFixaNo17Z);
             this.groupBoxNo17.Controls.Add(this.checkBoxFixaNo17Y);
             this.groupBoxNo17.Controls.Add(this.checkBoxFixaNo17X);
-            this.groupBoxNo17.Controls.Add(this.label123);
-            this.groupBoxNo17.Controls.Add(this.textBoxForcaNo17);
             this.groupBoxNo17.Controls.Add(this.label124);
             this.groupBoxNo17.Controls.Add(this.label125);
             this.groupBoxNo17.Controls.Add(this.label126);
+            this.groupBoxNo17.Controls.Add(this.label123);
+            this.groupBoxNo17.Controls.Add(this.textBoxForcaNo17);
             this.groupBoxNo17.Location = new System.Drawing.Point(693, 547);
             this.groupBoxNo17.Name = "groupBoxNo17";
-            this.groupBoxNo17.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo17.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo17.TabIndex = 60;
             this.groupBoxNo17.TabStop = false;
             this.groupBoxNo17.Text = "Nó 17";
@@ -4708,10 +4785,10 @@
             // checkBoxFixaNo17Z
             // 
             this.checkBoxFixaNo17Z.AutoSize = true;
-            this.checkBoxFixaNo17Z.Location = new System.Drawing.Point(133, 32);
+            this.checkBoxFixaNo17Z.Location = new System.Drawing.Point(137, 45);
             this.checkBoxFixaNo17Z.Name = "checkBoxFixaNo17Z";
             this.checkBoxFixaNo17Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo17Z.TabIndex = 40;
+            this.checkBoxFixaNo17Z.TabIndex = 49;
             this.checkBoxFixaNo17Z.Text = "Fixo";
             this.checkBoxFixaNo17Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo17Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo17_CheckedChanged);
@@ -4719,10 +4796,10 @@
             // checkBoxFixaNo17Y
             // 
             this.checkBoxFixaNo17Y.AutoSize = true;
-            this.checkBoxFixaNo17Y.Location = new System.Drawing.Point(72, 32);
+            this.checkBoxFixaNo17Y.Location = new System.Drawing.Point(137, 9);
             this.checkBoxFixaNo17Y.Name = "checkBoxFixaNo17Y";
             this.checkBoxFixaNo17Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo17Y.TabIndex = 39;
+            this.checkBoxFixaNo17Y.TabIndex = 48;
             this.checkBoxFixaNo17Y.Text = "Fixo";
             this.checkBoxFixaNo17Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo17Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo17_CheckedChanged);
@@ -4730,18 +4807,48 @@
             // checkBoxFixaNo17X
             // 
             this.checkBoxFixaNo17X.AutoSize = true;
-            this.checkBoxFixaNo17X.Location = new System.Drawing.Point(4, 32);
+            this.checkBoxFixaNo17X.Location = new System.Drawing.Point(137, 27);
             this.checkBoxFixaNo17X.Name = "checkBoxFixaNo17X";
             this.checkBoxFixaNo17X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo17X.TabIndex = 38;
+            this.checkBoxFixaNo17X.TabIndex = 47;
             this.checkBoxFixaNo17X.Text = "Fixo";
             this.checkBoxFixaNo17X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo17X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo17_CheckedChanged);
             // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label124.Location = new System.Drawing.Point(38, 47);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(79, 12);
+            this.label124.TabIndex = 46;
+            this.label124.Text = "Rotação no eixo Z";
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label125.Location = new System.Drawing.Point(38, 10);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(98, 12);
+            this.label125.TabIndex = 45;
+            this.label125.Text = "Deslocamento vertical";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label126.Location = new System.Drawing.Point(38, 29);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(79, 12);
+            this.label126.TabIndex = 44;
+            this.label126.Text = "Rotação no eixo X";
+            // 
             // label123
             // 
             this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(3, 58);
+            this.label123.Location = new System.Drawing.Point(3, 66);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(57, 13);
             this.label123.TabIndex = 31;
@@ -4749,51 +4856,24 @@
             // 
             // textBoxForcaNo17
             // 
-            this.textBoxForcaNo17.Location = new System.Drawing.Point(63, 55);
+            this.textBoxForcaNo17.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo17.Name = "textBoxForcaNo17";
             this.textBoxForcaNo17.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo17.TabIndex = 30;
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(141, 16);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(14, 13);
-            this.label124.TabIndex = 22;
-            this.label124.Text = "Z";
-            // 
-            // label125
-            // 
-            this.label125.AutoSize = true;
-            this.label125.Location = new System.Drawing.Point(88, 16);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(14, 13);
-            this.label125.TabIndex = 10;
-            this.label125.Text = "Y";
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(20, 16);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(14, 13);
-            this.label126.TabIndex = 8;
-            this.label126.Text = "X";
             // 
             // groupBoxNo16
             // 
             this.groupBoxNo16.Controls.Add(this.checkBoxFixaNo16Z);
             this.groupBoxNo16.Controls.Add(this.checkBoxFixaNo16Y);
             this.groupBoxNo16.Controls.Add(this.checkBoxFixaNo16X);
+            this.groupBoxNo16.Controls.Add(this.label109);
+            this.groupBoxNo16.Controls.Add(this.label110);
+            this.groupBoxNo16.Controls.Add(this.label120);
             this.groupBoxNo16.Controls.Add(this.label119);
             this.groupBoxNo16.Controls.Add(this.textBoxForcaNo16);
-            this.groupBoxNo16.Controls.Add(this.label120);
-            this.groupBoxNo16.Controls.Add(this.label121);
-            this.groupBoxNo16.Controls.Add(this.label122);
             this.groupBoxNo16.Location = new System.Drawing.Point(498, 547);
             this.groupBoxNo16.Name = "groupBoxNo16";
-            this.groupBoxNo16.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo16.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo16.TabIndex = 59;
             this.groupBoxNo16.TabStop = false;
             this.groupBoxNo16.Text = "Nó 16";
@@ -4802,10 +4882,10 @@
             // checkBoxFixaNo16Z
             // 
             this.checkBoxFixaNo16Z.AutoSize = true;
-            this.checkBoxFixaNo16Z.Location = new System.Drawing.Point(136, 32);
+            this.checkBoxFixaNo16Z.Location = new System.Drawing.Point(139, 45);
             this.checkBoxFixaNo16Z.Name = "checkBoxFixaNo16Z";
             this.checkBoxFixaNo16Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo16Z.TabIndex = 40;
+            this.checkBoxFixaNo16Z.TabIndex = 55;
             this.checkBoxFixaNo16Z.Text = "Fixo";
             this.checkBoxFixaNo16Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo16Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo16_CheckedChanged);
@@ -4813,10 +4893,10 @@
             // checkBoxFixaNo16Y
             // 
             this.checkBoxFixaNo16Y.AutoSize = true;
-            this.checkBoxFixaNo16Y.Location = new System.Drawing.Point(75, 32);
+            this.checkBoxFixaNo16Y.Location = new System.Drawing.Point(139, 9);
             this.checkBoxFixaNo16Y.Name = "checkBoxFixaNo16Y";
             this.checkBoxFixaNo16Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo16Y.TabIndex = 39;
+            this.checkBoxFixaNo16Y.TabIndex = 54;
             this.checkBoxFixaNo16Y.Text = "Fixo";
             this.checkBoxFixaNo16Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo16Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo16_CheckedChanged);
@@ -4824,18 +4904,48 @@
             // checkBoxFixaNo16X
             // 
             this.checkBoxFixaNo16X.AutoSize = true;
-            this.checkBoxFixaNo16X.Location = new System.Drawing.Point(7, 32);
+            this.checkBoxFixaNo16X.Location = new System.Drawing.Point(139, 27);
             this.checkBoxFixaNo16X.Name = "checkBoxFixaNo16X";
             this.checkBoxFixaNo16X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo16X.TabIndex = 38;
+            this.checkBoxFixaNo16X.TabIndex = 53;
             this.checkBoxFixaNo16X.Text = "Fixo";
             this.checkBoxFixaNo16X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo16X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo16_CheckedChanged);
             // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label109.Location = new System.Drawing.Point(40, 45);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(79, 12);
+            this.label109.TabIndex = 52;
+            this.label109.Text = "Rotação no eixo Z";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label110.Location = new System.Drawing.Point(40, 8);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(98, 12);
+            this.label110.TabIndex = 51;
+            this.label110.Text = "Deslocamento vertical";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label120.Location = new System.Drawing.Point(40, 27);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(79, 12);
+            this.label120.TabIndex = 50;
+            this.label120.Text = "Rotação no eixo X";
+            // 
             // label119
             // 
             this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(2, 58);
+            this.label119.Location = new System.Drawing.Point(4, 66);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(57, 13);
             this.label119.TabIndex = 31;
@@ -4843,51 +4953,24 @@
             // 
             // textBoxForcaNo16
             // 
-            this.textBoxForcaNo16.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo16.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo16.Name = "textBoxForcaNo16";
             this.textBoxForcaNo16.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo16.TabIndex = 30;
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(147, 16);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(14, 13);
-            this.label120.TabIndex = 22;
-            this.label120.Text = "Z";
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(89, 16);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(14, 13);
-            this.label121.TabIndex = 10;
-            this.label121.Text = "Y";
-            // 
-            // label122
-            // 
-            this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(20, 16);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(14, 13);
-            this.label122.TabIndex = 8;
-            this.label122.Text = "X";
             // 
             // groupBoxNo15
             // 
             this.groupBoxNo15.Controls.Add(this.checkBoxFixaNo15Z);
             this.groupBoxNo15.Controls.Add(this.checkBoxFixaNo15Y);
             this.groupBoxNo15.Controls.Add(this.checkBoxFixaNo15X);
-            this.groupBoxNo15.Controls.Add(this.label115);
-            this.groupBoxNo15.Controls.Add(this.textBoxForcaNo15);
             this.groupBoxNo15.Controls.Add(this.label116);
             this.groupBoxNo15.Controls.Add(this.label117);
             this.groupBoxNo15.Controls.Add(this.label118);
+            this.groupBoxNo15.Controls.Add(this.label115);
+            this.groupBoxNo15.Controls.Add(this.textBoxForcaNo15);
             this.groupBoxNo15.Location = new System.Drawing.Point(889, 454);
             this.groupBoxNo15.Name = "groupBoxNo15";
-            this.groupBoxNo15.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo15.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo15.TabIndex = 58;
             this.groupBoxNo15.TabStop = false;
             this.groupBoxNo15.Text = "Nó 15";
@@ -4896,10 +4979,10 @@
             // checkBoxFixaNo15Z
             // 
             this.checkBoxFixaNo15Z.AutoSize = true;
-            this.checkBoxFixaNo15Z.Location = new System.Drawing.Point(136, 32);
+            this.checkBoxFixaNo15Z.Location = new System.Drawing.Point(137, 44);
             this.checkBoxFixaNo15Z.Name = "checkBoxFixaNo15Z";
             this.checkBoxFixaNo15Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo15Z.TabIndex = 40;
+            this.checkBoxFixaNo15Z.TabIndex = 49;
             this.checkBoxFixaNo15Z.Text = "Fixo";
             this.checkBoxFixaNo15Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo15Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo15_CheckedChanged);
@@ -4907,10 +4990,10 @@
             // checkBoxFixaNo15Y
             // 
             this.checkBoxFixaNo15Y.AutoSize = true;
-            this.checkBoxFixaNo15Y.Location = new System.Drawing.Point(75, 32);
+            this.checkBoxFixaNo15Y.Location = new System.Drawing.Point(137, 8);
             this.checkBoxFixaNo15Y.Name = "checkBoxFixaNo15Y";
             this.checkBoxFixaNo15Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo15Y.TabIndex = 39;
+            this.checkBoxFixaNo15Y.TabIndex = 48;
             this.checkBoxFixaNo15Y.Text = "Fixo";
             this.checkBoxFixaNo15Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo15Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo15_CheckedChanged);
@@ -4918,18 +5001,48 @@
             // checkBoxFixaNo15X
             // 
             this.checkBoxFixaNo15X.AutoSize = true;
-            this.checkBoxFixaNo15X.Location = new System.Drawing.Point(7, 32);
+            this.checkBoxFixaNo15X.Location = new System.Drawing.Point(137, 26);
             this.checkBoxFixaNo15X.Name = "checkBoxFixaNo15X";
             this.checkBoxFixaNo15X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo15X.TabIndex = 38;
+            this.checkBoxFixaNo15X.TabIndex = 47;
             this.checkBoxFixaNo15X.Text = "Fixo";
             this.checkBoxFixaNo15X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo15X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo15_CheckedChanged);
             // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label116.Location = new System.Drawing.Point(38, 46);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(79, 12);
+            this.label116.TabIndex = 46;
+            this.label116.Text = "Rotação no eixo Z";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label117.Location = new System.Drawing.Point(38, 9);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(98, 12);
+            this.label117.TabIndex = 45;
+            this.label117.Text = "Deslocamento vertical";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label118.Location = new System.Drawing.Point(38, 28);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(79, 12);
+            this.label118.TabIndex = 44;
+            this.label118.Text = "Rotação no eixo X";
+            // 
             // label115
             // 
             this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(2, 58);
+            this.label115.Location = new System.Drawing.Point(2, 67);
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(57, 13);
             this.label115.TabIndex = 31;
@@ -4937,51 +5050,24 @@
             // 
             // textBoxForcaNo15
             // 
-            this.textBoxForcaNo15.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo15.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo15.Name = "textBoxForcaNo15";
             this.textBoxForcaNo15.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo15.TabIndex = 30;
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(141, 16);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(14, 13);
-            this.label116.TabIndex = 22;
-            this.label116.Text = "Z";
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(89, 16);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(14, 13);
-            this.label117.TabIndex = 10;
-            this.label117.Text = "Y";
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(20, 16);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(14, 13);
-            this.label118.TabIndex = 8;
-            this.label118.Text = "X";
             // 
             // groupBoxNo14
             // 
             this.groupBoxNo14.Controls.Add(this.checkBoxFixaNo14Z);
             this.groupBoxNo14.Controls.Add(this.checkBoxFixaNo14Y);
             this.groupBoxNo14.Controls.Add(this.checkBoxFixaNo14X);
-            this.groupBoxNo14.Controls.Add(this.label111);
-            this.groupBoxNo14.Controls.Add(this.textBoxForcaNo14);
             this.groupBoxNo14.Controls.Add(this.label112);
             this.groupBoxNo14.Controls.Add(this.label113);
             this.groupBoxNo14.Controls.Add(this.label114);
+            this.groupBoxNo14.Controls.Add(this.label111);
+            this.groupBoxNo14.Controls.Add(this.textBoxForcaNo14);
             this.groupBoxNo14.Location = new System.Drawing.Point(693, 454);
             this.groupBoxNo14.Name = "groupBoxNo14";
-            this.groupBoxNo14.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo14.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo14.TabIndex = 57;
             this.groupBoxNo14.TabStop = false;
             this.groupBoxNo14.Text = "Nó 14";
@@ -4990,10 +5076,10 @@
             // checkBoxFixaNo14Z
             // 
             this.checkBoxFixaNo14Z.AutoSize = true;
-            this.checkBoxFixaNo14Z.Location = new System.Drawing.Point(135, 32);
+            this.checkBoxFixaNo14Z.Location = new System.Drawing.Point(137, 44);
             this.checkBoxFixaNo14Z.Name = "checkBoxFixaNo14Z";
             this.checkBoxFixaNo14Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo14Z.TabIndex = 40;
+            this.checkBoxFixaNo14Z.TabIndex = 49;
             this.checkBoxFixaNo14Z.Text = "Fixo";
             this.checkBoxFixaNo14Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo14Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo14_CheckedChanged);
@@ -5001,10 +5087,10 @@
             // checkBoxFixaNo14Y
             // 
             this.checkBoxFixaNo14Y.AutoSize = true;
-            this.checkBoxFixaNo14Y.Location = new System.Drawing.Point(74, 32);
+            this.checkBoxFixaNo14Y.Location = new System.Drawing.Point(137, 8);
             this.checkBoxFixaNo14Y.Name = "checkBoxFixaNo14Y";
             this.checkBoxFixaNo14Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo14Y.TabIndex = 39;
+            this.checkBoxFixaNo14Y.TabIndex = 48;
             this.checkBoxFixaNo14Y.Text = "Fixo";
             this.checkBoxFixaNo14Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo14Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo14_CheckedChanged);
@@ -5012,18 +5098,48 @@
             // checkBoxFixaNo14X
             // 
             this.checkBoxFixaNo14X.AutoSize = true;
-            this.checkBoxFixaNo14X.Location = new System.Drawing.Point(6, 32);
+            this.checkBoxFixaNo14X.Location = new System.Drawing.Point(137, 26);
             this.checkBoxFixaNo14X.Name = "checkBoxFixaNo14X";
             this.checkBoxFixaNo14X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo14X.TabIndex = 38;
+            this.checkBoxFixaNo14X.TabIndex = 47;
             this.checkBoxFixaNo14X.Text = "Fixo";
             this.checkBoxFixaNo14X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo14X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo14_CheckedChanged);
             // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label112.Location = new System.Drawing.Point(38, 46);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(79, 12);
+            this.label112.TabIndex = 46;
+            this.label112.Text = "Rotação no eixo Z";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label113.Location = new System.Drawing.Point(38, 9);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(98, 12);
+            this.label113.TabIndex = 45;
+            this.label113.Text = "Deslocamento vertical";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label114.Location = new System.Drawing.Point(38, 28);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(79, 12);
+            this.label114.TabIndex = 44;
+            this.label114.Text = "Rotação no eixo X";
+            // 
             // label111
             // 
             this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(6, 58);
+            this.label111.Location = new System.Drawing.Point(6, 67);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(57, 13);
             this.label111.TabIndex = 31;
@@ -5031,51 +5147,24 @@
             // 
             // textBoxForcaNo14
             // 
-            this.textBoxForcaNo14.Location = new System.Drawing.Point(63, 55);
+            this.textBoxForcaNo14.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo14.Name = "textBoxForcaNo14";
             this.textBoxForcaNo14.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo14.TabIndex = 30;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(141, 16);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(14, 13);
-            this.label112.TabIndex = 22;
-            this.label112.Text = "Z";
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(88, 16);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(14, 13);
-            this.label113.TabIndex = 10;
-            this.label113.Text = "Y";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(20, 16);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(14, 13);
-            this.label114.TabIndex = 8;
-            this.label114.Text = "X";
             // 
             // groupBoxNo13
             // 
             this.groupBoxNo13.Controls.Add(this.checkBoxFixaNo13Z);
             this.groupBoxNo13.Controls.Add(this.checkBoxFixaNo13Y);
             this.groupBoxNo13.Controls.Add(this.checkBoxFixaNo13X);
+            this.groupBoxNo13.Controls.Add(this.label69);
+            this.groupBoxNo13.Controls.Add(this.label70);
+            this.groupBoxNo13.Controls.Add(this.label108);
             this.groupBoxNo13.Controls.Add(this.label107);
             this.groupBoxNo13.Controls.Add(this.textBoxForcaNo13);
-            this.groupBoxNo13.Controls.Add(this.label108);
-            this.groupBoxNo13.Controls.Add(this.label109);
-            this.groupBoxNo13.Controls.Add(this.label110);
             this.groupBoxNo13.Location = new System.Drawing.Point(498, 454);
             this.groupBoxNo13.Name = "groupBoxNo13";
-            this.groupBoxNo13.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo13.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo13.TabIndex = 56;
             this.groupBoxNo13.TabStop = false;
             this.groupBoxNo13.Text = "Nó 13";
@@ -5084,10 +5173,10 @@
             // checkBoxFixaNo13Z
             // 
             this.checkBoxFixaNo13Z.AutoSize = true;
-            this.checkBoxFixaNo13Z.Location = new System.Drawing.Point(134, 32);
+            this.checkBoxFixaNo13Z.Location = new System.Drawing.Point(139, 43);
             this.checkBoxFixaNo13Z.Name = "checkBoxFixaNo13Z";
             this.checkBoxFixaNo13Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo13Z.TabIndex = 40;
+            this.checkBoxFixaNo13Z.TabIndex = 55;
             this.checkBoxFixaNo13Z.Text = "Fixo";
             this.checkBoxFixaNo13Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo13Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo13_CheckedChanged);
@@ -5095,10 +5184,10 @@
             // checkBoxFixaNo13Y
             // 
             this.checkBoxFixaNo13Y.AutoSize = true;
-            this.checkBoxFixaNo13Y.Location = new System.Drawing.Point(73, 32);
+            this.checkBoxFixaNo13Y.Location = new System.Drawing.Point(139, 7);
             this.checkBoxFixaNo13Y.Name = "checkBoxFixaNo13Y";
             this.checkBoxFixaNo13Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo13Y.TabIndex = 39;
+            this.checkBoxFixaNo13Y.TabIndex = 54;
             this.checkBoxFixaNo13Y.Text = "Fixo";
             this.checkBoxFixaNo13Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo13Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo13_CheckedChanged);
@@ -5106,18 +5195,48 @@
             // checkBoxFixaNo13X
             // 
             this.checkBoxFixaNo13X.AutoSize = true;
-            this.checkBoxFixaNo13X.Location = new System.Drawing.Point(5, 32);
+            this.checkBoxFixaNo13X.Location = new System.Drawing.Point(139, 25);
             this.checkBoxFixaNo13X.Name = "checkBoxFixaNo13X";
             this.checkBoxFixaNo13X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo13X.TabIndex = 38;
+            this.checkBoxFixaNo13X.TabIndex = 53;
             this.checkBoxFixaNo13X.Text = "Fixo";
             this.checkBoxFixaNo13X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo13X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo13_CheckedChanged);
             // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label69.Location = new System.Drawing.Point(40, 45);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(79, 12);
+            this.label69.TabIndex = 52;
+            this.label69.Text = "Rotação no eixo Z";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(40, 8);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(98, 12);
+            this.label70.TabIndex = 51;
+            this.label70.Text = "Deslocamento vertical";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label108.Location = new System.Drawing.Point(40, 27);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(79, 12);
+            this.label108.TabIndex = 50;
+            this.label108.Text = "Rotação no eixo X";
+            // 
             // label107
             // 
             this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(2, 58);
+            this.label107.Location = new System.Drawing.Point(4, 67);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(57, 13);
             this.label107.TabIndex = 31;
@@ -5125,51 +5244,24 @@
             // 
             // textBoxForcaNo13
             // 
-            this.textBoxForcaNo13.Location = new System.Drawing.Point(65, 55);
+            this.textBoxForcaNo13.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo13.Name = "textBoxForcaNo13";
             this.textBoxForcaNo13.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo13.TabIndex = 30;
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(147, 16);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(14, 13);
-            this.label108.TabIndex = 22;
-            this.label108.Text = "Z";
-            // 
-            // label109
-            // 
-            this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(89, 16);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(14, 13);
-            this.label109.TabIndex = 10;
-            this.label109.Text = "Y";
-            // 
-            // label110
-            // 
-            this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(21, 16);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(14, 13);
-            this.label110.TabIndex = 8;
-            this.label110.Text = "X";
             // 
             // groupBoxNo12
             // 
             this.groupBoxNo12.Controls.Add(this.checkBoxFixaNo12Z);
             this.groupBoxNo12.Controls.Add(this.checkBoxFixaNo12Y);
             this.groupBoxNo12.Controls.Add(this.checkBoxFixaNo12X);
-            this.groupBoxNo12.Controls.Add(this.label103);
-            this.groupBoxNo12.Controls.Add(this.textBoxForcaNo12);
             this.groupBoxNo12.Controls.Add(this.label104);
             this.groupBoxNo12.Controls.Add(this.label105);
             this.groupBoxNo12.Controls.Add(this.label106);
+            this.groupBoxNo12.Controls.Add(this.label103);
+            this.groupBoxNo12.Controls.Add(this.textBoxForcaNo12);
             this.groupBoxNo12.Location = new System.Drawing.Point(890, 360);
             this.groupBoxNo12.Name = "groupBoxNo12";
-            this.groupBoxNo12.Size = new System.Drawing.Size(189, 84);
+            this.groupBoxNo12.Size = new System.Drawing.Size(189, 88);
             this.groupBoxNo12.TabIndex = 55;
             this.groupBoxNo12.TabStop = false;
             this.groupBoxNo12.Text = "Nó 12";
@@ -5178,10 +5270,10 @@
             // checkBoxFixaNo12Z
             // 
             this.checkBoxFixaNo12Z.AutoSize = true;
-            this.checkBoxFixaNo12Z.Location = new System.Drawing.Point(134, 30);
+            this.checkBoxFixaNo12Z.Location = new System.Drawing.Point(136, 44);
             this.checkBoxFixaNo12Z.Name = "checkBoxFixaNo12Z";
             this.checkBoxFixaNo12Z.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo12Z.TabIndex = 40;
+            this.checkBoxFixaNo12Z.TabIndex = 49;
             this.checkBoxFixaNo12Z.Text = "Fixo";
             this.checkBoxFixaNo12Z.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo12Z.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo12_CheckedChanged);
@@ -5189,10 +5281,10 @@
             // checkBoxFixaNo12Y
             // 
             this.checkBoxFixaNo12Y.AutoSize = true;
-            this.checkBoxFixaNo12Y.Location = new System.Drawing.Point(73, 30);
+            this.checkBoxFixaNo12Y.Location = new System.Drawing.Point(136, 8);
             this.checkBoxFixaNo12Y.Name = "checkBoxFixaNo12Y";
             this.checkBoxFixaNo12Y.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo12Y.TabIndex = 39;
+            this.checkBoxFixaNo12Y.TabIndex = 48;
             this.checkBoxFixaNo12Y.Text = "Fixo";
             this.checkBoxFixaNo12Y.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo12Y.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo12_CheckedChanged);
@@ -5200,18 +5292,48 @@
             // checkBoxFixaNo12X
             // 
             this.checkBoxFixaNo12X.AutoSize = true;
-            this.checkBoxFixaNo12X.Location = new System.Drawing.Point(5, 30);
+            this.checkBoxFixaNo12X.Location = new System.Drawing.Point(136, 26);
             this.checkBoxFixaNo12X.Name = "checkBoxFixaNo12X";
             this.checkBoxFixaNo12X.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxFixaNo12X.TabIndex = 38;
+            this.checkBoxFixaNo12X.TabIndex = 47;
             this.checkBoxFixaNo12X.Text = "Fixo";
             this.checkBoxFixaNo12X.UseVisualStyleBackColor = true;
             this.checkBoxFixaNo12X.CheckedChanged += new System.EventHandler(this.checkBoxFixaNo12_CheckedChanged);
             // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label104.Location = new System.Drawing.Point(37, 46);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(79, 12);
+            this.label104.TabIndex = 46;
+            this.label104.Text = "Rotação no eixo Z";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label105.Location = new System.Drawing.Point(37, 9);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(98, 12);
+            this.label105.TabIndex = 45;
+            this.label105.Text = "Deslocamento vertical";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.label106.Location = new System.Drawing.Point(37, 28);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(79, 12);
+            this.label106.TabIndex = 44;
+            this.label106.Text = "Rotação no eixo X";
+            // 
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(1, 56);
+            this.label103.Location = new System.Drawing.Point(1, 66);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(57, 13);
             this.label103.TabIndex = 31;
@@ -5219,37 +5341,10 @@
             // 
             // textBoxForcaNo12
             // 
-            this.textBoxForcaNo12.Location = new System.Drawing.Point(64, 53);
+            this.textBoxForcaNo12.Location = new System.Drawing.Point(64, 64);
             this.textBoxForcaNo12.Name = "textBoxForcaNo12";
             this.textBoxForcaNo12.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo12.TabIndex = 30;
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(141, 16);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(14, 13);
-            this.label104.TabIndex = 22;
-            this.label104.Text = "Z";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(88, 16);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(14, 13);
-            this.label105.TabIndex = 10;
-            this.label105.Text = "Y";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(20, 16);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(14, 13);
-            this.label106.TabIndex = 8;
-            this.label106.Text = "X";
             // 
             // groupBoxElemento12
             // 
@@ -5412,19 +5507,6 @@
             this.timerintro.Enabled = true;
             this.timerintro.Interval = 3000;
             this.timerintro.Tick += new System.EventHandler(this.timerintro_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(338, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(18, 23);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "?";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -5825,6 +5907,12 @@
         private System.Windows.Forms.Label label173;
         private System.Windows.Forms.Label label176;
         private System.Windows.Forms.Timer timerintro;
+        private System.Windows.Forms.CheckBox checkBoxFixaNo1Z;
+        private System.Windows.Forms.CheckBox checkBoxFixaNo1Y;
+        private System.Windows.Forms.CheckBox checkBoxFixaNo1X;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxFixaNo6Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo6Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo6X;
@@ -5840,9 +5928,9 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo4Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo4Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo4X;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.CheckBox checkBoxFixaNo3Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo3Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo3X;
@@ -5855,9 +5943,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBoxFixaNo1Z;
-        private System.Windows.Forms.CheckBox checkBoxFixaNo1Y;
-        private System.Windows.Forms.CheckBox checkBoxFixaNo1X;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
@@ -5888,27 +5973,27 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo7Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo7Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo7X;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.CheckBox checkBoxFixaNo27Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo27Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo27X;
+        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.Label label168;
         private System.Windows.Forms.Label label170;
-        private System.Windows.Forms.Label label171;
-        private System.Windows.Forms.Label label172;
         private System.Windows.Forms.CheckBox checkBoxFixaNo26Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo26Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo26X;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.Label label157;
         private System.Windows.Forms.Label label166;
-        private System.Windows.Forms.Label label167;
-        private System.Windows.Forms.Label label168;
         private System.Windows.Forms.CheckBox checkBoxFixaNo25Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo25Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo25X;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.Label label146;
         private System.Windows.Forms.Label label155;
-        private System.Windows.Forms.Label label156;
-        private System.Windows.Forms.Label label157;
         private System.Windows.Forms.CheckBox checkBoxFixaNo24Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo24Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo24X;
@@ -5924,9 +6009,9 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo22Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo22Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo22X;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.Label label134;
         private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.Label label145;
-        private System.Windows.Forms.Label label146;
         private System.Windows.Forms.CheckBox checkBoxFixaNo21Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo21Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo21X;
@@ -5942,9 +6027,9 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo19Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo19Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo19X;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label122;
         private System.Windows.Forms.Label label132;
-        private System.Windows.Forms.Label label133;
-        private System.Windows.Forms.Label label134;
         private System.Windows.Forms.CheckBox checkBoxFixaNo18Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo18Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo18X;
@@ -5960,9 +6045,9 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo16Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo16Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo16X;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label110;
         private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label121;
-        private System.Windows.Forms.Label label122;
         private System.Windows.Forms.CheckBox checkBoxFixaNo15Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo15Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo15X;
@@ -5978,18 +6063,15 @@
         private System.Windows.Forms.CheckBox checkBoxFixaNo13Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo13Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo13X;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label110;
         private System.Windows.Forms.CheckBox checkBoxFixaNo12Z;
         private System.Windows.Forms.CheckBox checkBoxFixaNo12Y;
         private System.Windows.Forms.CheckBox checkBoxFixaNo12X;
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label174;
-        private System.Windows.Forms.Button button1;
 
     }
 }
