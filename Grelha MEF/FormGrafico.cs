@@ -685,7 +685,7 @@ namespace Grelha_MEF
 
         private void deslocamentosEGirosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogVetores log = new FormLogVetores(vetoresDeslocGiroGlobalElem, "DESLOCAMENTO E GIROS");
+            FormLogVetores log = new FormLogVetores(vetoresDeslocGiroGlobalElem, "DESLOCAMENTOS E GIROS");
             log.Show();
         }
 
