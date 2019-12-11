@@ -52,7 +52,6 @@
             this.ClientSize = new System.Drawing.Size(323, 986);
             this.Controls.Add(this.richTextBoxLogVetores);
             this.Name = "FormLogVetores";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.ResumeLayout(false);
 
         }

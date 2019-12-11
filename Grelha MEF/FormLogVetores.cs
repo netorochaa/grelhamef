@@ -16,13 +16,14 @@ namespace Grelha_MEF
         {
             InitializeComponent();
 
+            bool esforcosInternos = titulo == "ESFORÇOS INTERNOS" ? true : false;
             this.Text = titulo;
             richTextBoxLogVetores.Text += titulo + Environment.NewLine + Environment.NewLine;
 
             for (int i = 0; i < vetor.Count; i++ )
             {
                 richTextBoxLogVetores.Text += "Elemento " + (i+1).ToString() + Environment.NewLine;
-                richTextBoxLogVetores.Text += MatrixUtil.VectorAsStringForLogForm(vetor[i]);
+                richTextBoxLogVetores.Text += MatrixUtil.VectorAsStringForLogForm(vetor[i], esforcosInternos);
             }
         }
     }

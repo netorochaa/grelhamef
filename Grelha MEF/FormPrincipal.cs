@@ -57,7 +57,6 @@ namespace Grelha_MEF
                 elementosLocais.Add(aux);
             }
         }
-
         public void inicializaMatrizGlobalEstrutura(int grausLiberdadeGlobal, int quantidadeElementos)
         {
             matrizGlobalEstrutura                = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
@@ -65,32 +64,38 @@ namespace Grelha_MEF
             elementosGraficoBase                 = new List<double[]>();
             matrizesLocaisElementos              = new List<double[,]>();
             matrizesGlobaisElementosEspalhamento = new List<double[,]>();
-            for (int i = 1; i <= quantidadeElementos; i++)
+            try
             {
-                Control[] combobox          = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
-                ComboBox angulo             = combobox[0] as ComboBox;
-                Control[] comboboxDirecao   = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
-                ComboBox anguloDir          = comboboxDirecao[0] as ComboBox;
-                Control[] textbox           = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
-                TextBox comprimento         = textbox[0] as TextBox;
-                double anguloConvertido     = anguloDir.Text == "-" ? -Convert.ToInt32(angulo.Text) : Convert.ToInt32(angulo.Text);
-                elementosGraficoBase.Add(new double[] { double.Parse(comprimento.Text), anguloConvertido });
-                matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
-                matrizesGlobaisElementosEspalhamento.Add(espalhamentoMatrizRigidezGlobalNoSistemaGlobal(
-                                                           MatrixUtil.multiplicacaoMatrizes( 
-                                                               grausLiberdadeLocal,
+                for (int i = 1; i <= quantidadeElementos; i++)
+                {
+                    Control[] combobox = this.Controls.Find("comboBoxAnguloE" + i.ToString(), true);
+                    ComboBox angulo = combobox[0] as ComboBox;
+                    Control[] comboboxDirecao = this.Controls.Find("comboBoxAnguloDirE" + i.ToString(), true);
+                    ComboBox anguloDir = comboboxDirecao[0] as ComboBox;
+                    Control[] textbox = this.Controls.Find("textBoxComprimentoE" + i.ToString(), true);
+                    TextBox comprimento = textbox[0] as TextBox;
+                    double anguloConvertido = anguloDir.Text == "-" ? -Convert.ToInt32(angulo.Text) : Convert.ToInt32(angulo.Text);
+                    elementosGraficoBase.Add(new double[] { double.Parse(comprimento.Text), anguloConvertido });
+                    matrizesLocaisElementos.Add(calculaMatrizRigidezEmCoordenadasLocais(comprimento.Text));
+                    matrizesGlobaisElementosEspalhamento.Add(espalhamentoMatrizRigidezGlobalNoSistemaGlobal(
                                                                MatrixUtil.multiplicacaoMatrizes(
-                                                                    grausLiberdadeLocal,
-                                                                    MatrixUtil.matrizRotacaoInversa(Convert.ToInt32(angulo.Text)), matrizesLocaisElementos[i - 1], string.Empty),
-                                                                    MatrixUtil.matrizRotacao(matrizesRotPorAnguloDoElem, Convert.ToInt32(angulo.Text)), string.Empty
-                                                            ), grausLiberdadeGlobal, 
-                                                               elementosLocais[i - 1],
-                                                               string.Empty
-                                                         ));
+                                                                   grausLiberdadeLocal,
+                                                                   MatrixUtil.multiplicacaoMatrizes(
+                                                                        grausLiberdadeLocal,
+                                                                        MatrixUtil.matrizRotacaoInversa(Convert.ToInt32(angulo.Text)), matrizesLocaisElementos[i - 1], string.Empty),
+                                                                        MatrixUtil.matrizRotacao(matrizesRotPorAnguloDoElem, Convert.ToInt32(angulo.Text)), string.Empty
+                                                                ), grausLiberdadeGlobal,
+                                                                   elementosLocais[i - 1],
+                                                                   string.Empty
+                                                             ));
+                }
+            }
+            catch (FormatException e)
+            {
+                MessageBox.Show("Há Campo(s) em branco ou dados foram informados incorretamente.");
             }
             matrizGlobalEstrutura = calculaMatrizGlobalDosElementos(matrizesGlobaisElementosEspalhamento, grausLiberdadeGlobal, "MATRIZ GLOBAL DA ESTRUTURA");
         }
-
         public void inicializaVetorCargasExternas(int tamanhoVetor, int quantidadeNos)
         {
             vetorCargasExternas = new double[tamanhoVetor];
@@ -105,7 +110,6 @@ namespace Grelha_MEF
                 }
             }
         }
-
         public double[,] espalhamentoMatrizRigidezGlobalNoSistemaGlobal(double[,] matrizGlobalDoElemento, int grausLiberdadeGlobal, int[] localElemento, string nome)
         {
             int countI = 0;
@@ -128,7 +132,6 @@ namespace Grelha_MEF
             }
             return matrizResultante;
         }
-
         public double[,] calculaMatrizGlobalDosElementos(List<double[,]> elementosNaMatrizGlobal, int grausLiberdadeGlobal, string nome)
         {
             double[,] matrizResultante = new double[grausLiberdadeGlobal, grausLiberdadeGlobal];
@@ -157,7 +160,6 @@ namespace Grelha_MEF
             }
             return matrizResultante;
         }
-
         public double[,] calculaMatrizRigidezEmCoordenadasLocais(string comprimentoBarraElem)
         {
             NumberFormatInfo provider = new NumberFormatInfo();
@@ -191,7 +193,7 @@ namespace Grelha_MEF
             };
             return matrizRigidezElementoEmCoordenadasLocais;
         }
-
+        
         //MATRIZ DA ESTRUTURA COM AS CONDIÇÕES DE CONTORNO
         public double[,] defineMatrizEstruturaComCondicoesDeContorno(double[,] matrizGlobalDosElementos, int quantidadeNos, int grausLiberdadeGlobal)
         {
@@ -201,12 +203,13 @@ namespace Grelha_MEF
                 bool condicaoX = defineSeRestrito(i, "X");
                 bool condicaoY = defineSeRestrito(i, "Y");
                 bool condicaoZ = defineSeRestrito(i, "Z");
-                if (condicaoX)
+                
+                if (condicaoY)
                 {
                     int comecoNO = (i - 1) * 3;
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
                 }
-                if (condicaoY)
+                if (condicaoX)
                 {
                     int comecoNO = ((i - 1) * 3) + 1;
                     aplicaCondicoesContornoPorGrauLiberdade(matrizResultante, comecoNO, grausLiberdadeGlobal);
@@ -237,7 +240,7 @@ namespace Grelha_MEF
             CheckBox checkBox = control[0] as CheckBox;
             return checkBox.Checked;
         }
-
+        
         public void defineVetoresDeslocRotGlobalPeloNo(double[] vetorDeslocamentoERotacaoGlobal, int quantidadeElementos, int grausLiberdadeGlobal)
         {
             vetoresDeslocGiroGlobalElem = new List<double[]>();
@@ -255,13 +258,11 @@ namespace Grelha_MEF
                 vetoresDeslocGiroGlobalElem.Add(vetorResultante);
             }
         }
-
         public void aplicandoDeslocamentosLocaisElementos(int quantidadeElementos)
         {
             for (int i = 0; i < quantidadeElementos; i++)
                 vetoresDeslocGiroGlobalElem[i] = MatrixUtil.multiplicacaoMatrizComVetor(matrizesRotPorAnguloDoElem[i], vetoresDeslocGiroGlobalElem[i], "DESLOCAMENTOS E GIROS - LOCAIS - ELEMENTO: " + (i + 1));
         }
-
         public void aplicandoDeslocamentosInternosElementos(int quantidadeElementos)
         {
             vetoresEsforcosInternosElem = new List<double[]>();
@@ -270,7 +271,6 @@ namespace Grelha_MEF
 
             incrementaElementosGrafResultadoFinal(vetoresEsforcosInternosElem);
         }
-
         public void incrementaElementosGrafResultadoFinal(List<double[]> vetoresEsforcosInternosElem)
         {
             elementosGraficoDEC = new List<double[]>();
@@ -280,9 +280,9 @@ namespace Grelha_MEF
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
                 elementosGraficoDEC.Add(new double[] { vetoresEsforcosInternosElem[i][0], -(vetoresEsforcosInternosElem[i][3]) }); //DEC
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
-                elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); //DMF
+                elementosGraficoDMF.Add(new double[] { vetoresEsforcosInternosElem[i][1], vetoresEsforcosInternosElem[i][4] }); //DMT E DMF ESTÃO TROCADOS
             for (int i = 0; i < vetoresEsforcosInternosElem.Count; i++)
-                elementosGraficoDMT.Add(new double[] { vetoresEsforcosInternosElem[i][2], vetoresEsforcosInternosElem[i][5] }); //DMT
+                elementosGraficoDMT.Add(new double[] { -(vetoresEsforcosInternosElem[i][2]), vetoresEsforcosInternosElem[i][5] }); //DMT E DMF ESTÃO TROCADOS
         }
         
         //EVENTOS
@@ -311,7 +311,7 @@ namespace Grelha_MEF
         private void buttonCalculaMatrizRigidezElementoEmCoordenadasLocais_Click(object sender, EventArgs e)
         {
             quantidadeNos        = Convert.ToInt32(textBoxQuantidadeNos.Text);
-            grausLiberdadeGlobal = Convert.ToInt32(quantidadeNos * 3);
+            grausLiberdadeGlobal = quantidadeNos * 3;
             quantidadeElementos  = Convert.ToInt32(numericUpDownQuantidadeElementos.Value);
 
             inicializaVetoresElementosLocais(grausLiberdadeGlobal, quantidadeElementos);
@@ -444,8 +444,8 @@ namespace Grelha_MEF
 
         private void timerintro_Tick(object sender, EventArgs e)
         {
-            //this.Controls.Remove(panelintro);
-            //panelintro.Dispose();
+            this.Controls.Remove(panelintro);
+            panelintro.Dispose();
             panel1.Visible = true;
             timerintro.Enabled = false;
         }

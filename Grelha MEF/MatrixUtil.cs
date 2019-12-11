@@ -161,12 +161,24 @@ namespace Grelha_MEF
             }
             return s;
         }
-        public static string VectorAsStringForLogForm(double[] vector)
+        public static string VectorAsStringForLogForm(double[] vector, bool mostrarIndicadoresEsfInternos)
         {
             string s = "";
             for (int i = 0; i < vector.GetLength(0); ++i)
             {
-                s += vector[i].ToString("F3").PadLeft(8) + " "; 
+                s += vector[i].ToString("F3").PadLeft(8) + " ";
+                if (mostrarIndicadoresEsfInternos)
+                {
+                    if (i == 0 || i == 3) s += "- Cortante";
+                    else if (i == 1 || i == 4) s += "- Torsor";
+                    else if (i == 2 || i == 5) s += "- Fletor";
+                }
+                else
+                {
+                    if (i == 0 || i == 3) s += "m";
+                    else if (i == 1 || i == 4) s += "rad";
+                    else if (i == 2 || i == 5) s += "rad";
+                }
                 s += Environment.NewLine;
             }
             return s;
