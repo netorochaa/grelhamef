@@ -5505,7 +5505,7 @@
             // 
             this.panelintro.BackColor = System.Drawing.SystemColors.Window;
             this.panelintro.Controls.Add(this.pictureBox1);
-            this.panelintro.Location = new System.Drawing.Point(442, 280);
+            this.panelintro.Location = new System.Drawing.Point(445, 265);
             this.panelintro.Name = "panelintro";
             this.panelintro.Size = new System.Drawing.Size(530, 386);
             this.panelintro.TabIndex = 43;

@@ -52,7 +52,7 @@ namespace Grelha_MEF
 
                 for (int h = 1; h <= elementosGraficoBase.Count; h++)
                 {
-                    tracaGrafico(h, addElementoGrafico(4, chart), chart, null, elementosGraficoBase);
+                    tracaGrafico(h, addElementoGrafico(3, chart, Color.Black), chart, null, elementosGraficoBase);
                 }
             }
             else
@@ -65,16 +65,16 @@ namespace Grelha_MEF
                 List<double[]> extremidadesDMF = new List<double[]>();
                 for (int h = 1; h <= quantidadeElementos; h++)
                 {
-                    tracaGrafico(h, addElementoGrafico(1, chart1), chart1, extremidadesDEC, elementosGraficoBase);
-                    tracaGrafico(h, addElementoGrafico(1, chart2), chart2, extremidadesDMT, elementosGraficoBase);
-                    tracaGrafico(h, addElementoGrafico(1, chart3), chart3, extremidadesDMF, elementosGraficoBase);
+                    tracaGrafico(h, addElementoGrafico(1, chart1, Color.Black), chart1, extremidadesDEC, elementosGraficoBase);
+                    tracaGrafico(h, addElementoGrafico(1, chart2, Color.Black), chart2, extremidadesDMT, elementosGraficoBase);
+                    tracaGrafico(h, addElementoGrafico(1, chart3, Color.Black), chart3, extremidadesDMF, elementosGraficoBase);
                 }
                 defineDEC(chart1, extremidadesDEC);
                 defineDMF(chart2, extremidadesDMF);
                 defineDMT(chart3, extremidadesDMT);
             }
         }
-        public string addElementoGrafico(int tam, Chart chart)
+        public string addElementoGrafico(int tam, Chart chart, Color cor)
         {
             string indexSeries = "Series";
             int indexCount = chart.Series.Count;
@@ -85,6 +85,7 @@ namespace Grelha_MEF
             chart.Series[indexSeries].IsVisibleInLegend = true;
             chart.Series[indexSeries].ChartType = SeriesChartType.Line;
             chart.Series[indexSeries].BorderWidth = tam;
+            chart.Series[indexSeries].Color = cor;
             chart.Series[indexSeries].CustomProperties = "IsXAxisQuantitative=True, EmptyPointValue=Zero, LabelStyle=TopLeft";
             
             return indexSeries;
@@ -185,7 +186,7 @@ namespace Grelha_MEF
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
-                string indexSeries = addElementoGrafico(4, chart);
+                string indexSeries = addElementoGrafico(4, chart, Color.SteelBlue);
                 int indexVetor = i - 1;
                 int ultimoPoint = chart.Series["Series" + indexVetor].Points.Count - 1;
                 double ultimoValorY = 0;
@@ -355,7 +356,7 @@ namespace Grelha_MEF
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
-                string indexSeries = addElementoGrafico(4, chart);
+                string indexSeries = addElementoGrafico(4, chart, Color.SteelBlue);
                 int indexVetor = i - 1;
                 int ultimoPoint = chart.Series["Series" + indexVetor].Points.Count - 1;
                 double ultimoValorY = 0;
@@ -521,7 +522,7 @@ namespace Grelha_MEF
         {
             for (int i = 1; i <= elementosGraficoBase.Count; i++)
             {
-                string indexSeries = addElementoGrafico(4, chart);
+                string indexSeries = addElementoGrafico(4, chart, Color.SteelBlue);
                 int indexVetor = i - 1;
                 int ultimoPoint = chart.Series["Series" + indexVetor].Points.Count - 1;
                 double ultimoValorY = 0;
