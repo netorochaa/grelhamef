@@ -448,7 +448,7 @@ namespace Grelha_MEF
                         //TODO VALOR DO 2º NÓ DO ELEMENTO SERÁ NEGATIVO
 
                         double valorEsfInternoNO = Math.Round(elementosGraficoDMF[indexVetor][h], 3);
-                        legendaValor = Math.Round(valorEsfInternoNO).ToString();
+                        legendaValor = Math.Round(valorEsfInternoNO).ToString("F2");
                         chart.Series[indexSeries].LegendText += legendaValor + " - ";
 
                         if (valorEsfInternoNO < 0)
@@ -618,7 +618,7 @@ namespace Grelha_MEF
                         //TODO VALOR DO 2º NÓ DO ELEMENTO SERÁ NEGATIVO
 
                         double valorEsfInternoNO = Math.Round(elementosGraficoDMT[indexVetor][h], 3);
-                        legendaValor = Math.Round(valorEsfInternoNO).ToString();
+                        legendaValor = Math.Round(valorEsfInternoNO).ToString("F2");
                         chart.Series[indexSeries].LegendText += legendaValor + " - ";
 
                         double ultimoValorYaux = angulo.Equals(-90) ? (ultimoValorY) + 1 : (ultimoValorY) - 1;
