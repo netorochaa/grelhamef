@@ -470,10 +470,11 @@ namespace Grelha_MEF
                         else
                         {
                             if (h == 0) ultimoValorYaux = (ultimoValorY) - 1;
-                            else ultimoValorYaux = (valorY) + 1;
+                            else 
+                                ultimoValorYaux = valorNegativo ? (ultimoValorY) + 1 : (ultimoValorY) - 1;
                         }
 
-                        valorY = valorNegativoAnterior ? (ultimoValorYaux) - valorInteracaoGrafico : (ultimoValorYaux) + valorInteracaoGrafico;
+                        valorY = valorNegativoAnterior ? (ultimoValorYaux) + valorInteracaoGrafico : (ultimoValorYaux) - valorInteracaoGrafico;
 
                         if (h.Equals(0))
                         {

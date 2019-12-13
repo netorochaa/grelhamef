@@ -546,7 +546,6 @@
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(191, 24);
             this.textBoxB.TabIndex = 1;
-            this.textBoxB.Text = "0.15";
             this.textBoxB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -568,7 +567,6 @@
             this.textBoxH.Name = "textBoxH";
             this.textBoxH.Size = new System.Drawing.Size(191, 24);
             this.textBoxH.TabIndex = 3;
-            this.textBoxH.Text = "0.30";
             this.textBoxH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -590,7 +588,6 @@
             this.textBoxModuloYoung.Name = "textBoxModuloYoung";
             this.textBoxModuloYoung.Size = new System.Drawing.Size(173, 24);
             this.textBoxModuloYoung.TabIndex = 5;
-            this.textBoxModuloYoung.Text = "0.03";
             this.textBoxModuloYoung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -612,7 +609,6 @@
             this.textBoxCoeficientePoisson.Name = "textBoxCoeficientePoisson";
             this.textBoxCoeficientePoisson.Size = new System.Drawing.Size(173, 24);
             this.textBoxCoeficientePoisson.TabIndex = 7;
-            this.textBoxCoeficientePoisson.Text = "0.20";
             this.textBoxCoeficientePoisson.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -630,7 +626,6 @@
             this.textBoxComprimentoE1.Name = "textBoxComprimentoE1";
             this.textBoxComprimentoE1.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE1.TabIndex = 9;
-            this.textBoxComprimentoE1.Text = "10.4";
             // 
             // buttonCalculaMatrizRigidezElementoEmCoordenadasLocais
             // 
@@ -807,7 +802,6 @@
             this.textBoxComprimentoE2.Name = "textBoxComprimentoE2";
             this.textBoxComprimentoE2.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprimentoE2.TabIndex = 9;
-            this.textBoxComprimentoE2.Text = "5.2";
             // 
             // label10
             // 
@@ -1980,7 +1974,6 @@
             this.textBoxForcaNo1.Name = "textBoxForcaNo1";
             this.textBoxForcaNo1.Size = new System.Drawing.Size(112, 20);
             this.textBoxForcaNo1.TabIndex = 27;
-            this.textBoxForcaNo1.Text = "-2";
             // 
             // label29
             // 
